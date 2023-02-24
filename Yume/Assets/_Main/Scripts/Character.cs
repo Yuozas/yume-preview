@@ -20,7 +20,7 @@ public class Character : MonoBehaviour
         var vertical = Input.GetAxisRaw("Vertical");
 
         var direction = Vector2.right * horizontal + Vector2.up * vertical;
-        var velocity = direction * BASE_MOVEMENT_SPEED;
+        var velocity = direction.normalized * BASE_MOVEMENT_SPEED;
         _rigidbody.velocity = velocity;
 
         Animate(horizontal, vertical, velocity);
