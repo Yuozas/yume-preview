@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Character : MonoBehaviour
 {
@@ -14,16 +15,15 @@ public class Character : MonoBehaviour
     public const string VERTICAL_ANIMATOR_PARAMETER_NAME = "Vertical";
     public const string SPEED_ANIMATOR_PARAMETER_NAME = "Magnitude";
 
+    Vector2 _direction;
+    public void SetDirection(InputAction.CallbackContext context) => _direction = context.ReadValue<Vector2>();
+
     void Update()
     {
-        var horizontal = Input.GetAxisRaw("Horizontal");
-        var vertical = Input.GetAxisRaw("Vertical");
-
-        var direction = Vector2.right * horizontal + Vector2.up * vertical;
-        var velocity = direction.normalized * BASE_MOVEMENT_SPEED;
+        var velocity = _direction.normalized * BASE_MOVEMENT_SPEED;
         _rigidbody.velocity = velocity;
 
-        Animate(horizontal, vertical, velocity);
+        Animate(_direction.x, _direction.y, velocity);
     }
 
     void Animate(float horizontal, float vertical, Vector2 velocity)
