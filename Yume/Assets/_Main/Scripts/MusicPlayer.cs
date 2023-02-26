@@ -10,7 +10,7 @@ public class MusicPlayer : MonoBehaviour
     [Header("Settings")]
     [SerializeField] Key _switch;
 
-    public const float DEFAULT_FADE_DURATION = 1f;
+    public const float DEFAULT_FADE_DURATION = 1;
     AudioClip CurrentClip => _clips[_index];
     int _index;
 

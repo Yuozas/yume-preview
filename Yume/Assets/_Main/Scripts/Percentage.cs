@@ -29,9 +29,9 @@ public class Percentage
     IEnumerator Co_Play(float duration, Action onCompleted = null)
     {
         var percentage = 0f;
-        while (percentage < 1f)
+        while (percentage < 1)
         {
-            percentage += Time.deltaTime * 1f / duration;
+            percentage += Time.deltaTime * 1 / duration;
             OnUpdated?.Invoke(percentage);
             yield return null;
         }
