@@ -6,7 +6,7 @@ public class Percentage
 {
     public event Action<float> OnUpdated;
 
-    MonoBehaviour _behaviour;
+    readonly MonoBehaviour _behaviour;
     IEnumerator _ienumerator;
     public Percentage(MonoBehaviour behaviour) => _behaviour = behaviour;
 

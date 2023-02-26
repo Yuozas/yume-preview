@@ -22,7 +22,7 @@ public class Music : MonoBehaviour
 
     #if UNITY_EDITOR
     AudioSource[] _previousSources;
-#endif
+    #endif
     void OnValidate()
     {
         const int requiredSourcesLength = 2;
