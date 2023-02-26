@@ -22,19 +22,13 @@ public class Music : MonoBehaviour
 
     #if UNITY_EDITOR
     AudioSource[] _previousSources;
-    #endif
+#endif
     void OnValidate()
     {
         const int requiredSourcesLength = 2;
-        if(_sources.Length > requiredSourcesLength)
-            _sources = _sources.Take(requiredSourcesLength).ToArray();
-
-        if (_previousSources?.Length == requiredSourcesLength && _sources.Length < requiredSourcesLength)
-            _sources = _previousSources;
-
-        _previousSources = _sources;
+        if (_sources.Length is requiredSourcesLength) _previousSources = _sources.ToArray();
+        else _sources = _previousSources.ToArray();
     }
-
     public void PlayInstant(AudioClip clip)
     {
         CurrentSource.Stop();
