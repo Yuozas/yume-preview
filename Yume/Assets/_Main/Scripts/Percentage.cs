@@ -13,7 +13,7 @@ public class Percentage
 	void Stop()
 	{
 		if (_ienumerator == null) return;
-		
+
 		_behaviour.StopCoroutine(_ienumerator);
 		_ienumerator = null;
 	}
@@ -28,7 +28,7 @@ public class Percentage
 	IEnumerator Co_Play(float duration, Action onCompleted = null)
 	{
 		float percentage = 0f;
-		while(percentage < 1f)
+		while (percentage < 1f)
 		{
 			percentage += Time.deltaTime * 1f / duration;
 			OnUpdated?.Invoke(percentage);
