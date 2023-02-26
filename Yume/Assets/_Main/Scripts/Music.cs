@@ -10,8 +10,8 @@ public class Music : MonoBehaviour
     [Header("Settings")]
     [SerializeField] float _volume = 0.5f;
 
-    public AudioSource Current => _sources[_index];
-    public AudioSource Previous => _sources[1 - _index];
+    public AudioSource CurrentSource => _sources[_index];
+    public AudioSource PreviousSource => _sources[1 - _index];
 
     Percentage _percentage;
     int _index;
@@ -21,7 +21,7 @@ public class Music : MonoBehaviour
     void OnDisable() => _percentage.OnUpdated -= Set;
 
     #if UNITY_EDITOR
-    AudioSource[] _previous;
+    AudioSource[] _previousSources;
     #endif
     void OnValidate()
     {
@@ -29,15 +29,15 @@ public class Music : MonoBehaviour
         if(_sources.Length > requiredSourcesLength)
             _sources = _sources.Take(requiredSourcesLength).ToArray();
 
-        if (_previous?.Length == requiredSourcesLength && _sources.Length < requiredSourcesLength)
-            _sources = _previous;
+        if (_previousSources?.Length == requiredSourcesLength && _sources.Length < requiredSourcesLength)
+            _sources = _previousSources;
 
-        _previous = _sources;
+        _previousSources = _sources;
     }
 
     public void PlayInstant(AudioClip clip)
     {
-        Current.Stop();
+        CurrentSource.Stop();
 
         UpdateActiveSourceIndex();
         SetClipAndPlay(clip);
@@ -52,15 +52,15 @@ public class Music : MonoBehaviour
     }
 
     void UpdateActiveSourceIndex() => _index = 1 - _index;
-    void StopPreviousSource() => Previous.Stop();
+    void StopPreviousSource() => PreviousSource.Stop();
     void SetClipAndPlay(AudioClip clip)
     {
-        Current.clip = clip;
-        Current.Play();
+        CurrentSource.clip = clip;
+        CurrentSource.Play();
     }
     void Set(float percentage)
     {
-        Current.volume = Mathf.Lerp(0f, _volume, percentage);
-        Previous.volume = Mathf.Lerp(_volume, 0f, percentage);
+        CurrentSource.volume = Mathf.Lerp(0f, _volume, percentage);
+        PreviousSource.volume = Mathf.Lerp(_volume, 0f, percentage);
     }
 }

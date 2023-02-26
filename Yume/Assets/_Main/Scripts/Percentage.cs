@@ -34,7 +34,8 @@ public class Percentage
             OnUpdated?.Invoke(percentage);
             yield return null;
         }
-        
+
+        _ienumerator = null;
         onCompleted?.Invoke();
     }
 }
