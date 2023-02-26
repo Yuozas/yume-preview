@@ -49,11 +49,7 @@ public class Music : MonoBehaviour
     }
 
     void UpdateActiveSourceIndex() => _index = 1 - _index;
-    void StopPreviousSource()
-    {
-        var previous = _sources[1 - _index];
-        previous.Stop();
-    }
+    void StopPreviousSource() => Previous.Stop();
     void SetClipAndPlay(AudioClip clip)
     {
         Current.clip = clip;
