@@ -13,7 +13,7 @@ public class Percentage
 	void Stop()
 	{
 		if (_ienumerator == null) return;
-
+		
 		_behaviour.StopCoroutine(_ienumerator);
 		_ienumerator = null;
 	}
