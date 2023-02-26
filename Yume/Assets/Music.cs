@@ -25,7 +25,7 @@ public class Music : MonoBehaviour
     {
         const int REQUIRED_SOURCES_LENGTH = 2;
         if(_sources.Length > REQUIRED_SOURCES_LENGTH) _sources = _sources.Take(REQUIRED_SOURCES_LENGTH).ToArray();
-        if (_previous.Length == REQUIRED_SOURCES_LENGTH && _sources.Length < REQUIRED_SOURCES_LENGTH) _sources = _previous;
+        if (_previous != null && _previous.Length == REQUIRED_SOURCES_LENGTH && _sources.Length < REQUIRED_SOURCES_LENGTH) _sources = _previous;
 
         _previous = new AudioSource[_sources.Length];
         Array.Copy(_sources, _previous, _sources.Length);
