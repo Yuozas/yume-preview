@@ -36,5 +36,5 @@ public class Percentage
         }
         
         onCompleted?.Invoke();
-	}
+    }
 }
