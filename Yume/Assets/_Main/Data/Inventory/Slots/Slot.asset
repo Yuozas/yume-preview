@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2832a8b1554066245a9c79c2c1cf9d37, type: 3}
   m_Name: Slot
   m_EditorClassIdentifier: 
-  <TotalSpace>k__BackingField: 0
-  <Name>k__BackingField: 
+  <TotalSpace>k__BackingField: 6
+  <Name>k__BackingField: Slot
   <Slots>k__BackingField: []

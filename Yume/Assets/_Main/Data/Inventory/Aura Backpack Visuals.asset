@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe225afad6f19b4d80fbd7d89ab9ccd, type: 3}
   m_Name: Aura Backpack Visuals
   m_EditorClassIdentifier: 
-  <Sprite>k__BackingField: {fileID: 0}
+  <Sprite>k__BackingField: {fileID: -1686963143, guid: 1a4d1f89522da874c8a9331ccf49cf2a, type: 3}
