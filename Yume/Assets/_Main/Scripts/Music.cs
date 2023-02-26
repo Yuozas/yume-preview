@@ -57,7 +57,7 @@ public class Music : MonoBehaviour
     }
     void Set(float percentage)
     {
-	    Current.volume = Mathf.Lerp(0f, _volume, percentage);
-	    Previous.volume = Mathf.Lerp(_volume, 0f, percentage);
+        Current.volume = Mathf.Lerp(0f, _volume, percentage);
+        Previous.volume = Mathf.Lerp(_volume, 0f, percentage);
     }
 }
