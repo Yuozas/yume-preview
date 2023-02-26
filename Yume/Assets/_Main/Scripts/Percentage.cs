@@ -25,6 +25,7 @@ public class Percentage
         _ienumerator = Co_Play(duration, onCompleted);
         _behaviour.StartCoroutine(_ienumerator);
     }
+
     IEnumerator Co_Play(float duration, Action onCompleted = null)
     {
         var percentage = 0f;

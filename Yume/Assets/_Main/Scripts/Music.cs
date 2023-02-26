@@ -23,12 +23,14 @@ public class Music : MonoBehaviour
     #if UNITY_EDITOR
     AudioSource[] _previousSources;
     #endif
+
     void OnValidate()
     {
         const int requiredSourcesLength = 2;
         if (_sources.Length is requiredSourcesLength) _previousSources = _sources.ToArray();
         else _sources = _previousSources.ToArray();
     }
+
     public void PlayInstant(AudioClip clip)
     {
         CurrentSource.Stop();
@@ -47,11 +49,13 @@ public class Music : MonoBehaviour
 
     void UpdateActiveSourceIndex() => _index = 1 - _index;
     void StopPreviousSource() => PreviousSource.Stop();
+
     void SetClipAndPlay(AudioClip clip)
     {
         CurrentSource.clip = clip;
         CurrentSource.Play();
     }
+
     void Set(float percentage)
     {
         CurrentSource.volume = Mathf.Lerp(0f, _volume, percentage);
