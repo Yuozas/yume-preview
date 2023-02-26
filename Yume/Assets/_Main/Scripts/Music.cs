@@ -55,7 +55,6 @@ public class Music : MonoBehaviour
         Current.clip = clip;
         Current.Play();
     }
-
     void Set(float percentage)
     {
 	    Current.volume = Mathf.Lerp(0f, _volume, percentage);
