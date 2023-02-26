@@ -27,15 +27,15 @@ public class Percentage
 	}
 
 	IEnumerator Co_Play(float duration, Action onCompleted = null)
-    {
+	{
 		float percentage = 0f;
 		while(percentage < 1f)
-        {
+		{
 			percentage += Time.deltaTime * 1f / duration;
 			OnUpdated?.Invoke(percentage);
 			yield return null;
-        }
+		}
 
 		onCompleted?.Invoke();
-    }
+	}
 }
