@@ -11,6 +11,7 @@ public class Music : MonoBehaviour
     [SerializeField] float _volume = 0.5f;
 
     public AudioSource Current => _sources[_index];
+    public AudioSource Previous => _sources[1 - _index];
 
     Percentage _percentage;
     int _index;
@@ -61,7 +62,7 @@ public class Music : MonoBehaviour
 
     void Set(float percentage)
     {
-	    _sources[_index].volume = Mathf.Lerp(0f, _volume, percentage);
-	    _sources[1 - _index].volume = Mathf.Lerp(_volume, 0f, percentage);
+	    Current.volume = Mathf.Lerp(0f, _volume, percentage);
+	    Previous.volume = Mathf.Lerp(_volume, 0f, percentage);
     }
 }
