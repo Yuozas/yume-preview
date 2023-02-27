@@ -2,7 +2,7 @@ using UnityEngine;
 using System;
 using System.Linq;
 
-public class Music : MonoBehaviour
+public class Music : Singleton<Music>
 {
     [Header("References")]
     [SerializeField] AudioSource[] _sources;
@@ -16,9 +16,14 @@ public class Music : MonoBehaviour
     Percentage _percentage;
     int _index;
 
-    void Awake() => _percentage = new Percentage(this);
-    void OnEnable() => _percentage.OnUpdated += Set;
-    void OnDisable() => _percentage.OnUpdated -= Set;
+    protected override void Awake()
+    {
+        base.Awake();
+        _percentage = new Percentage(this);
+        _percentage.OnUpdated += Set;
+    }
+
+    void OnDestroy() => _percentage.OnUpdated -= Set;
 
     #if UNITY_EDITOR
     AudioSource[] _previousSources;
@@ -28,7 +33,7 @@ public class Music : MonoBehaviour
     {
         const int requiredSourcesLength = 2;
         if (_sources.Length is requiredSourcesLength) _previousSources = _sources.ToArray();
-        else _sources = _previousSources.ToArray();
+        else _sources = _previousSources?.ToArray();
     }
 
     public void PlayInstant(AudioClip clip)
