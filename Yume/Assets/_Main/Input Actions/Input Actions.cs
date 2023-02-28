@@ -150,6 +150,34 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""In-game Menu"",
+            ""id"": ""b031db69-9d5d-4076-b126-db60a5c1fdd7"",
+            ""actions"": [
+                {
+                    ""name"": ""Exit "",
+                    ""type"": ""Button"",
+                    ""id"": ""b304ce11-9473-4e61-801e-9c6f9f6859ea"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""ebb5079b-8fb9-47f3-83ec-a49b0bb5a883"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Exit "",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -175,6 +203,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         // In-game
         m_Ingame = asset.FindActionMap("In-game", throwIfNotFound: true);
         m_Ingame_Backpackmenu = m_Ingame.FindAction("Backpack menu", throwIfNotFound: true);
+        // In-game Menu
+        m_IngameMenu = asset.FindActionMap("In-game Menu", throwIfNotFound: true);
+        m_IngameMenu_Exit = m_IngameMenu.FindAction("Exit ", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -370,6 +401,52 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         }
     }
     public IngameActions @Ingame => new IngameActions(this);
+
+    // In-game Menu
+    private readonly InputActionMap m_IngameMenu;
+    private List<IIngameMenuActions> m_IngameMenuActionsCallbackInterfaces = new List<IIngameMenuActions>();
+    private readonly InputAction m_IngameMenu_Exit;
+    public struct IngameMenuActions
+    {
+        private @InputActions m_Wrapper;
+        public IngameMenuActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Exit => m_Wrapper.m_IngameMenu_Exit;
+        public InputActionMap Get() { return m_Wrapper.m_IngameMenu; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(IngameMenuActions set) { return set.Get(); }
+        public void AddCallbacks(IIngameMenuActions instance)
+        {
+            if (instance == null || m_Wrapper.m_IngameMenuActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_IngameMenuActionsCallbackInterfaces.Add(instance);
+            @Exit.started += instance.OnExit;
+            @Exit.performed += instance.OnExit;
+            @Exit.canceled += instance.OnExit;
+        }
+
+        private void UnregisterCallbacks(IIngameMenuActions instance)
+        {
+            @Exit.started -= instance.OnExit;
+            @Exit.performed -= instance.OnExit;
+            @Exit.canceled -= instance.OnExit;
+        }
+
+        public void RemoveCallbacks(IIngameMenuActions instance)
+        {
+            if (m_Wrapper.m_IngameMenuActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IIngameMenuActions instance)
+        {
+            foreach (var item in m_Wrapper.m_IngameMenuActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_IngameMenuActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public IngameMenuActions @IngameMenu => new IngameMenuActions(this);
     private int m_KeyboardSchemeIndex = -1;
     public InputControlScheme KeyboardScheme
     {
@@ -390,5 +467,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     public interface IIngameActions
     {
         void OnBackpackmenu(InputAction.CallbackContext context);
+    }
+    public interface IIngameMenuActions
+    {
+        void OnExit(InputAction.CallbackContext context);
     }
 }

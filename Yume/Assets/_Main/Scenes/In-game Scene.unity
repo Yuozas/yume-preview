@@ -217,6 +217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2141033757}
   - component: {fileID: 2141033756}
+  - component: {fileID: 2141033758}
   m_Layer: 0
   m_Name: Input Handler
   m_TagString: Untagged
@@ -236,6 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a612cc89a0bb2ad41b1d5df05ed97fa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _inGameSceneHandler: {fileID: 2141033758}
 --- !u!4 &2141033757
 Transform:
   m_ObjectHideFlags: 0
@@ -251,3 +253,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2141033758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141033755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef9d39af33ba3d44aaee172b9f63feef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

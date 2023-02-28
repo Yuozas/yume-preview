@@ -1,18 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InGameMenuInputHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] InGameMenuSceneHandler _inGameMenuSceneHandler;
+    InputActions _inputActions;
+
+    private void OnEnable()
     {
-        
+        _inputActions = new();
+        _inputActions.Enable();
+        _inputActions.IngameMenu.Exit.performed += LoadInGameScene;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    void LoadInGameScene(InputAction.CallbackContext _) => _inGameMenuSceneHandler.LoadInGameScene();
 }
