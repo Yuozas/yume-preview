@@ -1635,7 +1635,7 @@ GameObject:
   - component: {fileID: 869245941}
   - component: {fileID: 869245940}
   m_Layer: 5
-  m_Name: Icon Canvas (2)
+  m_Name: Settings Option
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4211,7 +4211,7 @@ GameObject:
   - component: {fileID: 2106047540}
   - component: {fileID: 2106047539}
   m_Layer: 5
-  m_Name: Icon Canvas (1)
+  m_Name: Backpack Option
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
