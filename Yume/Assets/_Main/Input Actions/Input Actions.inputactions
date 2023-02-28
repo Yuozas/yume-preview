@@ -100,6 +100,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "In-game",
+            "id": "13044975-37d5-4f15-bb78-8833b6b93ffa",
+            "actions": [
+                {
+                    "name": "Backpack menu",
+                    "type": "Button",
+                    "id": "c55b4f52-140b-4ed0-a201-9b3f4cd869bb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4c3246bf-c83f-4dc6-bc86-67f4eb195928",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Backpack menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

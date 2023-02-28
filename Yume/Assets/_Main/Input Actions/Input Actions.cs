@@ -122,6 +122,34 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""In-game"",
+            ""id"": ""13044975-37d5-4f15-bb78-8833b6b93ffa"",
+            ""actions"": [
+                {
+                    ""name"": ""Backpack menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""c55b4f52-140b-4ed0-a201-9b3f4cd869bb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""4c3246bf-c83f-4dc6-bc86-67f4eb195928"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Backpack menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -144,6 +172,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         // Unity Editor
         m_UnityEditor = asset.FindActionMap("Unity Editor", throwIfNotFound: true);
         m_UnityEditor_Escape = m_UnityEditor.FindAction("Escape", throwIfNotFound: true);
+        // In-game
+        m_Ingame = asset.FindActionMap("In-game", throwIfNotFound: true);
+        m_Ingame_Backpackmenu = m_Ingame.FindAction("Backpack menu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -293,6 +324,52 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         }
     }
     public UnityEditorActions @UnityEditor => new UnityEditorActions(this);
+
+    // In-game
+    private readonly InputActionMap m_Ingame;
+    private List<IIngameActions> m_IngameActionsCallbackInterfaces = new List<IIngameActions>();
+    private readonly InputAction m_Ingame_Backpackmenu;
+    public struct IngameActions
+    {
+        private @InputActions m_Wrapper;
+        public IngameActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Backpackmenu => m_Wrapper.m_Ingame_Backpackmenu;
+        public InputActionMap Get() { return m_Wrapper.m_Ingame; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(IngameActions set) { return set.Get(); }
+        public void AddCallbacks(IIngameActions instance)
+        {
+            if (instance == null || m_Wrapper.m_IngameActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_IngameActionsCallbackInterfaces.Add(instance);
+            @Backpackmenu.started += instance.OnBackpackmenu;
+            @Backpackmenu.performed += instance.OnBackpackmenu;
+            @Backpackmenu.canceled += instance.OnBackpackmenu;
+        }
+
+        private void UnregisterCallbacks(IIngameActions instance)
+        {
+            @Backpackmenu.started -= instance.OnBackpackmenu;
+            @Backpackmenu.performed -= instance.OnBackpackmenu;
+            @Backpackmenu.canceled -= instance.OnBackpackmenu;
+        }
+
+        public void RemoveCallbacks(IIngameActions instance)
+        {
+            if (m_Wrapper.m_IngameActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IIngameActions instance)
+        {
+            foreach (var item in m_Wrapper.m_IngameActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_IngameActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public IngameActions @Ingame => new IngameActions(this);
     private int m_KeyboardSchemeIndex = -1;
     public InputControlScheme KeyboardScheme
     {
@@ -309,5 +386,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     public interface IUnityEditorActions
     {
         void OnEscape(InputAction.CallbackContext context);
+    }
+    public interface IIngameActions
+    {
+        void OnBackpackmenu(InputAction.CallbackContext context);
     }
 }
