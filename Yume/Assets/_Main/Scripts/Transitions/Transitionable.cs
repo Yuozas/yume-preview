@@ -2,5 +2,11 @@
 
 public class Transitionable : MonoBehaviour
 {
-    public void Set(Vector3 position) => transform.position = position;
+    [Header("References")]
+    [SerializeField] Character _character;
+    public void Set(Vector3 position, Vector2 direction)
+    {
+        transform.position = position;
+        _character.SetFacing(direction);
+    }
 }

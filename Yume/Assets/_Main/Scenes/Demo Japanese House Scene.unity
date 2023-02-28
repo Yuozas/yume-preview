@@ -5158,7 +5158,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 993895002}
         m_TargetAssemblyTypeName: Character, Assembly-CSharp
-        m_MethodName: SetDirection
+        m_MethodName: SetAxis
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5187,6 +5187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f9aa73781d9f14e82cbac8e6a26d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _character: {fileID: 993895002}
 --- !u!1 &1087256366
 GameObject:
   m_ObjectHideFlags: 0

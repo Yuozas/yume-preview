@@ -13,7 +13,7 @@ public class TransitionDestination : MonoBehaviour
 
     void OnEnable() => Transitioner.Instance.Add(this);
     void OnDisable() => Transitioner.Instance.Remove(this);
-    public void Set(Transitionable transitionable) => transitionable.Set(transform.position);
+    public void Set(Transitionable transitionable) => transitionable.Set(transform.position, _direction);
 
     void OnDrawGizmos()
     {
