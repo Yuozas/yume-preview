@@ -7,19 +7,26 @@ public class Transitioner : Singleton<Transitioner>
 {
     readonly List<TransitionDestination> _destinations = new();
     IEnumerator _coroutine;
+    Scriptable_TransitionDestination _to;
 
     public void Transition(Scriptable_TransitionDestination to)
     {
+        _to = to;
+        TransitionerAnimation.Instance.ToDefault(ContinueTransition);
+    }
+
+    private void ContinueTransition()
+    {
         var scene = SceneManager.GetActiveScene();
-        if (scene.name == to.Scene)
+        if (scene.name == _to.Scene)
         {
-            TransitionToDestination(to);
+            TransitionToDestination(_to);
             return;
         }
 
         Stop();
 
-        _coroutine = Co_LoadScene(to);
+        _coroutine = Co_LoadScene(_to);
         StartCoroutine(_coroutine);
     }
 
@@ -27,6 +34,8 @@ public class Transitioner : Singleton<Transitioner>
     {
         var transitionable = FindObjectOfType<Transitionable>();
         Get(to).Set(transitionable);
+
+        TransitionerAnimation.Instance.ToClear();
     }
 
     void Stop()
