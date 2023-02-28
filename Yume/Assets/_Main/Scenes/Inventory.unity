@@ -2011,6 +2011,7 @@ GameObject:
   - component: {fileID: 1040703032}
   - component: {fileID: 1040703031}
   - component: {fileID: 1040703030}
+  - component: {fileID: 1040703033}
   m_Layer: 0
   m_Name: MenuCursor
   m_TagString: Untagged
@@ -2098,6 +2099,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1040703033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040703029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6b1f434d1aa1634492fb7b2bb1bbf17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1041565703
 GameObject:
   m_ObjectHideFlags: 0
@@ -3519,7 +3532,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 19.449951, y: -70.05005}
+  m_AnchoredPosition: {x: 19.449951, y: -70.05002}
   m_SizeDelta: {x: -160.1, y: -240.79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1785056391
@@ -4064,7 +4077,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1804155280}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.36946484
+  m_Size: 0.3694648
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

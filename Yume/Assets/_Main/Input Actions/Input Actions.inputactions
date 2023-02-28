@@ -72,6 +72,34 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "Unity Editor",
+            "id": "e1afbf7f-0253-48e2-91af-daae12805432",
+            "actions": [
+                {
+                    "name": "Escape",
+                    "type": "Button",
+                    "id": "cdf83d9c-f3d0-4a6b-966d-79a7c0ebd7ac",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8f491c18-80bd-4a2e-af6c-00b095d5a27d",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Escape",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
