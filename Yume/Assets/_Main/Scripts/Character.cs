@@ -15,25 +15,23 @@ public class Character : MonoBehaviour
     public const string VERTICAL_ANIMATOR_PARAMETER_NAME = "Vertical";
     public const string SPEED_ANIMATOR_PARAMETER_NAME = "Magnitude";
 
-    Vector2 _direction;
-    public void SetDirection(InputAction.CallbackContext context) => _direction = context.ReadValue<Vector2>();
+    Vector2 _axis;
+    public void SetAxis(InputAction.CallbackContext context) => _axis = context.ReadValue<Vector2>();
+    public void SetFacing(Vector2 direction)
+    {
+        _animator.SetFloat(HORIZONTAL_ANIMATOR_PARAMETER_NAME, direction.x);
+        _animator.SetFloat(VERTICAL_ANIMATOR_PARAMETER_NAME, direction.y);
+    }
 
     void Update()
     {
-        var velocity = _direction.normalized * BASE_MOVEMENT_SPEED;
+        var velocity = _axis.normalized * BASE_MOVEMENT_SPEED;
         _rigidbody.velocity = velocity;
 
-        Animate(_direction.x, _direction.y, velocity);
+        var magnitude = velocity.magnitude;
+        if (magnitude >= Mathf.Epsilon) SetFacing(_axis.normalized);
+        SetMagnitude(magnitude);
     }
 
-    void Animate(float horizontal, float vertical, Vector2 velocity)
-    {
-        var magnitude = velocity.magnitude;
-        if (magnitude >= Mathf.Epsilon)
-        {
-            _animator.SetFloat(HORIZONTAL_ANIMATOR_PARAMETER_NAME, horizontal);
-            _animator.SetFloat(VERTICAL_ANIMATOR_PARAMETER_NAME, vertical);
-        }
-        _animator.SetFloat(SPEED_ANIMATOR_PARAMETER_NAME, magnitude);
-    }
+    void SetMagnitude(float magnitude) => _animator.SetFloat(SPEED_ANIMATOR_PARAMETER_NAME, magnitude);
 }
