@@ -15,7 +15,7 @@ public class Transitioner : Singleton<Transitioner>
         TransitionerAnimation.Instance.ToDefault(ContinueTransition);
     }
 
-    private void ContinueTransition()
+    void ContinueTransition()
     {
         var scene = SceneManager.GetActiveScene();
         if (scene.name == _to.Scene)
