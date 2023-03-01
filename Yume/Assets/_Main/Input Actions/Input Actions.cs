@@ -135,6 +135,15 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Settings menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""b3238317-bf21-430c-8a81-6d8591eabd1c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -146,6 +155,17 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
                     ""action"": ""Backpack menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""36dde1a4-676a-4237-b0ec-2f549fc48cce"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Settings menu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -203,6 +223,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         // In-game
         m_Ingame = asset.FindActionMap("In-game", throwIfNotFound: true);
         m_Ingame_Backpackmenu = m_Ingame.FindAction("Backpack menu", throwIfNotFound: true);
+        m_Ingame_Settingsmenu = m_Ingame.FindAction("Settings menu", throwIfNotFound: true);
         // In-game Menu
         m_IngameMenu = asset.FindActionMap("In-game Menu", throwIfNotFound: true);
         m_IngameMenu_Exit = m_IngameMenu.FindAction("Exit ", throwIfNotFound: true);
@@ -360,11 +381,13 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Ingame;
     private List<IIngameActions> m_IngameActionsCallbackInterfaces = new List<IIngameActions>();
     private readonly InputAction m_Ingame_Backpackmenu;
+    private readonly InputAction m_Ingame_Settingsmenu;
     public struct IngameActions
     {
         private @InputActions m_Wrapper;
         public IngameActions(@InputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Backpackmenu => m_Wrapper.m_Ingame_Backpackmenu;
+        public InputAction @Settingsmenu => m_Wrapper.m_Ingame_Settingsmenu;
         public InputActionMap Get() { return m_Wrapper.m_Ingame; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -377,6 +400,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Backpackmenu.started += instance.OnBackpackmenu;
             @Backpackmenu.performed += instance.OnBackpackmenu;
             @Backpackmenu.canceled += instance.OnBackpackmenu;
+            @Settingsmenu.started += instance.OnSettingsmenu;
+            @Settingsmenu.performed += instance.OnSettingsmenu;
+            @Settingsmenu.canceled += instance.OnSettingsmenu;
         }
 
         private void UnregisterCallbacks(IIngameActions instance)
@@ -384,6 +410,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Backpackmenu.started -= instance.OnBackpackmenu;
             @Backpackmenu.performed -= instance.OnBackpackmenu;
             @Backpackmenu.canceled -= instance.OnBackpackmenu;
+            @Settingsmenu.started -= instance.OnSettingsmenu;
+            @Settingsmenu.performed -= instance.OnSettingsmenu;
+            @Settingsmenu.canceled -= instance.OnSettingsmenu;
         }
 
         public void RemoveCallbacks(IIngameActions instance)
@@ -467,6 +496,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     public interface IIngameActions
     {
         void OnBackpackmenu(InputAction.CallbackContext context);
+        void OnSettingsmenu(InputAction.CallbackContext context);
     }
     public interface IIngameMenuActions
     {

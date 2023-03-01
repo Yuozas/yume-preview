@@ -24,4 +24,5 @@ public enum InGameMenuOption
 {
     Unset,
     Backpack,
+    Settings,
 }
