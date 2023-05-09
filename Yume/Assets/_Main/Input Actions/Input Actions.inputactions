@@ -72,6 +72,110 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "Unity Editor",
+            "id": "e1afbf7f-0253-48e2-91af-daae12805432",
+            "actions": [
+                {
+                    "name": "Escape",
+                    "type": "Button",
+                    "id": "cdf83d9c-f3d0-4a6b-966d-79a7c0ebd7ac",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8f491c18-80bd-4a2e-af6c-00b095d5a27d",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Escape",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "In-game",
+            "id": "13044975-37d5-4f15-bb78-8833b6b93ffa",
+            "actions": [
+                {
+                    "name": "Backpack menu",
+                    "type": "Button",
+                    "id": "c55b4f52-140b-4ed0-a201-9b3f4cd869bb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Settings menu",
+                    "type": "Button",
+                    "id": "b3238317-bf21-430c-8a81-6d8591eabd1c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4c3246bf-c83f-4dc6-bc86-67f4eb195928",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Backpack menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "36dde1a4-676a-4237-b0ec-2f549fc48cce",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Settings menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "In-game Menu",
+            "id": "b031db69-9d5d-4076-b126-db60a5c1fdd7",
+            "actions": [
+                {
+                    "name": "Exit ",
+                    "type": "Button",
+                    "id": "b304ce11-9473-4e61-801e-9c6f9f6859ea",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ebb5079b-8fb9-47f3-83ec-a49b0bb5a883",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Exit ",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

@@ -20,7 +20,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -489,7 +489,7 @@ TextureImporter:
         x: 384
         y: 419
         width: 144
-        height: 109
+        height: 91
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6741,7 +6741,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_UI_Style_1_316
+      name: Book
       rect:
         serializedVersion: 2
         x: 128
@@ -6762,7 +6762,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_UI_Style_1_317
+      name: Settings
       rect:
         serializedVersion: 2
         x: 160
@@ -6783,7 +6783,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_UI_Style_1_318
+      name: Phone In Hand
       rect:
         serializedVersion: 2
         x: 192
@@ -7314,7 +7314,7 @@ TextureImporter:
         x: 544
         y: 228
         width: 144
-        height: 108
+        height: 92
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -11361,15 +11361,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_UI_Style_1_536
+      name: Cursor 1
       rect:
         serializedVersion: 2
         x: 162
         y: 194
         width: 12
         height: 12
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -11382,7 +11382,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_UI_Style_1_537
+      name: Right Hand Finger Cursor 1
       rect:
         serializedVersion: 2
         x: 177
@@ -11403,7 +11403,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_UI_Style_1_538
+      name: Right Hand Finger Cursor 2
       rect:
         serializedVersion: 2
         x: 193
@@ -11424,7 +11424,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_UI_Style_1_539
+      name: Right Hand Finger Cursor 3
       rect:
         serializedVersion: 2
         x: 211
@@ -11445,7 +11445,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_UI_Style_1_540
+      name: Small cursor
       rect:
         serializedVersion: 2
         x: 229
@@ -12537,15 +12537,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_UI_Style_1_592
+      name: Cursor 2
       rect:
         serializedVersion: 2
         x: 161
         y: 177
         width: 13
         height: 14
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -12558,7 +12558,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_UI_Style_1_593
+      name: Left Hand Finger Cursor 1
       rect:
         serializedVersion: 2
         x: 179
@@ -12579,7 +12579,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_UI_Style_1_594
+      name: Left Hand Finger Cursor 2
       rect:
         serializedVersion: 2
         x: 195
@@ -12600,7 +12600,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_UI_Style_1_595
+      name: Left Hand Finger Cursor 3
       rect:
         serializedVersion: 2
         x: 211
@@ -18143,6 +18143,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Light button
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 513
+        width: 24
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 4, y: 3, z: 4, w: 3}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 125cb3d91f414d543a411acb75fcab78
+      internalID: -1662417516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dark button
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 513
+        width: 24
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 4, y: 3, z: 4, w: 3}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46f3b999a3bc7284bb816d3187630b40
+      internalID: -718108175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yellow button
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 320
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 4, y: 4, z: 4, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c788d814f2fe229499e876084b1aa68f
+      internalID: 209420594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -18157,9 +18220,17 @@ TextureImporter:
       Active Icon: -12497140
       Backpack Icon: -1686963143
       Backpack Slot Section: 1297398125
+      Book: 16535161
       Close Frame: 103831350
+      Cursor 1: 1259168085
+      Cursor 2: -1374743336
+      Dark button: -718108175
       Disabled Icon: 1988280641
       Item Slot: 1498562401
+      Left Hand Finger Cursor 1: -514704666
+      Left Hand Finger Cursor 2: -1026999738
+      Left Hand Finger Cursor 3: -815646678
+      Light button: -1662417516
       Main Frame: -1527888967
       Modern_UI_Style_1_0: 1328519814
       Modern_UI_Style_1_1: -1605925200
@@ -18396,9 +18467,6 @@ TextureImporter:
       Modern_UI_Style_1_313: -1922853623
       Modern_UI_Style_1_314: 1836673678
       Modern_UI_Style_1_315: 1324143362
-      Modern_UI_Style_1_316: 16535161
-      Modern_UI_Style_1_317: 726841540
-      Modern_UI_Style_1_318: 178504167
       Modern_UI_Style_1_319: -436011671
       Modern_UI_Style_1_32: 526778714
       Modern_UI_Style_1_320: 1674038852
@@ -18638,12 +18706,7 @@ TextureImporter:
       Modern_UI_Style_1_533: 1910460255
       Modern_UI_Style_1_534: -2118091221
       Modern_UI_Style_1_535: 1114778850
-      Modern_UI_Style_1_536: 1259168085
-      Modern_UI_Style_1_537: 1595176566
-      Modern_UI_Style_1_538: 819884689
-      Modern_UI_Style_1_539: -1608755531
       Modern_UI_Style_1_54: 984105112
-      Modern_UI_Style_1_540: 811161382
       Modern_UI_Style_1_541: -2040617359
       Modern_UI_Style_1_542: -1063080740
       Modern_UI_Style_1_543: -1881612954
@@ -18700,10 +18763,6 @@ TextureImporter:
       Modern_UI_Style_1_59: -1300133874
       Modern_UI_Style_1_590: -623262018
       Modern_UI_Style_1_591: -1630667642
-      Modern_UI_Style_1_592: -1374743336
-      Modern_UI_Style_1_593: -514704666
-      Modern_UI_Style_1_594: -1026999738
-      Modern_UI_Style_1_595: -815646678
       Modern_UI_Style_1_596: 1706329986
       Modern_UI_Style_1_597: -706760980
       Modern_UI_Style_1_598: 54268354
@@ -19009,10 +19068,17 @@ TextureImporter:
       Modern_UI_Style_1_97: -762335347
       Modern_UI_Style_1_98: -1697157758
       Modern_UI_Style_1_99: 1220653905
+      Phone In Hand: 178504167
+      Right Hand Finger Cursor 1: 1595176566
+      Right Hand Finger Cursor 2: 819884689
+      Right Hand Finger Cursor 3: -1608755531
       Scroll Drag Thingy: -215414629
       Scrollbar: 1169080930
       Search Input: -875630578
+      Settings: 726841540
+      Small cursor: 811161382
       Sub Frame: 813368477
+      Yellow button: 209420594
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
