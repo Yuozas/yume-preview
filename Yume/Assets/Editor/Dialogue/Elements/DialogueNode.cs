@@ -29,10 +29,10 @@ public class DialogueNode : Node
     {
         var type = typeof(bool);
 
-        var input = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Multi, type);
+        var input = InstantiatePort(Orientation.Horizontal, UnityEditor.Experimental.GraphView.Direction.Input, Port.Capacity.Multi, type);
         input.portName = IN_PORT_NAME;
 
-        var output = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, type);
+        var output = InstantiatePort(Orientation.Horizontal, UnityEditor.Experimental.GraphView.Direction.Output, Port.Capacity.Single, type);
         output.portName = OUT_PORT_NAME;
 
         inputContainer.Add(input);

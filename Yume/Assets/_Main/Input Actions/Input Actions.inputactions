@@ -2,7 +2,7 @@
     "name": "Input Actions",
     "maps": [
         {
-            "name": "On Foot",
+            "name": "Walking",
             "id": "f351c44e-8a2f-4f87-9071-87cdc42c7e54",
             "actions": [
                 {
@@ -83,6 +83,34 @@
                 {
                     "name": "",
                     "id": "39298070-bae9-4a4b-ba13-0ed9652a2d68",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Talking",
+            "id": "9776ee44-8653-4289-953f-0154cb7942e6",
+            "actions": [
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "a52a55b4-10ef-4c23-bf60-242f6a25e57b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5e69f5b4-1afd-41d0-81a6-a60b5f118baf",
                     "path": "<Keyboard>/z",
                     "interactions": "",
                     "processors": "",

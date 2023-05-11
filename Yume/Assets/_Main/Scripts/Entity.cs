@@ -6,32 +6,18 @@ public abstract class Entity : MonoBehaviour
     [SerializeField] protected Animator _animator;
 
     [Header("Abstract Settings")]
-    [SerializeField] protected Vector2 _direction = Vector2.down;
+    [SerializeField] protected Vector2 _facing = Vector2.down;
 
-    public const string HORIZONTAL_ANIMATOR_PARAMETER_NAME = "Horizontal";
-    public const string VERTICAL_ANIMATOR_PARAMETER_NAME = "Vertical";
-    public const string SPEED_ANIMATOR_PARAMETER_NAME = "Magnitude";
-
-    protected Vector2 _facing;
+    protected Animations _animations;
+    protected Direction _direction;
 
     protected virtual void Awake()
     {
-        SetFacingDirection(_direction);
+        _animations = new Animations(_animator);
+        _direction = new Direction(_animations);
+
+        _direction.Set(_facing);
     }
 
-    public void SetFacingDirection(Vector2 direction)
-    {
-        _facing = direction;
-        SetAnimatorDirection(direction);
-    }
-    public void SetAnimatorDirection(Vector2 direction)
-    {
-        _animator.SetFloat(HORIZONTAL_ANIMATOR_PARAMETER_NAME, direction.x);
-        _animator.SetFloat(VERTICAL_ANIMATOR_PARAMETER_NAME, direction.y);
-    }
-
-    protected void SetAnimatorSpeed(float magnitude)
-    {
-        _animator.SetFloat(SPEED_ANIMATOR_PARAMETER_NAME, magnitude);
-    }
+    public void SetDirection(Vector2 direction) => _direction.Set(direction);
 }
