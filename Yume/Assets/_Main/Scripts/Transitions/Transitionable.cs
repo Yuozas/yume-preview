@@ -7,6 +7,6 @@ public class Transitionable : MonoBehaviour
     public void Set(Vector3 position, Vector2 direction)
     {
         transform.position = position;
-        _character.SetFacing(direction);
+        _character.SetAnimatorDirection(direction);
     }
 }

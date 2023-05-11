@@ -1,37 +1,51 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Character : MonoBehaviour
+public class Character : Entity
 {
     [Header("References")]
-    [SerializeField] Rigidbody2D _rigidbody;
-    [SerializeField] Animator _animator;
+    [SerializeField] private Rigidbody2D _rigidbody;
 
     public const float BASE_MOVEMENT_SPEED = 5f;
-    public const string HORIZONTAL_AXIS_NAME = "Horizontal";
-    public const string VERTICAL_AXIS_NAME = "Vertical";
+    public const float INTERACT_DISTANCE = 1f;
 
-    public const string HORIZONTAL_ANIMATOR_PARAMETER_NAME = "Horizontal";
-    public const string VERTICAL_ANIMATOR_PARAMETER_NAME = "Vertical";
-    public const string SPEED_ANIMATOR_PARAMETER_NAME = "Magnitude";
+    private Vector2 _axis;
 
-    Vector2 _axis;
-    public void SetAxis(InputAction.CallbackContext context) => _axis = context.ReadValue<Vector2>();
-    public void SetFacing(Vector2 direction)
+    protected override void Awake()
     {
-        _animator.SetFloat(HORIZONTAL_ANIMATOR_PARAMETER_NAME, direction.x);
-        _animator.SetFloat(VERTICAL_ANIMATOR_PARAMETER_NAME, direction.y);
+        base.Awake();
+        Physics2D.queriesStartInColliders = false;
     }
 
-    void Update()
+    private void Update()
+    {
+        Movement();
+    }
+
+    public void Interact()
+    {
+        var hit = Physics2D.Raycast(transform.position, _facing, INTERACT_DISTANCE);
+
+        if (hit.collider is null)
+            return;
+
+        var found = hit.collider.TryGetComponent<Conversation>(out var conversation);
+        if (!found)
+            return;
+
+        conversation.Interact();
+    }
+    public void SetAxis(InputAction.CallbackContext context) => _axis = context.ReadValue<Vector2>();
+
+    private void Movement()
     {
         var velocity = _axis.normalized * BASE_MOVEMENT_SPEED;
         _rigidbody.velocity = velocity;
 
         var magnitude = velocity.magnitude;
-        if (magnitude >= Mathf.Epsilon) SetFacing(_axis.normalized);
-        SetMagnitude(magnitude);
-    }
+        if (magnitude >= Mathf.Epsilon)
+            SetFacingDirection(_axis.normalized);
 
-    void SetMagnitude(float magnitude) => _animator.SetFloat(SPEED_ANIMATOR_PARAMETER_NAME, magnitude);
+        SetAnimatorSpeed(magnitude);
+    }
 }

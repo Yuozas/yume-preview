@@ -9,12 +9,18 @@ public class DialogueBox : Singleton<DialogueBox>
     [SerializeField] private GameObject _visualization;
     [SerializeField] private TMP_Text _text;
 
-    public const float WAIT_IN_BETWEEN_LETTER = 0.1f;
+    public const float WAIT_IN_BETWEEN_LETTER = 0.05f;
 
     private bool _typing => _ienumerator is not null;
     private IEnumerator _ienumerator;
     private Action _onCompleted;
     private string _sentence;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        SetVisibility(false);
+    }
 
     public void SetVisibility(bool visible)
     {
@@ -50,5 +56,7 @@ public class DialogueBox : Singleton<DialogueBox>
             _text.text += letter;
             yield return rate;
         }
+
+        _onCompleted?.Invoke();
     }
 }
