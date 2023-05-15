@@ -3,9 +3,9 @@
 public class Talking : IState
 {
     private readonly InputActions.TalkingActions _talking;
-    public Talking(InputActions input)
+    public Talking(InputActions.TalkingActions actions)
     {
-        _talking = input.Talking;
+        _talking = actions;
     }
     public void Enter()
     {
@@ -22,9 +22,6 @@ public class Talking : IState
         
     }
 
-
     public void Tick() { }
-
-
 }
 

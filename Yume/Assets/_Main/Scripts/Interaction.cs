@@ -11,11 +11,11 @@ public class Interaction
         if (hit.collider is null)
             return false;
 
-        var found = hit.collider.TryGetComponent<Conversation>(out var conversation);
+        var found = hit.collider.TryGetComponent<IInteractable>(out var interactable);
         if (!found)
             return false;
 
-        conversation.Interact();
+        interactable.Interact();
         return true;
     }
 }

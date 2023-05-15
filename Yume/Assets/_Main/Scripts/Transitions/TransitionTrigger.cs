@@ -14,7 +14,7 @@ public class TransitionTrigger : MonoBehaviour
         if (_destination is null)
             return;
 
-        var detected = collision.TryGetComponent<Transitionable>(out var transitionable);
+        var detected = collision.TryGetComponent<ITransitionable>(out var transitionable);
         if (!detected)
             return;
 

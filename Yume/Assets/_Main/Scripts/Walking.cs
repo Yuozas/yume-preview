@@ -8,9 +8,9 @@ public class Walking : IState
     private readonly Interaction _interaction;
     private readonly InputActions.WalkingActions _walking;
 
-    public Walking(InputActions input, Movement movement, Direction direction, Interaction interaction)
+    public Walking(InputActions.WalkingActions actions, Movement movement, Direction direction, Interaction interaction)
     {
-        _walking = input.Walking;
+        _walking = actions;
 
         _movement = movement;
         _direction = direction;

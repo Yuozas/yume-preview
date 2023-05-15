@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Character : Entity
+public class Character : Entity, ITransitionable
 {
     [Header("References")]
     [SerializeField] private Rigidbody2D _rigidbody;
@@ -21,10 +21,9 @@ public class Character : Entity
 
         var states = new IState[]
         {
-            new Walking(_input, movement, _direction, interaction),
-            new Talking(_input)
+            new Walking(_input.Walking, movement, _direction, interaction),
+            new Talking(_input.Talking)
         };
-
 
         _states = new States(states);
     }
@@ -48,5 +47,11 @@ public class Character : Entity
     private void Update()
     {
         _states.Tick();
+    }
+
+    public void Transition(Vector3 position, Vector2 direction)
+    {
+        transform.position = position;
+        SetDirection(direction);
     }
 }

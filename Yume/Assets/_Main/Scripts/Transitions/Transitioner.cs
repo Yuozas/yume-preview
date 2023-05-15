@@ -32,8 +32,8 @@ public class Transitioner : Singleton<Transitioner>
 
     void TransitionToDestination(Scriptable_TransitionDestination to)
     {
-        var transitionable = FindObjectOfType<Transitionable>();
-        Get(to).Set(transitionable);
+        var transitionable = (ITransitionable)FindObjectOfType<Character>();
+        Get(to).Transition(transitionable);
 
         TransitionerAnimation.Instance.ToClear();
     }
