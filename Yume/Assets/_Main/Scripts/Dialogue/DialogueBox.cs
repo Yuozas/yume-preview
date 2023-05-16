@@ -19,7 +19,7 @@ public class DialogueBox : Singleton<DialogueBox>
     protected override void Awake()
     {
         base.Awake();
-        SetVisibility(false);
+        //SetVisibility(false);
     }
 
     public void SetVisibility(bool visible)
