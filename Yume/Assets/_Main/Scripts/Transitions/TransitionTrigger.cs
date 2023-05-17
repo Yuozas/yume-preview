@@ -21,6 +21,7 @@ public class TransitionTrigger : MonoBehaviour
         Transitioner.Instance.Transition(_destination);
     }
 
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         if (_collider is null)
@@ -31,4 +32,5 @@ public class TransitionTrigger : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(colliderPosition, _collider.size);
     }
+#endif
 }

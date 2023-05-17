@@ -15,7 +15,7 @@ public class Character : Entity, ITransitionable
         _input = new InputActions();
 
         var movement = new Movement(_rigidbody, _animations, _direction);
-        var interaction = new Interaction();
+        var interaction = new Interactor();
 
         Physics2D.queriesStartInColliders = false;
 

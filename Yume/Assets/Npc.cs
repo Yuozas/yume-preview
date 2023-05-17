@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Npc : Entity, IInteractable
 {
@@ -12,6 +13,7 @@ public class Npc : Entity, IInteractable
     protected override void Awake()
     {
         base.Awake();
+
         _interface = FindObjectOfType<DialogueBox>();
     }
 
@@ -37,3 +39,16 @@ public class Npc : Entity, IInteractable
         _interface.Begin(_sentence, Next);
     }
 }
+
+
+public class Dialogue : ScriptableObject
+{
+
+}
+
+
+//[CreateAssetMenu(menuName = "Sentence")]
+//public class Sentence : ScriptableObject
+//{
+//    public string Sentence;
+//}

@@ -5,10 +5,10 @@ public class Walking : IState
 {
     private readonly Movement _movement;
     private readonly Direction _direction;
-    private readonly Interaction _interaction;
+    private readonly Interactor _interaction;
     private readonly InputActions.WalkingActions _walking;
 
-    public Walking(InputActions.WalkingActions actions, Movement movement, Direction direction, Interaction interaction)
+    public Walking(InputActions.WalkingActions actions, Movement movement, Direction direction, Interactor interaction)
     {
         _walking = actions;
 
@@ -38,7 +38,7 @@ public class Walking : IState
 
     private void Interact(InputAction.CallbackContext context)
     {
-        _interaction.TryInteract(_movement.Position, _direction.Axis, Interaction.DEFAULT_INTERACTION_DISTANCE);
+        _interaction.TryInteract(_movement.Position, _direction.Axis, Interactor.DEFAULT_INTERACTION_DISTANCE);
     }
     private void Move(InputAction.CallbackContext context)
     {

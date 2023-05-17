@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Interaction
+public class Interactor
 {
     public const float DEFAULT_INTERACTION_DISTANCE = 1f;
 
