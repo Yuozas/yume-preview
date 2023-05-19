@@ -5,7 +5,7 @@ using SwiftLocator.Services.ScopedServices;
 public static class Initialization
 {
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
-    public static void Initialize()
+    private static void Initialize()
     {
         RegisterSingletonServices();
         RegisterTransientServices();
