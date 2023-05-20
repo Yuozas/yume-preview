@@ -3,19 +3,53 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine.UIElements;
 using System;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class DialogueView : GraphView
 {
     public DialogueView()
     {
+        var options = new OptionsNode();
+        options.Draw();
+
         AddBackground();
         AddStyling();
         AddManipulators();
     }
 
+    public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter)
+    {
+        var compatible = new List<Port>();
+        foreach (var port in ports)
+        {
+            if (port.node == startPort.node)
+                continue;
+            if (port.direction == startPort.direction)
+                continue;
+
+            compatible.Add(port);
+        }
+
+        return compatible;
+    }
+
     private void AddNode(Vector2 position)
     {
         var node = new DialogueNode(position);
+        node.Draw();
+
+        AddElement(node);
+    }
+    private void AddEntry(Vector2 position)
+    {
+        var node = new EntryNode(position);
+        node.Draw();
+
+        AddElement(node);
+    }
+    private void AddExit(Vector2 position)
+    {
+        var node = new ExitNode(position);
         node.Draw();
 
         AddElement(node);
@@ -33,12 +67,14 @@ public class DialogueView : GraphView
         this.AddManipulator(selectionDragger);
         this.AddManipulator(selector);
 
-        SetupZoom(ContentZoomer.DefaultMinScale, ContentZoomer.DefaultMaxScale);
+        SetupZoom(ContentZoomer.DefaultMinScale, ContentZoomer.DefaultMaxScale * 2);
     }
 
     private void ContextualMenuBuilder(ContextualMenuPopulateEvent @event)
     {
         @event.menu.AppendAction(DialogueNode.NAME, CreateDialogueNode);
+        @event.menu.AppendAction(EntryNode.NAME, CreateEntryNode);
+        @event.menu.AppendAction(ExitNode.NAME, CreateExitNode);
     }
 
     private void CreateDialogueNode(DropdownMenuAction action)
@@ -46,13 +82,18 @@ public class DialogueView : GraphView
         AddNode(action.eventInfo.localMousePosition);
     }
 
+    private void CreateEntryNode(DropdownMenuAction action)
+    {
+        AddEntry(action.eventInfo.localMousePosition);
+    }
+    private void CreateExitNode(DropdownMenuAction action)
+    {
+        AddExit(action.eventInfo.localMousePosition);
+    }
     private void AddStyling()
     {
         var viewStyle = (StyleSheet)EditorGUIUtility.Load("Dialogue/DialogueViewStyles.uss");
-        var nodeStyle = (StyleSheet)EditorGUIUtility.Load("Dialogue/DialogueNodeStyles.uss");
-
         styleSheets.Add(viewStyle);
-        styleSheets.Add(nodeStyle);
     }
 
     private void AddBackground()
