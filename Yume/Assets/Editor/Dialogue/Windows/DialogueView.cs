@@ -92,7 +92,10 @@ public class DialogueView : GraphView
     }
     private void AddStyling()
     {
+        var variables = (StyleSheet)EditorGUIUtility.Load("Dialogue/DialogueVariables.uss");
         var viewStyle = (StyleSheet)EditorGUIUtility.Load("Dialogue/DialogueViewStyles.uss");
+
+        styleSheets.Add(variables);
         styleSheets.Add(viewStyle);
     }
 
