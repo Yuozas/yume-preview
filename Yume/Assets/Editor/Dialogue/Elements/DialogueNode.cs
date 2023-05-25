@@ -40,7 +40,6 @@ public class DialogueNode : Node
         input.portName = IN_PORT_NAME + "(Any)";
         input.portColor = color;
 
-
         var output = InstantiatePort(Orientation.Horizontal, UnityEditor.Experimental.GraphView.Direction.Output, Port.Capacity.Single, type);
         output.portName = OUT_PORT_NAME + "(1)";
         output.portColor = color;
