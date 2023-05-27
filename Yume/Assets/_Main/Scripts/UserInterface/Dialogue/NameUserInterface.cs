@@ -1,18 +1,18 @@
 ﻿using TMPro;
 using UnityEngine;
 
-public class NameHandlerUserInterface : MonoBehaviour
+public class NameUserInterface : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private TMP_Text _text;
 
-    private NameHandler _name;
-    public void Initialize(NameHandler name)
+    private Name _name;
+    public void Initialize(Name name)
     {
         _name = name;
         _name.OnUpdated += Set;
 
-        Set(name.Text);
+        Set(name.Settings);
     }
 
     private void OnDestroy()
@@ -20,8 +20,8 @@ public class NameHandlerUserInterface : MonoBehaviour
         _name.OnUpdated -= Set;
     }
 
-    private void Set(string name)
+    private void Set(NameSettings settings)
     {
-        _text.SetText(name);
+        _text.SetText(settings.Name);
     }
 }

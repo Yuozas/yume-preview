@@ -1,19 +1,19 @@
 ﻿using System;
 
-public class TypewriterHandler
+public class Typewriter
 {
     public event Action<string> OnUpdated;
 
     private readonly DelayedExecutor _executor;
     private readonly TypewriterIterator _builder;
 
-    public TypewriterHandler(DelayedExecutor executor, TypewriterIterator builder)
+    public Typewriter(DelayedExecutor executor, TypewriterIterator builder)
     {
         _builder = builder;
         _executor = executor;
         _executor.OnUpdated += Set;
     }
-    ~TypewriterHandler()
+    ~Typewriter()
     {
         _executor.OnUpdated -= Set;
     }

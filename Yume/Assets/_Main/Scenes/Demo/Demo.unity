@@ -3456,7 +3456,7 @@ GameObject:
   - component: {fileID: 1204539516}
   - component: {fileID: 1204539517}
   m_Layer: 5
-  m_Name: DialogueHandlerResolver
+  m_Name: DialoguesUserInterface
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5031,7 +5031,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1335010729}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 883d3dd5338d00a46a37bf17f7a750cb, type: 3}
+  m_Script: {fileID: 11500000, guid: c006fbe42d632c94a9de1e565882d7ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 340737525}
@@ -5475,7 +5475,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1430245965}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d23bcf754417441958f3a3bf9f3c5b, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b91fb451cf670748980ec88019e6c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _face: {fileID: 1977084484}

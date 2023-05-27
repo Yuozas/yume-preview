@@ -1,14 +1,14 @@
 ﻿using TMPro;
 using UnityEngine;
 
-public class TypewriterHandlerUserInterface : MonoBehaviour
+public class TypewriterUserInterface : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private TMP_Text _text;
 
-    private TypewriterHandler _handler;
+    private Typewriter _handler;
 
-    public void Initialize(TypewriterHandler handler)
+    public void Initialize(Typewriter handler)
     {
         _handler = handler;
         _handler.OnUpdated += Set;

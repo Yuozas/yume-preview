@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class PortraitHandlerUserInterface : MonoBehaviour
+public class PortraitUserInterface : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Image _face;
     [SerializeField] private Image _hair;
 
-    private PortraitHandler _portrait;
+    private Portrait _portrait;
 
-    public void Initialize(PortraitHandler handler)
+    public void Initialize(Portrait handler)
     {
         _portrait = handler;
         _portrait.OnUpdated += Set;
@@ -22,7 +22,7 @@ public class PortraitHandlerUserInterface : MonoBehaviour
         _portrait.OnUpdated -= Set;
     }
 
-    private void Set(PortraitHandlerSettings settings)
+    private void Set(PortraitSettings settings)
     {
         Set(_face, settings.Face);
         Set(_hair, settings.Face);

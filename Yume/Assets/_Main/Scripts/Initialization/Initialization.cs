@@ -1,17 +1,13 @@
 using UnityEngine;
 using SwiftLocator.Services.ServiceLocatorServices;
-using System.Collections.Generic;
+using System.Linq;
 
 public static class Initialization
 {
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
     private static void Initialize()
     {
-        //Load Initialization Scene.
-        //Coroutine Monobehaviour.
-
         RegisterSingletonServices();
-        RegisterTransientServices();
         ServiceLocator.Build();
     }
 
@@ -23,38 +19,38 @@ public static class Initialization
 
         ServiceLocator.SingletonRegistrator.Register(monoBehaviour);
 
-        var dialogues = new List<DialogueHandler>
+        var factory = new DialogueFactory();
+        var dialogues = new Dialogue[]
         {
-            CreateDialogueHandler(DialogueHandler.INSPECTION, true, false, false),
-            CreateDialogueHandler(DialogueHandler.CONVERSATION, true, true, true)
+            factory.BuildConversation(),
+            factory.BuildInspection()
         };
 
-        var dialogueManager = new DialogueHandlerResolver(dialogues);
+        var toggles = dialogues.Select(dialogue => dialogue.Toggle);
+        _ = new Toggles(toggles);
+
+        var resolver = new DialogueResolver(dialogues);
+
+
+        ServiceLocator.SingletonRegistrator.Register(resolver);
+    }
+}
+
+public interface ICommand
+{
+    void Execute();
+}
+
+public class SetName : ICommand
+{
+    readonly Name _name;
+
+    public SetName(Name name)
+    {
+        _name = name;
+    }
+    public void Execute()
+    {
         
-        ServiceLocator.SingletonRegistrator.Register(dialogueManager);
-    }
-
-    private static DialogueHandler CreateDialogueHandler(string type, bool? useTypewriter, bool? usePortrait, bool? useName)
-    {
-        var typewriter = useTypewriter != null ? CreateTypewriter() : null;
-        var portrait = usePortrait != null ? new PortraitHandler() : null;
-        var name = useName != null ? new NameHandler() : null;
-
-        return new DialogueHandler(type, typewriter, portrait, name);
-    }
-
-    private static TypewriterHandler CreateTypewriter()
-    {
-        var delayedExecutor = new DelayedExecutor();
-
-        var typewriterIterator = new TypewriterIterator();
-        var typewriterHandler = new TypewriterHandler(delayedExecutor, typewriterIterator);
-        return typewriterHandler;
-    }
-
-    private static void RegisterTransientServices()
-    {
-        // Todo register transient services.
-        //ServiceLocator.TransientRegistrator;
     }
 }
