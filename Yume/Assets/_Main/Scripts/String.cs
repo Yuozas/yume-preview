@@ -1,4 +1,7 @@
-﻿public static class String
+﻿namespace Euphelia
 {
-    public const string EMPTY = "";
+    public static class String
+    {
+        public const string EMPTY = "";
+    }
 }
