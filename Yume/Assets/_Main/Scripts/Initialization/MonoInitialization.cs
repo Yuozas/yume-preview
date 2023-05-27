@@ -2,7 +2,7 @@ using UnityEngine;
 using SwiftLocator.Services.ServiceLocatorServices;
 using System.Linq;
 
-public static class Initialization
+public static class MonoInitialization
 {
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
     private static void Initialize()
@@ -33,24 +33,5 @@ public static class Initialization
 
 
         ServiceLocator.SingletonRegistrator.Register(resolver);
-    }
-}
-
-public interface ICommand
-{
-    void Execute();
-}
-
-public class SetName : ICommand
-{
-    readonly Name _name;
-
-    public SetName(Name name)
-    {
-        _name = name;
-    }
-    public void Execute()
-    {
-        
     }
 }

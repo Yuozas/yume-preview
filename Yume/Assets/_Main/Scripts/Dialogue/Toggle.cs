@@ -13,13 +13,13 @@ public class Toggle : IToggle
     public event Action OnEnable;
     public event Action OnDisable;
 
-    private readonly Dictionary<bool, Action> _actions;
+    private readonly Dictionary<bool, Action> _events;
 
     public Toggle(bool enabled = false)
     {
-        _actions = new();
-        _actions.Add(true, InvokeEnabled);
-        _actions.Add(false, InvokeDisabled);
+        _events = new();
+        _events.Add(true, InvokeEnabled);
+        _events.Add(false, InvokeDisabled);
 
         Set(enabled);
     }
@@ -44,7 +44,7 @@ public class Toggle : IToggle
         Enabled = value;
         OnUpdated?.Invoke(value);
 
-        _actions[value].Invoke();
+        _events[value].Invoke();
     }
 
     private void InvokeEnabled()
