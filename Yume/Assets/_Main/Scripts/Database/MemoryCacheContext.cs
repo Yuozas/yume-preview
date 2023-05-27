@@ -32,8 +32,8 @@ public class MemoryCacheContext : IMemoryCacheContext
 
         var uniqueKeys = keys.ToHashSet();
         foreach (var key in uniqueKeys)
-            if (TryGet<T>(key, out var t))
-                yield return t;
+            if (TryGet<T>(key, out var type))
+                yield return type;
     }
 
     public IEnumerable<T> GetMultiple<T>(ICollection<string> keys)
@@ -53,15 +53,15 @@ public class MemoryCacheContext : IMemoryCacheContext
         throw new NullReferenceException("Invalid key. Object not found.");
     }
 
-    public bool TryGet<T>(string key, out T t)
+    public bool TryGet<T>(string key, out T type)
     {
         var cache = GetOrAddCache<T>();
         if(cache.TryGetValue(key, out var cachedT))
         {
-            t = (T)DeepCloner.Clone(cachedT);
+            type = (T)DeepCloner.Clone(cachedT);
             return true;
         }
-        t = default;
+        type = default;
         return false;
     }
 

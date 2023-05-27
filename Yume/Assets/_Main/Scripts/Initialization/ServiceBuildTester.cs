@@ -6,7 +6,6 @@ public class ServiceBuildTester : IPreliminarySetup
 
     public void Setup()
     {
-        // Ensure all instances run correctly.
         ServiceLocator.Build();
     }
 }

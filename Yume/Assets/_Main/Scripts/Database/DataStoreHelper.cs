@@ -12,11 +12,11 @@ public class DataStoreHelper : IDataStoreHelper
 
         return assembly
             .GetTypes()
-            .Where(assemblyType =>
-                assemblyType.IsClass &&
-                !assemblyType.IsAbstract &&
-                abstractType.IsAssignableFrom(assemblyType) &&
-                assemblyType != abstractType
+            .Where(type =>
+                type.IsClass &&
+                !type.IsAbstract &&
+                abstractType.IsAssignableFrom(type) &&
+                type != abstractType
             );
     }
 

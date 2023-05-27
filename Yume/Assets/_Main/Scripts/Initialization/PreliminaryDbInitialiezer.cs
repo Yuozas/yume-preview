@@ -6,7 +6,6 @@ public class PreliminaryDbInitialiezer : IPreliminarySetup
 
     public void Setup()
     {
-        // Cache database data to memory.
         ServiceLocator.SingletonProvider.Get<ICacheDbContext>().CacheAllDataFromDb();
     }
 }

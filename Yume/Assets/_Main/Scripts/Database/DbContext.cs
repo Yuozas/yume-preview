@@ -75,7 +75,7 @@ public class DbContext : SQLiteConnection, IDbContext
     {
         const string sql = "SELECT `name` as `Name` FROM `sqlite_master` WHERE `type` = 'table' AND `name` != 'sqlite_sequence';";
         var allTableNames = Query<SqliteMaster>(sql);
-        return allTableNames.Where(t => t is not null).Select(s => s.Name);
+        return allTableNames.Where(row => row is not null).Select(row => row.Name);
     }
 
     private class SqliteMaster

@@ -34,6 +34,7 @@ public class CacheDbContext : ICacheDbContext
         var idsToMatch = ids?.Select(id => id.ToString()).ToArray();
         return _memoryCache.GetMultiple<T>(idsToMatch);
     }
+
     public IEnumerable<T> GetMultipleMatching<T>(ICollection<int> ids)
     {
         var idsToMatch = ids?.Select(id => id.ToString()).ToArray();
@@ -110,7 +111,6 @@ public class CacheDbContext : ICacheDbContext
             // Get id to unreserve now since it can be modified during insert.
             var idToUnreserve = instance.Id;
 
-            // Backup data.
             _dbContext.InsertOrReplace(instance);
 
             UnreserveId<T>(idToUnreserve);

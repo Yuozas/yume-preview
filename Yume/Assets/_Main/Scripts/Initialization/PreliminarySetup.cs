@@ -9,7 +9,7 @@ public static class PreliminarySetup
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
     private static void Setup()
     {
-        var setups = GetAllPreliminarySetups().OrderBy(s => s.Order);
+        var setups = GetAllPreliminarySetups().OrderBy(setup => setup.Order);
         foreach (var setup in setups)
             setup.Setup();
     }
