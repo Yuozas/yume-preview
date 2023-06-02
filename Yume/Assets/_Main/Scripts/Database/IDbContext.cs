@@ -1,13 +1,15 @@
-﻿using SQLite4Unity3d;
-using System.Collections.Generic;
+﻿using System;
+using System.Linq.Expressions;
+using System.Linq;
 
 public interface IDbContext
 {
-    TableQuery<TTable> GetTableQuery<TTable>() where TTable : Table, new();
-    int Insert<TTable>(TTable row) where TTable : Table, new();
-    int InsertOrReplace<TTable>(TTable row) where TTable : Table, new();
-    int InsertAll<TTable>(IEnumerable<TTable> rows) where TTable : Table, new();
-    int Update<TTable>(TTable rows) where TTable : Table, new();
-    int UpdateAll<TTable>(IEnumerable<TTable> rows) where TTable : Table, new();
-    int GetNextId<TTable>() where TTable : Table, new();
+    IQueryable<T> All<T>() where T : class;
+    void Add<T>(T entity) where T : class;
+    void Update<T>(T entity) where T : class;
+    void Delete<T>(T entity) where T : class;
+    IQueryable<T> Where<T>(Expression<Func<T, bool>> predicate) where T : class;
+    void BeginTransaction();
+    void CommitTransaction();
+    void CancelTransaction();
 }
