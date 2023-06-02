@@ -3,7 +3,7 @@ using UnityEngine.UIElements;
 using UnityEngine;
 using UnityEditor;
 
-public class DialogueNode : Node
+public class DialogueNode : UnityEditor.Experimental.GraphView.Node
 {
     public const string NAME = "Node";
     public const string IN_PORT_NAME = "In";
@@ -76,7 +76,7 @@ public class DialogueNode : Node
     }
 }
 
-public class EntryNode : Node
+public class EntryNode : UnityEditor.Experimental.GraphView.Node
 {
     public const string NAME = "Entry";
     public const string OUT_PORT_NAME = "Out";
@@ -116,7 +116,7 @@ public class EntryNode : Node
     }
 }
 
-public class ExitNode : Node
+public class ExitNode : UnityEditor.Experimental.GraphView.Node
 {
     public const string NAME = "Exit";
     public const string IN_PORT_NAME = "In";

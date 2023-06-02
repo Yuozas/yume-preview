@@ -1,7 +1,7 @@
 ﻿using UnityEditor.Experimental.GraphView;
 using UnityEngine.UIElements;
 
-public class OptionsNode : Node
+public class OptionsNode : UnityEditor.Experimental.GraphView.Node
 {
     public void Draw()
     {
