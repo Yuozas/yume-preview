@@ -1,5 +1,4 @@
 using SwiftLocator.Services.ServiceLocatorServices;
-using UnityEngine;
 
 public class ServiceRegistrator : IPreliminarySetup
 {
@@ -7,13 +6,11 @@ public class ServiceRegistrator : IPreliminarySetup
 
     public void Setup()
     {
-        RegisterDbServices();
+        RegisterRealmServices();
     }
 
-    private static void RegisterDbServices()
+    private static void RegisterRealmServices()
     {
-        ServiceLocator.SingletonRegistrator
-            .Register<IDbContext, RealmDbContext>();
-        ServiceLocator.TransientRegistrator.Register<ITransientDbContext, RealmDbContext>();
+        ServiceLocator.SingletonRegistrator.Register<IRealmContext, RealmContext>();
     }
 }
