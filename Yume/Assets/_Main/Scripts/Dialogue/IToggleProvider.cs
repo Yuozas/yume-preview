@@ -1,5 +1,5 @@
 ﻿public interface IToggleProvider
 {
-    IToggle Toggle { get; }
+    IToggler Toggler { get; }
 }
 

@@ -1,11 +1,11 @@
 ﻿using System;
 
-public interface IToggle
+public interface IToggler
 {
     bool Enabled { get; }
 
-    event Action<IToggle> OnEnabled;
-    event Action<IToggle> OnDisabled;
+    event Action<IToggler> OnEnabled;
+    event Action<IToggler> OnDisabled;
     event Action<bool> OnUpdated;
 
     event Action OnEnable;

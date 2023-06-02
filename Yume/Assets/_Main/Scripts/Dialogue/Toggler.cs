@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 
-public class Toggle : IToggle
+public class Toggler : IToggler
 {
     public bool Enabled { get; private set; }
 
     public event Action<bool> OnUpdated;
 
-    public event Action<IToggle> OnEnabled;
-    public event Action<IToggle> OnDisabled;
+    public event Action<IToggler> OnEnabled;
+    public event Action<IToggler> OnDisabled;
 
     public event Action OnEnable;
     public event Action OnDisable;
 
     private readonly Dictionary<bool, Action> _events;
 
-    public Toggle(bool enabled = false)
+    public Toggler(bool enabled = false)
     {
         _events = new();
         _events.Add(true, InvokeEnabled);

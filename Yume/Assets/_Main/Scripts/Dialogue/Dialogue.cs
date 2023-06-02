@@ -8,7 +8,7 @@
     public readonly Typewriter Typewriter;
     public readonly Portrait Portrait;
     public readonly Name Name;
-    public IToggle Toggle { get; private set; }
+    public IToggler Toggler { get; private set; }
 
     public Dialogue(string type, Typewriter typewriter = null, Portrait portrait = null, Name name = null)
     {
@@ -17,6 +17,6 @@
         Portrait = portrait;
         Name = name;
 
-        Toggle = new Toggle();
+        Toggler = new Toggler();
     }
 }

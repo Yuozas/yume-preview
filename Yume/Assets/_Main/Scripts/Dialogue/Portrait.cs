@@ -7,13 +7,13 @@ public class Portrait
 
     public Portrait(PortraitSettings? settings = null)
     {
-        var @default = settings ?? PortraitSettings.DEFAULT;
-        Set(@default);
+        Set(settings);
     }
 
-    public void Set(PortraitSettings settings)
+    public void Set(PortraitSettings? settings = null)
     {
-        Settings = settings;
-        OnUpdated?.Invoke(settings);
+        var @default = settings ?? PortraitSettings.DEFAULT;
+        Settings = @default;
+        OnUpdated?.Invoke(@default);
     }
 }

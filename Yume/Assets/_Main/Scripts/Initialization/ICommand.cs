@@ -1,4 +1,6 @@
-﻿public interface ICommand
+﻿using System;
+
+public interface ICommand
 {
-    void Execute();
+    void Execute(Action action = null);
 }

@@ -64,7 +64,6 @@ public class DialogueNode : Node
 
         field.AddToClassList("foldout-text-element");
 
-
         var content = foldout.contentContainer;
         content.AddToClassList("foldout-content");
         content.Add(field);

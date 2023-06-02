@@ -18,11 +18,12 @@ public class Typewriter
         _executor.OnUpdated -= Set;
     }
 
-    public void Execute(TypewriterSettings settings, Action onFinished = null)
+    public void Execute(TypewriterSettings? settings = null, Action onFinished = null)
     {
-        _builder.Set(settings.Sentence);
+        var @default = settings ?? TypewriterSettings.DEFAULT;
+        _builder.Set(@default.Sentence);
 
-        var executorSettings = new DelayedExecutorSettings(settings.Sentence.Length, settings.Rate);
+        var executorSettings = new DelayedExecutorSettings(@default.Sentence.Length, @default.Rate);
         _executor.UpdateSettings(executorSettings);
         _executor.Begin(onFinished);
     }

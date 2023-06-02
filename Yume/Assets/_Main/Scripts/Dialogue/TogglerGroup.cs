@@ -1,22 +1,22 @@
 ﻿using System.Collections.Generic;
 
-public class Toggles
+public class TogglerGroup
 {
-    private readonly IEnumerable<IToggle> _toggleables;
+    private readonly IEnumerable<IToggler> _toggleables;
 
-    public Toggles(IEnumerable<IToggle> toggleables)
+    public TogglerGroup(IEnumerable<IToggler> toggleables)
     {
         foreach (var toggleable in toggleables)
             toggleable.OnEnabled += DeactivateExcept;
     }
 
-    ~Toggles()
+    ~TogglerGroup()
     {
         foreach (var toggle in _toggleables)
             toggle.OnEnabled -= DeactivateExcept;
     }
 
-    private void DeactivateExcept(IToggle exception)
+    private void DeactivateExcept(IToggler exception)
     {
         foreach (var toggle in _toggleables)
         {

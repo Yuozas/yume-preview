@@ -5,16 +5,16 @@ public class Name
     public event Action<NameSettings> OnUpdated;
     public NameSettings Settings { get; private set; }
 
-    public Name(NameSettings? text = null)
+    public Name(NameSettings? settings = null)
     {
-        var @default = text ?? NameSettings.DEFAULT;
-        Set(@default);
+        Set(settings);
     }
 
-    public void Set(NameSettings text)
+    public void Set(NameSettings? settings = null)
     {
-        Settings = text;
-        OnUpdated?.Invoke(text);
+        var @default = settings ?? NameSettings.DEFAULT;
+        Settings = @default;
+        OnUpdated?.Invoke(@default);
     }
 }
 

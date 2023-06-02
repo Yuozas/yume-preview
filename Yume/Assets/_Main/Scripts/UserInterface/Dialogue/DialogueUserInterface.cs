@@ -7,7 +7,7 @@ public class DialogueUserInterface : MonoBehaviour
     [SerializeField] private PortraitUserInterface _portrait;
     [SerializeField] private NameUserInterface _name;
 
-    private IToggle _toggle;
+    private IToggler _toggle;
 
     public void Initialize(Dialogue dialogue)
     {
@@ -15,7 +15,7 @@ public class DialogueUserInterface : MonoBehaviour
         _portrait?.Initialize(dialogue.Portrait);
         _typewriter?.Initialize(dialogue.Typewriter);
 
-        _toggle = dialogue.Toggle;
+        _toggle = dialogue.Toggler;
         _toggle.OnUpdated += Set;
 
         Set(_toggle.Enabled);
