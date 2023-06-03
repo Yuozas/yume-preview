@@ -1,5 +1,4 @@
 using SwiftLocator.Services.ServiceLocatorServices;
-using UnityEngine;
 
 public class ServiceRegistrator : IPreliminarySetup
 {
@@ -7,27 +6,11 @@ public class ServiceRegistrator : IPreliminarySetup
 
     public void Setup()
     {
-        RegisterDbServices();
+        RegisterRealmServices();
     }
 
-    private static void RegisterDbServices()
+    private static void RegisterRealmServices()
     {
-        ServiceLocator.SingletonRegistrator
-            .Register<IDbContext, DbContext>(serviceProvider =>
-            {
-                const string databaseFileName = "Yume.db";
-
-                var configuration = new DbConfigurations()
-                {
-                    DatabasePath = $"{Application.dataPath}/_Main/Databases/{databaseFileName}"
-                };
-
-                var dbContext = new DbContext(configuration, serviceProvider.Get<IDataStoreHelper>());
-                dbContext.Build();
-                return dbContext;
-            })
-            .Register<IMemoryCacheContext, MemoryCacheContext>()
-            .Register<ICacheDbContext, CacheDbContext>()
-            .Register<IDataStoreHelper, DataStoreHelper>();
+        ServiceLocator.SingletonRegistrator.Register<IRealmContext, RealmContext>();
     }
 }
