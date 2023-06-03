@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 
-public class UnityGraphNode
+public class UnityNode
 {
     public readonly INode Node;
     public Vector3 Position;
 
-    public UnityGraphNode(INode node, Vector3 position)
+    public UnityNode(INode node, Vector3 position)
     {
         Node = node;
         SetPosition(position);
