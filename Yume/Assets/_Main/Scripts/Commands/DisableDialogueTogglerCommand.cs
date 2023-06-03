@@ -3,19 +3,18 @@ using System;
 
 public class DisableDialogueTogglerCommand : ICommand
 {
-    private readonly ICommand _command;
+    private readonly string _type;
 
     public DisableDialogueTogglerCommand(string type)
     {
-        var resolver = ServiceLocator.GetSingleton<DialogueResolver>();
-        var dialogue = resolver.Resolve(type);
-        var toggler = dialogue.Toggler;
-
-        _command = new DisableTogglerCommand(toggler);
+        _type = type;
     }
 
     public void Execute(Action onFinished = null)
     {
-        _command.Execute(onFinished);
+        var toggler = ServiceLocator.GetSingleton<DialogueResolver>().Resolve(_type).Toggler;
+        var command = new DisableTogglerCommand(toggler);
+
+        command.Execute(onFinished);
     }
 }

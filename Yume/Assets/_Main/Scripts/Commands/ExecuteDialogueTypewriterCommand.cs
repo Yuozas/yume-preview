@@ -3,19 +3,20 @@ using System;
 
 public class ExecuteDialogueTypewriterCommand : ICommand
 {
-    private readonly ICommand _command;
+    private readonly string _type;
+    private readonly TypewriterSettings _settings;
 
     public ExecuteDialogueTypewriterCommand(string type, TypewriterSettings settings)
     {
-        var resolver = ServiceLocator.GetSingleton<DialogueResolver>();
-        var dialogue = resolver.Resolve(type);
-        var typewriter = dialogue.Typewriter;
-
-        _command = new ExecuteTypewriterCommand(typewriter, settings);
+        _type = type;
+        _settings = settings;
     }
 
     public void Execute(Action onFinished = null)
     {
-        _command.Execute(onFinished);
+        var typewriter = ServiceLocator.GetSingleton<DialogueResolver>().Resolve(_type).Typewriter;
+        var command = new ExecuteTypewriterCommand(typewriter, _settings);
+
+        command.Execute(onFinished);
     }
 }

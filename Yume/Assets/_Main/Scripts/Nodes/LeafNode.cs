@@ -1,6 +1,6 @@
 ﻿public class LeafNode : INode
 {
-    private readonly ICommand _executable;
+    public readonly ICommand _executable;
 
     public LeafNode(ICommand executable)
     {

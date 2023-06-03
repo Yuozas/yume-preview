@@ -3,19 +3,20 @@ using System;
 
 public class SetDialogueNameSettingsCommand : ICommand
 {
-    private readonly ICommand _command;
+    private readonly string _type;
+    private readonly NameSettings _settings;
 
     public SetDialogueNameSettingsCommand(string type, NameSettings settings)
     {
-        var resolver = ServiceLocator.GetSingleton<DialogueResolver>();
-        var dialogue = resolver.Resolve(type);
-        var name = dialogue.Name;
-
-        _command = new SetNameSettingsCommand(name, settings);
+        _type = type;
+        _settings = settings;
     }
 
     public void Execute(Action onFinished = null)
     {
-        _command.Execute(onFinished);
+        var name = ServiceLocator.GetSingleton<DialogueResolver>().Resolve(_type).Name;
+        var command = new SetNameSettingsCommand(name, _settings);
+
+        command.Execute(onFinished);
     }
 }
