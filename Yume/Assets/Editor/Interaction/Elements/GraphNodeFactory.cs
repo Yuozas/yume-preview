@@ -104,7 +104,9 @@ public class GraphNodeFactory
             value = executable.Settings.Hair
         };
 
-        hairField.RegisterValueChangedCallback(callback => executable.Settings.Hair = callback.newValue as Sprite);
+        hairField.RegisterValueChangedCallback(callback => 
+            executable.Settings = new PortraitSettings(executable.Settings.Face, callback.newValue as Sprite)
+        );
         return hairField;
     }
     private static ObjectField CreateFaceFieldForPortrait(SetDialoguePortraitSettingsCommand executable)
@@ -116,7 +118,9 @@ public class GraphNodeFactory
             value = executable.Settings.Face
         };
 
-        faceField.RegisterValueChangedCallback(callback => executable.Settings.Face = callback.newValue as Sprite);
+        faceField.RegisterValueChangedCallback(callback =>
+            executable.Settings = new PortraitSettings(callback.newValue as Sprite, executable.Settings.Hair)
+        );
         return faceField;
     }
     private static TextField CreateNameFieldForName(SetDialogueNameSettingsCommand executable)

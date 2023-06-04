@@ -6,6 +6,8 @@ public class TogglerGroup
 
     public TogglerGroup(IEnumerable<IToggler> toggleables)
     {
+        _toggleables = toggleables;
+
         foreach (var toggleable in toggleables)
             toggleable.OnEnabled += DeactivateExcept;
     }
