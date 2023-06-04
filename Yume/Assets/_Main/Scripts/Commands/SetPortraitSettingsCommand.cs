@@ -1,9 +1,11 @@
 ﻿using System;
+using UnityEngine;
 
+[Serializable]
 public class SetPortraitSettingsCommand : ICommand
 {
-    private readonly Portrait _portrait;
-    private readonly PortraitSettings _settings;
+    [SerializeReference] private Portrait _portrait;
+    [SerializeField] private PortraitSettings _settings;
 
     public SetPortraitSettingsCommand(Portrait portrait, PortraitSettings settings)
     {

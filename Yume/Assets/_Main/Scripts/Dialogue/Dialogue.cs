@@ -1,5 +1,15 @@
-﻿public class Dialogue : IToggleProvider
+﻿using System;
+using System.Collections.Generic;
+
+public class Dialogue : IToggleProvider
 {
+    public const string DEFAULT = CONVERSATION;
+    public static readonly List<string> Types = new()
+    {
+        CONVERSATION,
+        INSPECTION
+    };
+
     public const string CONVERSATION = "Conversation";
     public const string INSPECTION = "Inspection";
 

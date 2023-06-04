@@ -26,7 +26,6 @@ public class MonoInitialization : IPreliminarySetup
 
         var resolver = new DialogueResolver(dialogues);
 
-
         ServiceLocator.SingletonRegistrator.Register(resolver);
     }
 }

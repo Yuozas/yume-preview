@@ -1,4 +1,7 @@
-﻿public struct NameSettings
+﻿using System;
+
+[Serializable]
+public struct NameSettings
 {
     public const string NAME = "Name";
     public static readonly NameSettings DEFAULT = new(NAME);

@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
+[Serializable]
 public class Toggler : IToggler
 {
-    public bool Enabled { get; private set; }
+    [field: SerializeField] public bool Enabled { get; private set; }
 
     public event Action<bool> OnUpdated;
 
@@ -13,14 +15,8 @@ public class Toggler : IToggler
     public event Action OnEnable;
     public event Action OnDisable;
 
-    private readonly Dictionary<bool, Action> _events;
-
     public Toggler(bool enabled = false)
     {
-        _events = new();
-        _events.Add(true, InvokeEnabled);
-        _events.Add(false, InvokeDisabled);
-
         Set(enabled);
     }
 
@@ -44,7 +40,10 @@ public class Toggler : IToggler
         Enabled = value;
         OnUpdated?.Invoke(value);
 
-        _events[value].Invoke();
+        if (value)
+            InvokeEnabled();
+        else
+            InvokeDisabled();
     }
 
     private void InvokeEnabled()

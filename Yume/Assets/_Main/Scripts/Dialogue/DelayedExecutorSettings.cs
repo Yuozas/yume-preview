@@ -1,4 +1,7 @@
-﻿public struct DelayedExecutorSettings
+﻿using System;
+
+[Serializable]
+public struct DelayedExecutorSettings
 {
     public static readonly DelayedExecutorSettings DEFAULT = new(0, 1);
 

@@ -1,9 +1,11 @@
 ﻿using System;
+using UnityEngine;
 
+[Serializable]
 public class Name
 {
     public event Action<NameSettings> OnUpdated;
-    public NameSettings Settings { get; private set; }
+    [field: SerializeField] public NameSettings Settings { get; private set; }
 
     public Name(NameSettings? settings = null)
     {

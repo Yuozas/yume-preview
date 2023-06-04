@@ -1,9 +1,11 @@
 ﻿using System;
+using UnityEngine;
 
+[Serializable]
 public class ExecuteTypewriterCommand : ICommand
 {
-    private readonly Typewriter _typewriter;
-    private readonly TypewriterSettings _settings;
+    [SerializeReference] private Typewriter _typewriter;
+    [SerializeField] private TypewriterSettings _settings;
 
     public ExecuteTypewriterCommand(Typewriter typewriter, TypewriterSettings settings)
     {

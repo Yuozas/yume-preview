@@ -1,0 +1,186 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a56a6cac0d1a63b4f9bb1d60b90e0a14, type: 3}
+  m_Name: Bob
+  m_EditorClassIdentifier: 
+  <UnityNodes>k__BackingField:
+  - rid: 8981177211230355745
+  - rid: 8981177211230355747
+  - rid: 8981177211230355759
+  - rid: 8981177211230355772
+  - rid: 8981177211230355779
+  - rid: 8981177211230355792
+  - rid: 8981177211230355802
+  - rid: 8981177211230355805
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 8981177211230355745
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177211230355746
+        Position: {x: -209.55733, y: 187.99998}
+    - rid: 8981177211230355746
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Entry
+        <Connections>k__BackingField:
+        - rid: 8981177211230355760
+        - rid: 8981177211230355780
+        - rid: 8981177211230355773
+        - rid: 8981177211230355793
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: -2
+    - rid: 8981177211230355747
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177211230355748
+        Position: {x: 699.6, y: 188}
+    - rid: 8981177211230355748
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Exit
+        <Connections>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: -2
+    - rid: 8981177211230355759
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177211230355760
+        Position: {x: -38, y: 235.61003}
+    - rid: 8981177211230355760
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Typewriter
+        <Connections>k__BackingField:
+        - rid: 8981177211230355748
+        _wait: 1
+        <Executable>k__BackingField:
+          rid: 8981177211230355761
+    - rid: 8981177211230355761
+      type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+        Settings:
+          Sentence: 'This is a sentence. Welcome.
+
+            Please, make yourself
+            at home!'
+          Rate: 0.075
+    - rid: 8981177211230355772
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177211230355773
+        Position: {x: -38.000015, y: -92.09249}
+    - rid: 8981177211230355773
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Name
+        <Connections>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 8981177211230355774
+    - rid: 8981177211230355774
+      type: {class: SetDialogueNameSettingsCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+        Settings:
+          Name: Mantas
+    - rid: 8981177211230355779
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177211230355780
+        Position: {x: -38.000015, y: -288.2678}
+    - rid: 8981177211230355780
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Portrait
+        <Connections>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 8981177211230355781
+    - rid: 8981177211230355781
+      type: {class: SetDialoguePortraitSettingsCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+        Settings:
+          Face: {fileID: 21300000, guid: ba345f2f643d842459447c374943401d, type: 3}
+          Hair: {fileID: 21300000, guid: ba345f2f643d842459447c374943401d, type: 3}
+    - rid: 8981177211230355792
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177211230355793
+        Position: {x: -37.999985, y: 77}
+    - rid: 8981177211230355793
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Open
+        <Connections>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 8981177211230355794
+    - rid: 8981177211230355794
+      type: {class: EnableDialogueTogglerCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+    - rid: 8981177211230355802
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177211230355803
+        Position: {x: 579.5, y: 18.999924}
+    - rid: 8981177211230355803
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Close
+        <Connections>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 8981177211230355804
+    - rid: 8981177211230355804
+      type: {class: DisableDialogueTogglerCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+    - rid: 8981177211230355805
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177211230355806
+        Position: {x: 354, y: 466}
+    - rid: 8981177211230355806
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Typewriter
+        <Connections>k__BackingField: []
+        _wait: 1
+        <Executable>k__BackingField:
+          rid: 8981177211230355807
+    - rid: 8981177211230355807
+      type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+        Settings:
+          Sentence: 'This is a sentence. Welcome.
+
+            Please, make yourself
+            at home!'
+          Rate: 0.075

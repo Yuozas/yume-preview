@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+using System;
 
+[Serializable]
 public struct PortraitSettings
 {
     public static readonly PortraitSettings DEFAULT = new(null, null);

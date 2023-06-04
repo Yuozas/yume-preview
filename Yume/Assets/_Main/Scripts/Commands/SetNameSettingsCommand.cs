@@ -1,9 +1,11 @@
 ﻿using System;
+using UnityEngine;
 
+[Serializable]
 public class SetNameSettingsCommand : ICommand
 {
-    private readonly Name _name;
-    private readonly NameSettings _settings;
+    [SerializeReference] private Name _name;
+    [SerializeField] private NameSettings _settings;
 
     public SetNameSettingsCommand(Name name, NameSettings settings)
     {

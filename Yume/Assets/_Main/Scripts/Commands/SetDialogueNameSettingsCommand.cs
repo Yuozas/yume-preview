@@ -1,21 +1,23 @@
 ﻿using SwiftLocator.Services.ServiceLocatorServices;
 using System;
+using UnityEngine;
 
+[Serializable]
 public class SetDialogueNameSettingsCommand : ICommand
 {
-    private readonly string _type;
-    private readonly NameSettings _settings;
+    [SerializeField] public string Type;
+    [SerializeField] public NameSettings Settings;
 
-    public SetDialogueNameSettingsCommand(string type, NameSettings settings)
+    public SetDialogueNameSettingsCommand(string type = null, NameSettings? settings = null)
     {
-        _type = type;
-        _settings = settings;
+        Type = type ?? Dialogue.DEFAULT;
+        Settings = settings ?? NameSettings.DEFAULT;
     }
 
     public void Execute(Action onFinished = null)
     {
-        var name = ServiceLocator.GetSingleton<DialogueResolver>().Resolve(_type).Name;
-        var command = new SetNameSettingsCommand(name, _settings);
+        var name = ServiceLocator.GetSingleton<DialogueResolver>().Resolve(Type).Name;
+        var command = new SetNameSettingsCommand(name, Settings);
 
         command.Execute(onFinished);
     }

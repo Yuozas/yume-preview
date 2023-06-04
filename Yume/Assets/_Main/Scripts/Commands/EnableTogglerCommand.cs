@@ -1,8 +1,10 @@
 ﻿using System;
+using UnityEngine;
 
+[Serializable]
 public class EnableTogglerCommand : ICommand
 {
-    private readonly IToggler _toggle;
+    [SerializeReference] private readonly IToggler _toggle;
 
     public EnableTogglerCommand(IToggler toggle)
     {

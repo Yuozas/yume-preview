@@ -1,9 +1,11 @@
 ﻿using System;
+using UnityEngine;
 
+[Serializable]
 public class Portrait
 {
     public event Action<PortraitSettings> OnUpdated;
-    public PortraitSettings Settings { get; private set; }
+    [field: SerializeField] public PortraitSettings Settings { get; private set; }
 
     public Portrait(PortraitSettings? settings = null)
     {

@@ -2,11 +2,12 @@
 using System.Collections;
 using System;
 
+[Serializable]
 public class DelayedExecutor : CoroutineHandler
 {
     public event Action OnUpdated;
 
-    private DelayedExecutorSettings _settings;
+    [SerializeField] private DelayedExecutorSettings _settings;
 
     public DelayedExecutor(MonoBehaviour behaviour = null, DelayedExecutorSettings? settings = null) : base(behaviour)
     {

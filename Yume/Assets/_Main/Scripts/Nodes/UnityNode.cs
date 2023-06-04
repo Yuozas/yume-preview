@@ -1,16 +1,19 @@
 ﻿#if UNITY_EDITOR
 using UnityEngine;
 #endif
+using System;
 
+[Serializable]
 public class UnityNode
 {
-    public readonly INode Node;
+    [field: SerializeReference] public INode Node { get; private set; }
+    public string Type => Node.Type;
 
 #if UNITY_EDITOR
-    public Vector3 Position;
+    public Vector2 Position;
 #endif
 
-    public UnityNode(INode node, Vector3 position)
+    public UnityNode(INode node, Vector2 position)
     {
         Node = node;
 
@@ -20,7 +23,7 @@ public class UnityNode
     }
 
 #if UNITY_EDITOR
-    public void SetPosition(Vector3 position)
+    public void SetPosition(Vector2 position)
     {
         Position = position;
     }

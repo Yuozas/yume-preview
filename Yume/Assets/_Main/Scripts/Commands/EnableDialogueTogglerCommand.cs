@@ -1,18 +1,20 @@
 ﻿using SwiftLocator.Services.ServiceLocatorServices;
 using System;
+using UnityEngine;
 
-public class EnableDialogueTogglerCommand
+[Serializable]
+public class EnableDialogueTogglerCommand : ICommand
 {
-    private readonly string _type;
+    [SerializeField] public string Type;
 
-    public EnableDialogueTogglerCommand(string type)
+    public EnableDialogueTogglerCommand(string type = null)
     {
-        _type = type;
+        Type = type ?? Dialogue.DEFAULT;
     }
 
     public void Execute(Action onFinished = null)
     {
-        var toggler = ServiceLocator.GetSingleton<DialogueResolver>().Resolve(_type).Toggler;
+        var toggler = ServiceLocator.GetSingleton<DialogueResolver>().Resolve(Type).Toggler;
         var command = new EnableTogglerCommand(toggler);
 
         command.Execute(onFinished);

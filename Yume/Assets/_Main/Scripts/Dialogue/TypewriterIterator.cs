@@ -1,19 +1,17 @@
 ﻿using System.Text;
+using System;
 
+[Serializable]
 public class TypewriterIterator
 {
     public string Current => _builder.ToString();
 
     private string _sentence;
-    private readonly StringBuilder _builder;
+    private StringBuilder _builder;
 
-    public TypewriterIterator()
-    {
-        _builder = new();
-    }
     public void Set(string sentence)
     {
-        _builder.Clear();
+        _builder = new StringBuilder();
         _sentence = sentence;
     }
 

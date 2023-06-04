@@ -1,11 +1,13 @@
 ﻿using System;
+using UnityEngine;
 
+[Serializable]
 public class Typewriter
 {
     public event Action<string> OnUpdated;
 
-    private readonly DelayedExecutor _executor;
-    private readonly TypewriterIterator _builder;
+    [SerializeReference] private DelayedExecutor _executor;
+    [SerializeReference] private TypewriterIterator _builder;
 
     public Typewriter(DelayedExecutor executor, TypewriterIterator builder)
     {
