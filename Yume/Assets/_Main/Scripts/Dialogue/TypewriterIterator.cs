@@ -20,4 +20,10 @@ public class TypewriterIterator
         var character = _sentence[_builder.Length];
         _builder.Append(character);
     }
+
+    public void Complete()
+    {
+        _builder.Clear();
+        _builder.Append(_sentence);
+    }
 }

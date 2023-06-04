@@ -29,6 +29,7 @@ public class DelayedExecutor : CoroutineHandler
             yield return wait;
         }
 
+        Stop();
         onFinished?.Invoke();
     }
 }

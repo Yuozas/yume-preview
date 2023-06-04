@@ -19,23 +19,27 @@ public class Character : Entity, ITransitionable
 
         Physics2D.queriesStartInColliders = false;
 
+        var talking = new Talking(_input.Talking);
         var states = new IState[]
         {
             new Walking(_input.Walking, movement, _direction, interaction),
-            new Talking(_input.Talking)
+            talking
         };
 
         _states = new States(states);
+        talking.Set(_states);
     }
 
     private void OnEnable()
     {
         _input.Enable();
+        Dialogue.Enabled += Set;
     }
 
     private void OnDisable()
     {
         _input.Disable();
+        Dialogue.Enabled -= Set;
     }
 
     private void Start()
@@ -47,6 +51,12 @@ public class Character : Entity, ITransitionable
     private void Update()
     {
         _states.Tick();
+    }
+
+    private void Set()
+    {
+        var type = typeof(Talking);
+        _states.Set(type);
     }
 
     public void Transition(Vector3 position, Vector2 direction)

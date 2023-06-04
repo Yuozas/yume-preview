@@ -20,6 +20,9 @@ public class Dialogue : IToggleProvider
     public readonly Name Name;
     public IToggler Toggler { get; private set; }
 
+    public static event Action Enabled;
+    public static event Action Disabled;
+
     public Dialogue(string type, Typewriter typewriter = null, Portrait portrait = null, Name name = null)
     {
         Type = type;
@@ -28,5 +31,24 @@ public class Dialogue : IToggleProvider
         Name = name;
 
         Toggler = new Toggler();
+
+        Toggler.OnEnable += InvokeEnabled;
+        Toggler.OnDisable += InvokeDisabled;
+    }
+
+    ~Dialogue()
+    {
+        Toggler.OnEnable -= InvokeEnabled;
+        Toggler.OnDisable -= InvokeDisabled;
+    }
+
+    private void InvokeEnabled()
+    {
+        Enabled?.Invoke();
+    }
+
+    private void InvokeDisabled()
+    {
+        Disabled?.Invoke();
     }
 }

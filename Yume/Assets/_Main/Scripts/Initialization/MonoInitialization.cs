@@ -24,9 +24,11 @@ public class MonoInitialization : IPreliminarySetup
         var toggles = dialogues.Select(dialogue => dialogue.Toggler);
 
         _ = new TogglerGroup(toggles);
+        var dialogueGroup = new DialogueGroup(dialogues);
 
         var resolver = new DialogueResolver(dialogues);
 
         ServiceLocator.SingletonRegistrator.Register(resolver);
+        ServiceLocator.SingletonRegistrator.Register(dialogueGroup);
     }
 }

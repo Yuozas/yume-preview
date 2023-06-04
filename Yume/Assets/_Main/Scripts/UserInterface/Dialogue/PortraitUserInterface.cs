@@ -25,7 +25,7 @@ public class PortraitUserInterface : MonoBehaviour
     private void Set(PortraitSettings settings)
     {
         Set(_face, settings.Face);
-        Set(_hair, settings.Face);
+        Set(_hair, settings.Hair);
     }
 
     private void Set(Image image, Sprite sprite)

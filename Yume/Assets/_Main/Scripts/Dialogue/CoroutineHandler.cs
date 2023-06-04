@@ -8,6 +8,8 @@ public abstract class CoroutineHandler
     private readonly MonoBehaviour _behaviour;
     private IEnumerator _ienumerator;
 
+    public bool Running => _ienumerator != null;
+
     public CoroutineHandler(MonoBehaviour behaviour)
     {
         var @default = ServiceLocator.GetSingleton<MonoBehaviour>();
