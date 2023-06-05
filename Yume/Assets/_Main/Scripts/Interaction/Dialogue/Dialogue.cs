@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-public class Dialogue : IToggleProvider
+public class Dialogue : ITogglerProvider
 {
     public const string DEFAULT = CONVERSATION;
     public static readonly List<string> Types = new()
@@ -21,7 +21,7 @@ public class Dialogue : IToggleProvider
     public IToggler Toggler { get; private set; }
 
     public static event Action Enabled;
-    public static event Action Disabled;
+    public event Action Disabled;
 
     public Dialogue(string type, Typewriter typewriter = null, Portrait portrait = null, Name name = null)
     {

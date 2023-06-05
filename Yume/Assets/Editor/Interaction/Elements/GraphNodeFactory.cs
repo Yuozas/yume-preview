@@ -7,6 +7,9 @@ using UnityEditor.UIElements;
 public class GraphNodeFactory
 {
 
+    /*
+     Holy god. Please forgive me Juozai. *Insert evaporate from existence meme here*
+    */
     public GraphNode Build(UnityNode unity)
     {
         var drawables = new List<IDrawable>()

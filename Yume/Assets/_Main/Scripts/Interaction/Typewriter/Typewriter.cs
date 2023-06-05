@@ -27,9 +27,11 @@ public class Typewriter
         _onFinished = onFinished;
 
         var @default = settings ?? TypewriterSettings.DEFAULT;
-        _builder.Set(@default.Sentence);
 
-        var executorSettings = new DelayedExecutorSettings(@default.Sentence.Length, @default.Rate);
+        var sentence = @default.Sentence.RemoveNewLinesAndAddSpace();
+        _builder.Set(sentence);
+
+        var executorSettings = new DelayedExecutorSettings(sentence.Length, @default.Rate);
         _executor.UpdateSettings(executorSettings);
         _executor.Begin();
     }

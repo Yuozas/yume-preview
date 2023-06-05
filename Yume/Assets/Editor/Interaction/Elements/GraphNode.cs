@@ -1,11 +1,8 @@
-﻿
-using UnityEngine.UIElements;
+﻿using UnityEngine.UIElements;
 using UnityEngine;
 using UnityEditor;
 using Node = UnityEditor.Experimental.GraphView.Node;
 using System.Collections.Generic;
-using System.Linq;
-using System;
 
 public class GraphNode : Node
 {

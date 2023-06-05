@@ -23,7 +23,8 @@ public class InteractionGraphWindow : EditorWindow
         CreateGraphView();
         CreateToolbar();
 
-        _view.Load(_interaction);
+        if(_interaction != null)
+            _view.Load(_interaction);
     }
     private void CreateGraphView()
     {

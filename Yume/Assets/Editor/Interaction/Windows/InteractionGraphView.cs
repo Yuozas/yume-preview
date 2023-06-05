@@ -66,7 +66,6 @@ public class InteractionGraphView : GraphView
             }
         }
 
-
         return change;
     }
 
@@ -125,7 +124,12 @@ public class InteractionGraphView : GraphView
 
     public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter)
     {
-        return ports.Where(port => port.node != startPort.node && port.direction != startPort.direction).ToList();
+        var updated = ports
+            .Where(port => port.node != startPort.node && port.direction != startPort.direction
+                && !port.connections.Any(edge => edge.output == startPort || edge.input == startPort))
+            .ToList();
+
+        return updated;
     }
     private void CreateGraphNode(UnityNode unityNode)
     {

@@ -3,7 +3,7 @@ using System.Linq;
 
 public class DialogueResolver
 {
-    protected readonly IEnumerable<Dialogue> _dialogues;
+    private readonly IEnumerable<Dialogue> _dialogues;
 
     public DialogueResolver(IEnumerable<Dialogue> dialogues)
     {
@@ -13,5 +13,10 @@ public class DialogueResolver
     public Dialogue Resolve(string type)
     {
         return _dialogues.First(dialogue => dialogue.Type == type);
+    }
+
+    public Dialogue ResolveWhereTogglerEnabled()
+    {
+        return _dialogues.First(dialogue => dialogue.Toggler.Enabled);
     }
 }
