@@ -48,6 +48,7 @@ public class Typewriter
 
         _onFinished?.Invoke();
     }
+
     public void Stop()
     {
         _executor.Stop();
