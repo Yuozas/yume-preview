@@ -11,7 +11,6 @@ public class Character : Entity, ITransitionable
     protected override void Awake()
     {
         base.Awake();
-
         _input = new InputActions();
 
         var movement = new Movement(_rigidbody, _animations, _direction);
