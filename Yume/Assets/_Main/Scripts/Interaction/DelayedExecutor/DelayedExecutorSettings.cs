@@ -3,7 +3,7 @@
 [Serializable]
 public struct DelayedExecutorSettings
 {
-    public static readonly DelayedExecutorSettings DEFAULT = new(0, 1);
+    public static readonly DelayedExecutorSettings Default = new(0, 1);
 
     public int Cycles;
     public float Rate;

@@ -11,7 +11,7 @@ public class DelayedExecutor : CoroutineHandler
 
     public DelayedExecutor(MonoBehaviour behaviour = null, DelayedExecutorSettings? settings = null) : base(behaviour)
     {
-        var @default = settings ?? DelayedExecutorSettings.DEFAULT;
+        var @default = settings ?? DelayedExecutorSettings.Default;
         UpdateSettings(@default);
     }
 

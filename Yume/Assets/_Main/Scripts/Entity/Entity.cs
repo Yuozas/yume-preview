@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using Euphelia;
 public abstract class Entity : MonoBehaviour
 {
     [Header("Abstract References")]

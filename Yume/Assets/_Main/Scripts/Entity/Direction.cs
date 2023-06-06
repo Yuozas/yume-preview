@@ -1,20 +1,22 @@
 ﻿using UnityEngine;
 
-public class Direction
+namespace Euphelia
 {
-    public Vector2 Axis { get; private set; }
-
-    private readonly Animations _animations;
-
-    public Direction(Animations animations)
+    public class Direction
     {
-        _animations = animations;
-    }
+        public Vector2 Axis { get; private set; }
 
-    public void Set(Vector2 direction)
-    {
-        Axis = direction;
-        _animations.SetAxis(direction);
+        private readonly Animations _animations;
+
+        public Direction(Animations animations)
+        {
+            _animations = animations;
+        }
+
+        public void Set(Vector2 direction)
+        {
+            Axis = direction;
+            _animations.SetAxis(direction);
+        }
     }
 }
-

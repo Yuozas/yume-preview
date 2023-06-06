@@ -1,4 +1,4 @@
-﻿
+﻿using UnityEditor.Experimental.GraphView;
 using UnityEngine.UIElements;
 using UnityEngine;
 using System.Collections.Generic;
@@ -45,7 +45,7 @@ public class GraphNodeFactory
 
     private static void AddSingularInputPortContainer(List<IDrawable> drawables)
     {
-        var singularInput = new SingularInputPortContainer();
+        var singularInput = new SingularPortContainer(SingularPortContainer.IN_PORT_NAME, Direction.Input);
         drawables.Add(singularInput);
     }
 
@@ -107,7 +107,7 @@ public class GraphNodeFactory
 
     private static void AddSingularOutputPortContainer(List<IDrawable> drawables)
     {
-        var singularOutput = new SingularOutputPortContainer();
+        var singularOutput = new SingularPortContainer(SingularPortContainer.OUT_PORT_NAME, Direction.Output);
         drawables.Add(singularOutput);
     }
 
