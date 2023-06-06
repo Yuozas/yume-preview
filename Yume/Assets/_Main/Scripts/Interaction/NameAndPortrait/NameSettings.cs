@@ -4,7 +4,7 @@
 public struct NameSettings
 {
     public const string NAME = "Name";
-    public static readonly NameSettings DEFAULT = new(NAME);
+    public static readonly NameSettings Default = new(NAME);
 
     public string Name;
 

@@ -11,7 +11,7 @@ public class SetDialogueNameSettingsCommand : ICommand
     public SetDialogueNameSettingsCommand(string type = null, NameSettings? settings = null)
     {
         Type = type ?? Dialogue.DEFAULT;
-        Settings = settings ?? NameSettings.DEFAULT;
+        Settings = settings ?? NameSettings.Default;
     }
 
     public void Execute(Action onFinished = null)

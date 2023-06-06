@@ -14,7 +14,7 @@ public class Name
 
     public void Set(NameSettings? settings = null)
     {
-        var @default = settings ?? NameSettings.DEFAULT;
+        var @default = settings ?? NameSettings.Default;
         Settings = @default;
         OnUpdated?.Invoke(@default);
     }
