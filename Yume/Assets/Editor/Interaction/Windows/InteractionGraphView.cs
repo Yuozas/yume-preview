@@ -30,44 +30,44 @@ public class InteractionGraphView : GraphView
     private GraphViewChange OnGraphChange(GraphViewChange change)
     {
         var edges = change.edgesToCreate;
-        if(edges != null)
-        {
+        if(edges is not null)
             foreach (var edge in edges)
-            {
+                AddConnectionBasedOnEdge(edge);
+
+        var removables = change.elementsToRemove;
+        if (removables is not null)
+            foreach (var element in change.elementsToRemove)
+                CheckTypeAndRemoveIt(element);
+
+        return change;
+    }
+
+    private void AddConnectionBasedOnEdge(Edge edge)
+    {
+        var from = (edge.output.node as GraphNode).UnityNode.Node;
+        var to = (edge.input.node as GraphNode).UnityNode.Node;
+
+        from.Add(to);
+
+        var contains = _removables.Contains(edge);
+        if (!contains)
+            _removables.Add(edge);
+    }
+
+    private void CheckTypeAndRemoveIt(GraphElement element)
+    {
+        switch (element)
+        {
+            case GraphNode graphNode:
+                _interaction.Remove(graphNode.UnityNode);
+                break;
+            case Edge edge:
                 var from = (edge.output.node as GraphNode).UnityNode.Node;
                 var to = (edge.input.node as GraphNode).UnityNode.Node;
 
-                from.Add(to);
-
-                var contains = _removables.Contains(edge);
-                if(!contains)
-                    _removables.Add(edge);
-            }
+                from.Remove(to);
+                break;
         }
-
-        var removables = change.elementsToRemove;
-        if (removables != null)
-        {
-            foreach (var element in change.elementsToRemove)
-            {
-                var type = typeof(GraphNode);
-                if (element.GetType() == type)
-                {
-                    var converted = (GraphNode)element;
-                    _interaction.Remove(converted.UnityNode);
-                }
-                else if(element.GetType() == typeof(Edge))
-                {
-                    var converted = (Edge)element;
-                    var from = (converted.output.node as GraphNode).UnityNode.Node;
-                    var to = (converted.input.node as GraphNode).UnityNode.Node;
-
-                    from.Remove(to);
-                }
-            }
-        }
-
-        return change;
     }
 
     public void Load(Interaction interaction)
