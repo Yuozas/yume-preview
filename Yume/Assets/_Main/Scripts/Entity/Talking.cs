@@ -24,6 +24,7 @@ public class Talking : IState
     {
         _states = states;
     }
+
     public void Enter()
     {
         // Todo.
@@ -46,17 +47,18 @@ public class Talking : IState
         _dialogue.Disabled -= Return;
     }
 
-
     private void Interact(InputAction.CallbackContext context)
     {
         var dialogue = _dialogues.ResolveWhereTogglerEnabled();
         dialogue.Typewriter.Continue();
     }
+
     private void Return()
     {
         var type = typeof(Walking);
         _states.Set(type);
     }
+
     private void UnsubscribeFromTalking()
     {
         _talking.Disable();
