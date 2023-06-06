@@ -1,7 +1,9 @@
 ﻿using Realms;
+using Realms.Schema;
 
 public interface IRealmContext
 {
-    public Realm GetRealm(string name);
-    public void DeleteRealm(string name);
+    Realm GetRealm(string name);
+    void DeleteRealm(string name);
+    Realm GetGlobalRealm(RealmSchema schema = null);
 }

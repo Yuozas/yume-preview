@@ -1,0 +1,4 @@
+.dim-button {
+	background-color: rgba(188, 188, 188, 0.51); 
+	color: rgba(27, 27, 27, 0.41);
+}

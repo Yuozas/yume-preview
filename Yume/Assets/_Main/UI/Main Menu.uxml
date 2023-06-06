@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Main/UI/Buttons.uss?fileID=7433441132597879392&amp;guid=4f071cacbc073774987596a436c38bce&amp;type=3#Buttons" />
+    <ui:Button text="New Game" display-tooltip-when-elided="true" name="NewGameButton" />
+    <ui:Button text="Continue" display-tooltip-when-elided="true" selectable="false" focusable="true" name="ContinueButton" />
+</ui:UXML>
