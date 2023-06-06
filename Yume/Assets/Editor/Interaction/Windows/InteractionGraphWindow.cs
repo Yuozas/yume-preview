@@ -18,6 +18,7 @@ public class InteractionGraphWindow : EditorWindow
     {
         GetWindow<InteractionGraphWindow>(TITLE);
     }
+
     private void OnEnable()
     {
         CreateGraphView();
@@ -26,6 +27,7 @@ public class InteractionGraphWindow : EditorWindow
         if(_interaction != null)
             _view.Load(_interaction);
     }
+
     private void CreateGraphView()
     {
         _view = new InteractionGraphView();
@@ -102,6 +104,7 @@ public class InteractionGraphWindow : EditorWindow
         if (_interaction != null)
             _interaction.Save();
     }
+
     private void Clear()
     {
         if (_interaction == null)
