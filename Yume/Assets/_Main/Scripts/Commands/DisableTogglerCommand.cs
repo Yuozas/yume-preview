@@ -10,6 +10,7 @@ public class DisableTogglerCommand : ICommand
     {
         _toggle = toggle;
     }
+
     public void Execute(Action onFinished = null)
     {
         _toggle.Disable();
