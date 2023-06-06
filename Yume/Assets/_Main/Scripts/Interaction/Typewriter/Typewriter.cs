@@ -4,11 +4,10 @@ using UnityEngine;
 [Serializable]
 public class Typewriter
 {
-    public event Action<string> OnUpdated;
-
     [SerializeReference] private DelayedExecutor _executor;
     [SerializeReference] private TypewriterIterator _builder;
 
+    public event Action<string> OnUpdated;
     private Action _onFinished;
 
     public Typewriter(DelayedExecutor executor, TypewriterIterator builder)
@@ -17,6 +16,7 @@ public class Typewriter
         _executor = executor;
         _executor.OnUpdated += Set;
     }
+
     ~Typewriter()
     {
         _executor.OnUpdated -= Set;
@@ -26,7 +26,7 @@ public class Typewriter
     {
         _onFinished = onFinished;
 
-        var @default = settings ?? TypewriterSettings.DEFAULT;
+        var @default = settings ?? TypewriterSettings.Default;
 
         var sentence = @default.Sentence.RemoveNewLinesAndAddSpace();
         _builder.Set(sentence);

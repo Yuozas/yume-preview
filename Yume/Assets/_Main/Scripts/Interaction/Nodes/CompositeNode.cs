@@ -7,10 +7,9 @@ public class CompositeNode : INode
 {
     [field: SerializeField] public string Type { get; private set; }
     [field: SerializeReference] public List<INode> Connections { get; private set; }
-
-    [SerializeField] private bool _wait;
     [field: SerializeReference] public ICommand Executable { get; private set; }
 
+    [SerializeField] private bool _wait;
 
     public CompositeNode(string type, bool wait, ICommand executable = null, List<INode> nodes = null)
     {

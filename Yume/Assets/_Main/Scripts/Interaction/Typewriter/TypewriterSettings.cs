@@ -4,7 +4,7 @@
 public struct TypewriterSettings
 {
     private const string SENTENCE = "This is a sentence. Welcome." + "\n" + "Please, make yourself at home!";
-    public static readonly TypewriterSettings DEFAULT = new(SENTENCE, 0.05f);
+    public static readonly TypewriterSettings Default = new(SENTENCE, 0.05f);
 
     public string Sentence;
     public float Rate;

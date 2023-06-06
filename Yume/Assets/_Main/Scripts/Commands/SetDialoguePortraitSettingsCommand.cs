@@ -11,7 +11,7 @@ public class SetDialoguePortraitSettingsCommand : ICommand
     public SetDialoguePortraitSettingsCommand(string type = null, PortraitSettings? settings = null)
     {
         Type = type ?? Dialogue.DEFAULT;
-        Settings = settings ?? PortraitSettings.DEFAULT;
+        Settings = settings ?? PortraitSettings.Default;
     }
 
     public void Execute(Action onFinished = null)

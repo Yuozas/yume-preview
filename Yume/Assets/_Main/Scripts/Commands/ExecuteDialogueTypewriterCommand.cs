@@ -11,7 +11,7 @@ public class ExecuteDialogueTypewriterCommand : ICommand
     public ExecuteDialogueTypewriterCommand(string type = null, TypewriterSettings? settings = null)
     {
         Type = type ?? Dialogue.DEFAULT;
-        Settings = settings ?? TypewriterSettings.DEFAULT;
+        Settings = settings ?? TypewriterSettings.Default;
     }
 
     public void Execute(Action onFinished = null)

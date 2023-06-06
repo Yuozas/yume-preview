@@ -14,7 +14,7 @@ public class Portrait
 
     public void Set(PortraitSettings? settings = null)
     {
-        var @default = settings ?? PortraitSettings.DEFAULT;
+        var @default = settings ?? PortraitSettings.Default;
         Settings = @default;
         OnUpdated?.Invoke(@default);
     }

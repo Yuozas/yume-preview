@@ -7,10 +7,9 @@ using System.Collections.Generic;
 public class GraphNode : Node
 {
     public readonly UnityNode UnityNode;
+
     private readonly List<IDrawable> _drawables;
-
     private const string STYLES_PATH = "Dialogue/DialogueNodeStyles.uss";
-
 
     public GraphNode(UnityNode node, params IDrawable[] drawables)
     {
@@ -53,6 +52,7 @@ public class GraphNode : Node
         var rect = new Rect(position, Vector3.zero);
         SetPosition(rect);
     }
+
     private void AddStylesheet()
     {
         var nodeStyle = (StyleSheet)EditorGUIUtility.Load(STYLES_PATH);

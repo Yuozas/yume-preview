@@ -8,10 +8,8 @@ public class DrawableExtensionContainer : IDrawable
     private const string FOLDOUT_CLASS = "foldout-element";
     private const string FOLDOUT_CONTAINER_CLASS = "foldout-content";
     private const string EXTENSION_CONTAINER_CLASS = "extension-container";
-
     private GraphNode _node;
     private readonly VisualElement[] _addables;
-
 
     public DrawableExtensionContainer(params VisualElement[] addables)
     {

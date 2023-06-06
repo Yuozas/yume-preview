@@ -13,6 +13,7 @@ public class InteractionGraphView : GraphView
 
     private readonly List<GraphElement> _removables;
     private readonly List<GraphNode> _graphNodes;
+
     public InteractionGraphView()
     {
         graphViewChanged = OnGraphChange;
@@ -76,36 +77,12 @@ public class InteractionGraphView : GraphView
         _interaction = interaction;
         AddContextualMenuManipulator();
 
-        var unityNodes = _interaction.UnityNodes;
-        for (int i = 0; i < unityNodes.Count; i++)
-        {
-            var node = unityNodes[i];
+        var nodes = _interaction.UnityNodes;
+
+        foreach (var node in nodes)
             CreateGraphNode(node);
-        }
 
-        for (int i = 0; i < unityNodes.Count; i++)
-        {
-            var unityNode = unityNodes[i].Node;
-            if (unityNode.Connections.Count <= 0) continue;
-
-            var fromGraphNode = _graphNodes.First(node => node.UnityNode.Node == unityNode);
-            var fromPort = (Port)fromGraphNode.outputContainer.Children().First();
-
-            for (int j = 0; j < unityNode.Connections.Count; j++)
-            {
-                var toNode = unityNode.Connections[j];
-
-                var toGraphNode = _graphNodes.First(node => node.UnityNode.Node == toNode);
-                var toPort = (Port)toGraphNode.inputContainer.Children().First();
-                var edge = fromPort.ConnectTo(toPort);
-
-
-                var contains = _removables.Contains(edge);
-                if(!contains)
-                    _removables.Add(edge);
-                AddElement(edge);
-            }
-        }
+        DrawsConnectionLineBetweenNodes(nodes);
     }
 
     public void ClearElements()
@@ -131,6 +108,7 @@ public class InteractionGraphView : GraphView
 
         return updated;
     }
+
     private void CreateGraphNode(UnityNode unityNode)
     {
         var node = _graphNodeFactory.Build(unityNode);
@@ -145,10 +123,9 @@ public class InteractionGraphView : GraphView
     {
         var node = _nodeFactory.Build(action.name);
         var unityNode = new UnityNode(node, action.eventInfo.localMousePosition);
+
         _interaction.Add(unityNode);
         CreateGraphNode(unityNode);
-
-
         AddContextualMenuManipulator();
     }
 
@@ -160,6 +137,7 @@ public class InteractionGraphView : GraphView
         styleSheets.Add(variables);
         styleSheets.Add(viewStyle);
     }
+
     private void AddBackground()
     {
         var background = new GridBackground();
@@ -167,6 +145,7 @@ public class InteractionGraphView : GraphView
 
         Insert(0, background);
     }
+
     private void AddManipulators()
     {
         var contentDragger = new ContentDragger();
@@ -179,6 +158,7 @@ public class InteractionGraphView : GraphView
 
         SetupZoom(ContentZoomer.DefaultMinScale, ContentZoomer.DefaultMaxScale * 2);
     }
+
     private void AddContextualMenuManipulator()
     {
         RemoveContextual();
@@ -210,5 +190,31 @@ public class InteractionGraphView : GraphView
         var containsExit = _interaction.Contains(INode.EXIT);
         if (!containsExit)
             @event.menu.AppendAction(INode.EXIT, CreateNode);
+    }
+
+    private void DrawsConnectionLineBetweenNodes(List<UnityNode> unityNodes)
+    {
+        foreach (var unityNode in unityNodes)
+        {
+            var node = unityNode.Node;
+            if (node.Connections.Count <= 0)
+                continue;
+
+            var fromGraphNode = _graphNodes.First(n => n.UnityNode.Node == node);
+            var fromPort = (Port)fromGraphNode.outputContainer.Children().First();
+
+            foreach (var connection in node.Connections)
+            {
+                var toGraphNode = _graphNodes.First(node => node.UnityNode.Node == connection);
+                var toPort = (Port)toGraphNode.inputContainer.Children().First();
+                var edge = fromPort.ConnectTo(toPort);
+
+                var contains = _removables.Contains(edge);
+                if (!contains)
+                    _removables.Add(edge);
+
+                AddElement(edge);
+            }
+        }
     }
 }
