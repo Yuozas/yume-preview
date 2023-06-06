@@ -25,7 +25,6 @@ public abstract class CoroutineHandler
         _ienumerator = null;
     }
 
-
     public void Begin(Action onFinished = null)
     {
         Stop();
