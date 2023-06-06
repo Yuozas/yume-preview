@@ -57,9 +57,6 @@ public class Talking : IState
         var type = typeof(Walking);
         _states.Set(type);
     }
-
-    public void Tick() { }
-
     private void UnsubscribeFromTalking()
     {
         _talking.Disable();

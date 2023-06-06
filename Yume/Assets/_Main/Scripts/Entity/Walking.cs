@@ -16,6 +16,7 @@ public class Walking : IState
         _direction = direction;
         _interaction = interaction;
     }
+
     public void Enter()
     {
         _walking.Enable();
@@ -34,12 +35,11 @@ public class Walking : IState
         _walking.Movement.canceled -= Move;
     }
 
-    public void Tick() { }
-
     private void Interact(InputAction.CallbackContext context)
     {
         _interaction.TryInteract(_movement.Position, _direction.Axis, Interactor.DEFAULT_INTERACTION_DISTANCE);
     }
+
     private void Move(InputAction.CallbackContext context)
     {
         var axis = context.ReadValue<Vector2>();
