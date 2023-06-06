@@ -29,14 +29,20 @@ public class InGameMenuOptionLoader : MonoBehaviour
     {
         _inGameMenuOption = InGameMenuOption.Unset;
         _previousGameMenuOption = InGameMenuOption.Unset;
+
+#if UNITY_EDITOR
         EditorApplication.hierarchyChanged += OnHierarchyChanged;
+#endif
     }
 
     void OnDisable()
     {
         _inGameMenuOption = InGameMenuOption.Unset;
         _previousGameMenuOption = InGameMenuOption.Unset;
+
+#if UNITY_EDITOR
         EditorApplication.hierarchyChanged -= OnHierarchyChanged;
+#endif
     }
 
     void OnHierarchyChanged()

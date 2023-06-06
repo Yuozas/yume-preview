@@ -49,6 +49,7 @@ public class InventoryHandler : MonoBehaviour
 
     public void Save()
     {
+#if UNITY_EDITOR
         var json = JsonConvert.SerializeObject(_items);
         var jsonBytes = Encoding.ASCII.GetBytes(json);
         var encryptedJsonBytes = EncryptHandler.Encrypt(jsonBytes);
@@ -56,6 +57,7 @@ public class InventoryHandler : MonoBehaviour
         var savePath = AssetDatabase.GetAssetPath(_itemSaveFile);
         File.WriteAllBytes(savePath, encryptedJsonBytes);
         EditorUtility.SetDirty(_itemSaveFile);
+#endif
     }
 
     public void ReadSave()

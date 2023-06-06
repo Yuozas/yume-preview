@@ -25,9 +25,8 @@ public class Music : Singleton<Music>
 
     void OnDestroy() => _percentage.OnUpdated -= Set;
 
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
     AudioSource[] _previousSources;
-    #endif
 
     void OnValidate()
     {
@@ -35,7 +34,7 @@ public class Music : Singleton<Music>
         if (_sources.Length is requiredSourcesLength) _previousSources = _sources.ToArray();
         else _sources = _previousSources?.ToArray();
     }
-
+#endif
     public void PlayInstant(AudioClip clip)
     {
         CurrentSource.Stop();
