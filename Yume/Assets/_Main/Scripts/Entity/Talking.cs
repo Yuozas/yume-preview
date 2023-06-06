@@ -26,7 +26,7 @@ public class Talking : IState
     }
     public void Enter()
     {
-        // TODO
+        // Todo.
         // I'm adding a delay here to subscribing, because there's a bug. When you switch control scheme
         // from walking to talking by pressing the z button, when it switches it call the z button again on the talking scheme,
         // even though it was pressed a second time. Note to self, find why it is happening.
