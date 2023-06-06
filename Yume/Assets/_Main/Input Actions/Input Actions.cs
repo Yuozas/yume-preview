@@ -24,7 +24,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     ""name"": ""Input Actions"",
     ""maps"": [
         {
-            ""name"": ""On Foot"",
+            ""name"": ""Walking"",
             ""id"": ""f351c44e-8a2f-4f87-9071-87cdc42c7e54"",
             ""actions"": [
                 {
@@ -35,6 +35,15 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""ce403746-3cd2-43d9-abe1-e506f1ca7884"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -92,6 +101,45 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""39298070-bae9-4a4b-ba13-0ed9652a2d68"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Talking"",
+            ""id"": ""9776ee44-8653-4289-953f-0154cb7942e6"",
+            ""actions"": [
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""a52a55b4-10ef-4c23-bf60-242f6a25e57b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""5e69f5b4-1afd-41d0-81a6-a60b5f118baf"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -214,9 +262,13 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         }
     ]
 }");
-        // On Foot
-        m_OnFoot = asset.FindActionMap("On Foot", throwIfNotFound: true);
-        m_OnFoot_Movement = m_OnFoot.FindAction("Movement", throwIfNotFound: true);
+        // Walking
+        m_Walking = asset.FindActionMap("Walking", throwIfNotFound: true);
+        m_Walking_Movement = m_Walking.FindAction("Movement", throwIfNotFound: true);
+        m_Walking_Interact = m_Walking.FindAction("Interact", throwIfNotFound: true);
+        // Talking
+        m_Talking = asset.FindActionMap("Talking", throwIfNotFound: true);
+        m_Talking_Interact = m_Talking.FindAction("Interact", throwIfNotFound: true);
         // Unity Editor
         m_UnityEditor = asset.FindActionMap("Unity Editor", throwIfNotFound: true);
         m_UnityEditor_Escape = m_UnityEditor.FindAction("Escape", throwIfNotFound: true);
@@ -285,51 +337,105 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // On Foot
-    private readonly InputActionMap m_OnFoot;
-    private List<IOnFootActions> m_OnFootActionsCallbackInterfaces = new List<IOnFootActions>();
-    private readonly InputAction m_OnFoot_Movement;
-    public struct OnFootActions
+    // Walking
+    private readonly InputActionMap m_Walking;
+    private List<IWalkingActions> m_WalkingActionsCallbackInterfaces = new List<IWalkingActions>();
+    private readonly InputAction m_Walking_Movement;
+    private readonly InputAction m_Walking_Interact;
+    public struct WalkingActions
     {
         private @InputActions m_Wrapper;
-        public OnFootActions(@InputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Movement => m_Wrapper.m_OnFoot_Movement;
-        public InputActionMap Get() { return m_Wrapper.m_OnFoot; }
+        public WalkingActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement => m_Wrapper.m_Walking_Movement;
+        public InputAction @Interact => m_Wrapper.m_Walking_Interact;
+        public InputActionMap Get() { return m_Wrapper.m_Walking; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(OnFootActions set) { return set.Get(); }
-        public void AddCallbacks(IOnFootActions instance)
+        public static implicit operator InputActionMap(WalkingActions set) { return set.Get(); }
+        public void AddCallbacks(IWalkingActions instance)
         {
-            if (instance == null || m_Wrapper.m_OnFootActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_OnFootActionsCallbackInterfaces.Add(instance);
+            if (instance == null || m_Wrapper.m_WalkingActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_WalkingActionsCallbackInterfaces.Add(instance);
             @Movement.started += instance.OnMovement;
             @Movement.performed += instance.OnMovement;
             @Movement.canceled += instance.OnMovement;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
         }
 
-        private void UnregisterCallbacks(IOnFootActions instance)
+        private void UnregisterCallbacks(IWalkingActions instance)
         {
             @Movement.started -= instance.OnMovement;
             @Movement.performed -= instance.OnMovement;
             @Movement.canceled -= instance.OnMovement;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
         }
 
-        public void RemoveCallbacks(IOnFootActions instance)
+        public void RemoveCallbacks(IWalkingActions instance)
         {
-            if (m_Wrapper.m_OnFootActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_WalkingActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
-        public void SetCallbacks(IOnFootActions instance)
+        public void SetCallbacks(IWalkingActions instance)
         {
-            foreach (var item in m_Wrapper.m_OnFootActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_WalkingActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_OnFootActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_WalkingActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
-    public OnFootActions @OnFoot => new OnFootActions(this);
+    public WalkingActions @Walking => new WalkingActions(this);
+
+    // Talking
+    private readonly InputActionMap m_Talking;
+    private List<ITalkingActions> m_TalkingActionsCallbackInterfaces = new List<ITalkingActions>();
+    private readonly InputAction m_Talking_Interact;
+    public struct TalkingActions
+    {
+        private @InputActions m_Wrapper;
+        public TalkingActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Interact => m_Wrapper.m_Talking_Interact;
+        public InputActionMap Get() { return m_Wrapper.m_Talking; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(TalkingActions set) { return set.Get(); }
+        public void AddCallbacks(ITalkingActions instance)
+        {
+            if (instance == null || m_Wrapper.m_TalkingActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_TalkingActionsCallbackInterfaces.Add(instance);
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
+        }
+
+        private void UnregisterCallbacks(ITalkingActions instance)
+        {
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
+        }
+
+        public void RemoveCallbacks(ITalkingActions instance)
+        {
+            if (m_Wrapper.m_TalkingActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ITalkingActions instance)
+        {
+            foreach (var item in m_Wrapper.m_TalkingActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_TalkingActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public TalkingActions @Talking => new TalkingActions(this);
 
     // Unity Editor
     private readonly InputActionMap m_UnityEditor;
@@ -485,9 +591,14 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             return asset.controlSchemes[m_KeyboardSchemeIndex];
         }
     }
-    public interface IOnFootActions
+    public interface IWalkingActions
     {
         void OnMovement(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
+    }
+    public interface ITalkingActions
+    {
+        void OnInteract(InputAction.CallbackContext context);
     }
     public interface IUnityEditorActions
     {

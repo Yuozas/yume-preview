@@ -1,1 +1,33 @@
-VisualElement {}
+.title-element
+{
+	font-size: 12;
+	-unity-text-align: middle-center;
+	padding-left: 8;
+	color: #cfcfcf;
+}
+
+.extension-container
+{
+	background-color: #393939;
+}
+
+.foldout-text-element
+{
+	margin: 7;
+	max-width: 175px;
+	white-space: normal;
+}
+
+.foldout-element
+{
+	align-items: center;
+}
+
+.foldout-content
+{
+	background-color: #2D2D2D;
+	width: 100%;
+	margin: 0%;
+}
+
+

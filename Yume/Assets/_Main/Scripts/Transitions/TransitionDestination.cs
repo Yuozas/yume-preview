@@ -8,16 +8,18 @@ public class TransitionDestination : MonoBehaviour
 #if UNITY_EDITOR
     [Header("Settings")]
     [SerializeField] float _distance = 1f;
-    [SerializeField] Vector2 _direction = Vector2.up;
 #endif
+    [SerializeField] Vector2 _direction = Vector2.up;
 
     void OnEnable() => Transitioner.Instance.Add(this);
     void OnDisable() => Transitioner.Instance.Remove(this);
-    public void Set(Transitionable transitionable) => transitionable.Set(transform.position, _direction);
+    public void Transition(ITransitionable transitionable) => transitionable.Transition(transform.position, _direction);
 
+#if UNITY_EDITOR
     void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
         OnDrawGizmosUtility.Draw(transform.position, _distance, _direction);
     }
+#endif
 }
