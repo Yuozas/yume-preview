@@ -48,25 +48,10 @@ public class InteractionGraphWindow : EditorWindow
         };
         field.RegisterValueChangedCallback(HandleInteractionChanged);
 
-        var loadButton = new Button(Load)
-        {
-            text = "Load",
-        };
-
-        var saveButton = new Button(Save)
-        {
-            text = "Save",
-        };
-
-        var clearButton = new Button(Clear)
-        {
-            text = "Clear",
-        };
-
-        var toggle = new Toggle("Auto-Load")
-        {
-            value = _autoLoad
-        };
+        var loadButton = new Button(Load) { text = "Load" };
+        var saveButton = new Button(Save) { text = "Save" };
+        var clearButton = new Button(Clear) { text = "Clear" };
+        var toggle = new Toggle("Auto-Load") { value = _autoLoad };
 
         toggle.RegisterValueChangedCallback(callback => _autoLoad = callback.newValue);
 
