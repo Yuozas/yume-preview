@@ -51,6 +51,11 @@ public class InteractionGraphWindow : EditorWindow
             text = "Load",
         };
 
+        var saveButton = new Button(Save)
+        {
+            text = "Save",
+        };
+
         var clearButton = new Button(Clear)
         {
             text = "Clear",
@@ -65,6 +70,7 @@ public class InteractionGraphWindow : EditorWindow
 
         toolbar.Add(field);
         toolbar.Add(loadButton);
+        toolbar.Add(saveButton);
         toolbar.Add(clearButton);
         toolbar.Add(toggle);
 
@@ -91,6 +97,11 @@ public class InteractionGraphWindow : EditorWindow
         _view.Load(_interaction);
     }
 
+    private void Save()
+    {
+        if (_interaction != null)
+            _interaction.Save();
+    }
     private void Clear()
     {
         if (_interaction == null)

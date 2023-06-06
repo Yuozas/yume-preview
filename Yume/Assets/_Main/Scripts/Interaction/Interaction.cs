@@ -51,7 +51,7 @@ public class Interaction : ScriptableObject
         return UnityNodes.Contains(node);
     }
 
-    private void Save()
+    public void Save()
     {
         EditorUtility.SetDirty(this);
         AssetDatabase.SaveAssets();

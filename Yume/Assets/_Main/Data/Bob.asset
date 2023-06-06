@@ -268,7 +268,7 @@ MonoBehaviour:
       data:
         <Node>k__BackingField:
           rid: 8981177242252476570
-        Position: {x: 1406.9998, y: -91.99996}
+        Position: {x: 1407.0002, y: -110.4}
     - rid: 8981177242252476570
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
@@ -311,6 +311,7 @@ MonoBehaviour:
         <Type>k__BackingField: Typewriter
         <Connections>k__BackingField:
         - rid: 8981177211230355748
+        - rid: 8981177264092741678
         <Executable>k__BackingField:
           rid: 8981177242252476583
         _wait: 1
@@ -326,7 +327,7 @@ MonoBehaviour:
       data:
         <Node>k__BackingField:
           rid: 8981177264092741678
-        Position: {x: 718, y: 273}
+        Position: {x: 1942.9998, y: -92}
     - rid: 8981177264092741678
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:

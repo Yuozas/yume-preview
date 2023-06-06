@@ -11,6 +11,7 @@ public class UnityNode
 
 #if UNITY_EDITOR
     public Vector2 Position;
+    private Action _onUpdated;
 #endif
 
     public UnityNode(INode node, Vector2 position)
@@ -23,9 +24,17 @@ public class UnityNode
     }
 
 #if UNITY_EDITOR
+    public void Set(Action onUpdated)
+    {
+        _onUpdated = onUpdated;
+    }
+#endif
+
+#if UNITY_EDITOR
     public void SetPosition(Vector2 position)
     {
         Position = position;
+        _onUpdated?.Invoke();
     }
 #endif
 }
