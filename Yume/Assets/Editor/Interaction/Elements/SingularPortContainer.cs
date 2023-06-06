@@ -34,7 +34,11 @@ public class SingularPortContainer : IDrawable
         output.portName = _name + "(Any)";
         output.portColor = color;
 
-        _node.outputContainer.Add(output);
+        if(_direction is Direction.Output)
+            _node.outputContainer.Add(output);
+        else
+            _node.inputContainer.Add(output);
+
         OnDrawn?.Invoke();
     }
 }
