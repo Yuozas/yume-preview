@@ -170,7 +170,7 @@ public class GraphNodeFactory
             value = executable.Settings.Rate
         };
         rate.RegisterValueChangedCallback(callback =>
-            executable.Settings = new TypewriterSettings(executable.Settings.Sentence, executable.Settings.Rate)
+            executable.Settings = new TypewriterSettings(executable.Settings.Sentence, callback.newValue)
         );
 
         return rate;
