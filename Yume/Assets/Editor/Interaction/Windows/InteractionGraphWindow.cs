@@ -81,7 +81,8 @@ public class InteractionGraphWindow : EditorWindow
 
     private void Load()
     {
-        _view.Load(_interaction);
+        if(_interaction != null)
+            _view.Load(_interaction);
     }
 
     private void Save()
