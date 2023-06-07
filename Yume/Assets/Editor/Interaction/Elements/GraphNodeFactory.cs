@@ -3,6 +3,7 @@ using UnityEngine.UIElements;
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEditor.UIElements;
+using System.Linq;
 
 public class GraphNodeFactory
 {
@@ -74,7 +75,7 @@ public class GraphNodeFactory
         var faceField = CreateFaceFieldForPortrait(executable);
         var hairField = CreateHairFieldForPortrait(executable);
 
-        var dropdown = CreateTypeSelect(executable.Type, callback => executable.Type = callback.newValue);
+        var dropdown = CreateTypeSelect(executable.Type, callback => executable.Type = callback.newValue, Dialogue.INSPECTION);
 
         var extension = new DrawableExtensionContainer(dropdown, faceField, hairField);
         drawables.Add(extension);
@@ -85,7 +86,7 @@ public class GraphNodeFactory
         var executable = (SetDialogueNameSettingsCommand)unity.Node.Executable;
         var nameField = CreateNameFieldForName(executable);
 
-        var dropdown = CreateTypeSelect(executable.Type, callback => executable.Type = callback.newValue);
+        var dropdown = CreateTypeSelect(executable.Type, callback => executable.Type = callback.newValue, Dialogue.INSPECTION);
 
         var extension = new DrawableExtensionContainer(dropdown, nameField);
         drawables.Add(extension);
@@ -111,9 +112,12 @@ public class GraphNodeFactory
         drawables.Add(singularOutput);
     }
 
-    private static DropdownField CreateTypeSelect(string type, EventCallback<ChangeEvent<string>> callback)
+    private static DropdownField CreateTypeSelect(string type, EventCallback<ChangeEvent<string>> callback, params string[] discludes)
     {
-        var dropdown = new DropdownField("Type", Dialogue.Types, Dialogue.Types.IndexOf(type));
+        var types = Dialogue.Types.Except(discludes).ToList();
+        var index = Dialogue.Types.IndexOf(type);
+
+        var dropdown = new DropdownField("Type", types, index);
         dropdown.RegisterValueChangedCallback(callback);
 
         return dropdown;
@@ -121,32 +125,32 @@ public class GraphNodeFactory
 
     private static ObjectField CreateHairFieldForPortrait(SetDialoguePortraitSettingsCommand executable)
     {
-        var hairField = new ObjectField("Hair")
-        {
-            objectType = typeof(Sprite),
-            allowSceneObjects = false,
-            value = executable.Settings.Hair
-        };
+        var field = CreateField("Hair", executable.Settings.Hair);
 
-        hairField.RegisterValueChangedCallback(callback => 
+        field.RegisterValueChangedCallback(callback =>
             executable.Settings = new PortraitSettings(executable.Settings.Face, callback.newValue as Sprite)
         );
-        return hairField;
+        return field;
     }
 
     private static ObjectField CreateFaceFieldForPortrait(SetDialoguePortraitSettingsCommand executable)
     {
-        var faceField = new ObjectField("Face")
-        {
-            objectType = typeof(Sprite),
-            allowSceneObjects = false,
-            value = executable.Settings.Face
-        };
+        var field = CreateField("Face", executable.Settings.Face);
 
-        faceField.RegisterValueChangedCallback(callback =>
+        field.RegisterValueChangedCallback(callback =>
             executable.Settings = new PortraitSettings(callback.newValue as Sprite, executable.Settings.Hair)
         );
-        return faceField;
+        return field;
+    }
+
+    private static ObjectField CreateField<T>(string name, T sprite) where T : Object
+    {
+        return new ObjectField(name)
+        {
+            objectType = sprite.GetType(),
+            allowSceneObjects = false,
+            value = sprite
+        };
     }
 
     private static TextField CreateNameFieldForName(SetDialogueNameSettingsCommand executable)
