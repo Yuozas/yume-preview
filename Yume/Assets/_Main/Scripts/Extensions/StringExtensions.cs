@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 public static class StringExtensions
 {
@@ -6,5 +7,12 @@ public static class StringExtensions
     {
         var sentence = text.Replace("\n", " ");
         return string.Join(" ", sentence.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries));
+    }
+
+    public static int GetWhiteSpaceCount(this string text)
+    {
+        return text.Where(letter => 
+            char.IsWhiteSpace(letter)
+        ).Count();
     }
 }
