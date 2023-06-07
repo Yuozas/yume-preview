@@ -10,6 +10,8 @@ public class Typewriter
     public event Action<string> OnUpdated;
     private Action _onFinished;
 
+    private const bool IGNORE_SPACE = true;
+
     public Typewriter(DelayedExecutor executor, TypewriterIterator builder)
     {
         _builder = builder;
@@ -27,11 +29,13 @@ public class Typewriter
         _onFinished = onFinished;
 
         var @default = settings ?? TypewriterSettings.Default;
-
         var sentence = @default.Sentence.RemoveNewLinesAndAddSpace();
-        _builder.Set(sentence);
 
-        var executorSettings = new DelayedExecutorSettings(sentence.Length, @default.Rate);
+        _builder.Set(sentence, IGNORE_SPACE);
+
+        var cycles = IGNORE_SPACE ? sentence.Length - sentence.GetWhiteSpaceCount() : sentence.Length;
+        var executorSettings = new DelayedExecutorSettings(cycles, @default.Rate);
+
         _executor.UpdateSettings(executorSettings);
         _executor.Begin();
     }
