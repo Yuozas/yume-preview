@@ -11,8 +11,6 @@ public static class StringExtensions
 
     public static int GetWhiteSpaceCount(this string text)
     {
-        return text.Where(letter => 
-            char.IsWhiteSpace(letter)
-        ).Count();
+        return text.Where(char.IsWhiteSpace).Count();
     }
 }
