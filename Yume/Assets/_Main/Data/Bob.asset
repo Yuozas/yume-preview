@@ -186,7 +186,7 @@ MonoBehaviour:
 
             yourself
             at home!'
-          Rate: 0.075
+          Rate: 0.036
     - rid: 8981177242252476560
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
@@ -211,7 +211,7 @@ MonoBehaviour:
 
             and
             picture!'
-          Rate: 0.075
+          Rate: 0.036
     - rid: 8981177242252476563
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
@@ -238,7 +238,7 @@ MonoBehaviour:
             to once and forget about for the rest of
 
             the game!'
-          Rate: 0.075
+          Rate: 0.036
     - rid: 8981177242252476566
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
@@ -262,7 +262,7 @@ MonoBehaviour:
         Type: Inspection
         Settings:
           Sentence: Ugh...
-          Rate: 0.075
+          Rate: 0.036
     - rid: 8981177242252476569
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
@@ -321,7 +321,7 @@ MonoBehaviour:
         Type: Conversation
         Settings:
           Sentence: You actually gave it back! Thank you!
-          Rate: 0.075
+          Rate: 0.036
     - rid: 8981177264092741677
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
