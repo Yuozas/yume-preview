@@ -15,6 +15,8 @@ public class Character : Entity, ITransitionable
         base.Awake();
 
         _resolver = ServiceLocator.GetSingleton<CharacterResolver>();
+        _resolver.Set(this);
+
         _input = new InputActions();
 
         var movement = new Movement(_rigidbody, _animations, _direction);
@@ -30,9 +32,7 @@ public class Character : Entity, ITransitionable
         };
 
         _states = new States(states);
-
         talking.Set(_states);
-        _resolver.Set(this);
     }
 
     private void OnDestroy()
