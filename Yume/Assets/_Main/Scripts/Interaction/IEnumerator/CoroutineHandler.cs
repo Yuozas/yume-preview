@@ -8,12 +8,12 @@ public abstract class CoroutineHandler
     private readonly MonoBehaviour _behaviour;
     private IEnumerator _ienumerator;
 
-    public bool Running => _ienumerator != null;
+    public bool Running => _ienumerator is not null;
 
     public CoroutineHandler(MonoBehaviour behaviour)
     {
         var @default = ServiceLocator.GetSingleton<MonoBehaviour>();
-        _behaviour = behaviour != null ? behaviour : @default;
+        _behaviour = behaviour is not null ? behaviour : @default;
     }
 
     public void Stop()
@@ -33,5 +33,5 @@ public abstract class CoroutineHandler
         _behaviour.StartCoroutine(_ienumerator);
     }
 
-    protected abstract IEnumerator Execute(Action finished);
+    protected abstract IEnumerator Execute(Action onFinished);
 }

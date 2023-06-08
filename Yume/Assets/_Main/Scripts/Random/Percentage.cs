@@ -2,41 +2,28 @@
 using UnityEngine;
 using System;
 
-public class Percentage
+public class Percentage : CoroutineHandler
 {
     public event Action<float> OnUpdated;
+    private float _duration;
 
-    readonly MonoBehaviour _behaviour;
-    IEnumerator _ienumerator;
-    public Percentage(MonoBehaviour behaviour) => _behaviour = behaviour;
+    public Percentage(MonoBehaviour behaviour) : base(behaviour) { }
 
-    void Stop()
+    public void SetDuration(float duration)
     {
-        if (_ienumerator == null) return;
-
-        _behaviour.StopCoroutine(_ienumerator);
-        _ienumerator = null;
+        _duration = duration;
     }
 
-    public void Play(float duration, Action onCompleted = null)
-    {
-        Stop();
-
-        _ienumerator = Co_Play(duration, onCompleted);
-        _behaviour.StartCoroutine(_ienumerator);
-    }
-
-    IEnumerator Co_Play(float duration, Action onCompleted = null)
+    protected override IEnumerator Execute(Action onFinished = null)
     {
         var percentage = 0f;
         while (percentage < 1)
         {
-            percentage += Time.deltaTime * 1 / duration;
+            percentage += Time.deltaTime * 1 / _duration;
             OnUpdated?.Invoke(percentage);
             yield return null;
         }
 
-        _ienumerator = null;
-        onCompleted?.Invoke();
+        onFinished?.Invoke();
     }
 }
