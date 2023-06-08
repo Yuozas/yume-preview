@@ -143,13 +143,13 @@ public class GraphNodeFactory
         return field;
     }
 
-    private static ObjectField CreateField<T>(string name, T sprite) where T : Object
+    private static ObjectField CreateField<T>(string name, T value) where T : Object
     {
         return new ObjectField(name)
         {
-            objectType = sprite.GetType(),
+            objectType = value.GetType(),
             allowSceneObjects = false,
-            value = sprite
+            value = value
         };
     }
 
