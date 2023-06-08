@@ -2,29 +2,31 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-public class TransitionerAnimation : Singleton<TransitionerAnimation>
+public class TransitionerAnimation : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] Image _image;
+    [SerializeField] private Image _image;
 
     [Header("Settings")]
-    [SerializeField] Color _clear;
-    [SerializeField] Color _default;
+    [SerializeField] private Color _clear;
+    [SerializeField] private Color _default;
 
     public const float DURATION = 0.33f;
 
-    Percentage _percentage;
-    Color _from;
-    Color _to;
+    private Percentage _percentage;
+    private Color _from;
+    private Color _to;
 
-    protected override void Awake()
+    private void Awake()
     {
-        base.Awake();
         _percentage = new Percentage(this);
         _percentage.OnUpdated += Set;
     }
 
-    void OnDestroy() => _percentage.OnUpdated -= Set;
+    private void OnDestroy()
+    {
+        _percentage.OnUpdated -= Set;
+    }
 
     public void ToClear()
     {
@@ -42,5 +44,8 @@ public class TransitionerAnimation : Singleton<TransitionerAnimation>
         _percentage.Play(DURATION, onCompleted);
     }
 
-    void Set(float percentage) => _image.color = Color.Lerp(_from, _to, percentage);
+    private void Set(float percentage)
+    {
+        _image.color = Color.Lerp(_from, _to, percentage);
+    }
 }

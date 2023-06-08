@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using SwiftLocator.Services.ServiceLocatorServices;
+using UnityEngine;
 
 public class TransitionDestination : MonoBehaviour
 {
@@ -7,16 +8,34 @@ public class TransitionDestination : MonoBehaviour
 
 #if UNITY_EDITOR
     [Header("Settings")]
-    [SerializeField] float _distance = 1f;
+    [SerializeField] private float _distance = 1f;
 #endif
-    [SerializeField] Vector2 _direction = Vector2.up;
+    [SerializeField] private Vector2 _direction = Vector2.up;
 
-    void OnEnable() => Transitioner.Instance.Add(this);
-    void OnDisable() => Transitioner.Instance.Remove(this);
-    public void Transition(ITransitionable transitionable) => transitionable.Transition(transform.position, _direction);
+    private Transitioner _transitioner;
+
+    private void Awake()
+    {
+        _transitioner = ServiceLocator.GetSingleton<Transitioner>();
+    }
+
+    private void OnEnable()
+    {
+        _transitioner.Add(this);
+    }
+
+    private void OnDisable()
+    {
+        _transitioner.Remove(this);
+    }
+
+    public void Transition(ITransitionable transitionable)
+    {
+        transitionable.Transition(transform.position, _direction);
+    }
 
 #if UNITY_EDITOR
-    void OnDrawGizmos()
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
         OnDrawGizmosUtility.Draw(transform.position, _distance, _direction);

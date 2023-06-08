@@ -1,3 +1,4 @@
+using SwiftLocator.Services.ServiceLocatorServices;
 using UnityEngine;
 
 public class TransitionTrigger : MonoBehaviour
@@ -9,6 +10,13 @@ public class TransitionTrigger : MonoBehaviour
     [SerializeField] private BoxCollider2D _collider;
 #endif
 
+    private Transitioner _transitioner;
+
+    private void Awake()
+    {
+        _transitioner = ServiceLocator.GetSingleton<Transitioner>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (_destination is null)
@@ -18,7 +26,7 @@ public class TransitionTrigger : MonoBehaviour
         if (!detected)
             return;
 
-        Transitioner.Instance.Transition(_destination);
+        _transitioner.Transition(_destination);
     }
 
 #if UNITY_EDITOR
