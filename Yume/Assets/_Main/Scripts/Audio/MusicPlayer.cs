@@ -35,6 +35,7 @@ public class MusicPlayer : MonoBehaviour
     private void UpdateCurrentAudioClip()
     {
         _index++;
-        if (_index >= _clips.Length) _index = 0;
+        if (_index >= _clips.Length)
+            _index = 0;
     }
 }
