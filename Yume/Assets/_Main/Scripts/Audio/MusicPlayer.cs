@@ -4,31 +4,38 @@ using UnityEngine.InputSystem;
 public class MusicPlayer : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] Music _music;
-    [SerializeField] AudioClip[] _clips;
+    [SerializeField] private Music _music;
+    [SerializeField] private AudioClip[] _clips;
 
     [Header("Settings")]
-    [SerializeField] Key _switch;
+    [SerializeField] private Key _switch;
 
     public const float DEFAULT_FADE_DURATION = 1;
-    AudioClip CurrentClip => _clips[_index];
-    int _index;
 
-    void Start() => _music.PlayInstant(CurrentClip);
+    private AudioClip CurrentClip => _clips[_index];
+    private int _index;
 
-    void Update()
+    private void Start()
+    {
+        _music.PlayInstant(CurrentClip);
+    }
+
+    private void Update()
     {
         var keyboard = Keyboard.current;
-        if (keyboard == null) return;
-        if (!keyboard[_switch].wasPressedThisFrame) return;
+        if (keyboard is null)
+            return;
+        if (!keyboard[_switch].wasPressedThisFrame)
+            return;
 
         UpdateCurrentAudioClip();
         _music.Play(CurrentClip, DEFAULT_FADE_DURATION);
     }
 
-    void UpdateCurrentAudioClip()
+    private void UpdateCurrentAudioClip()
     {
         _index++;
-        if (_index >= _clips.Length) _index = 0;
+        if (_index >= _clips.Length)
+            _index = 0;
     }
 }

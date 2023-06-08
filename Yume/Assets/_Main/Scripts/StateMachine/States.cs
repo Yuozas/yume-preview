@@ -1,38 +1,31 @@
-﻿using System;
+﻿using System.Linq;
 
 public class States
 {
     private IState _current;
-    private IState[] _states;
+    private readonly IState[] _states;
 
     public States(IState[] states)
     {
         _states = states;
     }
+
     public void Set(IState state)
     {
         _current?.Exit();
 
         _current = state;
-        _current.Enter();
+        _current?.Enter();
     }
 
-    public void Set(Type type)
+    public void Set<T>() where T : IState
     {
-        for (int i = 0; i < _states.Length; i++)
-        {
-            var state = _states[i];
-            var target = state.GetType();
-            if (target == type)
-            {
-                Set(state);
-                return;
-            }
-        }
+        var state = _states.OfType<T>().First();
+        Set(state);
     }
 
     public void Tick()
     {
-        _current.Tick();
+        _current?.Tick();
     }
 }

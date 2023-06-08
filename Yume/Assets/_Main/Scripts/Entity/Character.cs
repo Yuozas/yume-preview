@@ -8,13 +8,13 @@ public class Character : Entity, ITransitionable
 
     private States _states;
     private InputActions _input;
-    private CharacterResolver _resolver;
+    private InSceneCharacter _resolver;
 
     protected override void Awake()
     {
         base.Awake();
 
-        _resolver = ServiceLocator.GetSingleton<CharacterResolver>();
+        _resolver = ServiceLocator.GetSingleton<InSceneCharacter>();
         _resolver.Set(this);
 
         _input = new InputActions();
@@ -54,8 +54,7 @@ public class Character : Entity, ITransitionable
 
     private void Start()
     {
-        var starting = typeof(Walking);
-        _states.Set(starting);
+        _states.Set<Walking>();
     }
 
     private void Update()
@@ -65,8 +64,7 @@ public class Character : Entity, ITransitionable
 
     private void Set()
     {
-        var type = typeof(Talking);
-        _states.Set(type);
+        _states.Set<Talking>();
     }
 
     public void Transition(Vector3 position, Vector2 direction)

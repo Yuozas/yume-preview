@@ -17,8 +17,7 @@ public class Interaction : ScriptableObject
 
     public void Interact()
     {
-        var node = UnityNodes.First(node => node.Type == INode.ENTRY).Node;
-        node.Execute();
+        UnityNodes.First(node => node.Type is INode.ENTRY).Node.Execute();
     }
 
     public bool Contains(string type)

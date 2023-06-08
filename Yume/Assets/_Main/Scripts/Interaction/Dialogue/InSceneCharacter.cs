@@ -1,8 +1,8 @@
-﻿public class CharacterResolver
+﻿public class InSceneCharacter
 {
     private Character _character;
 
-    public Character Resolve()
+    public Character Get()
     {
         return _character;
     }

@@ -7,7 +7,7 @@ using static UnityEngine.SceneManagement.SceneManager;
 public class Transitioner
 {
     readonly private List<TransitionDestination> _destinations;
-    readonly private CharacterResolver _resolver;
+    readonly private InSceneCharacter _resolver;
     readonly private TransitionerAnimation _animation;
 
     private Scriptable_TransitionDestination _to;
@@ -15,7 +15,7 @@ public class Transitioner
     public Transitioner()
     {
         _destinations = new();
-        _resolver = ServiceLocator.GetSingleton<CharacterResolver>();
+        _resolver = ServiceLocator.GetSingleton<InSceneCharacter>();
         _animation = ServiceLocator.GetSingleton<TransitionerAnimation>();
     }
 
@@ -60,7 +60,7 @@ public class Transitioner
 
     private void TransitionToDestination(Scriptable_TransitionDestination to)
     {
-        var transitionable = (ITransitionable)_resolver.Resolve();
+        var transitionable = (ITransitionable)_resolver.Get();
         Get(to).Transition(transitionable);
 
         _animation.ToClear();
