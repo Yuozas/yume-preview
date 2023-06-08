@@ -51,7 +51,7 @@ public class Music : MonoBehaviour
         UpdateActiveSourceIndex();
         SetClipAndPlay(clip);
 
-        _percentage.Play(duration, StopPreviousSource);
+        _percentage.Begin(duration, StopPreviousSource);
     }
 
     private void UpdateActiveSourceIndex()

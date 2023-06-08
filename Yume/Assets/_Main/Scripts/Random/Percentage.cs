@@ -9,9 +9,10 @@ public class Percentage : CoroutineHandler
 
     public Percentage(MonoBehaviour behaviour) : base(behaviour) { }
 
-    public void SetDuration(float duration)
+    public void Begin(float duration, Action onFinished = null)
     {
         _duration = duration;
+        Begin(onFinished);
     }
 
     protected override IEnumerator Execute(Action onFinished = null)

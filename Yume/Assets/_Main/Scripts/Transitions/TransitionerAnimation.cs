@@ -33,7 +33,7 @@ public class TransitionerAnimation : MonoBehaviour
         _from = _default;
         _to = _clear;
 
-        _percentage.Play(DURATION);
+        _percentage.Begin(DURATION);
     }
 
     public void ToDefault(Action onCompleted = null)
@@ -41,7 +41,7 @@ public class TransitionerAnimation : MonoBehaviour
         _from = _clear;
         _to = _default;
 
-        _percentage.Play(DURATION, onCompleted);
+        _percentage.Begin(DURATION, onCompleted);
     }
 
     private void Set(float percentage)
