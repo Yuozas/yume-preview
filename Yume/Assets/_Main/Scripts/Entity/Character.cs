@@ -8,13 +8,13 @@ public class Character : Entity, ITransitionable
 
     private States _states;
     private InputActions _input;
-    private CharacterResolver _resolver;
+    private InSceneCharacter _resolver;
 
     protected override void Awake()
     {
         base.Awake();
 
-        _resolver = ServiceLocator.GetSingleton<CharacterResolver>();
+        _resolver = ServiceLocator.GetSingleton<InSceneCharacter>();
         _resolver.Set(this);
 
         _input = new InputActions();

@@ -22,7 +22,7 @@ public class CompositeNode : INode
 
     public void Execute()
     {
-        if(Executable == null)
+        if(Executable is null)
         {
             Continue();
             return;

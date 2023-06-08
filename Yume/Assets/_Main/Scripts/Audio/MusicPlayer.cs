@@ -23,7 +23,7 @@ public class MusicPlayer : MonoBehaviour
     private void Update()
     {
         var keyboard = Keyboard.current;
-        if (keyboard == null)
+        if (keyboard is null)
             return;
         if (!keyboard[_switch].wasPressedThisFrame)
             return;

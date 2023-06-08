@@ -29,7 +29,7 @@ public class Initializer : IPreliminarySetup
         });
 
         ServiceLocator.SingletonRegistrator.Register(provider => new Transitioner());
-        ServiceLocator.SingletonRegistrator.Register(provider => new CharacterResolver());
+        ServiceLocator.SingletonRegistrator.Register(provider => new InSceneCharacter());
 
         ServiceLocator.SingletonRegistrator.Register(provider => {
             var prefab = Resources.Load<TransitionerAnimation>("TransitionerAnimation");

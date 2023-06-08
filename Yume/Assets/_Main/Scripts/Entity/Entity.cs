@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Euphelia;
+
 public abstract class Entity : MonoBehaviour
 {
     [Header("Abstract References")]
@@ -19,5 +20,8 @@ public abstract class Entity : MonoBehaviour
         _direction.Set(_facing);
     }
 
-    public void SetDirection(Vector2 direction) => _direction.Set(direction);
+    public void SetDirection(Vector2 direction)
+    {
+        _direction.Set(direction);
+    }
 }
