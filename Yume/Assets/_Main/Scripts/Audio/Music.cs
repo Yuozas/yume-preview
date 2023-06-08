@@ -1,38 +1,41 @@
 using UnityEngine;
-using System;
 using System.Linq;
 
-public class Music : Singleton<Music>
+public class Music : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] AudioSource[] _sources;
+    [SerializeField] private AudioSource[] _sources;
 
     [Header("Settings")]
-    [SerializeField] float _volume = 0.5f;
+    [SerializeField] private float _volume = 0.5f;
 
     public AudioSource CurrentSource => _sources[_index];
     public AudioSource PreviousSource => _sources[1 - _index];
 
-    Percentage _percentage;
-    int _index;
+    private Percentage _percentage;
+    private int _index;
 
-    protected override void Awake()
+    private void Awake()
     {
-        base.Awake();
         _percentage = new Percentage(this);
         _percentage.OnUpdated += Set;
     }
 
-    void OnDestroy() => _percentage.OnUpdated -= Set;
+    private void OnDestroy()
+    {
+        _percentage.OnUpdated -= Set;
+    }
 
 #if UNITY_EDITOR
-    AudioSource[] _previousSources;
+    private AudioSource[] _previousSources;
 
-    void OnValidate()
+    private void OnValidate()
     {
         const int requiredSourcesLength = 2;
-        if (_sources.Length is requiredSourcesLength) _previousSources = _sources.ToArray();
-        else _sources = _previousSources?.ToArray();
+        if (_sources.Length is requiredSourcesLength)
+            _previousSources = _sources.ToArray();
+        else
+            _sources = _previousSources?.ToArray();
     }
 #endif
     public void PlayInstant(AudioClip clip)
@@ -51,16 +54,23 @@ public class Music : Singleton<Music>
         _percentage.Play(duration, StopPreviousSource);
     }
 
-    void UpdateActiveSourceIndex() => _index = 1 - _index;
-    void StopPreviousSource() => PreviousSource.Stop();
+    private void UpdateActiveSourceIndex()
+    {
+        _index = 1 - _index;
+    }
 
-    void SetClipAndPlay(AudioClip clip)
+    private void StopPreviousSource()
+    {
+        PreviousSource.Stop();
+    }
+
+    private void SetClipAndPlay(AudioClip clip)
     {
         CurrentSource.clip = clip;
         CurrentSource.Play();
     }
 
-    void Set(float percentage)
+    private void Set(float percentage)
     {
         CurrentSource.volume = Mathf.Lerp(0, _volume, percentage);
         PreviousSource.volume = Mathf.Lerp(_volume, 0, percentage);
