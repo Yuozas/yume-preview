@@ -55,8 +55,7 @@ public class Talking : IState
 
     private void Return()
     {
-        var type = typeof(Walking);
-        _states.Set(type);
+        _states.Set<Walking>();
     }
 
     private void UnsubscribeFromTalking()
