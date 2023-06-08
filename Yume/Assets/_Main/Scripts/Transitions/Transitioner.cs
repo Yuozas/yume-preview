@@ -1,63 +1,68 @@
-﻿using UnityEngine.SceneManagement;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Collections;
+using UnityEngine;
+using SwiftLocator.Services.ServiceLocatorServices;
+using static UnityEngine.SceneManagement.SceneManager;
 
-public class Transitioner : Singleton<Transitioner>
+public class Transitioner
 {
-    readonly List<TransitionDestination> _destinations = new();
-    IEnumerator _coroutine;
-    Scriptable_TransitionDestination _to;
+    readonly private List<TransitionDestination> _destinations;
+    readonly private CharacterResolver _resolver;
+    readonly private TransitionerAnimation _animation;
+
+    private Scriptable_TransitionDestination _to;
+
+    public Transitioner()
+    {
+        _destinations = new();
+        _resolver = ServiceLocator.GetSingleton<CharacterResolver>();
+        _animation = ServiceLocator.GetSingleton<TransitionerAnimation>();
+    }
 
     public void Transition(Scriptable_TransitionDestination to)
     {
         _to = to;
-        TransitionerAnimation.Instance.ToDefault(ContinueTransition);
+        _animation.ToDefault(Continue);
     }
 
-    void ContinueTransition()
+    private void Continue()
     {
-        var scene = SceneManager.GetActiveScene();
+        var scene = GetActiveScene();
         if (scene.name == _to.Scene)
         {
             TransitionToDestination(_to);
             return;
         }
 
-        Stop();
-
-        _coroutine = Co_LoadScene(_to);
-        StartCoroutine(_coroutine);
+        Load(_to);
     }
 
-    void TransitionToDestination(Scriptable_TransitionDestination to)
+    public void Add(TransitionDestination destination)
     {
-        var transitionable = (ITransitionable)FindObjectOfType<Character>();
+        _destinations.Add(destination);
+    }
+
+    public void Remove(TransitionDestination destination)
+    {
+        _destinations.Remove(destination);
+    }
+
+    private TransitionDestination Get(Scriptable_TransitionDestination to)
+    {
+        return _destinations.First(destination => destination.This == to);
+    }
+
+    private async void Load(Scriptable_TransitionDestination to)
+    {
+        await LoadSceneAsync(to.Scene);
+        TransitionToDestination(to);
+    }
+
+    private void TransitionToDestination(Scriptable_TransitionDestination to)
+    {
+        var transitionable = (ITransitionable)_resolver.Resolve();
         Get(to).Transition(transitionable);
 
-        TransitionerAnimation.Instance.ToClear();
-    }
-
-    void Stop()
-    {
-        if (_coroutine == null) return;
-
-        StopCoroutine(_coroutine);
-        _coroutine = null;
-    }
-
-    public void Add(TransitionDestination destination) => _destinations.Add(destination);
-    public void Remove(TransitionDestination destination) => _destinations.Remove(destination);
-    TransitionDestination Get(Scriptable_TransitionDestination to)
-        => _destinations.First(destination => destination.This == to);
-
-    IEnumerator Co_LoadScene(Scriptable_TransitionDestination to)
-    {
-        var asyncLoad = SceneManager.LoadSceneAsync(to.Scene);
-
-        while (!asyncLoad.isDone)
-            yield return null;
-
-        TransitionToDestination(to);
+        _animation.ToClear();
     }
 }

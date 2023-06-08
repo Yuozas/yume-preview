@@ -1,3 +1,4 @@
+using SwiftLocator.Services.ServiceLocatorServices;
 using UnityEngine;
 
 public class Character : Entity, ITransitionable
@@ -7,10 +8,14 @@ public class Character : Entity, ITransitionable
 
     private States _states;
     private InputActions _input;
+    private CharacterResolver _resolver;
 
     protected override void Awake()
     {
         base.Awake();
+
+        _resolver = ServiceLocator.GetSingleton<CharacterResolver>();
+        _resolver.Set(this);
 
         _input = new InputActions();
 
@@ -28,6 +33,11 @@ public class Character : Entity, ITransitionable
 
         _states = new States(states);
         talking.Set(_states);
+    }
+
+    private void OnDestroy()
+    {
+        _resolver.Remove();
     }
 
     private void OnEnable()
