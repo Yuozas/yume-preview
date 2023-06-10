@@ -2795,6 +2795,7 @@ MonoBehaviour:
   _animator: {fileID: 1087256369}
   _facing: {x: 0, y: -1}
   _rigidbody: {fileID: 993895003}
+  _collider: {fileID: 993895004}
 --- !u!50 &993895003
 Rigidbody2D:
   serializedVersion: 4
@@ -2811,7 +2812,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 6200000, guid: 9ab9133d4e86513498cd010fc950a04e, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2832,7 +2833,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 9ab9133d4e86513498cd010fc950a04e, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

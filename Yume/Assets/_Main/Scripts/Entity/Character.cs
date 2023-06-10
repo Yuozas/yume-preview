@@ -5,6 +5,7 @@ public class Character : Entity, ITransitionable
 {
     [Header("References")]
     [SerializeField] private Rigidbody2D _rigidbody;
+    [SerializeField] private BoxCollider2D _collider;
 
     private States _states;
     private InputActions _input;
@@ -13,6 +14,8 @@ public class Character : Entity, ITransitionable
     protected override void Awake()
     {
         base.Awake();
+
+        CreateAndAssignPhysicsMaterial();
 
         _resolver = ServiceLocator.GetSingleton<InSceneCharacter>();
         _resolver.Set(this);
@@ -62,14 +65,27 @@ public class Character : Entity, ITransitionable
         _states.Tick();
     }
 
+    public void Transition(Vector3 position, Vector2 direction)
+    {
+        transform.position = position;
+        SetDirection(direction);
+    }
+
     private void Set()
     {
         _states.Set<Talking>();
     }
 
-    public void Transition(Vector3 position, Vector2 direction)
+    private void CreateAndAssignPhysicsMaterial()
     {
-        transform.position = position;
-        SetDirection(direction);
+        var name = "Physics";
+        var material = new PhysicsMaterial2D(name)
+        {
+            friction = 0,
+            bounciness = 0
+        };
+
+        _rigidbody.sharedMaterial = material;
+        _collider.sharedMaterial = material;
     }
 }
