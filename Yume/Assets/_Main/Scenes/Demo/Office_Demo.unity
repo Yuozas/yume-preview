@@ -8517,7 +8517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 1757513987}
   _facing: {x: 0, y: -1}
-  _interaction: {fileID: 11400000, guid: a4258bbd18a24964a9a777202eb43cb6, type: 2}
+  _interaction: {fileID: 11400000, guid: f7e688e6bd8b4ee4fa7ba66e293ef7ce, type: 2}
 --- !u!1001 &2145364727
 PrefabInstance:
   m_ObjectHideFlags: 0
