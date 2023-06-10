@@ -78,7 +78,7 @@ public class Character : Entity, ITransitionable
 
     private void CreateAndAssignPhysicsMaterial()
     {
-        var name = "Physics";
+        const string name = "Physics";
         var material = new PhysicsMaterial2D(name)
         {
             friction = 0,
