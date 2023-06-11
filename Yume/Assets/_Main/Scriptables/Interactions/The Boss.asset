@@ -77,7 +77,7 @@ MonoBehaviour:
       data:
         Type: Conversation
         Settings:
-          Name: Mantas
+          Name: Boss
     - rid: 8981177211230355779
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
