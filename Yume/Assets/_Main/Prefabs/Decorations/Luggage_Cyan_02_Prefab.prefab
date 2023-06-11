@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1357492400176790044}
   - component: {fileID: 4394507727418032567}
+  - component: {fileID: 4870977470199563833}
   m_Layer: 0
   m_Name: Luggage_Cyan_02_Prefab
   m_TagString: Untagged
@@ -163,3 +164,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.93761915, y: 0.5628731}
   m_EdgeRadius: 0
+--- !u!114 &4870977470199563833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7539826054339820547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b3872e84bb87f4fa631ae8d048e86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interaction: {fileID: 11400000, guid: a5ad999f5f55ec547a8ced979a0325e0, type: 2}

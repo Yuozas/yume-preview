@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7805495415037093456}
   - component: {fileID: 6153572578180965791}
+  - component: {fileID: -5447303696803036108}
   m_Layer: 0
   m_Name: Shelf_01_Prefab
   m_TagString: Untagged
@@ -79,6 +80,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.875, y: 0.375}
   m_EdgeRadius: 0
+--- !u!114 &-5447303696803036108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389631920664047602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b3872e84bb87f4fa631ae8d048e86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interaction: {fileID: 11400000, guid: b0e4a24e3795bef4081bc973d0c6e5b3, type: 2}
 --- !u!1 &2418221272553552798
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6185767833354542128}
   - component: {fileID: 3414034858527811497}
+  - component: {fileID: -7478594106210168702}
   m_Layer: 0
   m_Name: Water_Dispenser_01_Prefab
   m_TagString: Untagged
@@ -79,6 +80,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.8122734, y: 0.3753606}
   m_EdgeRadius: 0
+--- !u!114 &-7478594106210168702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2956807189766532610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b3872e84bb87f4fa631ae8d048e86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interaction: {fileID: 11400000, guid: 9bef3ba07dc725d42b38a7d83ad4c7ac, type: 2}
 --- !u!1 &6772111864569767806
 GameObject:
   m_ObjectHideFlags: 0
