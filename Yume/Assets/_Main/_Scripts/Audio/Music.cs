@@ -54,6 +54,17 @@ public class Music : MonoBehaviour
         _percentage.Begin(duration, StopPreviousSource);
     }
 
+    public void Play(MusicClipSettings settings)
+    {
+        if(settings.CrossFadeDuration <= Mathf.Epsilon)
+        {
+            PlayInstant(settings.Clip);
+            return;
+        }
+
+        Play(settings.Clip, settings.CrossFadeDuration);
+    }
+
     private void UpdateActiveSourceIndex()
     {
         _index = 1 - _index;
