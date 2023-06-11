@@ -14,6 +14,7 @@
             INode.EXIT => BuildExit(),
             INode.ENABLE => BuildEnable(),
             INode.DISABLE => BuildDisable(),
+            INode.MUSIC => BuildMusic(),
             INode.PORTRAIT => BuildPortrait(),
             INode.NAME => BuildName(),
             INode.TYPEWRITER => BuildTypewriter(),
@@ -39,6 +40,12 @@
     {
         var command = new EnableDialogueTogglerCommand(_type);
         return new CompositeNode(INode.ENABLE, false, command);
+    }
+
+    public INode BuildMusic()
+    {
+        var command = new PlayMusicClipCommand();
+        return new CompositeNode(INode.MUSIC, false, command);
     }
 
     public INode BuildDisable()

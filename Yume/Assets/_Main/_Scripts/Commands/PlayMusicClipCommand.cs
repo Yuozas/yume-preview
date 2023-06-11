@@ -5,16 +5,16 @@ using UnityEngine;
 [Serializable]
 public class PlayMusicClipCommand : ICommand
 {
-    [SerializeField] private MusicClipSettings _settings;
+    [SerializeField] public MusicClipSettings Settings;
 
-    public PlayMusicClipCommand(MusicClipSettings settings)
+    public PlayMusicClipCommand(MusicClipSettings? settings = null)
     {
-        _settings = settings;
+        Settings = settings ?? MusicClipSettings.Default;
     }
 
     public void Execute(Action onFinished = null)
     {
-        ServiceLocator.GetSingleton<Music>().Play(_settings);
+        ServiceLocator.GetSingleton<Music>().Play(Settings);
         onFinished?.Invoke();
     }
 }

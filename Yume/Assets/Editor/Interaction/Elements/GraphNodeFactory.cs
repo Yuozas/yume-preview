@@ -28,6 +28,9 @@ public class GraphNodeFactory
             case INode.PORTRAIT:
                 AddPortraitNodeElements(unity, drawables);
                 break;
+            case INode.MUSIC:
+                AddMusicNodeElements(unity, drawables);
+                break;
             case INode.ENABLE:
                 AddEnableNodeElements(unity, drawables);
                 break;
@@ -42,6 +45,27 @@ public class GraphNodeFactory
         var array = drawables.ToArray();
         var node = new GraphNode(unity, array);
         return node;
+    }
+
+    private static void AddMusicNodeElements(UnityNode unity, List<IDrawable> drawables)
+    {
+        var executable = (PlayMusicClipCommand)unity.Node.Executable;
+
+        var floatField = new FloatField("Cross Fade Duration")
+        {
+            value = executable.Settings.CrossFadeDuration
+        };
+        floatField.RegisterValueChangedCallback(callback =>
+            executable.Settings = new MusicClipSettings(executable.Settings.Clip, callback.newValue)
+        );
+
+        var clipField = CreateField("Music", executable.Settings.Clip);
+        clipField.RegisterValueChangedCallback(callback =>
+            executable.Settings = new MusicClipSettings(callback.newValue as AudioClip, executable.Settings.CrossFadeDuration)
+        );
+
+        var extension = new DrawableExtensionContainer(floatField, clipField);
+        drawables.Add(extension);
     }
 
     private static void AddSingularInputPortContainer(List<IDrawable> drawables)
@@ -147,7 +171,7 @@ public class GraphNodeFactory
     {
         return new ObjectField(name)
         {
-            objectType = value.GetType(),
+            objectType = typeof(T),
             allowSceneObjects = false,
             value = value
         };
