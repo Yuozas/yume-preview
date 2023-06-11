@@ -37,11 +37,8 @@ public class Initializer : IPreliminarySetup
             return instantiated;
         });
 
-        ServiceLocator.SingletonRegistrator.Register(provider =>
-        {
-            var prefab = Resources.Load<Music>("Music");
-            var instantiated = Instantiator.InstantiateAndDontDestroy(prefab);
-            return instantiated;
-        });
+        var prefab = Resources.Load<Music>("Music");
+        var instantiated = Instantiator.InstantiateAndDontDestroy(prefab);
+        ServiceLocator.SingletonRegistrator.Register(instantiated);
     }
 }
