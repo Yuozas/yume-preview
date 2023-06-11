@@ -23,8 +23,8 @@ public class Walking : IState
         _walking.Enable();
 
         _walking.Interact.performed += Interact;
-        _walking.Movement.performed += Move;
-        _walking.Movement.canceled += Move;
+        _walking.Movement.performed += SetAxis;
+        _walking.Movement.canceled += SetAxis;
     }
 
     public void Exit()
@@ -32,8 +32,10 @@ public class Walking : IState
         _walking.Disable();
 
         _walking.Interact.performed -= Interact;
-        _walking.Movement.performed -= Move;
-        _walking.Movement.canceled -= Move;
+        _walking.Movement.performed -= SetAxis;
+        _walking.Movement.canceled -= SetAxis;
+
+        _movement.Stop();
     }
 
     public void Tick()
@@ -46,7 +48,7 @@ public class Walking : IState
         _interaction.TryInteract(_movement.Position, _direction.Axis, Interactor.DEFAULT_INTERACTION_DISTANCE);
     }
 
-    private void Move(InputAction.CallbackContext context)
+    private void SetAxis(InputAction.CallbackContext context)
     {
         var axis = context.ReadValue<Vector2>();
         _movement.Set(axis);
