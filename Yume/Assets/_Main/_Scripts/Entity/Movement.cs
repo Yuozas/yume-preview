@@ -3,12 +3,14 @@ using Euphelia;
 
 public class Movement
 {
-    public const float DEFAULT_MOVEMENT_SPEED = 5f;
+    public const float DEFAULT_SPEED = 5f;
     public Vector2 Position => _rigidbody.transform.position;
 
     private readonly Rigidbody2D _rigidbody;
     private readonly Animations _animations;
     private readonly Direction _direction;
+
+    private Vector2 _axis;
 
     public Movement(Rigidbody2D rigidbody, Animations animations, Direction direction)
     {
@@ -17,14 +19,19 @@ public class Movement
         _direction = direction;
     }
 
-    public void Tick(Vector2 direction, float speed)
+    public void Set(Vector2 axis)
     {
-        var velocity = direction.normalized * speed;
+        _axis = axis;
+    }
+
+    public void Tick(float speed)
+    {
+        var velocity = _axis.normalized * speed;
         _rigidbody.velocity = velocity;
 
         var magnitude = velocity.magnitude;
         if (magnitude >= Mathf.Epsilon)
-            _direction.Set(direction.normalized);
+            _direction.Set(_axis.normalized);
 
         _animations.SetMagnitude(magnitude);
     }
