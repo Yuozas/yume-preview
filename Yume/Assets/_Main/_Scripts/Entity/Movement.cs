@@ -24,6 +24,12 @@ public class Movement
         _axis = axis;
     }
 
+    public void Stop()
+    {
+        Set(Vector2.zero);
+        Tick(DEFAULT_SPEED);
+    }
+
     public void Tick(float speed)
     {
         var velocity = _axis.normalized * speed;
