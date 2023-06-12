@@ -28,6 +28,8 @@ MonoBehaviour:
   - rid: 8981177242252476578
   - rid: 8981177242252476581
   - rid: 8981177264092741677
+  - rid: 8981177380004430001
+  - rid: 8981177380004430003
   references:
     version: 2
     RefIds:
@@ -340,3 +342,29 @@ MonoBehaviour:
       type: {class: DisableDialogueTogglerCommand, ns: , asm: Assembly-CSharp}
       data:
         Type: Conversation
+    - rid: 8981177380004430001
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: -2
+        Position: {x: 409, y: 166}
+    - rid: 8981177380004430003
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177380004430004
+        Position: {x: 303, y: 212}
+    - rid: 8981177380004430004
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Music
+        <Connections>k__BackingField: []
+        <Executable>k__BackingField:
+          rid: 8981177380004430005
+        _wait: 0
+    - rid: 8981177380004430005
+      type: {class: PlayMusicClipCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Settings:
+          Clip: {fileID: 0}
+          CrossFadeDuration: 1

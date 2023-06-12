@@ -21,6 +21,8 @@ MonoBehaviour:
   - rid: 8981177242252476554
   - rid: 8981177242252476581
   - rid: 8981177264092741677
+  - rid: 8981177380004430024
+  - rid: 8981177380004430033
   references:
     version: 2
     RefIds:
@@ -41,6 +43,7 @@ MonoBehaviour:
         - rid: 8981177211230355773
         - rid: 8981177211230355793
         - rid: 8981177242252476555
+        - rid: 8981177380004430025
         <Executable>k__BackingField:
           rid: -2
         _wait: 0
@@ -49,7 +52,7 @@ MonoBehaviour:
       data:
         <Node>k__BackingField:
           rid: 8981177211230355748
-        Position: {x: 728.81537, y: 170}
+        Position: {x: 729, y: 265}
     - rid: 8981177211230355748
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
@@ -155,6 +158,7 @@ MonoBehaviour:
         <Connections>k__BackingField:
         - rid: 8981177211230355748
         - rid: 8981177264092741678
+        - rid: 8981177380004430034
         <Executable>k__BackingField:
           rid: 8981177242252476583
         _wait: 1
@@ -170,7 +174,7 @@ MonoBehaviour:
       data:
         <Node>k__BackingField:
           rid: 8981177264092741678
-        Position: {x: 728.81537, y: -92}
+        Position: {x: 729, y: 58}
     - rid: 8981177264092741678
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
@@ -183,3 +187,43 @@ MonoBehaviour:
       type: {class: DisableDialogueTogglerCommand, ns: , asm: Assembly-CSharp}
       data:
         Type: Conversation
+    - rid: 8981177380004430024
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177380004430025
+        Position: {x: -38, y: -438.7177}
+    - rid: 8981177380004430025
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Music
+        <Connections>k__BackingField: []
+        <Executable>k__BackingField:
+          rid: 8981177380004430026
+        _wait: 0
+    - rid: 8981177380004430026
+      type: {class: PlayMusicClipCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Settings:
+          Clip: {fileID: 8300000, guid: 1c4abe749aba59346a5490bc0d005758, type: 3}
+          CrossFadeDuration: 0.1
+    - rid: 8981177380004430033
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177380004430034
+        Position: {x: 729, y: -91.999985}
+    - rid: 8981177380004430034
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Music
+        <Connections>k__BackingField: []
+        <Executable>k__BackingField:
+          rid: 8981177380004430035
+        _wait: 0
+    - rid: 8981177380004430035
+      type: {class: PlayMusicClipCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Settings:
+          Clip: {fileID: 8300000, guid: e184037b817c8d246af5c91f58708606, type: 3}
+          CrossFadeDuration: 1

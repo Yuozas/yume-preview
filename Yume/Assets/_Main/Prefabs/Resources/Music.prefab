@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5951241211033357832
 MonoBehaviour:
@@ -63,11 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65218b70e1c8af346a44ce51816275fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _music: {fileID: 5951241211033357832}
-  _clips:
-  - {fileID: 8300000, guid: 8fff5bc15cac769468c6d47785e50e60, type: 3}
-  - {fileID: 8300000, guid: a742d278309ea65488064a8931bdadef, type: 3}
-  _switch: 1
+  _clip: {fileID: 8300000, guid: e184037b817c8d246af5c91f58708606, type: 3}
 --- !u!82 &4684659871465010691
 AudioSource:
   m_ObjectHideFlags: 0
