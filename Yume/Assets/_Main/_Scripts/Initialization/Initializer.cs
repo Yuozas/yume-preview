@@ -41,5 +41,10 @@ public class Initializer : IPreliminarySetup
             var prefab = Resources.Load<Music>("Music");
             return Instantiator.InstantiateAndDontDestroy(prefab);
         });
+
+        ServiceLocator.SingletonRegistrator.Register(provider => {
+            var prefab = Resources.Load<Sfx>("Sfx");
+            return Instantiator.InstantiateAndDontDestroy(prefab);
+        });
     }
 }

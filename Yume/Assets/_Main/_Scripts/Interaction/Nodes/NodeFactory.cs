@@ -15,6 +15,7 @@
             INode.ENABLE => BuildEnable(),
             INode.DISABLE => BuildDisable(),
             INode.MUSIC => BuildMusic(),
+            INode.SFX => BuildSfx(),
             INode.PORTRAIT => BuildPortrait(),
             INode.NAME => BuildName(),
             INode.TYPEWRITER => BuildTypewriter(),
@@ -46,6 +47,12 @@
     {
         var command = new PlayMusicClipCommand();
         return new CompositeNode(INode.MUSIC, false, command);
+    }
+
+    public INode BuildSfx()
+    {
+        var command = new PlaySfxClipCommand();
+        return new CompositeNode(INode.SFX, false, command);
     }
 
     public INode BuildDisable()
