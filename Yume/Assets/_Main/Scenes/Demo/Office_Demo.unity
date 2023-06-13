@@ -3469,6 +3469,9 @@ MonoBehaviour:
   _facing: {x: 0, y: -1}
   _rigidbody: {fileID: 993895003}
   _collider: {fileID: 993895004}
+  _layers:
+    serializedVersion: 2
+    m_Bits: 55
 --- !u!50 &993895003
 Rigidbody2D:
   serializedVersion: 4
@@ -4542,7 +4545,7 @@ GameObject:
   - component: {fileID: 1273756381}
   - component: {fileID: 1273756380}
   - component: {fileID: 1273756379}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9121,7 +9124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 488700370201202975, guid: 6c8f7fac4dba17140947ac4682213891, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 488700370201202975, guid: 6c8f7fac4dba17140947ac4682213891, type: 3}
       propertyPath: m_LocalPosition.z
