@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,5 +10,29 @@ public static class ArrayExtensions
     public static bool IsNullOrEmpty<T>(this IEnumerable<T> array)
     {
         return array == null || !array.Any();
+    }
+
+    public static TResult? SelectFirstValid<TSource, TResult>(this IEnumerable<TSource> source,
+        Func<TSource, TResult?> selector) where TResult : struct
+    {
+        foreach (var item in source)
+        {
+            var result = selector(item);
+            if (result is not null)
+                return result;
+        }
+        return null;
+    }
+
+    public static TResult SelectFirstValid<TSource, TResult>(this IEnumerable<TSource> source,
+        Func<TSource, TResult> selector) where TResult : class
+    {
+        foreach (var item in source)
+        {
+            var result = selector(item);
+            if (result is not null)
+                return result;
+        }
+        return null;
     }
 }
