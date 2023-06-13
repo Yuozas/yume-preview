@@ -18,7 +18,6 @@ MonoBehaviour:
   - rid: 8981177211230355792
   - rid: 8981177242252476554
   - rid: 8981177264092741677
-  - rid: 8981177366639542451
   - rid: 8981177420305924159
   - rid: 8981177420305924162
   references:
@@ -87,7 +86,8 @@ MonoBehaviour:
       data:
         <Type>k__BackingField: Typewriter
         <Connections>k__BackingField:
-        - rid: 8981177366639542452
+        - rid: 8981177264092741678
+        - rid: 8981177211230355748
         <Executable>k__BackingField:
           rid: 8981177242252476556
         _wait: 1
@@ -96,7 +96,7 @@ MonoBehaviour:
       data:
         Type: Conversation
         Settings:
-          Sentence: Hey! Don't touch that!
+          Sentence: Don't touch that!
           Rate: 0.036
     - rid: 8981177264092741677
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
@@ -116,29 +116,6 @@ MonoBehaviour:
       type: {class: DisableDialogueTogglerCommand, ns: , asm: Assembly-CSharp}
       data:
         Type: Conversation
-    - rid: 8981177366639542451
-      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
-      data:
-        <Node>k__BackingField:
-          rid: 8981177366639542452
-        Position: {x: 246.60005, y: 265.00006}
-    - rid: 8981177366639542452
-      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
-      data:
-        <Type>k__BackingField: Typewriter
-        <Connections>k__BackingField:
-        - rid: 8981177264092741678
-        - rid: 8981177211230355748
-        <Executable>k__BackingField:
-          rid: 8981177366639542453
-        _wait: 1
-    - rid: 8981177366639542453
-      type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
-      data:
-        Type: Conversation
-        Settings:
-          Sentence: That costs more than your yearly income!
-          Rate: 0.036
     - rid: 8981177420305924159
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:

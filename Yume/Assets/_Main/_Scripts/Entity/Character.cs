@@ -23,7 +23,7 @@ public class Character : Entity, ITransitionable
         _input = new InputActions();
 
         var movement = new Movement(_rigidbody, _animations, _direction);
-        var interaction = new Interactor();
+        var interaction = new MultipleInteractor();
 
         Physics2D.queriesStartInColliders = false;
 
