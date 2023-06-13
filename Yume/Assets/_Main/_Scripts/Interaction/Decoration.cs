@@ -5,9 +5,13 @@ public class Decoration : MonoBehaviour, IInteractable
     [Header("References")]
     [SerializeField] private Interaction _interaction;
 
+    public bool Can()
+    {
+        return _interaction is not null;
+    }
+
     public void Interact()
     {
-        if(_interaction != null)
-            _interaction.Interact();
+        _interaction.Interact();
     }
 }
