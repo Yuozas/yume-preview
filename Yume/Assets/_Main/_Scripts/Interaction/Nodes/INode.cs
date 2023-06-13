@@ -12,6 +12,7 @@ public interface INode
     public const string NAME = "Name";
     public const string TYPEWRITER = "Typewriter";
     public const string EXIT = "Exit";
+    public const string SFX = "Sfx";
 
     List<INode> Connections { get; }
     ICommand Executable { get; }

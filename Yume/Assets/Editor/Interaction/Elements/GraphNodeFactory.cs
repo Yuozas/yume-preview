@@ -37,6 +37,9 @@ public class GraphNodeFactory
             case INode.DISABLE:
                 AddDisableNodeElements(unity, drawables);
                 break;
+            case INode.SFX:
+                AddSfxNodeElements(unity, drawables);
+                break;
         }
 
         if (unity.Type != INode.ENTRY)
@@ -65,6 +68,19 @@ public class GraphNodeFactory
         );
 
         var extension = new DrawableExtensionContainer(floatField, clipField);
+        drawables.Add(extension);
+    }
+
+    private static void AddSfxNodeElements(UnityNode unity, List<IDrawable> drawables)
+    {
+        var executable = (PlaySfxClipCommand)unity.Node.Executable;
+
+        var clipField = CreateField("Sfx", executable.Settings.Clip);
+        clipField.RegisterValueChangedCallback(callback =>
+            executable.Settings = new SfxClipSettings(callback.newValue as AudioClip)
+        );
+
+        var extension = new DrawableExtensionContainer(clipField);
         drawables.Add(extension);
     }
 
