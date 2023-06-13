@@ -24,6 +24,14 @@ MonoBehaviour:
   - rid: 8981177380004430024
   - rid: 8981177380004430033
   - rid: 8981177420305924119
+  - rid: 8981177420305924219
+  - rid: 8981177420305924222
+  - rid: 8981177420305924225
+  - rid: 8981177420305924235
+  - rid: 8981177420305924238
+  - rid: 8981177420305924241
+  - rid: 8981177420305924244
+  - rid: 8981177420305924255
   references:
     version: 2
     RefIds:
@@ -53,7 +61,7 @@ MonoBehaviour:
       data:
         <Node>k__BackingField:
           rid: 8981177211230355748
-        Position: {x: 729, y: 265}
+        Position: {x: 2575, y: 154}
     - rid: 8981177211230355748
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
@@ -133,7 +141,6 @@ MonoBehaviour:
         <Type>k__BackingField: Typewriter
         <Connections>k__BackingField:
         - rid: 8981177242252476582
-        - rid: 8981177420305924120
         <Executable>k__BackingField:
           rid: 8981177242252476556
         _wait: 1
@@ -142,25 +149,20 @@ MonoBehaviour:
       data:
         Type: Conversation
         Settings:
-          Sentence: 'What are you doing here? I hope you
-
-            didn''t come
-            here for a raise...'
+          Sentence: Well, well, well...
           Rate: 0.036
     - rid: 8981177242252476581
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
         <Node>k__BackingField:
           rid: 8981177242252476582
-        Position: {x: 316.70004, y: 265.00006}
+        Position: {x: 303.00797, y: 265}
     - rid: 8981177242252476582
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
         <Type>k__BackingField: Typewriter
         <Connections>k__BackingField:
-        - rid: 8981177211230355748
-        - rid: 8981177264092741678
-        - rid: 8981177380004430034
+        - rid: 8981177420305924220
         <Executable>k__BackingField:
           rid: 8981177242252476583
         _wait: 1
@@ -169,14 +171,14 @@ MonoBehaviour:
       data:
         Type: Conversation
         Settings:
-          Sentence: You know... I ain't swimming in money.
+          Sentence: If it isn't my favourite employee!
           Rate: 0.036
     - rid: 8981177264092741677
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
         <Node>k__BackingField:
           rid: 8981177264092741678
-        Position: {x: 729, y: 58}
+        Position: {x: 2574.6074, y: 37.70999}
     - rid: 8981177264092741678
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
@@ -214,7 +216,7 @@ MonoBehaviour:
       data:
         <Node>k__BackingField:
           rid: 8981177380004430034
-        Position: {x: 729, y: -91.999985}
+        Position: {x: 2574.6074, y: -97.29002}
     - rid: 8981177380004430034
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
@@ -234,7 +236,7 @@ MonoBehaviour:
       data:
         <Node>k__BackingField:
           rid: 8981177420305924120
-        Position: {x: 317, y: 76.99991}
+        Position: {x: 1113, y: 119}
     - rid: 8981177420305924120
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
@@ -248,3 +250,185 @@ MonoBehaviour:
       data:
         Settings:
           Clip: {fileID: 8300000, guid: 3470424e6b240994381f438269a7b407, type: 3}
+    - rid: 8981177420305924219
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177420305924220
+        Position: {x: 569.5, y: 264.99997}
+    - rid: 8981177420305924220
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Typewriter
+        <Connections>k__BackingField:
+        - rid: 8981177420305924223
+        <Executable>k__BackingField:
+          rid: 8981177420305924221
+        _wait: 1
+    - rid: 8981177420305924221
+      type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+        Settings:
+          Sentence: To what do I owe the honor?
+          Rate: 0.036
+    - rid: 8981177420305924222
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177420305924223
+        Position: {x: 841, y: 264.99997}
+    - rid: 8981177420305924223
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Typewriter
+        <Connections>k__BackingField:
+        - rid: 8981177420305924226
+        - rid: 8981177420305924120
+        <Executable>k__BackingField:
+          rid: 8981177420305924224
+        _wait: 1
+    - rid: 8981177420305924224
+      type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+        Settings:
+          Sentence: Did you say you want a raise?
+          Rate: 0.036
+    - rid: 8981177420305924225
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177420305924226
+        Position: {x: 1113.4333, y: 264.99997}
+    - rid: 8981177420305924226
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Typewriter
+        <Connections>k__BackingField:
+        - rid: 8981177420305924236
+        <Executable>k__BackingField:
+          rid: 8981177420305924227
+        _wait: 1
+    - rid: 8981177420305924227
+      type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+        Settings:
+          Sentence: Hahahahahahaha!
+          Rate: 0.036
+    - rid: 8981177420305924235
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177420305924236
+        Position: {x: 1402.8116, y: 264.99997}
+    - rid: 8981177420305924236
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Typewriter
+        <Connections>k__BackingField:
+        - rid: 8981177420305924239
+        <Executable>k__BackingField:
+          rid: 8981177420305924237
+        _wait: 1
+    - rid: 8981177420305924237
+      type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+        Settings:
+          Sentence: 'That''s why I like you so much. You always
+
+            brighten
+            the mood with your jokes!'
+          Rate: 0.036
+    - rid: 8981177420305924238
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177420305924239
+        Position: {x: 1687.4783, y: 265}
+    - rid: 8981177420305924239
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Typewriter
+        <Connections>k__BackingField:
+        - rid: 8981177420305924242
+        - rid: 8981177420305924245
+        <Executable>k__BackingField:
+          rid: 8981177420305924240
+        _wait: 1
+    - rid: 8981177420305924240
+      type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+        Settings:
+          Sentence: Wait, you weren't joking?
+          Rate: 0.036
+    - rid: 8981177420305924241
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177420305924242
+        Position: {x: 1963.935, y: 265}
+    - rid: 8981177420305924242
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Typewriter
+        <Connections>k__BackingField:
+        - rid: 8981177420305924256
+        <Executable>k__BackingField:
+          rid: 8981177420305924243
+        _wait: 1
+    - rid: 8981177420305924243
+      type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+        Settings:
+          Sentence: Hahahahahahaha!
+          Rate: 0.036
+    - rid: 8981177420305924244
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177420305924245
+        Position: {x: 1964, y: 118}
+    - rid: 8981177420305924245
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Sfx
+        <Connections>k__BackingField: []
+        <Executable>k__BackingField:
+          rid: 8981177420305924246
+        _wait: 0
+    - rid: 8981177420305924246
+      type: {class: PlaySfxClipCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Settings:
+          Clip: {fileID: 8300000, guid: 3470424e6b240994381f438269a7b407, type: 3}
+    - rid: 8981177420305924255
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177420305924256
+        Position: {x: 2245, y: 265.00006}
+    - rid: 8981177420305924256
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Typewriter
+        <Connections>k__BackingField:
+        - rid: 8981177380004430034
+        - rid: 8981177264092741678
+        - rid: 8981177211230355748
+        <Executable>k__BackingField:
+          rid: 8981177420305924257
+        _wait: 1
+    - rid: 8981177420305924257
+      type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+        Settings:
+          Sentence: 'Can''t do! Does it look like i''m swimming in
+
+            money?'
+          Rate: 0.036
