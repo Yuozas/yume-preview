@@ -1,5 +1,6 @@
 using SwiftLocator.Services.ServiceLocatorServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class MainMenuUserInterface : MonoBehaviour
@@ -30,9 +31,7 @@ public class MainMenuUserInterface : MonoBehaviour
 
     private void TriggerNewGame()
     {
-        //var saveManager = ServiceLocator.SingletonProvider.Get<ISaveManager>();
-        //saveManager.DeleteAllSaves();
-        //SceneLoader.Load(SceneLoader.SceneName.Game);
+        SceneManager.LoadScene(SceneData.NewGameSceneName, LoadSceneMode.Single);
     }
 
     private void SetupContinueButton()
@@ -52,7 +51,7 @@ public class MainMenuUserInterface : MonoBehaviour
 
     private void TriggerContinue()
     {
-        //await SceneManager.LoadSceneAsync();
+        SceneManager.LoadScene(SceneData.ContinueSceneName, LoadSceneMode.Single);
     }
 
     private void SetupSettingsButton()
@@ -63,7 +62,7 @@ public class MainMenuUserInterface : MonoBehaviour
 
     private void TriggerSettings()
     {
-        //SceneLoader.Load(SceneLoader.SceneName.Options);
+        SceneManager.LoadScene(SceneData.SettingsSceneName, LoadSceneMode.Single);
     }
 
     private void SetupQuitGameButton()

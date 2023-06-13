@@ -1,0 +1,21 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Main/UI/Main%20Menu/New%20Game/New%20Game%20Style.uss?fileID=7433441132597879392&amp;guid=aa89414aa92bf224d8ccbf1727d87ade&amp;type=3#New Game Style" />
+    <ui:VisualElement name="Body" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+        <ui:VisualElement name="GameStartContainer" class="game-start-container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+            <ui:Button text="Mantas" display-tooltip-when-elided="true" name="StartButton" class="left-container" />
+            <ui:Button text="Aura" display-tooltip-when-elided="true" name="StartButton" class="right-container" />
+        </ui:VisualElement>
+        <ui:VisualElement name="BackToMenuContainer" class="back-to-menu-container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+            <ui:Button text="&lt; Menu" display-tooltip-when-elided="true" name="BackToMenuButton" />
+        </ui:VisualElement>
+        <ui:VisualElement name="ConfirmStartContainer" class="confirm-start-container hidden">
+            <ui:VisualElement name="ConfirmationDialog" class="confirmation-dialog">
+                <ui:Label tabindex="-1" text="Start Game" display-tooltip-when-elided="true" />
+                <ui:VisualElement name="ConfirmationButtonContainer" class="unity-button-container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+                    <ui:Button text="Yes" display-tooltip-when-elided="true" name="ConfirmStartButton" class="unity-button" />
+                    <ui:Button text="No" display-tooltip-when-elided="true" name="CancelStartButton" class="unity-button" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
