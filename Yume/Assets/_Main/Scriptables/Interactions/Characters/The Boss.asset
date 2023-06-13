@@ -23,6 +23,7 @@ MonoBehaviour:
   - rid: 8981177264092741677
   - rid: 8981177380004430024
   - rid: 8981177380004430033
+  - rid: 8981177420305924119
   references:
     version: 2
     RefIds:
@@ -132,6 +133,7 @@ MonoBehaviour:
         <Type>k__BackingField: Typewriter
         <Connections>k__BackingField:
         - rid: 8981177242252476582
+        - rid: 8981177420305924120
         <Executable>k__BackingField:
           rid: 8981177242252476556
         _wait: 1
@@ -227,3 +229,22 @@ MonoBehaviour:
         Settings:
           Clip: {fileID: 8300000, guid: e184037b817c8d246af5c91f58708606, type: 3}
           CrossFadeDuration: 1
+    - rid: 8981177420305924119
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177420305924120
+        Position: {x: 317, y: 76.99991}
+    - rid: 8981177420305924120
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Sfx
+        <Connections>k__BackingField: []
+        <Executable>k__BackingField:
+          rid: 8981177420305924121
+        _wait: 0
+    - rid: 8981177420305924121
+      type: {class: PlaySfxClipCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Settings:
+          Clip: {fileID: 8300000, guid: 3470424e6b240994381f438269a7b407, type: 3}
