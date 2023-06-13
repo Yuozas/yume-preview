@@ -46,8 +46,5 @@ public class Initializer : IPreliminarySetup
             var prefab = Resources.Load<Sfx>("Sfx");
             return Instantiator.InstantiateAndDontDestroy(prefab);
         });
-
-        var prefab = Resources.Load<DialoguesUserInterface>("DialoguesUserInterface");
-        Instantiator.InstantiateAndDontDestroy(prefab);
     }
 }
