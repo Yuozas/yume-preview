@@ -1,5 +1,5 @@
 ﻿public interface IInteractable
 {
-    bool Can();
+    bool CanInteract();
     void Interact();
 }

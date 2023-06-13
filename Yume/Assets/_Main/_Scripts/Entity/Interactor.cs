@@ -10,7 +10,7 @@ public class Interactor : IInteractor
         if (!found)
             return false;
 
-        var can = interactable.Can();
+        var can = interactable.CanInteract();
         if (!can)
             return false;
 

@@ -5,7 +5,7 @@ public class Npc : Entity, IInteractable
     [Header("References")]
     [SerializeField] private Interaction _interaction;
 
-    public bool Can()
+    public bool CanInteract()
     {
         return _interaction is not null;
     }

@@ -9,15 +9,13 @@ public class MultipleInteractor : IInteractor
         var ordered = hits
             .OrderBy(hit => hit.distance)
             .Select(hit => hit.collider.GetComponent<IInteractable>())
-            .Where(interactable => interactable is not null && interactable.Can())
+            .Where(interactable => interactable is not null && interactable.CanInteract())
             .FirstOrDefault();
 
-        if(ordered is not null)
-        {
-            ordered.Interact();
-            return true;
-        }
+        if(ordered is null)
+            return false;
 
-        return false;
+        ordered.Interact();
+        return true;
     }
 }
