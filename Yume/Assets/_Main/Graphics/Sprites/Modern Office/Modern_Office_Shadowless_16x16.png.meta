@@ -2943,8 +2943,8 @@ TextureImporter:
         y: 656
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2964,8 +2964,8 @@ TextureImporter:
         y: 656
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3524,15 +3524,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_Office_Shadowless_16x16_198
+      name: Paper_04
       rect:
         serializedVersion: 2
         x: 0
         y: 592
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3902,7 +3902,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_Office_Shadowless_16x16_237
+      name: Sofa_01
       rect:
         serializedVersion: 2
         x: 0
@@ -4595,15 +4595,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_Office_Shadowless_16x16_335
+      name: Table_02
       rect:
         serializedVersion: 2
         x: 224
         y: 464
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.75}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6464,15 +6464,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_Office_Shadowless_16x16_529
+      name: Printer_Table_04
       rect:
         serializedVersion: 2
         x: 224
         y: 208
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6548,15 +6548,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Coffee_Table_01
+      name: Coffee_Table_Top_01
       rect:
         serializedVersion: 2
         x: 128
-        y: 192
+        y: 208
         width: 32
-        height: 48
+        height: 32
       alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6569,15 +6569,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Coffee_Table_02
+      name: Coffee_Table_Top_02
       rect:
         serializedVersion: 2
         x: 160
-        y: 192
+        y: 208
         width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6590,15 +6590,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Coffee_Table_03
+      name: Coffee_Table_Top_03
       rect:
         serializedVersion: 2
         x: 192
-        y: 192
+        y: 208
         width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6702,8 +6702,8 @@ TextureImporter:
         y: 160
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6716,15 +6716,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_Office_Shadowless_16x16_548
+      name: Printer_Table_05
       rect:
         serializedVersion: 2
         x: 224
         y: 176
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6807,8 +6807,8 @@ TextureImporter:
         y: 160
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6828,8 +6828,8 @@ TextureImporter:
         y: 160
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6968,15 +6968,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_Office_Shadowless_16x16_568
+      name: Printer_Table_06
       rect:
         serializedVersion: 2
         x: 224
         y: 144
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -8543,15 +8543,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_Office_Shadowless_16x16_83
+      name: Table_03_01
       rect:
         serializedVersion: 2
         x: 160
         y: 368
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -8564,7 +8564,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_Office_Shadowless_16x16_84
+      name: Table_03_02
       rect:
         serializedVersion: 2
         x: 176
@@ -8585,15 +8585,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_Office_Shadowless_16x16_95
+      name: Table_03_03
       rect:
         serializedVersion: 2
         x: 192
         y: 368
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -8626,6 +8626,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Table_Bottom_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 32
+        height: 16
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76b831be770a8b94b9453e259720eeed
+      internalID: -526049054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Table_Bottom_02
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 192
+        width: 32
+        height: 16
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9378eb80259dc84c8dad0b3ce3f0474
+      internalID: 2063823382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Table_Bottom_03
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 32
+        height: 16
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b871d5a2693b0f041909b2f52d955702
+      internalID: 1019822230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -8643,9 +8706,9 @@ TextureImporter:
       Certificate_02: 8333050180183992248
       Certificate_03: -9082939987395605101
       Coffee_Device_01: 1415317547
-      Coffee_Table_01: 994200125
-      Coffee_Table_02: 903734119
-      Coffee_Table_03: -918684661
+      Coffee_Table_Top_01: 994200125
+      Coffee_Table_Top_02: 903734119
+      Coffee_Table_Top_03: -918684661
       Graph_01: -423637415017636708
       Graph_02: -9162488475442917105
       Keyboard_Mouse_01: 737795916
@@ -8723,7 +8786,6 @@ TextureImporter:
       Modern_Office_Shadowless_16x16_195: -1547451183
       Modern_Office_Shadowless_16x16_196: 1720677485
       Modern_Office_Shadowless_16x16_197: -1987513778
-      Modern_Office_Shadowless_16x16_198: 719475832
       Modern_Office_Shadowless_16x16_201: -1291017257
       Modern_Office_Shadowless_16x16_202: 1867365142
       Modern_Office_Shadowless_16x16_203: 779319378
@@ -8754,7 +8816,6 @@ TextureImporter:
       Modern_Office_Shadowless_16x16_234: 2111028287
       Modern_Office_Shadowless_16x16_235: -2062688444
       Modern_Office_Shadowless_16x16_236: -1355962019
-      Modern_Office_Shadowless_16x16_237: 1297788392
       Modern_Office_Shadowless_16x16_238: -835050745
       Modern_Office_Shadowless_16x16_239: -1581610833
       Modern_Office_Shadowless_16x16_24: -4815973738301423793
@@ -8853,7 +8914,6 @@ TextureImporter:
       Modern_Office_Shadowless_16x16_332: 1099114867
       Modern_Office_Shadowless_16x16_333: 360457181
       Modern_Office_Shadowless_16x16_334: 289624930
-      Modern_Office_Shadowless_16x16_335: 492524269
       Modern_Office_Shadowless_16x16_336: -2039000194
       Modern_Office_Shadowless_16x16_337: 684359235
       Modern_Office_Shadowless_16x16_338: -1199979124
@@ -9049,7 +9109,6 @@ TextureImporter:
       Modern_Office_Shadowless_16x16_526: -1569075764
       Modern_Office_Shadowless_16x16_527: 1361079751
       Modern_Office_Shadowless_16x16_528: 323422624
-      Modern_Office_Shadowless_16x16_529: -2146153964
       Modern_Office_Shadowless_16x16_53: 915556970201600917
       Modern_Office_Shadowless_16x16_530: -979049732
       Modern_Office_Shadowless_16x16_531: 914304462
@@ -9066,7 +9125,6 @@ TextureImporter:
       Modern_Office_Shadowless_16x16_544: -188276801
       Modern_Office_Shadowless_16x16_545: 946551657
       Modern_Office_Shadowless_16x16_547: -174729650
-      Modern_Office_Shadowless_16x16_548: -1462444779
       Modern_Office_Shadowless_16x16_549: -94242870
       Modern_Office_Shadowless_16x16_55: 5416058085334265672
       Modern_Office_Shadowless_16x16_550: 2046809772
@@ -9086,7 +9144,6 @@ TextureImporter:
       Modern_Office_Shadowless_16x16_565: -1487762321
       Modern_Office_Shadowless_16x16_566: 647672636
       Modern_Office_Shadowless_16x16_567: 1896712479
-      Modern_Office_Shadowless_16x16_568: -982508614
       Modern_Office_Shadowless_16x16_569: -112639272
       Modern_Office_Shadowless_16x16_57: -3990286741706270778
       Modern_Office_Shadowless_16x16_570: 1285873271
@@ -9191,8 +9248,6 @@ TextureImporter:
       Modern_Office_Shadowless_16x16_80: 7952056763456393936
       Modern_Office_Shadowless_16x16_81: 5934668668143372795
       Modern_Office_Shadowless_16x16_82: -8571178931729717665
-      Modern_Office_Shadowless_16x16_83: 1668968753284192375
-      Modern_Office_Shadowless_16x16_84: 6419126251537263212
       Modern_Office_Shadowless_16x16_85: -5269630249248426751
       Modern_Office_Shadowless_16x16_86: 7508468706635905592
       Modern_Office_Shadowless_16x16_87: -9087445887659676191
@@ -9204,7 +9259,6 @@ TextureImporter:
       Modern_Office_Shadowless_16x16_92: -3773172108261248308
       Modern_Office_Shadowless_16x16_93: -1572300455270676487
       Modern_Office_Shadowless_16x16_94: 6455656474434458402
-      Modern_Office_Shadowless_16x16_95: -4194530086848946030
       Modern_Office_Shadowless_16x16_97: 8257870772122807600
       Modern_Office_Shadowless_16x16_98: 8337799891936050387
       Modern_Office_Shadowless_16x16_99: -1742582041444797252
@@ -9233,6 +9287,7 @@ TextureImporter:
       Paper_01: -1910573004
       Paper_02: -1316059530
       Paper_03: 967679391
+      Paper_04: 719475832
       Paper_Picture: -1168702329
       Phone_01: -764322085
       Phone_02: 3519332355183542019
@@ -9258,8 +9313,12 @@ TextureImporter:
       Printer_Table_01: 1790224007
       Printer_Table_02: -1277065583
       Printer_Table_03: 1202950053
+      Printer_Table_04: -2146153964
+      Printer_Table_05: -1462444779
+      Printer_Table_06: -982508614
       Shelf_01: 261925929
       Shelf_02: -1598249123
+      Sofa_01: 1297788392
       Sofa_Chair_01: -1196357646
       Sofa_Chair_02: 1667107181
       Sofa_Chair_03: 478707998
@@ -9281,6 +9340,13 @@ TextureImporter:
       Table_01_15: 4546929920400434330
       Table_01_16: -2716894637302438144
       Table_01_17: -1054926250685943175
+      Table_02: 492524269
+      Table_03_01: 1668968753284192375
+      Table_03_02: 6419126251537263212
+      Table_03_03: -4194530086848946030
+      Table_Bottom_01: -526049054
+      Table_Bottom_02: 2063823382
+      Table_Bottom_03: 1019822230
       Trash_Bottom: -1719978213
       Trash_Top_01: -4775804647292340396
       Trash_Top_02: 1460285720
