@@ -259,8 +259,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 993895001}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &993895000
 GameObject:
@@ -289,11 +289,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993895000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.45, y: -4.185, z: 0}
+  m_LocalPosition: {x: -6.42, y: -4.185, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1087256367}
+  - {fileID: 519420032}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -939,7 +940,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5718494118451235006, guid: 5ce8b61e4aa25ce45961422f19c918a6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -31
+      value: -45.75
       objectReference: {fileID: 0}
     - target: {fileID: 5718494118451235006, guid: 5ce8b61e4aa25ce45961422f19c918a6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -990,21 +991,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1206924225}
     m_Modifications:
-    - target: {fileID: 591111714525267771, guid: dd9b54a90b3b4794b921c826737f5ca8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 4105982748983927351, guid: dd9b54a90b3b4794b921c826737f5ca8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.5
-      objectReference: {fileID: 0}
     - target: {fileID: 6157909123196346318, guid: dd9b54a90b3b4794b921c826737f5ca8, type: 3}
       propertyPath: m_Name
       value: Office_01
-      objectReference: {fileID: 0}
-    - target: {fileID: 6157909123196346318, guid: dd9b54a90b3b4794b921c826737f5ca8, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9125089593479014645, guid: dd9b54a90b3b4794b921c826737f5ca8, type: 3}
       propertyPath: m_RootOrder

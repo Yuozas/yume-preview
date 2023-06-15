@@ -10,13 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a56a6cac0d1a63b4f9bb1d60b90e0a14, type: 3}
-  m_Name: Soda Machine
+  m_Name: Worker
   m_EditorClassIdentifier: 
   <UnityNodes>k__BackingField:
   - rid: 8981177211230355745
   - rid: 8981177211230355747
+  - rid: 8981177211230355772
+  - rid: 8981177211230355779
   - rid: 8981177211230355792
   - rid: 8981177242252476554
+  - rid: 8981177242252476581
   - rid: 8981177264092741677
   references:
     version: 2
@@ -34,6 +37,8 @@ MonoBehaviour:
       data:
         <Type>k__BackingField: Entry
         <Connections>k__BackingField:
+        - rid: 8981177211230355780
+        - rid: 8981177211230355773
         - rid: 8981177211230355793
         - rid: 8981177242252476555
         <Executable>k__BackingField:
@@ -44,7 +49,7 @@ MonoBehaviour:
       data:
         <Node>k__BackingField:
           rid: 8981177211230355748
-        Position: {x: 638.08716, y: 339}
+        Position: {x: 791.0296, y: 380.99997}
     - rid: 8981177211230355748
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
@@ -53,6 +58,47 @@ MonoBehaviour:
         <Executable>k__BackingField:
           rid: -2
         _wait: 0
+    - rid: 8981177211230355772
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177211230355773
+        Position: {x: -38.000015, y: -92.09249}
+    - rid: 8981177211230355773
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Name
+        <Connections>k__BackingField: []
+        <Executable>k__BackingField:
+          rid: 8981177211230355774
+        _wait: 0
+    - rid: 8981177211230355774
+      type: {class: SetDialogueNameSettingsCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+        Settings:
+          Name: ???
+    - rid: 8981177211230355779
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177211230355780
+        Position: {x: -38.000015, y: -288.2678}
+    - rid: 8981177211230355780
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Portrait
+        <Connections>k__BackingField: []
+        <Executable>k__BackingField:
+          rid: 8981177211230355781
+        _wait: 0
+    - rid: 8981177211230355781
+      type: {class: SetDialoguePortraitSettingsCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+        Settings:
+          Face: {fileID: -1066215805, guid: b991628c5debdb547bf34663838c85c6, type: 3}
+          Hair: {fileID: -1430172774, guid: 3efb46cd92c0ac64290ae7414c688ef0, type: 3}
     - rid: 8981177211230355792
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
@@ -70,7 +116,7 @@ MonoBehaviour:
     - rid: 8981177211230355794
       type: {class: EnableDialogueTogglerCommand, ns: , asm: Assembly-CSharp}
       data:
-        Type: Inspection
+        Type: Conversation
     - rid: 8981177242252476554
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
@@ -82,24 +128,46 @@ MonoBehaviour:
       data:
         <Type>k__BackingField: Typewriter
         <Connections>k__BackingField:
-        - rid: 8981177264092741678
-        - rid: 8981177211230355748
+        - rid: 8981177242252476582
         <Executable>k__BackingField:
           rid: 8981177242252476556
         _wait: 1
     - rid: 8981177242252476556
       type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
       data:
-        Type: Inspection
+        Type: Conversation
         Settings:
-          Sentence: Water, water, water and... water.
+          Sentence: I don't even work here.
+          Rate: 0.036
+    - rid: 8981177242252476581
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177242252476582
+        Position: {x: 303.00797, y: 265}
+    - rid: 8981177242252476582
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Typewriter
+        <Connections>k__BackingField:
+        - rid: 8981177264092741678
+        - rid: 8981177211230355748
+        <Executable>k__BackingField:
+          rid: 8981177242252476583
+        _wait: 1
+    - rid: 8981177242252476583
+      type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+        Settings:
+          Sentence: I come here everyday to steal food and sleep.
           Rate: 0.036
     - rid: 8981177264092741677
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
         <Node>k__BackingField:
           rid: 8981177264092741678
-        Position: {x: 638.08716, y: 77.00001}
+        Position: {x: 791.0296, y: 265}
     - rid: 8981177264092741678
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
@@ -111,4 +179,4 @@ MonoBehaviour:
     - rid: 8981177264092741679
       type: {class: DisableDialogueTogglerCommand, ns: , asm: Assembly-CSharp}
       data:
-        Type: Inspection
+        Type: Conversation

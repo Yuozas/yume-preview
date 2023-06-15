@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a56a6cac0d1a63b4f9bb1d60b90e0a14, type: 3}
-  m_Name: Soda Machine
+  m_Name: Paper
   m_EditorClassIdentifier: 
   <UnityNodes>k__BackingField:
   - rid: 8981177211230355745
@@ -44,7 +44,7 @@ MonoBehaviour:
       data:
         <Node>k__BackingField:
           rid: 8981177211230355748
-        Position: {x: 638.08716, y: 339}
+        Position: {x: 371.89856, y: 339}
     - rid: 8981177211230355748
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
@@ -92,14 +92,14 @@ MonoBehaviour:
       data:
         Type: Inspection
         Settings:
-          Sentence: Water, water, water and... water.
+          Sentence: This is a lot of paper.
           Rate: 0.036
     - rid: 8981177264092741677
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
         <Node>k__BackingField:
           rid: 8981177264092741678
-        Position: {x: 638.08716, y: 77.00001}
+        Position: {x: 371.89856, y: 76.99997}
     - rid: 8981177264092741678
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:

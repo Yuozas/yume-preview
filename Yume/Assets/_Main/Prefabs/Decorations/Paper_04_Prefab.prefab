@@ -32,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 3029800321054363228}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &3289338800779503790
 BoxCollider2D:
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73b3872e84bb87f4fa631ae8d048e86e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interaction: {fileID: 11400000, guid: 9bef3ba07dc725d42b38a7d83ad4c7ac, type: 2}
+  _interaction: {fileID: 11400000, guid: 5d1d733325b6c034096e79c6849b9b20, type: 2}
 --- !u!1 &1409137534789286417
 GameObject:
   m_ObjectHideFlags: 0
