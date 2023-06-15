@@ -1,0 +1,159 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a56a6cac0d1a63b4f9bb1d60b90e0a14, type: 3}
+  m_Name: Monitor
+  m_EditorClassIdentifier: 
+  <UnityNodes>k__BackingField:
+  - rid: 8981177211230355745
+  - rid: 8981177211230355747
+  - rid: 8981177211230355792
+  - rid: 8981177242252476554
+  - rid: 8981177264092741677
+  - rid: 8981177420305924159
+  - rid: 8981177420305924162
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 8981177211230355745
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177211230355746
+        Position: {x: -209.55733, y: 187.99998}
+    - rid: 8981177211230355746
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Entry
+        <Connections>k__BackingField:
+        - rid: 8981177211230355793
+        - rid: 8981177242252476555
+        - rid: 8981177420305924160
+        - rid: 8981177420305924163
+        <Executable>k__BackingField:
+          rid: -2
+        _wait: 0
+    - rid: 8981177211230355747
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177211230355748
+        Position: {x: 597.544, y: 339}
+    - rid: 8981177211230355748
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Exit
+        <Connections>k__BackingField: []
+        <Executable>k__BackingField:
+          rid: -2
+        _wait: 0
+    - rid: 8981177211230355792
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177211230355793
+        Position: {x: -37.999985, y: 77}
+    - rid: 8981177211230355793
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Open
+        <Connections>k__BackingField: []
+        <Executable>k__BackingField:
+          rid: 8981177211230355794
+        _wait: 0
+    - rid: 8981177211230355794
+      type: {class: EnableDialogueTogglerCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+    - rid: 8981177242252476554
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177242252476555
+        Position: {x: -38, y: 265}
+    - rid: 8981177242252476555
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Typewriter
+        <Connections>k__BackingField:
+        - rid: 8981177264092741678
+        - rid: 8981177211230355748
+        <Executable>k__BackingField:
+          rid: 8981177242252476556
+        _wait: 1
+    - rid: 8981177242252476556
+      type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+        Settings:
+          Sentence: Don't touch that!
+          Rate: 0.036
+    - rid: 8981177264092741677
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177264092741678
+        Position: {x: 597.544, y: 77}
+    - rid: 8981177264092741678
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Close
+        <Connections>k__BackingField: []
+        <Executable>k__BackingField:
+          rid: 8981177264092741679
+        _wait: 0
+    - rid: 8981177264092741679
+      type: {class: DisableDialogueTogglerCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+    - rid: 8981177420305924159
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177420305924160
+        Position: {x: -38, y: -274.8497}
+    - rid: 8981177420305924160
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Name
+        <Connections>k__BackingField: []
+        <Executable>k__BackingField:
+          rid: 8981177420305924161
+        _wait: 0
+    - rid: 8981177420305924161
+      type: {class: SetDialogueNameSettingsCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+        Settings:
+          Name: Boss
+    - rid: 8981177420305924162
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177420305924163
+        Position: {x: -38, y: -109.7558}
+    - rid: 8981177420305924163
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Portrait
+        <Connections>k__BackingField: []
+        <Executable>k__BackingField:
+          rid: 8981177420305924164
+        _wait: 0
+    - rid: 8981177420305924164
+      type: {class: SetDialoguePortraitSettingsCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+        Settings:
+          Face: {fileID: -1888897924, guid: b991628c5debdb547bf34663838c85c6, type: 3}
+          Hair: {fileID: 1892011019, guid: 3efb46cd92c0ac64290ae7414c688ef0, type: 3}

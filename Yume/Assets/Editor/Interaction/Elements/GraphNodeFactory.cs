@@ -3,6 +3,7 @@ using UnityEngine.UIElements;
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEditor.UIElements;
+using System.Linq;
 
 public class GraphNodeFactory
 {
@@ -27,11 +28,17 @@ public class GraphNodeFactory
             case INode.PORTRAIT:
                 AddPortraitNodeElements(unity, drawables);
                 break;
+            case INode.MUSIC:
+                AddMusicNodeElements(unity, drawables);
+                break;
             case INode.ENABLE:
                 AddEnableNodeElements(unity, drawables);
                 break;
             case INode.DISABLE:
                 AddDisableNodeElements(unity, drawables);
+                break;
+            case INode.SFX:
+                AddSfxNodeElements(unity, drawables);
                 break;
         }
 
@@ -41,6 +48,40 @@ public class GraphNodeFactory
         var array = drawables.ToArray();
         var node = new GraphNode(unity, array);
         return node;
+    }
+
+    private static void AddMusicNodeElements(UnityNode unity, List<IDrawable> drawables)
+    {
+        var executable = (PlayMusicClipCommand)unity.Node.Executable;
+
+        var floatField = new FloatField("Cross Fade Duration")
+        {
+            value = executable.Settings.CrossFadeDuration
+        };
+        floatField.RegisterValueChangedCallback(callback =>
+            executable.Settings = new MusicClipSettings(executable.Settings.Clip, callback.newValue)
+        );
+
+        var clipField = CreateField("Music", executable.Settings.Clip);
+        clipField.RegisterValueChangedCallback(callback =>
+            executable.Settings = new MusicClipSettings(callback.newValue as AudioClip, executable.Settings.CrossFadeDuration)
+        );
+
+        var extension = new DrawableExtensionContainer(floatField, clipField);
+        drawables.Add(extension);
+    }
+
+    private static void AddSfxNodeElements(UnityNode unity, List<IDrawable> drawables)
+    {
+        var executable = (PlaySfxClipCommand)unity.Node.Executable;
+
+        var clipField = CreateField("Sfx", executable.Settings.Clip);
+        clipField.RegisterValueChangedCallback(callback =>
+            executable.Settings = new SfxClipSettings(callback.newValue as AudioClip)
+        );
+
+        var extension = new DrawableExtensionContainer(clipField);
+        drawables.Add(extension);
     }
 
     private static void AddSingularInputPortContainer(List<IDrawable> drawables)
@@ -74,7 +115,7 @@ public class GraphNodeFactory
         var faceField = CreateFaceFieldForPortrait(executable);
         var hairField = CreateHairFieldForPortrait(executable);
 
-        var dropdown = CreateTypeSelect(executable.Type, callback => executable.Type = callback.newValue);
+        var dropdown = CreateTypeSelect(executable.Type, callback => executable.Type = callback.newValue, Dialogue.INSPECTION);
 
         var extension = new DrawableExtensionContainer(dropdown, faceField, hairField);
         drawables.Add(extension);
@@ -85,7 +126,7 @@ public class GraphNodeFactory
         var executable = (SetDialogueNameSettingsCommand)unity.Node.Executable;
         var nameField = CreateNameFieldForName(executable);
 
-        var dropdown = CreateTypeSelect(executable.Type, callback => executable.Type = callback.newValue);
+        var dropdown = CreateTypeSelect(executable.Type, callback => executable.Type = callback.newValue, Dialogue.INSPECTION);
 
         var extension = new DrawableExtensionContainer(dropdown, nameField);
         drawables.Add(extension);
@@ -111,9 +152,12 @@ public class GraphNodeFactory
         drawables.Add(singularOutput);
     }
 
-    private static DropdownField CreateTypeSelect(string type, EventCallback<ChangeEvent<string>> callback)
+    private static DropdownField CreateTypeSelect(string type, EventCallback<ChangeEvent<string>> callback, params string[] discludes)
     {
-        var dropdown = new DropdownField("Type", Dialogue.Types, Dialogue.Types.IndexOf(type));
+        var types = Dialogue.Types.Except(discludes).ToList();
+        var index = Dialogue.Types.IndexOf(type);
+
+        var dropdown = new DropdownField("Type", types, index);
         dropdown.RegisterValueChangedCallback(callback);
 
         return dropdown;
@@ -121,32 +165,32 @@ public class GraphNodeFactory
 
     private static ObjectField CreateHairFieldForPortrait(SetDialoguePortraitSettingsCommand executable)
     {
-        var hairField = new ObjectField("Hair")
-        {
-            objectType = typeof(Sprite),
-            allowSceneObjects = false,
-            value = executable.Settings.Hair
-        };
+        var field = CreateField("Hair", executable.Settings.Hair);
 
-        hairField.RegisterValueChangedCallback(callback => 
+        field.RegisterValueChangedCallback(callback =>
             executable.Settings = new PortraitSettings(executable.Settings.Face, callback.newValue as Sprite)
         );
-        return hairField;
+        return field;
     }
 
     private static ObjectField CreateFaceFieldForPortrait(SetDialoguePortraitSettingsCommand executable)
     {
-        var faceField = new ObjectField("Face")
-        {
-            objectType = typeof(Sprite),
-            allowSceneObjects = false,
-            value = executable.Settings.Face
-        };
+        var field = CreateField("Face", executable.Settings.Face);
 
-        faceField.RegisterValueChangedCallback(callback =>
+        field.RegisterValueChangedCallback(callback =>
             executable.Settings = new PortraitSettings(callback.newValue as Sprite, executable.Settings.Hair)
         );
-        return faceField;
+        return field;
+    }
+
+    private static ObjectField CreateField<T>(string name, T value) where T : Object
+    {
+        return new ObjectField(name)
+        {
+            objectType = typeof(T),
+            allowSceneObjects = false,
+            value = value
+        };
     }
 
     private static TextField CreateNameFieldForName(SetDialogueNameSettingsCommand executable)
@@ -170,7 +214,7 @@ public class GraphNodeFactory
             value = executable.Settings.Rate
         };
         rate.RegisterValueChangedCallback(callback =>
-            executable.Settings = new TypewriterSettings(executable.Settings.Sentence, executable.Settings.Rate)
+            executable.Settings = new TypewriterSettings(executable.Settings.Sentence, callback.newValue)
         );
 
         return rate;

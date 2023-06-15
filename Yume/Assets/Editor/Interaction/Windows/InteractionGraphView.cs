@@ -180,8 +180,10 @@ public class InteractionGraphView : GraphView
         @event.menu.AppendAction(INode.TYPEWRITER, CreateNode);
         @event.menu.AppendAction(INode.PORTRAIT, CreateNode);
         @event.menu.AppendAction(INode.NAME, CreateNode);
+        @event.menu.AppendAction(INode.MUSIC, CreateNode);
         @event.menu.AppendAction(INode.ENABLE, CreateNode);
         @event.menu.AppendAction(INode.DISABLE, CreateNode);
+        @event.menu.AppendAction(INode.SFX, CreateNode);
 
         var containsEntry = _interaction.Contains(INode.ENTRY);
         if (!containsEntry)

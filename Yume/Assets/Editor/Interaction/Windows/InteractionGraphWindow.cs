@@ -24,7 +24,7 @@ public class InteractionGraphWindow : EditorWindow
         CreateGraphView();
         CreateToolbar();
 
-        if(_interaction != null)
+        if(_interaction is not null)
             _view.Load(_interaction);
     }
 
@@ -69,7 +69,7 @@ public class InteractionGraphWindow : EditorWindow
     private void HandleInteractionChanged(ChangeEvent<Object> @event)
     {
         _interaction = @event.newValue as Interaction;
-        if(_interaction == null)
+        if(_interaction is null)
         {
             _view.ClearElements();
             return;
@@ -81,18 +81,19 @@ public class InteractionGraphWindow : EditorWindow
 
     private void Load()
     {
-        _view.Load(_interaction);
+        if(_interaction is not null)
+            _view.Load(_interaction);
     }
 
     private void Save()
     {
-        if (_interaction != null)
+        if (_interaction is not null)
             _interaction.Save();
     }
 
     private void Clear()
     {
-        if (_interaction == null)
+        if (_interaction is null)
             return;
 
         var confirmed = EditorUtility.DisplayDialog("Confirmation", "Are you sure? All nodes will be lost.", "Yes", "No");

@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a56a6cac0d1a63b4f9bb1d60b90e0a14, type: 3}
+  m_Name: Soda Machine
+  m_EditorClassIdentifier: 
+  <UnityNodes>k__BackingField:
+  - rid: 8981177211230355745
+  - rid: 8981177211230355747
+  - rid: 8981177211230355792
+  - rid: 8981177242252476554
+  - rid: 8981177264092741677
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 8981177211230355745
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177211230355746
+        Position: {x: -209.55733, y: 187.99998}
+    - rid: 8981177211230355746
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Entry
+        <Connections>k__BackingField:
+        - rid: 8981177211230355793
+        - rid: 8981177242252476555
+        <Executable>k__BackingField:
+          rid: -2
+        _wait: 0
+    - rid: 8981177211230355747
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177211230355748
+        Position: {x: 638.08716, y: 339}
+    - rid: 8981177211230355748
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Exit
+        <Connections>k__BackingField: []
+        <Executable>k__BackingField:
+          rid: -2
+        _wait: 0
+    - rid: 8981177211230355792
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177211230355793
+        Position: {x: -37.999985, y: 77}
+    - rid: 8981177211230355793
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Open
+        <Connections>k__BackingField: []
+        <Executable>k__BackingField:
+          rid: 8981177211230355794
+        _wait: 0
+    - rid: 8981177211230355794
+      type: {class: EnableDialogueTogglerCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Inspection
+    - rid: 8981177242252476554
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177242252476555
+        Position: {x: -38, y: 265}
+    - rid: 8981177242252476555
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Typewriter
+        <Connections>k__BackingField:
+        - rid: 8981177264092741678
+        - rid: 8981177211230355748
+        <Executable>k__BackingField:
+          rid: 8981177242252476556
+        _wait: 1
+    - rid: 8981177242252476556
+      type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Inspection
+        Settings:
+          Sentence: Water, water, water and... water.
+          Rate: 0.036
+    - rid: 8981177264092741677
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177264092741678
+        Position: {x: 638.08716, y: 77.00001}
+    - rid: 8981177264092741678
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Close
+        <Connections>k__BackingField: []
+        <Executable>k__BackingField:
+          rid: 8981177264092741679
+        _wait: 0
+    - rid: 8981177264092741679
+      type: {class: DisableDialogueTogglerCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Inspection
