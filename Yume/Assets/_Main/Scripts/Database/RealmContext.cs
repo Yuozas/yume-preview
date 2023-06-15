@@ -8,11 +8,13 @@ public class RealmContext : IRealmContext
         Realm.DeleteRealm(new RealmConfiguration(name));
     }
 
-    public Realm GetGlobalRealm(RealmSchema schema = null)
+    public Realm GetGlobalRealm()
     {
         var configuration = new RealmConfiguration("Global") 
         {
-            Schema = schema
+            // Hardcode all unset schema types here to avoid runtime errors.
+            // This must always be the same.
+            Schema = new []{ typeof(ActiveRealmSaveDetails), typeof(RealmSaveDetails) }
         };
         return Realm.GetInstance(configuration);
     }

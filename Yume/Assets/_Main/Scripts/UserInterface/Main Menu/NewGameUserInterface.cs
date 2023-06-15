@@ -1,11 +1,15 @@
 using SwiftLocator.Services.ServiceLocatorServices;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class NewGameUserInterface : MonoBehaviour
 {
-    private ISaveManager _saveManager;
+    private DefaultCharacterData _selectedCharacter;
+    private IRealmSaveManager _saveManager;
+    private SceneDataHandler _sceneDataHandler;
+    private CharacterDataHandler _characterDataHandler;
     private VisualElement _startContainer;
     private VisualElement _backToMenuContainer;
     private VisualElement _confirmStartContainer;
@@ -13,7 +17,9 @@ public class NewGameUserInterface : MonoBehaviour
 
     void Awake()
     {
-        _saveManager = ServiceLocator.SingletonProvider.Get<ISaveManager>();
+        _saveManager = ServiceLocator.SingletonProvider.Get<IRealmSaveManager>();
+        _sceneDataHandler = ServiceLocator.SingletonProvider.Get<SceneDataHandler>();
+        _characterDataHandler = ServiceLocator.SingletonProvider.Get<CharacterDataHandler>();
 
         var root = GetComponent<UIDocument>().rootVisualElement;
         var body = root.Q<VisualElement>("Body");
@@ -22,17 +28,11 @@ public class NewGameUserInterface : MonoBehaviour
         _confirmStartContainer = body.Q<VisualElement>("ConfirmStartContainer");
         _confirmationButtonContainer = _confirmStartContainer.Q<VisualElement>("ConfirmationDialog").Q<VisualElement>("ConfirmationButtonContainer");
 
-        SetupStartButton();
+        SetupStartButton(_characterDataHandler.EmberCharacterId);
+        SetupStartButton(_characterDataHandler.AuraCharacterId);
         SetupBackToMenuButton();
         SetupConfirmStartButton();
         SetupCancelStartButton();
-    }
-
-    public void SetupStartButton()
-    {
-        var startButton = _startContainer.Query<Button>("StartButton").Build();
-        foreach (var button in startButton)
-            button.clicked += TriggerStart;
     }
 
     public void TriggerStart()
@@ -50,7 +50,7 @@ public class NewGameUserInterface : MonoBehaviour
 
     public void TriggerBack()
     {
-        SceneManager.LoadScene(SceneData.MainMenuSceneName, LoadSceneMode.Single);
+        SceneManager.LoadScene(_sceneDataHandler.MainMenuSceneName, LoadSceneMode.Single);
     }
     public void SetupConfirmStartButton()
     {
@@ -60,10 +60,8 @@ public class NewGameUserInterface : MonoBehaviour
 
     public void TriggerConfirm()
     {
-        //_saveManager.DeleteAllSaves();
-        //_saveManager.CreateNewSave();
-        //_saveManager.Save();
-        //SceneLoader.LoadGameScene();
+        // _saveManager.CreateNewSave(_selectedCharacter.Id);
+        SceneManager.LoadScene(_selectedCharacter.SceneName, LoadSceneMode.Single);
     }
 
     public void SetupCancelStartButton()
@@ -77,5 +75,18 @@ public class NewGameUserInterface : MonoBehaviour
         _startContainer.RemoveFromClassList("hidden");
         _backToMenuContainer.RemoveFromClassList("hidden");
         _confirmStartContainer.AddToClassList("hidden");
+    }
+
+    private void SetupStartButton(int characterId)
+    {
+        var startButton = _startContainer.Query<Button>("StartButton").Build().Skip(characterId).First();
+
+        var character = _characterDataHandler.GetCharacterData(characterId);
+        startButton.text = character.Name;
+        startButton.clicked += () =>
+        {
+            _selectedCharacter = character;
+            TriggerStart();
+        };
     }
 }

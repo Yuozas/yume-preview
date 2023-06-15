@@ -32,7 +32,7 @@ public class Transitioner : Singleton<Transitioner>
 
     void TransitionToDestination(Scriptable_TransitionDestination to)
     {
-        var transitionable = (ITransitionable)FindObjectOfType<Character>();
+        var transitionable = (ITransitionable)FindObjectOfType<PlayableEntity>();
         Get(to).Transition(transitionable);
 
         TransitionerAnimation.Instance.ToClear();

@@ -2,8 +2,8 @@
     <Style src="project://database/Assets/_Main/UI/Main%20Menu/New%20Game/New%20Game%20Style.uss?fileID=7433441132597879392&amp;guid=aa89414aa92bf224d8ccbf1727d87ade&amp;type=3#New Game Style" />
     <ui:VisualElement name="Body" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
         <ui:VisualElement name="GameStartContainer" class="game-start-container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
-            <ui:Button text="Mantas" display-tooltip-when-elided="true" name="StartButton" class="left-container" />
-            <ui:Button text="Aura" display-tooltip-when-elided="true" name="StartButton" class="right-container" />
+            <ui:Button text="Unset" display-tooltip-when-elided="true" name="StartButton" class="left-container" />
+            <ui:Button text="Unset" display-tooltip-when-elided="true" name="StartButton" class="right-container" />
         </ui:VisualElement>
         <ui:VisualElement name="BackToMenuContainer" class="back-to-menu-container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
             <ui:Button text="&lt; Menu" display-tooltip-when-elided="true" name="BackToMenuButton" />

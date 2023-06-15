@@ -16,8 +16,8 @@
     margin: 0;
     padding: 50px;
     width: 50%;
-    background-color: none;
-    border-color: none;
+    background-color: transparent;
+    border-color: transparent;
     font-size: 50px;
     -unity-font-style: bold;
     letter-spacing: 5px;
@@ -49,8 +49,8 @@
 .back-to-menu-container .unity-button {
     margin: 0;
     padding: 0;
-    background-color: none;
-    border-color: none;
+    background-color: transparent;
+    border-color: transparent;
     font-size: 20px;
     -unity-font-style: bold;
     letter-spacing: 5px;
@@ -95,8 +95,8 @@
 .confirm-start-container .confirmation-dialog .unity-button {
     margin: 0;
     padding: 0;
-    background-color: none;
-    border-color: none;
+    background-color: transparent;
+    border-color: transparent;
     font-size: 20px;
     -unity-font-style: bold;
     letter-spacing: 5px;

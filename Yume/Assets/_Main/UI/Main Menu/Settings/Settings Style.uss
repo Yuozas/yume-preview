@@ -12,8 +12,8 @@
 .back-to-menu-container .unity-button {
     margin: 0;
     padding: 0;
-    background-color: none;
-    border-color: none;
+    background-color: transparent;
+    border-color: transparent;
     font-size: 20px;
     -unity-font-style: bold;
     letter-spacing: 5px;
