@@ -927,8 +927,8 @@ TextureImporter:
         y: 816
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1578,8 +1578,8 @@ TextureImporter:
         y: 784
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2502,8 +2502,8 @@ TextureImporter:
         y: 688
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2523,8 +2523,8 @@ TextureImporter:
         y: 688
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2544,8 +2544,8 @@ TextureImporter:
         y: 688
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2566,7 +2566,7 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+      pivot: {x: 0.5, y: 0.375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2586,8 +2586,8 @@ TextureImporter:
         y: 688
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2607,8 +2607,8 @@ TextureImporter:
         y: 688
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2642,15 +2642,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_Office_Shadowless_16x16_114
+      name: Certificate_04
       rect:
         serializedVersion: 2
         x: 128
         y: 688
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2797,7 +2797,7 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 9
-      pivot: {x: 0.5, y: 0.3125}
+      pivot: {x: 0.5, y: 0.375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2818,7 +2818,7 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 9
-      pivot: {x: 0.5, y: 0.3125}
+      pivot: {x: 0.5, y: 0.375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2839,7 +2839,7 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 9
-      pivot: {x: 0.5, y: 0.3125}
+      pivot: {x: 0.5, y: 0.375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2860,7 +2860,7 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 9
-      pivot: {x: 0.5, y: 0.3125}
+      pivot: {x: 0.5, y: 0.375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2881,7 +2881,7 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 9
-      pivot: {x: 0.5, y: 0.3125}
+      pivot: {x: 0.5, y: 0.375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2902,7 +2902,7 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 9
-      pivot: {x: 0.5, y: 0.3125}
+      pivot: {x: 0.5, y: 0.375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3006,7 +3006,7 @@ TextureImporter:
         y: 672
         width: 16
         height: 16
-      alignment: 0
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -3153,8 +3153,8 @@ TextureImporter:
         y: 640
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3293,15 +3293,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_Office_Shadowless_16x16_179
+      name: Monitor_03_01
       rect:
         serializedVersion: 2
         x: 208
         y: 640
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3314,15 +3314,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_Office_Shadowless_16x16_180
+      name: Monitor_03_02
       rect:
         serializedVersion: 2
         x: 224
         y: 640
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3335,15 +3335,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_Office_Shadowless_16x16_181
+      name: Monitor_03_03
       rect:
         serializedVersion: 2
         x: 240
         y: 640
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3461,15 +3461,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_Office_Shadowless_16x16_195
+      name: Monitor_02_01
       rect:
         serializedVersion: 2
         x: 208
         y: 624
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3482,15 +3482,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_Office_Shadowless_16x16_196
+      name: Monitor_02_02
       rect:
         serializedVersion: 2
         x: 224
         y: 624
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3503,15 +3503,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_Office_Shadowless_16x16_197
+      name: Monitor_02_03
       rect:
         serializedVersion: 2
         x: 240
         y: 624
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3818,7 +3818,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_Office_Shadowless_16x16_222
+      name: Laptop_01_01
       rect:
         serializedVersion: 2
         x: 208
@@ -3839,7 +3839,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_Office_Shadowless_16x16_223
+      name: Laptop_01_02
       rect:
         serializedVersion: 2
         x: 224
@@ -3860,7 +3860,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_Office_Shadowless_16x16_224
+      name: Laptop_01_03
       rect:
         serializedVersion: 2
         x: 240
@@ -3965,7 +3965,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_Office_Shadowless_16x16_247
+      name: Laptop_02_01
       rect:
         serializedVersion: 2
         x: 208
@@ -3986,7 +3986,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_Office_Shadowless_16x16_248
+      name: Laptop_02_02
       rect:
         serializedVersion: 2
         x: 224
@@ -4007,7 +4007,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_Office_Shadowless_16x16_249
+      name: Laptop_02_03
       rect:
         serializedVersion: 2
         x: 240
@@ -8705,6 +8705,7 @@ TextureImporter:
       Certificate_01: -5019813693617020871
       Certificate_02: 8333050180183992248
       Certificate_03: -9082939987395605101
+      Certificate_04: 9150535425751367713
       Coffee_Device_01: 1415317547
       Coffee_Table_Top_01: 994200125
       Coffee_Table_Top_02: 903734119
@@ -8712,6 +8713,12 @@ TextureImporter:
       Graph_01: -423637415017636708
       Graph_02: -9162488475442917105
       Keyboard_Mouse_01: 737795916
+      Laptop_01_01: -58880672
+      Laptop_01_02: -980244919
+      Laptop_01_03: 453006664
+      Laptop_02_01: -1325931165
+      Laptop_02_02: -920238278
+      Laptop_02_03: 590210840
       Laptop_Lamp_Paper_01: 1001528149
       Luggage_Cyan_01: -911538429
       Luggage_Cyan_02: -1920193276
@@ -8729,7 +8736,6 @@ TextureImporter:
       Modern_Office_Shadowless_16x16_105: -5590419451924883605
       Modern_Office_Shadowless_16x16_11: -6452772727881938794
       Modern_Office_Shadowless_16x16_112: -2738379979152506122
-      Modern_Office_Shadowless_16x16_114: 9150535425751367713
       Modern_Office_Shadowless_16x16_115: 6391574339951871202
       Modern_Office_Shadowless_16x16_116: 5401111055891758760
       Modern_Office_Shadowless_16x16_117: -2441072220392793110
@@ -8772,9 +8778,6 @@ TextureImporter:
       Modern_Office_Shadowless_16x16_174: -1798120366
       Modern_Office_Shadowless_16x16_176: -1901572370
       Modern_Office_Shadowless_16x16_178: 2079288255
-      Modern_Office_Shadowless_16x16_179: -362459630
-      Modern_Office_Shadowless_16x16_180: 349306362
-      Modern_Office_Shadowless_16x16_181: -1028797863
       Modern_Office_Shadowless_16x16_182: 1615394984
       Modern_Office_Shadowless_16x16_183: -851200469
       Modern_Office_Shadowless_16x16_184: -212354056
@@ -8783,9 +8786,6 @@ TextureImporter:
       Modern_Office_Shadowless_16x16_190: 627629643
       Modern_Office_Shadowless_16x16_191: 137142264
       Modern_Office_Shadowless_16x16_192: 1740493404
-      Modern_Office_Shadowless_16x16_195: -1547451183
-      Modern_Office_Shadowless_16x16_196: 1720677485
-      Modern_Office_Shadowless_16x16_197: -1987513778
       Modern_Office_Shadowless_16x16_201: -1291017257
       Modern_Office_Shadowless_16x16_202: 1867365142
       Modern_Office_Shadowless_16x16_203: 779319378
@@ -8800,9 +8800,6 @@ TextureImporter:
       Modern_Office_Shadowless_16x16_219: -579312779
       Modern_Office_Shadowless_16x16_22: -2093960164493811879
       Modern_Office_Shadowless_16x16_220: -1126889390
-      Modern_Office_Shadowless_16x16_222: -58880672
-      Modern_Office_Shadowless_16x16_223: -980244919
-      Modern_Office_Shadowless_16x16_224: 453006664
       Modern_Office_Shadowless_16x16_225: -215468344
       Modern_Office_Shadowless_16x16_226: -887554174
       Modern_Office_Shadowless_16x16_227: 1563018645
@@ -8826,9 +8823,6 @@ TextureImporter:
       Modern_Office_Shadowless_16x16_244: -1638940917
       Modern_Office_Shadowless_16x16_245: -285329744
       Modern_Office_Shadowless_16x16_246: -947167842
-      Modern_Office_Shadowless_16x16_247: -1325931165
-      Modern_Office_Shadowless_16x16_248: -920238278
-      Modern_Office_Shadowless_16x16_249: 590210840
       Modern_Office_Shadowless_16x16_25: -2495059601379297609
       Modern_Office_Shadowless_16x16_250: 1737789878
       Modern_Office_Shadowless_16x16_251: 732678081
@@ -9270,6 +9264,12 @@ TextureImporter:
       Monitor_01_02: 1394785899932588650
       Monitor_01_03: 7287502605480148018
       Monitor_02: -1614845609
+      Monitor_02_01: -1547451183
+      Monitor_02_02: 1720677485
+      Monitor_02_03: -1987513778
+      Monitor_03_01: -362459630
+      Monitor_03_02: 349306362
+      Monitor_03_03: -1028797863
       Office_Chair_01_01: -6021058315651188136
       Office_Chair_01_02: 8543367558638830241
       Office_Chair_01_03: -4964052632533960162
