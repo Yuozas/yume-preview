@@ -7,7 +7,7 @@ using System.Linq;
 public static class PreliminarySetup
 {
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
-    private static void Setup()
+    public static void Setup()
     {
         var setups = GetAllPreliminarySetups().OrderBy(setup => setup.Order);
         foreach (var setup in setups)

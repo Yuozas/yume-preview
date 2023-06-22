@@ -6,6 +6,9 @@ public class Initializer : IPreliminarySetup
 {
     public void Setup()
     {
+        if (!Application.isPlaying)
+            return;
+
         ServiceLocator.SingletonRegistrator.Register(provider => {
             const string COROUTINES = "Coroutines";
             var gameObject = new GameObject(COROUTINES);

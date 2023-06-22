@@ -8,8 +8,13 @@ public static class RealmExtensions
         return realm.All<T>().First();
     }
 
-    public static void Update(this Realm realm, RealmObject obj)
+    public static void UpdateAndSave(this Realm realm, RealmObject obj)
     {
         realm.Write(() => realm.Add(obj, true));
+    }
+
+    public static void AddAndSave(this Realm realm, RealmObject obj)
+    {
+        realm.Write(() => realm.Add(obj));
     }
 }

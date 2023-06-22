@@ -21,7 +21,8 @@ public class RealmSaveRegistry
         {
             SaveId = DateTimeOffset.UtcNow.ToUnixTimeSeconds(),
             DisplayName = saveName,
-            Date = DateTime.UtcNow
+            Date = DateTime.UtcNow,
+            IsVisible = true
         };
         globalRealm.Add(newSave);
         ChangeActiveSave(newSave);
@@ -75,9 +76,9 @@ public class RealmSaveRegistry
         globalRealm.Add(realmSave, true);
     }
 
-    public ActiveRealmSaveDetails GetActiveSaveDetails()
+    public RealmResult<ActiveRealmSaveDetails> GetActiveSaveDetails()
     {
-        using var globalRealm = _realmContext.GetGlobalRealm();
+        var globalRealm = _realmContext.GetGlobalRealm();
 
         var activeRealmSave = globalRealm.All<ActiveRealmSaveDetails>().FirstOrDefault();
         if(activeRealmSave?.ActiveSaveDetails?.IsVisible ?? false)

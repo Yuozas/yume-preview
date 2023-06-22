@@ -61,7 +61,7 @@ public class NewGameUserInterface : MonoBehaviour
 
     public void TriggerConfirm()
     {
-        // _saveManager.CreateNewSave(_selectedCharacter.Id);
+        _saveManager.CreateNewSave(_selectedCharacter.Id);
         SceneManager.LoadScene(_selectedCharacter.SceneName, LoadSceneMode.Single);
     }
 

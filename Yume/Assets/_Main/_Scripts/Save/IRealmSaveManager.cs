@@ -9,5 +9,5 @@ public interface IRealmSaveManager
     Realm GetActiveSave();
     void ChangeActiveSave(RealmSaveDetails realmSave);
     RealmSaveDetails[] GetAllSaveDetails();
-    RealmSaveDetails GetActiveSaveDetails();
+    RealmResult<RealmSaveDetails> GetActiveSaveDetails();
 }

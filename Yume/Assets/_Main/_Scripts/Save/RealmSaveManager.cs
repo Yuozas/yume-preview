@@ -1,4 +1,5 @@
-﻿using Realms;
+﻿using FastDeepCloner;
+using Realms;
 using System;
 using System.Linq;
 
@@ -23,10 +24,11 @@ public class RealmSaveManager : IRealmSaveManager
             throw new ArgumentException("Only main characters can be used to create a new save");
         _realmSaveRegistry.CreateNewSave($"{character.Name}'s little story.");
 
-        var realm = GetActiveSave();
-        var activeCharacter = realm.Get<ActiveCharacter>();
-        activeCharacter.Id = character.Id;
-        realm.Update(activeCharacter);
+        using var realm = GetActiveSave();
+        realm.AddAndSave(new ActiveCharacter()
+        {
+            Id = character.Id
+        });
     }
 
     public void DeleteSave(long saveId)
@@ -41,20 +43,21 @@ public class RealmSaveManager : IRealmSaveManager
 
     public bool AnySaveExists()
     {
-        using var globalRealm = _realmContext.GetGlobalRealm();
-        var activeSave = _realmSaveRegistry.GetActiveSaveDetails();
-        if(activeSave is null)
+        using var activeSaveDetails = GetActiveSaveDetails();
+        if(activeSaveDetails is null)
             return false;
-        var save = globalRealm.Find<RealmSaveDetails>(activeSave.ActiveSaveDetails.SaveId);
+
+        using var globalRealm = _realmContext.GetGlobalRealm();
+        var save = globalRealm.Find<RealmSaveDetails>(activeSaveDetails.Result.SaveId);
         return save is not null;
     }
 
     public Realm GetActiveSave()
     {
-        var activeSave = _realmSaveRegistry.GetActiveSaveDetails();
-        return activeSave is null
+        using var activeSaveDetails = GetActiveSaveDetails();
+        return activeSaveDetails is null
             ? throw new ArgumentException("No active save found.")
-            : _realmContext.GetRealm(activeSave.ActiveSaveDetails.SaveId.ToString());
+            : _realmContext.GetRealm(activeSaveDetails.Result.SaveId.ToString());
     }
 
     public void ChangeActiveSave(RealmSaveDetails realmSave)
@@ -65,11 +68,11 @@ public class RealmSaveManager : IRealmSaveManager
     public RealmSaveDetails[] GetAllSaveDetails()
     {
         using var globalRealm = _realmContext.GetGlobalRealm();
-        return globalRealm.All<RealmSaveDetails>().ToArray();
+        return globalRealm.All<RealmSaveDetails>().ToArray().Select(save => save.Clone()).ToArray();
     }
 
-    public RealmSaveDetails GetActiveSaveDetails()
+    public RealmResult<RealmSaveDetails> GetActiveSaveDetails()
     {
-        return _realmSaveRegistry.GetActiveSaveDetails().ActiveSaveDetails;
+        return _realmSaveRegistry.GetActiveSaveDetails()?.Result.ActiveSaveDetails;
     }
 }
