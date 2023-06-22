@@ -33,9 +33,6 @@ public class CharacterDataHandler
         return _characters.Values.First(predicate);
     }
 
-    /// <summary>
-    ///     Adds a character to the dictionary with automatically assigned id.
-    /// </summary>
     private void AddCharacter(DefaultCharacterData character) 
     {
         var newCharacterId = _characters.Values.Last().Id + 1;

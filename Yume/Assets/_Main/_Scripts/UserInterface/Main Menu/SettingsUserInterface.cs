@@ -8,7 +8,7 @@ public class SettingsUserInterface : MonoBehaviour
     private VisualElement _backToMenuContainer;
     private SceneDataHandler _sceneDataHandler;
 
-    public void Awake()
+    private void Awake()
     {
         _sceneDataHandler = ServiceLocator.GetSingleton<SceneDataHandler>();
 
@@ -19,13 +19,13 @@ public class SettingsUserInterface : MonoBehaviour
         SetupBackToMenuButton();
     }
 
-    public void SetupBackToMenuButton()
+    private void SetupBackToMenuButton()
     {
         var backToMenuButton = _backToMenuContainer.Q<Button>("BackToMenuButton");
         backToMenuButton.clicked += TriggerBack;
     }
 
-    public void TriggerBack()
+    private void TriggerBack()
     {
         SceneManager.LoadScene(_sceneDataHandler.MainMenuSceneName, LoadSceneMode.Single);
     }

@@ -26,7 +26,6 @@ public class MainMenuUserInterface : MonoBehaviour
 
     private void SetupNewGameButton()
     {
-
         var newGameButton = _buttonWrapper.Q<Button>("NewGameButton");
         newGameButton.clicked += TriggerNewGame;
     }
@@ -39,16 +38,13 @@ public class MainMenuUserInterface : MonoBehaviour
     private void SetupContinueButton()
     {
         var continueButton = _buttonWrapper.Q<Button>("ContinueButton");
-        
-        if (!_saveManager.AnySaveExists())
-        {
-            continueButton.SetEnabled(false);
-            continueButton.AddToClassList("button-hidden");
-        }
-        else
+        if (_saveManager.AnySaveExists())
         {
             continueButton.clicked += TriggerContinue;
+            return;
         }
+        continueButton.SetEnabled(false);
+        continueButton.AddToClassList("button-hidden");
     }
 
     private void TriggerContinue()

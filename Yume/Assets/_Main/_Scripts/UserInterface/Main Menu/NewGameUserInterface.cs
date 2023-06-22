@@ -52,6 +52,7 @@ public class NewGameUserInterface : MonoBehaviour
     {
         SceneManager.LoadScene(_sceneDataHandler.MainMenuSceneName, LoadSceneMode.Single);
     }
+
     public void SetupConfirmStartButton()
     {
         var confirmStartButton = _confirmationButtonContainer.Q<Button>("ConfirmStartButton");
