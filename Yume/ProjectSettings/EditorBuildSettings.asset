@@ -6,11 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Main/Scenes/In-game Scene.unity
-    guid: 12fdff90e04414b42bccee0500ce902a
+    path: Assets/_Main/Scenes/PreliminarySetupScene.unity
+    guid: f1be2cc04d768c64ea2ae15f512be6b6
   - enabled: 1
-    path: Assets/_Main/Scenes/In-game Menu.unity
-    guid: 475c428f1dcdf7e4a8c245e3cea2c4fd
+    path: Assets/_Main/Scenes/Menu/Main Menu.unity
+    guid: 2c4323318c4afc54b9138da7a0fdd930
+  - enabled: 1
+    path: Assets/_Main/Scenes/Menu/New Game.unity
+    guid: 69ad01a1c4472574b93bfc604ccf7851
+  - enabled: 1
+    path: Assets/_Main/Scenes/Menu/Continue.unity
+    guid: 3dddfa353eabb12408c0d33e4c048f61
+  - enabled: 1
+    path: Assets/_Main/Scenes/Menu/Settings.unity
+    guid: 18bdc11e9f9edff49bbe59cb49fb7268
   - enabled: 1
     path: Assets/_Main/Scenes/Demo/Office_Demo.unity
     guid: 907f144a3894f0e43ba435b5eb7d0595

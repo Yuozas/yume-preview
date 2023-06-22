@@ -1,13 +1,13 @@
 ﻿public class InSceneCharacter
 {
-    private Character _character;
+    private PlayableEntity _character;
 
-    public Character Get()
+    public PlayableEntity Get()
     {
         return _character;
     }
 
-    public void Set(Character character)
+    public void Set(PlayableEntity character)
     {
         _character = character;
     }

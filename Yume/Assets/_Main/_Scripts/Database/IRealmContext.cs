@@ -1,7 +1,7 @@
 ﻿using Realms;
-
 public interface IRealmContext
 {
-    public Realm GetRealm(string name);
-    public void DeleteRealm(string name);
+    Realm GetRealm(string name);
+    void DeleteRealm(string name);
+    Realm GetGlobalRealm();
 }

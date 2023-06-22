@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Main/UI/Main%20Menu/Settings/Settings%20Style.uss?fileID=7433441132597879392&amp;guid=a0fabfa13da13e4499ec2ff07e98bfe1&amp;type=3#Settings Style" />
+    <ui:VisualElement name="Body" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+        <ui:VisualElement name="BackToMenuContainer" class="back-to-menu-container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+            <ui:Button text="&lt; Menu" display-tooltip-when-elided="true" name="BackToMenuButton" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

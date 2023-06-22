@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Main/UI/Buttons.uss?fileID=7433441132597879392&amp;guid=4f071cacbc073774987596a436c38bce&amp;type=3#Buttons" />
+    <ui:VisualElement name="Body">
+        <ui:VisualElement name="Visuals" class="title-wrapper">
+            <ui:Label text="YUME" display-tooltip-when-elided="true" name="GameTitle" class="title" style="-unity-font-definition: url(&apos;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&amp;guid=6561d49f9001d574583007691775ccea&amp;type=3#NotInter-Regular&apos;);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="MenuButtonsWrapper" class="menu-buttons-wrapper">
+            <ui:Button text="New Game" display-tooltip-when-elided="true" name="NewGameButton" class="button button-text" />
+            <ui:Button text="Continue" display-tooltip-when-elided="true" selectable="false" focusable="true" name="ContinueButton" class="button button-text" />
+            <ui:Button text="Settings" display-tooltip-when-elided="true" selectable="false" focusable="true" name="SettingsButton" class="button button-text" />
+            <ui:Button text="Quit Game" display-tooltip-when-elided="true" selectable="false" focusable="true" name="QuitGameButton" class="button button-text" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
