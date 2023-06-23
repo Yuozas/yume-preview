@@ -30,7 +30,7 @@ public class InteractionGraphWindow : EditorWindow
 
     private void CreateGraphView()
     {
-        _view = new InteractionGraphView();
+        _view = new InteractionGraphView(this);
         _view.StretchToParentSize();
 
         rootVisualElement.Add(_view);
@@ -71,7 +71,7 @@ public class InteractionGraphWindow : EditorWindow
         _interaction = @event.newValue as Interaction;
         if(_interaction is null)
         {
-            _view.ClearElements();
+            _view.Unload();
             return;
         }
 
