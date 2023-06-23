@@ -8,7 +8,6 @@ using UnityEngine;
 public class InteractionGraphView : GraphView
 {
     private Interaction _interaction;
-    private ContextualMenuManipulator _contextual;
     private readonly NodeFactory _nodeFactory;
     private readonly GraphNodeFactory _graphNodeFactory;
 
