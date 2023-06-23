@@ -3,6 +3,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine.UIElements;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 public class InteractionGraphView : GraphView
 {
@@ -13,18 +14,29 @@ public class InteractionGraphView : GraphView
 
     private readonly List<GraphElement> _removables;
     private readonly List<GraphNode> _graphNodes;
+    private readonly EditorWindow _window;
 
-    public InteractionGraphView()
+    private InteractionSearchWindow _search;
+
+    public InteractionGraphView(EditorWindow window)
     {
         graphViewChanged = OnGraphChange;
         _graphNodes = new();
         _nodeFactory = new NodeFactory(Dialogue.DEFAULT);
         _graphNodeFactory = new();
         _removables = new();
+        _window = window;
 
+        CreateAndAddSearchWindow();
         AddBackground();
         AddStyling();
         AddManipulators();
+        AssignNodeCreationRequest();
+    }
+
+    private void AssignNodeCreationRequest()
+    {
+        nodeCreationRequest = _interaction is not null ? OpenSearchWindow : null;
     }
 
     private GraphViewChange OnGraphChange(GraphViewChange change)
@@ -72,10 +84,9 @@ public class InteractionGraphView : GraphView
 
     public void Load(Interaction interaction)
     {
-        ClearElements();
+        Unload();
 
         _interaction = interaction;
-        AddContextualMenuManipulator();
 
         var nodes = _interaction.UnityNodes;
 
@@ -83,20 +94,20 @@ public class InteractionGraphView : GraphView
             CreateGraphNode(node);
 
         DrawsConnectionLineBetweenNodes(nodes);
+        AssignNodeCreationRequest();
     }
 
-    public void ClearElements()
+    public void Unload()
     {
         _graphNodes.Clear();
-        RemoveContextual();
 
-        for (int i = _removables.Count - 1; i >= 0; i--)
-        {
-            var node = _removables[i];
-            RemoveElement(node);
-        }
+        foreach (var removable in _removables)
+            RemoveElement(removable);
 
         _removables.Clear();
+        _interaction = null;
+
+        AssignNodeCreationRequest();
     }
 
     public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter)
@@ -119,14 +130,15 @@ public class InteractionGraphView : GraphView
         _removables.Add(node);
     }
 
-    private void CreateNode(DropdownMenuAction action)
+    private void CreateNode(string type, SearchWindowContext context)
     {
-        var node = _nodeFactory.Build(action.name);
-        var unityNode = new UnityNode(node, action.eventInfo.localMousePosition);
+        var node = _nodeFactory.Build(type);
+        var position = _window.rootVisualElement.ChangeCoordinatesTo(_window.rootVisualElement.parent, context.screenMousePosition - _window.position.position);
+        var local = contentViewContainer.WorldToLocal(position);
+        var unityNode = new UnityNode(node, local);
 
         _interaction.Add(unityNode);
         CreateGraphNode(unityNode);
-        AddContextualMenuManipulator();
     }
 
     private void AddStyling()
@@ -159,39 +171,16 @@ public class InteractionGraphView : GraphView
         SetupZoom(ContentZoomer.DefaultMinScale, ContentZoomer.DefaultMaxScale * 2);
     }
 
-    private void AddContextualMenuManipulator()
+    private void CreateAndAddSearchWindow()
     {
-        RemoveContextual();
-
-        _contextual = new ContextualMenuManipulator(ContextualMenuBuilder);
-        this.AddManipulator(_contextual);
+        _search = _search is null ? ScriptableObject.CreateInstance<InteractionSearchWindow>() : _search;
+        _search.Initialize(CreateNode);
     }
 
-    private void RemoveContextual()
+    private void OpenSearchWindow(NodeCreationContext context)
     {
-        if (_contextual == null)
-            return;
-        this.RemoveManipulator(_contextual);
-        _contextual = null;
-    }
-
-    private void ContextualMenuBuilder(ContextualMenuPopulateEvent @event)
-    {
-        @event.menu.AppendAction(INode.TYPEWRITER, CreateNode);
-        @event.menu.AppendAction(INode.PORTRAIT, CreateNode);
-        @event.menu.AppendAction(INode.NAME, CreateNode);
-        @event.menu.AppendAction(INode.MUSIC, CreateNode);
-        @event.menu.AppendAction(INode.ENABLE, CreateNode);
-        @event.menu.AppendAction(INode.DISABLE, CreateNode);
-        @event.menu.AppendAction(INode.SFX, CreateNode);
-
-        var containsEntry = _interaction.Contains(INode.ENTRY);
-        if (!containsEntry)
-            @event.menu.AppendAction(INode.ENTRY, CreateNode);
-
-        var containsExit = _interaction.Contains(INode.EXIT);
-        if (!containsExit)
-            @event.menu.AppendAction(INode.EXIT, CreateNode);
+        var search = new SearchWindowContext(context.screenMousePosition);
+        SearchWindow.Open(search, _search);
     }
 
     private void DrawsConnectionLineBetweenNodes(List<UnityNode> unityNodes)
