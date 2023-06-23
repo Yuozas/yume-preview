@@ -7,7 +7,6 @@ using UnityEngine;
 
 public class InteractionGraphView : GraphView
 {
-    private Interaction _interaction;
     private readonly NodeFactory _nodeFactory;
     private readonly GraphNodeFactory _graphNodeFactory;
 
@@ -15,6 +14,7 @@ public class InteractionGraphView : GraphView
     private readonly List<GraphNode> _graphNodes;
     private readonly EditorWindow _window;
 
+    private Interaction _interaction;
     private InteractionSearchWindow _search;
 
     public InteractionGraphView(EditorWindow window)
