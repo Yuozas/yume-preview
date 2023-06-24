@@ -22,19 +22,3 @@ public class SetDialogueNameSettingsCommand : ICommand
         command.Execute(onFinished);
     }
 }
-
-[Serializable]
-public class SetChoicesCommand : ICommand
-{
-    [SerializeField] public string[] Choices;
-
-    public SetChoicesCommand(params string[] choices)
-    {
-        Choices = choices;
-    }
-
-    public void Execute(Action onFinished = null)
-    {
-        //var choices = ServiceLocator.GetSingleton<Choices>();
-    }
-}

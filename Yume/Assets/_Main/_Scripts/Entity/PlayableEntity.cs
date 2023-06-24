@@ -31,6 +31,7 @@ public class PlayableEntity : Entity, ITransitionable
         var states = new IState[]
         {
             new Walking(_input.Walking, movement, _direction, interaction),
+            new Choosing(_input.Choosing),
             talking
         };
 

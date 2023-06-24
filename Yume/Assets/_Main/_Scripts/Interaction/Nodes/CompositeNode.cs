@@ -18,7 +18,8 @@ public class CompositeNode : INode
         _wait = wait;
 
         Connections = Connections is null ? new() : Connections;
-        AddDefaultConnection();
+        var connection = new Connection();
+        Add(connection);
     }
 
     public void Execute()
@@ -31,7 +32,7 @@ public class CompositeNode : INode
 
         if (_wait)
         {
-            Executable.Execute(Handle);
+            Executable.Execute(ExecuteAllConnections);
             return;
         }
 
@@ -39,78 +40,26 @@ public class CompositeNode : INode
         ExecuteAllConnections();
     }
 
-    public void AddDefaultConnection()
-    {
-        while(Connections.Count >= 2)
-        {
-            Connections.RemoveAt(Connections.Count - 1);
-        }
-        if (Connections.Count > 0)
-            return;
-
-        var connection = new Connection();
-        Add(connection);
-    }
-
     public Connection Get(int index)
     {
         return Connections[index];
     }
 
+    private bool Contains(Connection connection)
+    {
+        return Connections.Contains(connection);
+    }
+
     private void Add(Connection connection)
     {
-        Connections.Add(connection);
+        var contains = Contains(connection);
+        if(!contains)
+            Connections.Add(connection);
     }
 
-    private void Handle()
-    {
-        ExecuteConnection(0);
-    }
-
-    private void ExecuteConnection(int index)
-    {
-        Connections[index].Execute();
-    }
-
-    public void ExecuteAllConnections()
+    private void ExecuteAllConnections()
     {
         foreach (var connection in Connections)
             connection.Execute();
-    }
-}
-
-[Serializable]
-public class Connection
-{
-    [field: SerializeReference] public List<INode> Nodes { get; private set; }
-
-    public Connection(List<INode> nodes = null)
-    {
-        Nodes = nodes ?? new();
-    }
-
-    public void Execute()
-    {
-        foreach (var node in Nodes)
-            node.Execute();
-    }
-
-    public void Add(INode node)
-    {
-        var contains = Contains(node);
-        if (!contains)
-            Nodes.Add(node);
-    }
-
-    public void Remove(INode node)
-    {
-        var contains = Contains(node);
-        if (contains)
-            Nodes.Remove(node);
-    }
-
-    public bool Contains(INode node)
-    {
-        return Nodes.Contains(node);
     }
 }

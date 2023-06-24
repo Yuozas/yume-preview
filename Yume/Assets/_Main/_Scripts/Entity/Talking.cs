@@ -72,4 +72,3 @@ public class Talking : IState
         _subscribed = true;
     }
 }
-
