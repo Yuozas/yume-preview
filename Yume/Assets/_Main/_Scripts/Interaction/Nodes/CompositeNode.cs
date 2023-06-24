@@ -6,7 +6,7 @@ using UnityEngine;
 public class CompositeNode : INode
 {
     [field: SerializeField] public string Type { get; private set; }
-    [field: SerializeReference] public List<Connection> Connections { get; private set; }
+    [field: SerializeField] public List<Connection> Connections { get; private set; }
     [field: SerializeReference] public ICommand Executable { get; private set; }
 
     [SerializeField] private bool _wait;
@@ -41,6 +41,10 @@ public class CompositeNode : INode
 
     public void AddDefaultConnection()
     {
+        while(Connections.Count >= 2)
+        {
+            Connections.RemoveAt(Connections.Count - 1);
+        }
         if (Connections.Count > 0)
             return;
 

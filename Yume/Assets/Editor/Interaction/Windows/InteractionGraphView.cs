@@ -210,6 +210,11 @@ public class InteractionGraphView : GraphView
             for (int i = 0; i < node.Connections.Count; i++)
             {
                 var connection = node.Connections[i];
+                var toNodes = connection.Nodes;
+
+                if (toNodes.Count <= 0)
+                    continue;
+
                 foreach (var toNode in connection.Nodes)
                 {
                     var toGraphNode = _graphNodes.First(graphNode => graphNode.UnityNode.Node == toNode);

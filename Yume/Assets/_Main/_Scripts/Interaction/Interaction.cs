@@ -15,6 +15,18 @@ public class Interaction : ScriptableObject
         Save();
     }
 
+    [ContextMenu("Fix")]
+    public void Fix()
+    {
+        var nodes = UnityNodes
+            .Select(unityNode => unityNode.Node)
+            .Cast<CompositeNode>()
+            .ToList();
+
+        foreach (var item in nodes)
+            item.AddDefaultConnection();
+    }
+
     public void Interact()
     {
         UnityNodes.First(node => node.Type is INode.ENTRY).Node.Execute();
@@ -50,6 +62,7 @@ public class Interaction : ScriptableObject
         return UnityNodes.Contains(node);
     }
 
+    [ContextMenu("Save")]
     public void Save()
     {
         EditorUtility.SetDirty(this);
