@@ -3,41 +3,31 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class CompositeNode : INode
+public class ChoicesNode : INode
 {
     [field: SerializeField] public string Type { get; private set; }
     [field: SerializeField] public List<Connection> Connections { get; private set; }
     [field: SerializeReference] public ICommand Executable { get; private set; }
 
-    [SerializeField] private bool _wait;
-
-    public CompositeNode(string type, bool wait, ICommand executable = null)
+    public ChoicesNode(string type)
     {
         Type = type;
-        Executable = executable;
-        _wait = wait;
-
         Connections = Connections is null ? new() : Connections;
+
         var connection = new Connection();
         Add(connection);
     }
 
     public void Execute()
     {
-        if(Executable is null)
+        var choices = new Choice[Connections.Count];
+        for (int i = 0; i < choices.Length; i++)
         {
-            ExecuteAllConnections();
-            return;
+            var connection = Connections[i];
+            choices[i] = new Choice(connection.Text, connection.Nodes);
         }
 
-        if (_wait)
-        {
-            Executable.Execute(ExecuteAllConnections);
-            return;
-        }
-
-        Executable.Execute();
-        ExecuteAllConnections();
+        new SetChoicesCommand(choices).Execute();
     }
 
     public Connection Get(int index)
@@ -53,13 +43,7 @@ public class CompositeNode : INode
     private void Add(Connection connection)
     {
         var contains = Contains(connection);
-        if(!contains)
+        if (!contains)
             Connections.Add(connection);
-    }
-
-    private void ExecuteAllConnections()
-    {
-        foreach (var connection in Connections)
-            connection.Execute();
     }
 }

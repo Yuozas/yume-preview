@@ -13,6 +13,9 @@ public interface INode
     public const string TYPEWRITER = "Typewriter";
     public const string EXIT = "Exit";
     public const string SFX = "Sfx";
+    public const string ENABLE_DECISIONS = "Open Decision";
+    public const string DISABLE_DECISIONS = "Close Decision";
+    public const string SET_CHOICES = "Set Choices";
 
     List<Connection> Connections { get; }
     ICommand Executable { get; }

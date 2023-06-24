@@ -20,22 +20,27 @@ public class InteractionSearchWindow : ScriptableObject, ISearchWindowProvider
         const string Basic = "Basic";
         const string Dialogue = "Dialogue";
         const string Audio = "Audio";
+        const string Decision = "Decision";
 
         return new List<SearchTreeEntry>()
         {
-            CreateGroupEntry(Create, 0),
-            CreateGroupEntry(Basic, 1),
-            CreateEntry(INode.ENTRY, 2, _texture),
-            CreateEntry(INode.EXIT, 2, _texture),
-            CreateGroupEntry(Dialogue, 1),
-            CreateEntry(INode.ENABLE, 2, _texture),
-            CreateEntry(INode.DISABLE, 2, _texture),
-            CreateEntry(INode.NAME, 2, _texture),
-            CreateEntry(INode.PORTRAIT, 2, _texture),
-            CreateEntry(INode.TYPEWRITER, 2, _texture),
-            CreateGroupEntry(Audio, 1),
-            CreateEntry(INode.MUSIC, 2, _texture),
-            CreateEntry(INode.SFX, 2, _texture)
+            CreateGroupEntry(Create),
+            CreateGroupEntry(Basic),
+            CreateEntry(INode.ENTRY),
+            CreateEntry(INode.EXIT),
+            CreateGroupEntry(Dialogue),
+            CreateEntry(INode.ENABLE),
+            CreateEntry(INode.DISABLE),
+            CreateEntry(INode.NAME),
+            CreateEntry(INode.PORTRAIT),
+            CreateEntry(INode.TYPEWRITER),
+            CreateGroupEntry(Audio),
+            CreateEntry(INode.MUSIC),
+            CreateEntry(INode.SFX),
+            CreateGroupEntry(Decision),
+            CreateEntry(INode.ENABLE_DECISIONS),
+            CreateEntry(INode.DISABLE_DECISIONS),
+            CreateEntry(INode.SET_CHOICES)
         };
     }
 
@@ -46,16 +51,16 @@ public class InteractionSearchWindow : ScriptableObject, ISearchWindowProvider
         return true;
     }
 
-    private SearchTreeEntry CreateEntry(string type, int level, Texture2D texture = null)
+    private SearchTreeEntry CreateEntry(string type)
     {
-        var content = new GUIContent(type, texture);
-        return new SearchTreeEntry(content) { level = level, userData = type };
+        var content = new GUIContent(type, _texture);
+        return new SearchTreeEntry(content) { level = 2, userData = type };
     }
 
-    private SearchTreeEntry CreateGroupEntry(string type, int level, Texture2D texture = null)
+    private SearchTreeEntry CreateGroupEntry(string type)
     {
-        var content = new GUIContent(type, texture);
-        return new SearchTreeGroupEntry(content) { level = level };
+        var content = new GUIContent(type);
+        return new SearchTreeGroupEntry(content) { level = 1 };
     }
 
     private void CreateContentTexture()

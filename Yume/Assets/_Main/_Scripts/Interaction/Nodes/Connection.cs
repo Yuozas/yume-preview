@@ -5,6 +5,7 @@ using UnityEngine;
 [Serializable]
 public class Connection
 {
+    [field: SerializeField] public string Text { get; private set; }
     [field: SerializeReference] public List<INode> Nodes { get; private set; }
 
     public Connection(List<INode> nodes = null)

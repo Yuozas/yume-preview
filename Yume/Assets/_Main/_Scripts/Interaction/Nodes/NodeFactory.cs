@@ -19,6 +19,8 @@
             INode.PORTRAIT => BuildPortrait(),
             INode.NAME => BuildName(),
             INode.TYPEWRITER => BuildTypewriter(),
+            INode.ENABLE_DECISIONS => BuildEnableDecision(),
+            INode.DISABLE_DECISIONS => BuildDisableDecision(),
             _ => null,
         };
     }
@@ -41,6 +43,18 @@
     {
         var command = new EnableDialogueTogglerCommand(_type);
         return new CompositeNode(INode.ENABLE, false, command);
+    }
+
+    public INode BuildDisableDecision()
+    {
+        var command = new EnableDecisionsTogglerCommand();
+        return new CompositeNode(INode.DISABLE_DECISIONS, false, command);
+    }
+
+    public INode BuildEnableDecision()
+    {
+        var command = new EnableDecisionsTogglerCommand();
+        return new CompositeNode(INode.ENABLE_DECISIONS, false, command);
     }
 
     public INode BuildMusic()

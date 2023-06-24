@@ -1,16 +1,19 @@
-﻿public class Choice
-{
-    private readonly string _text;
-    private readonly INode _node;
+﻿using System.Collections.Generic;
 
-    public Choice(string text, INode node)
+public class Choice
+{
+    public readonly string Text;
+    private readonly List<INode> _nodes;
+
+    public Choice(string text, List<INode> nodes)
     {
-        _text = text;
-        _node = node;
+        Text = text;
+        _nodes = nodes;
     }
 
     public void Choose()
     {
-        _node.Execute();
+        foreach (var node in _nodes)
+            node.Execute();
     }
 }
