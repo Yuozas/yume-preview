@@ -33,54 +33,6 @@ public class InteractionGraphView : GraphView
         AssignNodeCreationRequest();
     }
 
-    private void AssignNodeCreationRequest()
-    {
-        nodeCreationRequest = _interaction is not null ? OpenSearchWindow : null;
-    }
-
-    private GraphViewChange OnGraphChange(GraphViewChange change)
-    {
-        var edges = change.edgesToCreate;
-        if(edges is not null)
-            foreach (var edge in edges)
-                AddConnectionBasedOnEdge(edge);
-
-        var removables = change.elementsToRemove;
-        if (removables is not null)
-            foreach (var element in change.elementsToRemove)
-                CheckTypeAndRemoveIt(element);
-
-        return change;
-    }
-
-    private void AddConnectionBasedOnEdge(Edge edge)
-    {
-        var from = (edge.output.node as GraphNode).UnityNode.Node;
-        var to = (edge.input.node as GraphNode).UnityNode.Node;
-
-        from.Add(to);
-
-        var contains = _removables.Contains(edge);
-        if (!contains)
-            _removables.Add(edge);
-    }
-
-    private void CheckTypeAndRemoveIt(GraphElement element)
-    {
-        switch (element)
-        {
-            case GraphNode graphNode:
-                _interaction.Remove(graphNode.UnityNode);
-                break;
-            case Edge edge:
-                var from = (edge.output.node as GraphNode).UnityNode.Node;
-                var to = (edge.input.node as GraphNode).UnityNode.Node;
-
-                from.Remove(to);
-                break;
-        }
-    }
-
     public void Load(Interaction interaction)
     {
         Unload();
@@ -117,6 +69,69 @@ public class InteractionGraphView : GraphView
             .ToList();
 
         return updated;
+    }
+
+    private void AssignNodeCreationRequest()
+    {
+        nodeCreationRequest = _interaction is not null ? OpenSearchWindow : null;
+    }
+
+    private GraphViewChange OnGraphChange(GraphViewChange change)
+    {
+        var edges = change.edgesToCreate;
+        if (edges is not null)
+            foreach (var edge in edges)
+                AddConnectionBasedOnEdge(edge);
+
+        var removables = change.elementsToRemove;
+        if (removables is not null)
+            foreach (var element in change.elementsToRemove)
+                CheckTypeAndRemoveIt(element);
+
+        return change;
+    }
+
+    private void AddConnectionBasedOnEdge(Edge edge)
+    {
+        GetNodesAndIndex(edge, out var from, out var to, out var index);
+        from.UnityNode.Node.Get(index).Add(to.UnityNode.Node);
+
+        var contains = _removables.Contains(edge);
+        if (!contains)
+            _removables.Add(edge);
+    }
+
+    private void CheckTypeAndRemoveIt(GraphElement element)
+    {
+        switch (element)
+        {
+            case GraphNode graphNode:
+                _interaction.Remove(graphNode.UnityNode);
+                break;
+            case Edge edge:
+                GetNodesAndIndex(edge, out var from, out var to, out var index);
+                from.UnityNode.Node.Get(index).Remove(to.UnityNode.Node);
+                break;
+        }
+    }
+
+    private static void GetNodesAndIndex(Edge edge, out GraphNode from, out GraphNode to, out int index)
+    {
+        var output = edge.output;
+        var input = edge.input;
+
+        from = (output.node as GraphNode);
+        to = (input.node as GraphNode);
+        index = GetIndex(output, from);
+    }
+
+    private static int GetIndex(Port output, GraphNode from)
+    {
+        return from.outputContainer.Children()
+            .Where(element => element is Port)
+            .Cast<Port>()
+            .ToList()
+            .IndexOf(output);
     }
 
     private void CreateGraphNode(UnityNode unityNode)
@@ -191,19 +206,23 @@ public class InteractionGraphView : GraphView
                 continue;
 
             var fromGraphNode = _graphNodes.First(n => n.UnityNode.Node == node);
-            var fromPort = (Port)fromGraphNode.outputContainer.Children().First();
 
-            foreach (var connection in node.Connections)
+            for (int i = 0; i < node.Connections.Count; i++)
             {
-                var toGraphNode = _graphNodes.First(node => node.UnityNode.Node == connection);
-                var toPort = (Port)toGraphNode.inputContainer.Children().First();
-                var edge = fromPort.ConnectTo(toPort);
+                var connection = node.Connections[i];
+                foreach (var toNode in connection.Nodes)
+                {
+                    var toGraphNode = _graphNodes.First(graphNode => graphNode.UnityNode.Node == toNode);
+                    var toPort = (Port)toGraphNode.inputContainer.Children().First();
+                    var fromPort = (Port)fromGraphNode.outputContainer.Children().ToList()[i];
+                    var edge = fromPort.ConnectTo(toPort);
 
-                var contains = _removables.Contains(edge);
-                if (!contains)
-                    _removables.Add(edge);
+                    var contains = _removables.Contains(edge);
+                    if (!contains)
+                        _removables.Add(edge);
 
-                AddElement(edge);
+                    AddElement(edge);
+                }
             }
         }
     }

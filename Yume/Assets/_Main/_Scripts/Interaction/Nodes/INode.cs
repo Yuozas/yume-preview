@@ -14,9 +14,8 @@ public interface INode
     public const string EXIT = "Exit";
     public const string SFX = "Sfx";
 
-    List<INode> Connections { get; }
+    List<Connection> Connections { get; }
     ICommand Executable { get; }
-    void Add(INode node);
-    void Remove(INode node);
     void Execute();
+    Connection Get(int index);
 }
