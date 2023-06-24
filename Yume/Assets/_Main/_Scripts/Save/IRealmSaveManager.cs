@@ -8,6 +8,7 @@ public interface IRealmSaveManager
     bool AnySaveExists();
     Realm GetActiveSave();
     void ChangeActiveSave(RealmSaveDetails realmSave);
+    void ChangeActiveSave(long saveId);
     RealmSaveDetails[] GetAllSaveDetails();
     RealmResult<RealmSaveDetails> GetActiveSaveDetails();
 }

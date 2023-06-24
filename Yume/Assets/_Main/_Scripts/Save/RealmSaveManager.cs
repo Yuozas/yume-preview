@@ -25,9 +25,10 @@ public class RealmSaveManager : IRealmSaveManager
         _realmSaveRegistry.CreateNewSave($"{character.Name}'s little story.");
 
         using var realm = GetActiveSave();
-        realm.AddAndSave(new ActiveCharacter()
+        realm.WriteAdd(new PlayerDetails()
         {
-            Id = character.Id
+            CharacterId = character.Id,
+            SceneName = character.SceneName
         });
     }
 
@@ -58,6 +59,13 @@ public class RealmSaveManager : IRealmSaveManager
         return activeSaveDetails is null
             ? throw new ArgumentException("No active save found.")
             : _realmContext.GetRealm(activeSaveDetails.Result.SaveId.ToString());
+    }
+
+    public void ChangeActiveSave(long saveId)
+    {
+        using var globalRealm = _realmContext.GetGlobalRealm();
+        var save = globalRealm.Find<RealmSaveDetails>(saveId);
+        ChangeActiveSave(save);
     }
 
     public void ChangeActiveSave(RealmSaveDetails realmSave)

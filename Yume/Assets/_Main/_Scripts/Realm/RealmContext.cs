@@ -4,7 +4,7 @@ public class RealmContext : IRealmContext
 {
     private readonly RealmConfiguration _globalRealmConfiguration = new("Global")
     {
-        Schema = new[] { typeof(ActiveRealmSaveDetails), typeof(RealmSaveDetails) }
+        Schema = new[] { typeof(ActiveRealmSaveDetails), typeof(RealmSaveDetails), typeof(DebuggingRealm) }
     };
 
     public void DeleteRealm(string name)

@@ -10,7 +10,7 @@ public static class RealmUnityEditor
         ServiceLocator.GetSingleton<IRealmContext>().DeleteGlobalRealm();
     }
 
-    [MenuItem("Tools/Realm/Log path")]
+    [MenuItem("Tools/Realm/Log global realm path")]
     private static void LogRealmPath()
     {
         var realm = ServiceLocator.GetSingleton<IRealmContext>().GetGlobalRealm();

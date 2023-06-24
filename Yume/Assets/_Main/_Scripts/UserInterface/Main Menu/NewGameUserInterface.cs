@@ -62,6 +62,8 @@ public class NewGameUserInterface : MonoBehaviour
     public void TriggerConfirm()
     {
         _saveManager.CreateNewSave(_selectedCharacter.Id);
+        using var realm = _saveManager.GetActiveSave();
+        realm.Get<PlayerDetails>().SceneName = _selectedCharacter.SceneName;
         SceneManager.LoadScene(_selectedCharacter.SceneName, LoadSceneMode.Single);
     }
 
