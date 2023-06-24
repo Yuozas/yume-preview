@@ -40,6 +40,9 @@ public class GraphNodeFactory
             case INode.SFX:
                 AddSfxNodeElements(unity, drawables);
                 break;
+            case INode.SET_CHOICES:
+                AddSetChoicesNodeElements(drawables);
+                break;
         }
 
         if (unity.Type != INode.ENTRY)
@@ -141,6 +144,19 @@ public class GraphNodeFactory
         var dropdown = CreateTypeSelect(executable.Type, callback => executable.Type = callback.newValue);
 
         var extension = new DrawableExtensionContainer(dropdown, rate, field);
+
+        AddSingularOutputPortContainer(drawables);
+        drawables.Add(extension);
+    }
+
+    private static void AddSetChoicesNodeElements(List<IDrawable> drawables)
+    {
+        var button = new Button()
+        {
+            text = "Add Choice"
+        };
+
+        var extension = new DrawableExtensionContainer(button);
 
         AddSingularOutputPortContainer(drawables);
         drawables.Add(extension);

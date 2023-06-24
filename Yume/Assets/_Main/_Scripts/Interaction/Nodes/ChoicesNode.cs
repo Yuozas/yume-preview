@@ -1,49 +1,30 @@
-﻿using System.Collections.Generic;
-using System;
-using UnityEngine;
+﻿using System;
+using System.Linq;
 
 [Serializable]
-public class ChoicesNode : INode
+public class ChoicesNode : BaseNode, INode
 {
-    [field: SerializeField] public string Type { get; private set; }
-    [field: SerializeField] public List<Connection> Connections { get; private set; }
-    [field: SerializeReference] public ICommand Executable { get; private set; }
-
-    public ChoicesNode(string type)
+    public ICommand Executable { get; private set; }
+    public ChoicesNode(string type, ICommand executable = null) : base(type)
     {
-        Type = type;
-        Connections = Connections is null ? new() : Connections;
-
-        var connection = new Connection();
-        Add(connection);
+        Executable = executable ?? Executable;
     }
 
     public void Execute()
     {
-        var choices = new Choice[Connections.Count];
-        for (int i = 0; i < choices.Length; i++)
-        {
-            var connection = Connections[i];
-            choices[i] = new Choice(connection.Text, connection.Nodes);
-        }
-
-        new SetChoicesCommand(choices).Execute();
+        ValidateExecutable();
+        Executable.Execute();
     }
 
-    public Connection Get(int index)
+    private void ValidateExecutable()
     {
-        return Connections[index];
-    }
+        if (Executable is not null)
+            return;
 
-    private bool Contains(Connection connection)
-    {
-        return Connections.Contains(connection);
-    }
+        var choices = Connections
+            .Select(connection => new Choice(connection.Text, connection.Nodes))
+            .ToArray();
 
-    private void Add(Connection connection)
-    {
-        var contains = Contains(connection);
-        if (!contains)
-            Connections.Add(connection);
+        Executable = new SetChoicesCommand(choices);
     }
 }

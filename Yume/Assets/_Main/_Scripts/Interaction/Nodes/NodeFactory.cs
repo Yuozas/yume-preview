@@ -21,6 +21,7 @@
             INode.TYPEWRITER => BuildTypewriter(),
             INode.ENABLE_DECISIONS => BuildEnableDecision(),
             INode.DISABLE_DECISIONS => BuildDisableDecision(),
+            INode.SET_CHOICES => BuildSetChoices(),
             _ => null,
         };
     }
@@ -55,6 +56,11 @@
     {
         var command = new EnableDecisionsTogglerCommand();
         return new CompositeNode(INode.ENABLE_DECISIONS, false, command);
+    }
+
+    public INode BuildSetChoices()
+    {
+        return new ChoicesNode(INode.SET_CHOICES);
     }
 
     public INode BuildMusic()
