@@ -21,6 +21,8 @@ MonoBehaviour:
   - rid: 8981177242252476554
   - rid: 8981177242252476581
   - rid: 8981177264092741677
+  - rid: 8981177672155529319
+  - rid: 8981177672155529322
   references:
     version: 2
     RefIds:
@@ -37,29 +39,31 @@ MonoBehaviour:
       data:
         <Type>k__BackingField: Entry
         <Connections>k__BackingField:
-        - <Nodes>k__BackingField:
+        - <Text>k__BackingField: 
+          <Nodes>k__BackingField:
           - rid: 8981177211230355780
           - rid: 8981177211230355773
           - rid: 8981177211230355793
           - rid: 8981177242252476555
+        _wait: 0
         <Executable>k__BackingField:
           rid: -2
-        _wait: 0
     - rid: 8981177211230355747
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
         <Node>k__BackingField:
           rid: 8981177211230355748
-        Position: {x: 791.0296, y: 380.99997}
+        Position: {x: 1158.826, y: 380.99997}
     - rid: 8981177211230355748
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
         <Type>k__BackingField: Exit
         <Connections>k__BackingField:
-        - <Nodes>k__BackingField: []
+        - <Text>k__BackingField: 
+          <Nodes>k__BackingField: []
+        _wait: 0
         <Executable>k__BackingField:
           rid: -2
-        _wait: 0
     - rid: 8981177211230355772
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
@@ -71,10 +75,11 @@ MonoBehaviour:
       data:
         <Type>k__BackingField: Name
         <Connections>k__BackingField:
-        - <Nodes>k__BackingField: []
+        - <Text>k__BackingField: 
+          <Nodes>k__BackingField: []
+        _wait: 0
         <Executable>k__BackingField:
           rid: 8981177211230355774
-        _wait: 0
     - rid: 8981177211230355774
       type: {class: SetDialogueNameSettingsCommand, ns: , asm: Assembly-CSharp}
       data:
@@ -92,10 +97,11 @@ MonoBehaviour:
       data:
         <Type>k__BackingField: Portrait
         <Connections>k__BackingField:
-        - <Nodes>k__BackingField: []
+        - <Text>k__BackingField: 
+          <Nodes>k__BackingField: []
+        _wait: 0
         <Executable>k__BackingField:
           rid: 8981177211230355781
-        _wait: 0
     - rid: 8981177211230355781
       type: {class: SetDialoguePortraitSettingsCommand, ns: , asm: Assembly-CSharp}
       data:
@@ -114,10 +120,11 @@ MonoBehaviour:
       data:
         <Type>k__BackingField: Open
         <Connections>k__BackingField:
-        - <Nodes>k__BackingField: []
+        - <Text>k__BackingField: 
+          <Nodes>k__BackingField: []
+        _wait: 0
         <Executable>k__BackingField:
           rid: 8981177211230355794
-        _wait: 0
     - rid: 8981177211230355794
       type: {class: EnableDialogueTogglerCommand, ns: , asm: Assembly-CSharp}
       data:
@@ -133,11 +140,12 @@ MonoBehaviour:
       data:
         <Type>k__BackingField: Typewriter
         <Connections>k__BackingField:
-        - <Nodes>k__BackingField:
+        - <Text>k__BackingField: 
+          <Nodes>k__BackingField:
           - rid: 8981177242252476582
+        _wait: 1
         <Executable>k__BackingField:
           rid: 8981177242252476556
-        _wait: 1
     - rid: 8981177242252476556
       type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
       data:
@@ -156,12 +164,13 @@ MonoBehaviour:
       data:
         <Type>k__BackingField: Typewriter
         <Connections>k__BackingField:
-        - <Nodes>k__BackingField:
-          - rid: 8981177264092741678
-          - rid: 8981177211230355748
+        - <Text>k__BackingField: 
+          <Nodes>k__BackingField:
+          - rid: 8981177672155529320
+          - rid: 8981177672155529323
+        _wait: 1
         <Executable>k__BackingField:
           rid: 8981177242252476583
-        _wait: 1
     - rid: 8981177242252476583
       type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
       data:
@@ -174,17 +183,51 @@ MonoBehaviour:
       data:
         <Node>k__BackingField:
           rid: 8981177264092741678
-        Position: {x: 791.0296, y: 265}
+        Position: {x: 1158.826, y: 265}
     - rid: 8981177264092741678
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
         <Type>k__BackingField: Close
         <Connections>k__BackingField:
-        - <Nodes>k__BackingField: []
+        - <Text>k__BackingField: 
+          <Nodes>k__BackingField: []
+        _wait: 0
         <Executable>k__BackingField:
           rid: 8981177264092741679
-        _wait: 0
     - rid: 8981177264092741679
       type: {class: DisableDialogueTogglerCommand, ns: , asm: Assembly-CSharp}
       data:
         Type: Conversation
+    - rid: 8981177672155529319
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177672155529320
+        Position: {x: 672, y: 38.5}
+    - rid: 8981177672155529320
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Open Decision
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: 
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 8981177672155529321
+    - rid: 8981177672155529321
+      type: {class: EnableDecisionsTogglerCommand, ns: , asm: Assembly-CSharp}
+    - rid: 8981177672155529322
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177672155529323
+        Position: {x: 672, y: 145}
+    - rid: 8981177672155529323
+      type: {class: ChoicesNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Set Choices
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: 
+          <Nodes>k__BackingField:
+          - rid: 8981177264092741678
+          - rid: 8981177211230355748

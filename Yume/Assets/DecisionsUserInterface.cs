@@ -17,6 +17,7 @@ public class DecisionsUserInterface : MonoBehaviour
 
     private void Awake()
     {
+        _interfaces = new();
         _decisions = ServiceLocator.GetSingleton<Decisions>();
         _group = _decisions.Choices;
     }

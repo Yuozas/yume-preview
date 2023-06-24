@@ -13,6 +13,11 @@ public class ChoiceGroup
     private readonly List<Choice> _choices;
     private int _index;
 
+    public ChoiceGroup()
+    {
+        _choices = new();
+    }
+
     public void Update(params Choice[] choices)
     {
         _choices.Clear();
