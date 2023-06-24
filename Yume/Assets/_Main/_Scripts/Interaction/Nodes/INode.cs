@@ -21,4 +21,5 @@ public interface INode
     ICommand Executable { get; }
     void Execute();
     Connection Get(int index);
+    void AddConnection();
 }

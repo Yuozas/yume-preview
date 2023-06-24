@@ -8,7 +8,7 @@ public class Talking : IState
 
     private States _states;
     private Dialogue _dialogue;
-    private DelayedExecutor _executor;
+    private readonly DelayedExecutor _executor;
     private bool _subscribed;
 
     public Talking(InputActions.TalkingActions actions)

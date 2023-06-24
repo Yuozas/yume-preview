@@ -27,6 +27,12 @@ public class BaseNode
         return Connections.Contains(connection);
     }
 
+    public void AddConnection()
+    {
+        var connection = new Connection();
+        Add(connection);
+    }
+
     protected void Add(Connection connection)
     {
         var contains = Contains(connection);
