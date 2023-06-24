@@ -24,7 +24,7 @@ public class InteractionSearchWindow : ScriptableObject, ISearchWindowProvider
 
         return new List<SearchTreeEntry>()
         {
-            CreateGroupEntry(Create),
+            CreateGroupEntry(Create, 0),
             CreateGroupEntry(Basic),
             CreateEntry(INode.ENTRY),
             CreateEntry(INode.EXIT),
@@ -57,10 +57,10 @@ public class InteractionSearchWindow : ScriptableObject, ISearchWindowProvider
         return new SearchTreeEntry(content) { level = 2, userData = type };
     }
 
-    private SearchTreeEntry CreateGroupEntry(string type)
+    private SearchTreeEntry CreateGroupEntry(string type, int level = 1)
     {
         var content = new GUIContent(type);
-        return new SearchTreeGroupEntry(content) { level = 1 };
+        return new SearchTreeGroupEntry(content) { level = level };
     }
 
     private void CreateContentTexture()
