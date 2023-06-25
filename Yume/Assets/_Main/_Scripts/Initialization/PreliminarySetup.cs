@@ -3,12 +3,16 @@ using System;
 using System.Reflection;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public static class PreliminarySetup
 {
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
-    public static void Setup()
+    public static async void Setup()
     {
+        if(SceneManager.GetActiveScene().buildIndex is not 0)
+            await SceneManager.LoadSceneAsync(0);
+
         var setups = GetAllPreliminarySetups().OrderBy(setup => setup.Order);
         foreach (var setup in setups)
             setup.Setup();
