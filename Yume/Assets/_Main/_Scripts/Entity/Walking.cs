@@ -43,8 +43,7 @@ public class Walking : BaseState, IState
 
     public void Tick()
     {
-        var met = TryTransition();
-        if (met)
+        if (TryTransition())
             return;
 
         _movement.Tick(Movement.DEFAULT_SPEED);
