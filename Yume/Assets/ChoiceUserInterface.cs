@@ -9,7 +9,7 @@ public class ChoiceUserInterface : MonoBehaviour
     [SerializeField] private Image _image;
 
     public Choice Choice { get; private set; }
-    public int TextLength => Choice is not null ? Choice.Text.Length : 0;
+    public int TextLength => Choice is null ? 0 : Choice.Text.Length;
 
     public void Initialize(Choice choice)
     {
