@@ -151,7 +151,7 @@ public class GraphNodeFactory
 
     private void AddSetChoicesNodeElements(UnityNode unity, List<IDrawable> drawables, GraphView view)
     {
-        var compositeOutput = new MultiplePortContainer(SingularPortContainer.OUT_PORT_NAME, Direction.Output, unity.Node.Connections, view);
+        var compositeOutput = new MultiplePortContainer(Direction.Output, unity.Node.Connections, view);
         var button = new Button() { text = "Add Choice" };
         button.clicked += () =>
         {

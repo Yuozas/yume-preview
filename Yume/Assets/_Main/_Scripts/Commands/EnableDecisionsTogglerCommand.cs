@@ -6,9 +6,7 @@ public class EnableDecisionsTogglerCommand : ICommand
 {
     public void Execute(Action onFinished = null)
     {
-        var toggler = ServiceLocator.GetSingleton<Decisions>().Toggler;
-        var command = new EnableTogglerCommand(toggler);
-
-        command.Execute(onFinished);
+        new EnableTogglerCommand(ServiceLocator.GetSingleton<Decisions>().Toggler)
+            .Execute(onFinished);
     }
 }

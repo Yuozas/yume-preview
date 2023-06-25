@@ -6,9 +6,7 @@ public class DisableDecisionsTogglerCommand : ICommand
 {
     public void Execute(Action onFinished = null)
     {
-        var toggler = ServiceLocator.GetSingleton<Decisions>().Toggler;
-        var command = new DisableTogglerCommand(toggler);
-
-        command.Execute(onFinished);
+        new DisableTogglerCommand(ServiceLocator.GetSingleton<Decisions>().Toggler)
+            .Execute(onFinished);
     }
 }
