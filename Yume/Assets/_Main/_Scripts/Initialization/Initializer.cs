@@ -50,6 +50,8 @@ public class Initializer : IPreliminarySetup
             return Instantiator.InstantiateAndDontDestroy(prefab);
         });
 
+        ServiceLocator.SingletonRegistrator.Register(provider => new Decisions());
+
         var prefab = Resources.Load<DialoguesUserInterface>("DialoguesUserInterface");
         Instantiator.InstantiateAndDontDestroy(prefab);
     }

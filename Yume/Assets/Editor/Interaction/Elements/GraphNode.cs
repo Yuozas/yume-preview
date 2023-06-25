@@ -39,9 +39,8 @@ public class GraphNode : Node
 
     private void AddDrawables(params IDrawable[] drawables)
     {
-        for (int i = 0; i < drawables.Length; i++)
+        foreach (var drawable in drawables)
         {
-            var drawable = drawables[i];
             drawable.Set(this);
             _drawables.Add(drawable);
         }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class InteractionGraphWindow : EditorWindow
 {
     public const string TITLE = "Interaction";
-    public const string PATH = TITLE + "/Window";
+    public const string PATH = "Tools/" + TITLE;
 
     private InteractionGraphView _view;
     private Interaction _interaction;
@@ -30,7 +30,7 @@ public class InteractionGraphWindow : EditorWindow
 
     private void CreateGraphView()
     {
-        _view = new InteractionGraphView();
+        _view = new InteractionGraphView(this);
         _view.StretchToParentSize();
 
         rootVisualElement.Add(_view);
@@ -71,7 +71,7 @@ public class InteractionGraphWindow : EditorWindow
         _interaction = @event.newValue as Interaction;
         if(_interaction is null)
         {
-            _view.ClearElements();
+            _view.Unload();
             return;
         }
 

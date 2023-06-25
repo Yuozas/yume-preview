@@ -30,14 +30,12 @@ public class SingularPortContainer : IDrawable
 
         ColorUtility.TryParseHtmlString("#84E4E7", out var color);
 
-        var output = _node.InstantiatePort(Orientation.Horizontal, _direction, Port.Capacity.Multi, type);
-        output.portName = _name + "(Any)";
-        output.portColor = color;
+        var port = _node.InstantiatePort(Orientation.Horizontal, _direction, Port.Capacity.Multi, type);
+        port.portName = _name + "(Any)";
+        port.portColor = color;
 
-        if(_direction is Direction.Output)
-            _node.outputContainer.Add(output);
-        else
-            _node.inputContainer.Add(output);
+        var container = _direction is Direction.Output ? _node.outputContainer : _node.inputContainer;
+        container.Add(port);
 
         OnDrawn?.Invoke();
     }

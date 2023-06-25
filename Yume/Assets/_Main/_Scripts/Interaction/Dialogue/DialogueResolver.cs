@@ -10,6 +10,11 @@ public class DialogueResolver
         _dialogues = dialogues;
     }
 
+    public Dialogue[] Resolve()
+    {
+        return _dialogues.ToArray();
+    }
+
     public Dialogue Resolve(string type)
     {
         return _dialogues.First(dialogue => dialogue.Type == type);

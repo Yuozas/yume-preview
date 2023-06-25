@@ -863,7 +863,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_UI_Style_1_36
+      name: Star
       rect:
         serializedVersion: 2
         x: 150
@@ -1556,7 +1556,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_UI_Style_1_69
+      name: Bag
       rect:
         serializedVersion: 2
         x: 225
@@ -18222,6 +18222,7 @@ TextureImporter:
       Active Icon: -12497140
       Backpack Icon: -1686963143
       Backpack Slot Section: 1297398125
+      Bag: -742520751
       Book: 16535161
       Close Frame: 103831350
       Cursor 1: 1259168085
@@ -18513,7 +18514,6 @@ TextureImporter:
       Modern_UI_Style_1_357: 25362862
       Modern_UI_Style_1_358: 1550899431
       Modern_UI_Style_1_359: 1168364941
-      Modern_UI_Style_1_36: -1773562576
       Modern_UI_Style_1_360: 710417284
       Modern_UI_Style_1_361: -790000477
       Modern_UI_Style_1_362: -1802810492
@@ -18869,7 +18869,6 @@ TextureImporter:
       Modern_UI_Style_1_687: 1601272502
       Modern_UI_Style_1_688: 1521310944
       Modern_UI_Style_1_689: 380535431
-      Modern_UI_Style_1_69: -742520751
       Modern_UI_Style_1_690: 165437131
       Modern_UI_Style_1_691: -1356646595
       Modern_UI_Style_1_692: 270198823
@@ -19079,6 +19078,7 @@ TextureImporter:
       Search Input: -875630578
       Settings: 726841540
       Small cursor: 811161382
+      Star: -1773562576
       Sub Frame: 813368477
       Yellow button: 209420594
   mipmapLimitGroupName: 
