@@ -10,6 +10,8 @@ public class SaveItemUserIterface
     private readonly Button _deleteButton;
     private readonly RealmSaveDetails _realmSaveDetails;
     private readonly Action _onDelete;
+    private readonly IRealmSaveManager _realmSaveManager;
+    private readonly ISceneHelper _sceneHelper;
 
     public SaveItemUserIterface(VisualElement saveItem, RealmSaveDetails realmSaveDetails, Action onDelete)
     {
@@ -23,6 +25,9 @@ public class SaveItemUserIterface
 
         _onDelete = onDelete;
         SetupSaveItem();
+
+        _realmSaveManager = ServiceLocator.GetSingleton<IRealmSaveManager>();
+        _sceneHelper = ServiceLocator.GetSingleton<ISceneHelper>();
     }
 
     public void SetupSaveItem()
@@ -35,13 +40,13 @@ public class SaveItemUserIterface
 
     private void TriggerDelete()
     {
-        ServiceLocator.GetSingleton<IRealmSaveManager>().DeleteSave(_realmSaveDetails.SaveId);
+        _realmSaveManager.DeleteSave(_realmSaveDetails.SaveId);
         _onDelete();
     }
 
     private void TriggerContinue()
     {
-        ServiceLocator.GetSingleton<IRealmSaveManager>().ChangeActiveSave(_realmSaveDetails.SaveId);
-        ServiceLocator.GetSingleton<ISceneHelper>().LoadActiveSaveScene();
+        _realmSaveManager.ChangeActiveSave(_realmSaveDetails.SaveId);
+        _sceneHelper.LoadActiveSaveScene();
     }
 }
