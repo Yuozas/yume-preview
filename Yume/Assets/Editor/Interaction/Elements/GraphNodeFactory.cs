@@ -7,10 +7,8 @@ using System.Linq;
 
 public class GraphNodeFactory
 {
-    private GraphView _graphView;
     public GraphNode Build(GraphView view, UnityNode unity)
     {
-        _graphView = view;
         var drawables = new List<IDrawable>()
         {
             new DrawableTitleContainer(unity.Type)
@@ -43,7 +41,7 @@ public class GraphNodeFactory
                 AddSfxNodeElements(unity, drawables);
                 break;
             case INode.SET_DECISION_CHOICES:
-                AddSetChoicesNodeElements(unity, drawables);
+                AddSetChoicesNodeElements(unity, drawables, view);
                 break;
         }
 
@@ -151,9 +149,9 @@ public class GraphNodeFactory
         drawables.Add(extension);
     }
 
-    private void AddSetChoicesNodeElements(UnityNode unity, List<IDrawable> drawables)
+    private void AddSetChoicesNodeElements(UnityNode unity, List<IDrawable> drawables, GraphView view)
     {
-        var compositeOutput = new MultiplePortContainer(SingularPortContainer.OUT_PORT_NAME, Direction.Output, unity.Node.Connections, _graphView);
+        var compositeOutput = new MultiplePortContainer(SingularPortContainer.OUT_PORT_NAME, Direction.Output, unity.Node.Connections, view);
         var button = new Button() { text = "Add Choice" };
         button.clicked += () =>
         {
