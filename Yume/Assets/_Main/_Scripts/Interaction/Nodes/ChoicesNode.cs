@@ -22,7 +22,7 @@ public class ChoicesNode : BaseNode, INode
             return;
 
         var choices = Connections
-            .Select(connection => new Choice(connection.Text, connection.Nodes))
+            .Select(connection => new Choice(connection.Text, connection.Sprite, connection.Nodes))
             .ToArray();
 
         Executable = new SetChoicesCommand(choices);

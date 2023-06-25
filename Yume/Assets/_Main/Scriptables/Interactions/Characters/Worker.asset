@@ -200,7 +200,7 @@ MonoBehaviour:
         <Type>k__BackingField: Set Decision Choices
         <Connections>k__BackingField:
         - <Text>k__BackingField: Shop
-          <Sprite>k__BackingField: {fileID: 2116238392, guid: a61478f734817a34f845dcc7d680e467, type: 3}
+          <Sprite>k__BackingField: {fileID: -742520751, guid: 1a4d1f89522da874c8a9331ccf49cf2a, type: 3}
           <Nodes>k__BackingField:
           - rid: 8981177686387064857
         - <Text>k__BackingField: Close
@@ -276,5 +276,5 @@ MonoBehaviour:
       data:
         Type: Conversation
         Settings:
-          Sentence: Seriously...? Does I look like I sell stuff?
+          Sentence: Seriously...? Does it look like I sell stuff?
           Rate: 0.036

@@ -11,15 +11,22 @@ public class DecisionsUserInterface : MonoBehaviour
     [SerializeField] private RectTransform _holder;
     [SerializeField] private RectTransform _arrow;
 
+    [Header("Settings")]
+    [SerializeField] private float _arrowOffset = 1f;
+
     private Decisions _decisions;
     private ChoiceGroup _group;
     private List<ChoiceUserInterface> _interfaces;
+
+    private float _startingWidth;
 
     private void Awake()
     {
         _interfaces = new();
         _decisions = ServiceLocator.GetSingleton<Decisions>();
         _group = _decisions.Choices;
+
+        _startingWidth = _holder.sizeDelta.x;
     }
 
     private void OnEnable()
@@ -56,6 +63,20 @@ public class DecisionsUserInterface : MonoBehaviour
             instantiated.Initialize(choice);
             _interfaces.Add(instantiated);
         }
+
+        UpdateHolderWidth();
+    }
+
+    private void UpdateHolderWidth()
+    {
+        var @interface = _interfaces
+            .OrderByDescending(@interface => @interface.TextLength)
+            .First();
+
+        var width = _startingWidth + (@interface.TextLength * 5.5f);
+        _holder.sizeDelta = new Vector2(width, _holder.sizeDelta.y);
+
+        _arrow.localPosition = _arrow.localPosition.With(x: -_holder.sizeDelta.x + _arrowOffset);
     }
 
     private void Select()

@@ -6,11 +6,13 @@ using UnityEngine;
 public class Choice
 {
     [field: SerializeField] public string Text { get; private set; }
+    [field: SerializeField] public Sprite Icon { get; private set; }
     [SerializeReference] private List<INode> _nodes;
 
-    public Choice(string text, List<INode> nodes)
+    public Choice(string text, Sprite sprite, List<INode> nodes)
     {
         Text = text;
+        Icon = sprite;
         _nodes = nodes;
     }
 
