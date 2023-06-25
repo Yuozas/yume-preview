@@ -13,19 +13,18 @@ public class MultiplePortContainer : IDrawable
     public const string OUT_PORT_NAME = "Out";
     public const string IN_PORT_NAME = "In";
 
-    private readonly string _name;
     private readonly Direction _direction;
     private readonly List<Connection> _connections;
-    private GraphNode _node;
     private readonly Type _type;
     private readonly GraphView _view;
 
-    public MultiplePortContainer(string name, Direction direction, List<Connection> connections, GraphView view)
+    private GraphNode _node;
+
+    public MultiplePortContainer(Direction direction, List<Connection> connections, GraphView view)
     {
         _view = view;
         _connections = connections;
         _direction = direction;
-        _name = name;
         _type = typeof(bool);
     }
 
