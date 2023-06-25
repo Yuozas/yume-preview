@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Main/UI/Main%20Menu/Continue/Save%20Item%20Style.uss?fileID=7433441132597879392&amp;guid=6b413f1a803940144a8c61c12e61839b&amp;type=3#Save Item Style" />
+    <ui:VisualElement name="Body" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+        <ui:Label tabindex="-1" text="Save Name" display-tooltip-when-elided="true" name="DisplayName" class="text item text-item" />
+        <ui:Label tabindex="-1" text="0000-00-00 00:00" display-tooltip-when-elided="true" name="DateTime" class="text item text-item" />
+        <ui:Button text="Continue" display-tooltip-when-elided="true" name="ContinueButton" class="item" />
+        <ui:Button text="Delete" display-tooltip-when-elided="true" name="DeleteButton" class="item" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,3 +1,5 @@
+using UnityEngine.SceneManagement;
+
 public class SceneDataHandler
 {
     public readonly string MainMenuSceneName = "Main Menu";

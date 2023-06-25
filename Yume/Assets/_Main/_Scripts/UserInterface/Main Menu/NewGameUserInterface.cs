@@ -10,6 +10,7 @@ public class NewGameUserInterface : MonoBehaviour
     private IRealmSaveManager _saveManager;
     private SceneDataHandler _sceneDataHandler;
     private CharacterDataHandler _characterDataHandler;
+    private ISceneHelper _sceneHelper;
     private VisualElement _startContainer;
     private VisualElement _backToMenuContainer;
     private VisualElement _confirmStartContainer;
@@ -20,6 +21,7 @@ public class NewGameUserInterface : MonoBehaviour
         _saveManager = ServiceLocator.SingletonProvider.Get<IRealmSaveManager>();
         _sceneDataHandler = ServiceLocator.SingletonProvider.Get<SceneDataHandler>();
         _characterDataHandler = ServiceLocator.SingletonProvider.Get<CharacterDataHandler>();
+        _sceneHelper = ServiceLocator.GetSingleton<ISceneHelper>();
 
         var root = GetComponent<UIDocument>().rootVisualElement;
         var body = root.Q<VisualElement>("Body");
@@ -61,8 +63,8 @@ public class NewGameUserInterface : MonoBehaviour
 
     public void TriggerConfirm()
     {
-        // _saveManager.CreateNewSave(_selectedCharacter.Id);
-        SceneManager.LoadScene(_selectedCharacter.SceneName, LoadSceneMode.Single);
+        _saveManager.CreateNewSave(_selectedCharacter.Id);
+        _sceneHelper.LoadActiveSaveScene();
     }
 
     public void SetupCancelStartButton()

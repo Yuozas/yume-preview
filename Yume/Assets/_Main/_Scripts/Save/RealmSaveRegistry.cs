@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 
 public class RealmSaveRegistry
 {
@@ -13,42 +12,32 @@ public class RealmSaveRegistry
     public void CreateNewSave(string saveName = "New save")
     {
         using var globalRealm = _realmContext.GetGlobalRealm();
-        using var transaction = globalRealm.BeginWrite();
-        var activeRealmSave = globalRealm.All<ActiveRealmSaveDetails>().FirstOrDefault();
-        if (activeRealmSave is not null)
-            globalRealm.Remove(activeRealmSave);
         var newSave = new RealmSaveDetails
         {
             SaveId = DateTimeOffset.UtcNow.ToUnixTimeSeconds(),
             DisplayName = saveName,
-            Date = DateTime.UtcNow
+            Date = DateTime.UtcNow,
+            IsVisible = true
         };
-        globalRealm.Add(newSave);
+        globalRealm.WriteAdd(newSave);
         ChangeActiveSave(newSave);
-        transaction.Commit();
     }
 
     public void DeleteSave(long saveId)
     {
         using var globalRealm = _realmContext.GetGlobalRealm();
-        using var transaction = globalRealm.BeginWrite();
-        var save = globalRealm.Find<RealmSaveDetails>(saveId);
-        if (save is not null)
+        globalRealm.TryWriteUpdate<RealmSaveDetails>(saveId, realmSaveDetails =>
         {
-            save.IsVisible = false; 
-            globalRealm.Add(save, true);
-        }
-            
-        transaction.Commit();
+            realmSaveDetails.IsVisible = false;
+        });
     }
 
     public void CopySave(long saveId)
     {
         using var globalRealm = _realmContext.GetGlobalRealm();
-        using var transaction = globalRealm.BeginWrite();
 
-        var save = globalRealm.Find<RealmSaveDetails>(saveId) 
-            ?? throw new ArgumentException($"Invalid {nameof(saveId)} passed. Save doesn't exist.");
+        if(!globalRealm.TryGet<RealmSaveDetails>(saveId, out var save))
+            throw new ArgumentException($"Invalid {nameof(saveId)} passed. Save doesn't exist.");
 
         var newSave = new RealmSaveDetails
         {
@@ -56,33 +45,24 @@ public class RealmSaveRegistry
             DisplayName = save.DisplayName,
             Date = DateTime.UtcNow
         };
-        globalRealm.Add(newSave);
+        globalRealm.WriteAdd(newSave);
         ChangeActiveSave(newSave);
-        transaction.Commit();
     }
 
     public void ChangeActiveSave(RealmSaveDetails realmSave)
     {
         using var globalRealm = _realmContext.GetGlobalRealm();
-        var activeRealmSave = globalRealm.All<ActiveRealmSaveDetails>().FirstOrDefault();
-        if (activeRealmSave is null)
+        globalRealm.WriteUpsert<ActiveRealmSaveDetails>(realmSaveDetails =>
         {
-            activeRealmSave = new ActiveRealmSaveDetails { ActiveSaveDetails = realmSave };
-            globalRealm.Add(activeRealmSave);
-            return;
-        }
-        activeRealmSave.ActiveSaveDetails = realmSave;
-        globalRealm.Add(realmSave, true);
+            realmSaveDetails.ActiveSaveDetails = realmSave;
+        });
     }
 
-    public ActiveRealmSaveDetails GetActiveSaveDetails()
+    public RealmResult<ActiveRealmSaveDetails> GetActiveSaveDetails()
     {
-        using var globalRealm = _realmContext.GetGlobalRealm();
-
-        var activeRealmSave = globalRealm.All<ActiveRealmSaveDetails>().FirstOrDefault();
-        if(activeRealmSave?.ActiveSaveDetails?.IsVisible ?? false)
+        var globalRealm = _realmContext.GetGlobalRealm();
+        if(globalRealm.TryGet<ActiveRealmSaveDetails>(out var activeRealmSave) && activeRealmSave.ActiveSaveDetails.IsVisible)
             return activeRealmSave;
-
         return null;
     }
 }

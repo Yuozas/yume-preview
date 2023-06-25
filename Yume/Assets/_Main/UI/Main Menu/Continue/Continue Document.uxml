@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Main/UI/Main%20Menu/Continue/Continue%20Style.uss?fileID=7433441132597879392&amp;guid=abe196e67a567dd4891723662ffcd8eb&amp;type=3#Continue Style" />
+    <ui:VisualElement name="BackToMenuContainer" class="back-to-menu-container">
+        <ui:Button text="&lt; Menu" display-tooltip-when-elided="true" name="BackToMenuButton" />
+    </ui:VisualElement>
+    <ui:ScrollView name="SaveItemsScrollView" />
+</ui:UXML>
