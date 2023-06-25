@@ -161,7 +161,6 @@ public class GraphNodeFactory
 
         var extension = new DrawableExtensionContainer(button);
 
-
         drawables.Add(compositeOutput);
         drawables.Add(extension);
     }
