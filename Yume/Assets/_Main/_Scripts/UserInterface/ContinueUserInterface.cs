@@ -31,7 +31,7 @@ public class ContinueUserInterface : MonoBehaviour
         var saveItems = _saveManager.GetAllSaveDetails().Where(s => s.IsVisible);
         foreach (var saveItem in saveItems)
         {
-            VisualElement saveItemContainer = SaveItem.CloneTree();
+            var saveItemContainer = SaveItem.CloneTree();
             var saveItemUserInterface = new SaveItemUserIterface(saveItemContainer, saveItem, () =>
             {
                 _saveItemsScrollView.Remove(saveItemContainer);
@@ -42,8 +42,7 @@ public class ContinueUserInterface : MonoBehaviour
 
     private void SetupBackToMenuButton()
     {
-        var backToMenuButton = _backToMenuContainer.Q<Button>("BackToMenuButton");
-        backToMenuButton.clicked += TriggerBack;
+        _backToMenuContainer.Q<Button>("BackToMenuButton").clicked += TriggerBack;
     }
 
     private void TriggerBack()
