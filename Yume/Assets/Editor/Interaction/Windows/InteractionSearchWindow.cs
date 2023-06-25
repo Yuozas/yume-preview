@@ -40,7 +40,7 @@ public class InteractionSearchWindow : ScriptableObject, ISearchWindowProvider
             CreateGroupEntry(Decision),
             CreateEntry(INode.ENABLE_DECISIONS),
             CreateEntry(INode.DISABLE_DECISIONS),
-            CreateEntry(INode.SET_CHOICES)
+            CreateEntry(INode.SET_DECISION_CHOICES)
         };
     }
 

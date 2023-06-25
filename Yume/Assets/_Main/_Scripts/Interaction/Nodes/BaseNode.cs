@@ -27,10 +27,17 @@ public class BaseNode
         return Connections.Contains(connection);
     }
 
-    public void AddConnection()
+    public Connection AddConnection()
     {
         var connection = new Connection();
         Add(connection);
+
+        return connection;
+    }
+
+    public void RemoveConnection(Connection connection)
+    {
+        Remove(connection);
     }
 
     protected void Add(Connection connection)
@@ -38,5 +45,12 @@ public class BaseNode
         var contains = Contains(connection);
         if (!contains)
             Connections.Add(connection);
+    }
+
+    protected void Remove(Connection connection)
+    {
+        var contains = Contains(connection);
+        if (contains)
+            Connections.Remove(connection);
     }
 }

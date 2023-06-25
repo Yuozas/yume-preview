@@ -15,11 +15,12 @@ public interface INode
     public const string SFX = "Sfx";
     public const string ENABLE_DECISIONS = "Open Decision";
     public const string DISABLE_DECISIONS = "Close Decision";
-    public const string SET_CHOICES = "Set Choices";
+    public const string SET_DECISION_CHOICES = "Set Decision Choices";
 
     List<Connection> Connections { get; }
     ICommand Executable { get; }
     void Execute();
     Connection Get(int index);
-    void AddConnection();
+    Connection AddConnection();
+    void RemoveConnection(Connection connection);
 }

@@ -21,7 +21,7 @@
             INode.TYPEWRITER => BuildTypewriter(),
             INode.ENABLE_DECISIONS => BuildEnableDecision(),
             INode.DISABLE_DECISIONS => BuildDisableDecision(),
-            INode.SET_CHOICES => BuildSetChoices(),
+            INode.SET_DECISION_CHOICES => BuildSetChoices(),
             _ => null,
         };
     }
@@ -60,7 +60,7 @@
 
     public INode BuildSetChoices()
     {
-        return new ChoicesNode(INode.SET_CHOICES);
+        return new ChoicesNode(INode.SET_DECISION_CHOICES);
     }
 
     public INode BuildMusic()

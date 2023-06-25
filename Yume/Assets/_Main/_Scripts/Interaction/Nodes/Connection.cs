@@ -6,10 +6,14 @@ using UnityEngine;
 public class Connection
 {
     [field: SerializeField] public string Text { get; private set; }
+    [field: SerializeField] public Sprite Sprite { get; private set; }
     [field: SerializeReference] public List<INode> Nodes { get; private set; }
 
-    public Connection(List<INode> nodes = null)
+    private const string Default = "Choice";
+
+    public Connection(string text = Default, List<INode> nodes = null)
     {
+        Text = text;
         Nodes = nodes ?? new();
     }
 
@@ -17,6 +21,16 @@ public class Connection
     {
         foreach (var node in Nodes)
             node.Execute();
+    }
+
+    public void SetText(string text)
+    {
+        Text = text;
+    }
+
+    public void SetSprite(Sprite sprite)
+    {
+        Sprite = sprite;
     }
 
     public void Add(INode node)

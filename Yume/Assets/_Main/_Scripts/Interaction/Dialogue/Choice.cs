@@ -1,9 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 
+[Serializable]
 public class Choice
 {
-    public readonly string Text;
-    private readonly List<INode> _nodes;
+    [field: SerializeField] public string Text { get; private set; }
+    [SerializeReference] private List<INode> _nodes;
 
     public Choice(string text, List<INode> nodes)
     {

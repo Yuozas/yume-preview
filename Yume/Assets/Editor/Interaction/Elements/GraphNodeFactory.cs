@@ -40,7 +40,7 @@ public class GraphNodeFactory
             case INode.SFX:
                 AddSfxNodeElements(unity, drawables);
                 break;
-            case INode.SET_CHOICES:
+            case INode.SET_DECISION_CHOICES:
                 AddSetChoicesNodeElements(unity, drawables);
                 break;
         }
@@ -151,12 +151,13 @@ public class GraphNodeFactory
 
     private static void AddSetChoicesNodeElements(UnityNode unity, List<IDrawable> drawables)
     {
-        var compositeOutput = new SingularPortContainer(SingularPortContainer.OUT_PORT_NAME, Direction.Output);
-        var button = new Button()
+        var compositeOutput = new MultiplePortContainer(SingularPortContainer.OUT_PORT_NAME, Direction.Output, unity.Node.Connections);
+        var button = new Button() { text = "Add Choice" };
+        button.clicked += () =>
         {
-            text = "Add Choice"
+            var connection = unity.Node.AddConnection();
+            compositeOutput.CreateAndAddPort(connection, true);
         };
-        button.clicked += unity.Node.AddConnection;
 
         var extension = new DrawableExtensionContainer(button);
 
