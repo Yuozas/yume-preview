@@ -44,15 +44,11 @@ public class RealmSaveManager : IRealmSaveManager
 
     public bool AnySaveExists()
     {
-        using var activeSaveDetails = GetActiveSaveDetails();
-        if(activeSaveDetails is null)
-            return false;
-
-        using var globalRealm = _realmContext.GetGlobalRealm();
-        var save = globalRealm.Find<RealmSaveDetails>(activeSaveDetails.Result.SaveId);
-        return save is not null;
+        using var realm = _realmContext.GetGlobalRealm();
+        return realm.All<RealmSaveDetails>().Any(s => s.IsVisible);
     }
 
+    /// <exception cref="ArgumentException">No active save found.</exception>
     public Realm GetActiveSave()
     {
         using var activeSaveDetails = GetActiveSaveDetails();

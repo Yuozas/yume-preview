@@ -3,6 +3,20 @@ using UnityEngine.SceneManagement;
 
 public class SceneHelper : ISceneHelper
 {
+    private readonly IRealmSaveManager _realmSaveManager;
+
+    public SceneHelper(IRealmSaveManager realmSaveManager)
+    {
+        _realmSaveManager = realmSaveManager;
+    }
+
+    public void LoadActiveSaveScene()
+    {
+        using var realm = _realmSaveManager.GetActiveSave();
+        var playerDetails = realm.Get<PlayerDetails>();
+        SceneManager.LoadScene(playerDetails.SceneName, LoadSceneMode.Single);
+    }
+
     public string[] GetAllSceneNames()
     {
         var sceneCount = SceneManager.sceneCountInBuildSettings;

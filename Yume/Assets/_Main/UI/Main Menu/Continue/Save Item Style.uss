@@ -1,0 +1,40 @@
+#Body 
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+Button 
+{
+	border-width: 0px;
+	background-color: transparent;
+	height: 100%;
+	padding: 0;
+	flex-grow: 1;
+
+    color: rgba(0, 0, 0, 0.1);
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.73);
+}
+
+Button:hover
+{
+	color: rgb(255, 255, 255);
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.73);
+}
+
+.unity-text-element
+{
+	font-size: 30px;
+}
+
+.text-item
+{
+	-unity-text-align: middle-right;
+	flex-grow: 3;
+	padding-right: 15px;
+
+	color: rgb(255, 255, 255);
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.73);
+}

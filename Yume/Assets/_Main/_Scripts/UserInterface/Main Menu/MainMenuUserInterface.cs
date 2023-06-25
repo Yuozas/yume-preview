@@ -9,7 +9,7 @@ public class MainMenuUserInterface : MonoBehaviour
     private SceneDataHandler _sceneDataHandler;
     private VisualElement _buttonWrapper;
 
-    void Awake()
+    private void Awake()
     {
         _saveManager = ServiceLocator.SingletonProvider.Get<IRealmSaveManager>();
         _sceneDataHandler = ServiceLocator.SingletonProvider.Get<SceneDataHandler>();
