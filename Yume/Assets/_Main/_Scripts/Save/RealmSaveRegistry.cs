@@ -26,7 +26,7 @@ public class RealmSaveRegistry
     public void DeleteSave(long saveId)
     {
         using var globalRealm = _realmContext.GetGlobalRealm();
-        globalRealm.WriteUpdate<RealmSaveDetails>(saveId, realmSaveDetails =>
+        globalRealm.TryWriteUpdate<RealmSaveDetails>(saveId, realmSaveDetails =>
         {
             realmSaveDetails.IsVisible = false;
         });

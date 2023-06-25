@@ -4,80 +4,90 @@ using System.Linq;
 
 public static class RealmExtensions
 {
-    public static T Get<T>(this Realm realm) where T : RealmObject
+    public static T Get<T>(this Realm realm) 
+        where T : RealmObject
     {
         return realm.All<T>().First();
     }
 
-    public static bool TryGet<T>(this Realm realm, long key, out T obj) where T : RealmObject
+    public static bool TryGet<T>(this Realm realm, long key, out T realmObject) 
+        where T : RealmObject
     {
-        obj = realm.Find<T>(key);
-        return obj is not null;
+        realmObject = realm.Find<T>(key);
+        return realmObject is not null;
     }
 
-    public static bool TryGet<T>(this Realm realm, out T obj) where T : RealmObject
+    public static bool TryGet<T>(this Realm realm, out T realmObject) 
+        where T : RealmObject
     {
-        obj = realm.All<T>().FirstOrDefault();
-        return obj is not null;
+        realmObject = realm.All<T>().FirstOrDefault();
+        return realmObject is not null;
     }
 
-    public static void WriteUpdate<T>(this Realm realm, long key, Action<T> update) where T : RealmObject
+    public static void WriteUpsert<T>(this Realm realm, long key, Action<T> update)
+    where T : RealmObject, new()
     {
-        if(realm.TryGet<T>(key, out var t))
-            realm.WriteUpsert(() =>
-            {
-                update(t);
-                return t;
-            });
+        if (!realm.TryWriteUpdate(key, update))
+            realm.WriteAdd(update);
     }
 
-    public static void WriteUpdate<T>(this Realm realm, Action<T> update) where T : RealmObject
+    public static void WriteUpsert<T>(this Realm realm, Action<T> update)
+        where T : RealmObject, new()
     {
-        if(realm.TryGet<T>(out var t))
-            realm.WriteUpsert(() =>
-            {
-                update(t);
-                return t;
-            });
+        if (!realm.TryWriteUpdate(update))
+            realm.WriteAdd(update);
     }
 
-    public static void WriteUpsert<T>(this Realm realm, long key, Action<T> update) where T : RealmObject, new()
+    public static void WriteUpsert<T>(this Realm realm, Func<T> write)
+        where T : RealmObject
     {
-        if (realm.TryGet<T>(key, out var t))
+        realm.WriteSafe(() => realm.Add(write(), true));
+    }
+
+    public static void WriteUpsert<T>(this Realm realm, T realmObject)
+        where T : RealmObject
+    {
+        realm.WriteSafe(() => realm.Add(realmObject, true));
+    }
+
+    public static bool TryWriteUpdate<T>(this Realm realm, long key, Action<T> update) 
+        where T : RealmObject
+    {
+        if (!realm.TryGet<T>(key, out var realmObject))
+            return false;
+        realm.WriteUpsert(() =>
         {
-            realm.WriteUpdate(update);
-            return;
-        }
+            update(realmObject);
+            return realmObject;
+        });
+        return true;
+    }
+
+    public static bool TryWriteUpdate<T>(this Realm realm, Action<T> update) 
+        where T : RealmObject
+    {
+        if (!realm.TryGet<T>(out var realmObject))
+            return false;
+        realm.WriteUpsert(() =>
+        {
+            update(realmObject);
+            return realmObject;
+        });
+        return true;
+    }
+
+    public static void WriteAdd<T>(this Realm realm, Action<T> update) 
+        where T : RealmObject, new()
+    {
         var @object = new T();
         update(@object);
         realm.WriteAdd(@object);
     }
 
-    public static void WriteUpsert<T>(this Realm realm, Action<T> update) where T : RealmObject, new()
+    public static void WriteAdd<T>(this Realm realm, T realmObject) 
+        where T : RealmObject
     {
-        if (realm.TryGet<T>(out var t))
-        {
-            realm.WriteUpdate(update);
-            return;
-        }
-        var @object = new T();
-        update(@object);
-        realm.WriteAdd(@object);
-    }
-
-    public static void WriteUpsert<T>(this Realm realm, Func<T> func) where T : RealmObject
-    {
-        realm.WriteSafe(() => realm.Add(func(), true));
-    }
-
-    public static void WriteUpsert<T>(this Realm realm, T obj) where T : RealmObject
-    {
-        realm.WriteSafe(() => realm.Add(obj, true));
-    }
-
-    public static void WriteAdd<T>(this Realm realm, T obj) where T : RealmObject
-    {
-        realm.WriteSafe(() => realm.Add(obj));
+        realm.WriteSafe(() => realm.Add(realmObject));
     }
 
     public static void WriteSafe(this Realm realm, Action action)
