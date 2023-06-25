@@ -36,11 +36,9 @@ public class MultiplePortContainer : IDrawable
 
     public void Draw()
     {
-        for (int i = 0; i < _connections.Count; i++)
+        foreach (var connection in _connections)
         {
-            var connection = _connections[i];
-            var createDeleteButton = i is not 0;
-
+            var createDeleteButton = _connections.IndexOf(connection) != 0;
             CreateAndAddPort(connection, createDeleteButton);
         }
 
@@ -54,9 +52,6 @@ public class MultiplePortContainer : IDrawable
         CreateAndAddTextField(port, connection);
 
         container.Add(port);
-        var horizontalLine = new VisualElement();
-        horizontalLine.style.height = 1;
-        port.Add(horizontalLine);
         CreateAndAddIconField(connection, port);
 
         if (addDeleteButton)
@@ -78,7 +73,6 @@ public class MultiplePortContainer : IDrawable
             connection.SetSprite((Sprite)callback.newValue)
         );
 
-
         port.Add(field);
     }
 
@@ -86,8 +80,6 @@ public class MultiplePortContainer : IDrawable
     {
         var field = new TextField() { value = connection.Text };
         field.RegisterValueChangedCallback(callback => connection.SetText(callback.newValue));
-
-
         AddStylingsToElement(field, "Dialogue/PortTextFieldStyles.uss", "text-field");
 
         port.Add(field);
