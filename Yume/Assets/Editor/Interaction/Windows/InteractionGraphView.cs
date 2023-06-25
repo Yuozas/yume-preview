@@ -202,19 +202,20 @@ public class InteractionGraphView : GraphView
         foreach (var unityNode in unityNodes)
         {
             var node = unityNode.Node;
-            if (node.Connections.Count <= 0)
+            var connections = node.Connections;
+
+            if (connections.Count <= 0)
                 continue;
 
             var fromGraphNode = _graphNodes.First(n => n.UnityNode.Node == node);
 
-            for (int i = 0; i < node.Connections.Count; i++)
+            for (int i = 0; i < connections.Count; i++)
             {
-                var connection = node.Connections[i];
-
-                if (connection.Nodes.Count <= 0)
+                var nodes = connections[i].Nodes;
+                if (nodes.Count <= 0)
                     continue;
 
-                foreach (var toNode in connection.Nodes)
+                foreach (var toNode in nodes)
                 {
                     var toGraphNode = _graphNodes.First(graphNode => graphNode.UnityNode.Node == toNode);
                     var toPort = (Port)toGraphNode.inputContainer.Children().First();
