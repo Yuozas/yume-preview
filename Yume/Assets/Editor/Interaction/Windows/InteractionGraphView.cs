@@ -120,8 +120,8 @@ public class InteractionGraphView : GraphView
         var output = edge.output;
         var input = edge.input;
 
-        from = (output.node as GraphNode);
-        to = (input.node as GraphNode);
+        from = output.node as GraphNode;
+        to = input.node as GraphNode;
         index = GetIndex(output, from);
     }
 
