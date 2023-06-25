@@ -37,7 +37,7 @@ public class MultiplePortContainer : IDrawable
     {
         foreach (var connection in _connections)
         {
-            var createDeleteButton = _connections.IndexOf(connection) != 0;
+            var createDeleteButton = _connections.IndexOf(connection) is not 0;
             CreateAndAddPort(connection, createDeleteButton);
         }
 
