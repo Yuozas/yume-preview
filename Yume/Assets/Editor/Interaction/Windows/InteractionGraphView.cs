@@ -136,7 +136,7 @@ public class InteractionGraphView : GraphView
 
     private void CreateGraphNode(UnityNode unityNode)
     {
-        var node = _graphNodeFactory.Build(unityNode);
+        var node = _graphNodeFactory.Build(this, unityNode);
         node.Draw();
         AddElement(node);
 

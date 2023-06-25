@@ -75,6 +75,9 @@ public class DecisionsUserInterface : MonoBehaviour
 
     private void UpdateHolderWidth()
     {
+        if (_interfaces.Count <= 0)
+            return;
+
         var @interface = _interfaces
             .OrderByDescending(@interface => @interface.TextLength)
             .First();
@@ -95,6 +98,9 @@ public class DecisionsUserInterface : MonoBehaviour
 
     private void Set(bool active)
     {
+        if(active)
+            UpdateHolderWidth();
+
         _visualization.SetActive(active);
     }
 }

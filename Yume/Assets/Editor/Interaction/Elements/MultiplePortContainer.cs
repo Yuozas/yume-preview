@@ -18,9 +18,11 @@ public class MultiplePortContainer : IDrawable
     private readonly List<Connection> _connections;
     private GraphNode _node;
     private readonly Type _type;
+    private readonly GraphView _view;
 
-    public MultiplePortContainer(string name, Direction direction, List<Connection> connections)
+    public MultiplePortContainer(string name, Direction direction, List<Connection> connections, GraphView view)
     {
+        _view = view;
         _connections = connections;
         _direction = direction;
         _name = name;
@@ -96,6 +98,7 @@ public class MultiplePortContainer : IDrawable
         var button = new Button() { text = "Delete" };
         button.clicked += () =>
         {
+            _view.DeleteElements(port.connections);
             _node.UnityNode.Node.RemoveConnection(connection);
             container.Remove(port);
         };

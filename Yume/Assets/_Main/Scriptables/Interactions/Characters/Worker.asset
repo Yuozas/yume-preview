@@ -24,6 +24,7 @@ MonoBehaviour:
   - rid: 8981177686387064838
   - rid: 8981177686387064856
   - rid: 8981177687593713781
+  - rid: 8981177690256048145
   references:
     version: 2
     RefIds:
@@ -158,6 +159,7 @@ MonoBehaviour:
           <Sprite>k__BackingField: {fileID: 0}
           <Nodes>k__BackingField:
           - rid: 8981177685725937670
+          - rid: 8981177690256048146
         _wait: 1
         <Executable>k__BackingField:
           rid: 8981177685725937668
@@ -173,7 +175,7 @@ MonoBehaviour:
       data:
         <Node>k__BackingField:
           rid: 8981177685725937670
-        Position: {x: 688, y: 77}
+        Position: {x: 653.00006, y: 77}
     - rid: 8981177685725937670
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
@@ -192,7 +194,7 @@ MonoBehaviour:
       data:
         <Node>k__BackingField:
           rid: 8981177686387064833
-        Position: {x: 1206, y: 445.52173}
+        Position: {x: 1206, y: 458.16702}
     - rid: 8981177686387064833
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
@@ -238,7 +240,7 @@ MonoBehaviour:
       data:
         <Node>k__BackingField:
           rid: 8981177686387064857
-        Position: {x: 1206.2609, y: 265}
+        Position: {x: 1206, y: 274.99997}
     - rid: 8981177686387064857
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
@@ -263,7 +265,7 @@ MonoBehaviour:
       data:
         <Node>k__BackingField:
           rid: 8981177687593713782
-        Position: {x: 1206, y: 129}
+        Position: {x: 1206, y: 116.000015}
     - rid: 8981177687593713782
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
@@ -277,3 +279,24 @@ MonoBehaviour:
           rid: 8981177687593713783
     - rid: 8981177687593713783
       type: {class: DisableDecisionsTogglerCommand, ns: , asm: Assembly-CSharp}
+    - rid: 8981177690256048145
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177690256048146
+        Position: {x: 669, y: 274.99997}
+    - rid: 8981177690256048146
+      type: {class: ChoicesNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Set Decision Choices
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Open Shop
+          <Sprite>k__BackingField: {fileID: -742520751, guid: 1a4d1f89522da874c8a9331ccf49cf2a, type: 3}
+          <Nodes>k__BackingField:
+          - rid: 8981177687593713782
+          - rid: 8981177686387064857
+        - <Text>k__BackingField: Bye
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
+          - rid: 8981177686387064833
+          - rid: 8981177687593713782
