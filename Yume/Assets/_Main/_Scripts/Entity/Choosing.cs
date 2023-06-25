@@ -1,7 +1,9 @@
 ﻿using SwiftLocator.Services.ServiceLocatorServices;
+using System;
+using System.Collections.Generic;
 using UnityEngine.InputSystem;
 
-public class Choosing : IState
+public class Choosing : BaseState, IState
 {
     private readonly InputActions.ChoosingActions _choosing;
     private readonly ChoiceGroup _choices;
@@ -9,7 +11,7 @@ public class Choosing : IState
 
     private bool _subscribed;
 
-    public Choosing(InputActions.ChoosingActions actions)
+    public Choosing(InputActions.ChoosingActions actions, Dictionary<Func<bool>, Type> transitions) : base(transitions)
     {
         _choosing = actions;
         _choices = ServiceLocator.GetSingleton<Decisions>().Choices;
@@ -32,6 +34,11 @@ public class Choosing : IState
         _choosing.Previous.performed += Previous;
 
         _subscribed = true;
+    }
+
+    public void Tick()
+    {
+        _ = TryTransition();
     }
 
     public void Exit()

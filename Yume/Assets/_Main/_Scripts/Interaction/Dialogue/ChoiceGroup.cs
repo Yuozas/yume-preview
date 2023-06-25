@@ -16,6 +16,7 @@ public class ChoiceGroup
     public ChoiceGroup()
     {
         _choices = new();
+        _index = 0;
     }
 
     public void Update(params Choice[] choices)
@@ -24,6 +25,7 @@ public class ChoiceGroup
         foreach (var choice in choices)
             _choices.Add(choice);
 
+        Set(0);
         OnUpdated?.Invoke();
     }
 
@@ -33,7 +35,7 @@ public class ChoiceGroup
         if (index >= _choices.Count)
             index = 0;
 
-        Set(index);
+        SetAndInvoke(index);
     }
 
     public void Previous()
@@ -42,7 +44,7 @@ public class ChoiceGroup
         if (index < 0)
             index = _choices.GetLastElementIndex();
 
-        Set(index);
+        SetAndInvoke(index);
     }
 
     public void Choose()
@@ -50,10 +52,15 @@ public class ChoiceGroup
         Selected.Choose();
     }
 
+    private void SetAndInvoke(int index)
+    {
+        Set(index);
+        OnSelected?.Invoke();
+    }
+
     private void Set(int index)
     {
         _index = index;
         Selected = _choices[_index];
-        OnSelected?.Invoke();
     }
 }

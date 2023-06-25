@@ -1,5 +1,8 @@
 using SwiftLocator.Services.ServiceLocatorServices;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class PlayableEntity : Entity, ITransitionable
 {
@@ -9,7 +12,9 @@ public class PlayableEntity : Entity, ITransitionable
 
     private States _states;
     private InputActions _input;
-    private InSceneCharacter _resolver;
+    private InSceneCharacter _characterResolver;
+    private DialogueResolver _dialogueResolver;
+    private Decisions _decisions;
 
     protected override void Awake()
     {
@@ -17,8 +22,11 @@ public class PlayableEntity : Entity, ITransitionable
 
         CreateAndAssignPhysicsMaterial();
 
-        _resolver = ServiceLocator.GetSingleton<InSceneCharacter>();
-        _resolver.Set(this);
+        _decisions = ServiceLocator.GetSingleton<Decisions>();
+        _dialogueResolver = ServiceLocator.GetSingleton<DialogueResolver>();
+        _characterResolver = ServiceLocator.GetSingleton<InSceneCharacter>();
+
+        _characterResolver.Set(this);
 
         _input = new InputActions();
 
@@ -27,33 +35,22 @@ public class PlayableEntity : Entity, ITransitionable
 
         Physics2D.queriesStartInColliders = false;
 
-        var talking = new Talking(_input.Talking);
-        var states = new IState[]
-        {
-            new Walking(_input.Walking, movement, _direction, interaction),
-            new Choosing(_input.Choosing),
-            talking
-        };
-
-        _states = new States(states);
-        talking.Set(_states);
+        AddStates(movement, interaction);
     }
 
     private void OnDestroy()
     {
-        _resolver.Remove();
+        _characterResolver.Remove();
     }
 
     private void OnEnable()
     {
         _input.Enable();
-        Dialogue.Enabled += Set;
     }
 
     private void OnDisable()
     {
         _input.Disable();
-        Dialogue.Enabled -= Set;
     }
 
     private void Start()
@@ -72,9 +69,53 @@ public class PlayableEntity : Entity, ITransitionable
         SetDirection(direction);
     }
 
-    private void Set()
+    private Talking AddStates(Movement movement, MultipleInteractor interaction)
     {
-        _states.Set<Talking>();
+        var talkingTransitions = new Dictionary<Func<bool>, Type>()
+        {
+            [ToWalking] = typeof(Walking),
+            [ToChoosing] = typeof(Choosing)
+        };
+
+        var walkingTransitions = new Dictionary<Func<bool>, Type>()
+        {
+            [ToTalking] = typeof(Talking),
+            [ToChoosing] = typeof(Choosing)
+        };
+
+        var choosingTransitions = new Dictionary<Func<bool>, Type>()
+        {
+            [ToTalking] = typeof(Talking),
+            [ToWalking] = typeof(Walking)
+        };
+
+        var talking = new Talking(_input.Talking, talkingTransitions);
+        var states = new IState[]
+        {
+            new Walking(_input.Walking, movement, _direction, interaction, walkingTransitions),
+            new Choosing(_input.Choosing, choosingTransitions),
+            talking
+        };
+
+        _states = new States(states);
+        return talking;
+    }
+
+    private bool ToWalking()
+    {
+        var dialogues = _dialogueResolver.Resolve();
+        return dialogues.All(dialogue => !dialogue.Toggler.Enabled) && !_decisions.Toggler.Enabled;
+    }
+
+    private bool ToTalking()
+    {
+        var dialogues = _dialogueResolver.Resolve();
+        return dialogues.Any(dialogue => dialogue.Toggler.Enabled) && !_decisions.Toggler.Enabled;
+    }
+
+    private bool ToChoosing()
+    {
+        return _decisions.Toggler.Enabled;
     }
 
     private void CreateAndAssignPhysicsMaterial()

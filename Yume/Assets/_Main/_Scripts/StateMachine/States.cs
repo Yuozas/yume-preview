@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System;
 
 public class States
 {
@@ -8,6 +9,8 @@ public class States
     public States(IState[] states)
     {
         _states = states;
+        foreach (var state in _states)
+            state.Set(this);
     }
 
     public void Set(IState state)
@@ -16,6 +19,12 @@ public class States
 
         _current = state;
         _current?.Enter();
+    }
+
+    public void Set(Type type)
+    {
+        var state = _states.First(state => state.GetType() == type);
+        Set(state);
     }
 
     public void Set<T>() where T : IState

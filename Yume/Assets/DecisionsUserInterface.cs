@@ -65,6 +65,12 @@ public class DecisionsUserInterface : MonoBehaviour
         }
 
         UpdateHolderWidth();
+        Select();
+    }
+
+    private void LateUpdate()
+    {
+        Select();
     }
 
     private void UpdateHolderWidth()
@@ -81,8 +87,10 @@ public class DecisionsUserInterface : MonoBehaviour
 
     private void Select()
     {
-        var @interface = _interfaces.First(@interface => @interface.Choice == _group.Selected);
-        _arrow.transform.position = _arrow.transform.position.With(y: @interface.transform.position.y);
+        var @interface = _interfaces.FirstOrDefault(@interface => @interface.Choice == _group.Selected);
+
+        if(@interface is not null)
+            _arrow.transform.position = _arrow.transform.position.With(y: @interface.transform.position.y);
     }
 
     private void Set(bool active)

@@ -48,7 +48,7 @@
 
     public INode BuildDisableDecision()
     {
-        var command = new EnableDecisionsTogglerCommand();
+        var command = new DisableDecisionsTogglerCommand();
         return new CompositeNode(INode.DISABLE_DECISIONS, false, command);
     }
 

@@ -1,15 +1,18 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 using Euphelia;
+using System.Collections.Generic;
+using System;
 
-public class Walking : IState
+public class Walking : BaseState, IState
 {
     private readonly Movement _movement;
     private readonly Direction _direction;
     private readonly IInteractor _interaction;
     private readonly InputActions.WalkingActions _walking;
 
-    public Walking(InputActions.WalkingActions actions, Movement movement, Direction direction, IInteractor interaction)
+    public Walking(InputActions.WalkingActions actions, Movement movement, Direction direction, IInteractor interaction, Dictionary<Func<bool>, Type> transitions) 
+       : base(transitions)
     {
         _walking = actions;
 
@@ -40,6 +43,10 @@ public class Walking : IState
 
     public void Tick()
     {
+        var met = TryTransition();
+        if (met)
+            return;
+
         _movement.Tick(Movement.DEFAULT_SPEED);
     }
 
@@ -54,4 +61,3 @@ public class Walking : IState
         _movement.Set(axis);
     }
 }
-
