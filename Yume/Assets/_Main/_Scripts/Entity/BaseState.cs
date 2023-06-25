@@ -15,12 +15,11 @@ public class BaseState
     {
         foreach (var transition in _transitions)
         {
-            var met = transition.Key.Invoke();
-            if (!met)
-                continue;
-
-            _states.Set(transition.Value);
-            return true;
+            if (transition.Key.Invoke())
+            {
+                _states.Set(transition.Value);
+                return true;
+            }
         }
 
         return false;
