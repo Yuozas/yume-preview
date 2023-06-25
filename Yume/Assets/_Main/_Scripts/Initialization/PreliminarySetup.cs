@@ -11,7 +11,10 @@ public static class PreliminarySetup
     public static async void Setup()
     {
         if(SceneManager.GetActiveScene().buildIndex is not 0)
+        {
             await SceneManager.LoadSceneAsync(0);
+            ClearConsole();
+        }
 
         var setups = GetAllPreliminarySetups().OrderBy(setup => setup.Order);
         foreach (var setup in setups)
@@ -26,5 +29,12 @@ public static class PreliminarySetup
         foreach (Type type in types)
             if (typeof(IPreliminarySetup).IsAssignableFrom(type) && !type.IsInterface)
                 yield return Activator.CreateInstance(type) as IPreliminarySetup;
+    }
+
+    private static void ClearConsole()
+    {
+        var entries = Type.GetType("UnityEditor.LogEntries, UnityEditor.dll");
+        var method = entries.GetMethod("Clear", BindingFlags.Static | BindingFlags.Public);
+        method.Invoke(null, null);
     }
 }
