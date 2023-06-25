@@ -6,7 +6,7 @@ using UnityEngine;
 public class InteractionGraphWindow : EditorWindow
 {
     public const string TITLE = "Interaction";
-    public const string PATH = TITLE + "/Window";
+    public const string PATH = "Tools/" + TITLE;
 
     private InteractionGraphView _view;
     private Interaction _interaction;

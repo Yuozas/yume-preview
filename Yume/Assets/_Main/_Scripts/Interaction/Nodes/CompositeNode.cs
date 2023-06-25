@@ -1,66 +1,39 @@
-﻿using System.Collections.Generic;
-using System;
+﻿using System;
 using UnityEngine;
 
 [Serializable]
-public class CompositeNode : INode
+public class CompositeNode : BaseNode, INode
 {
-    [field: SerializeField] public string Type { get; private set; }
-    [field: SerializeReference] public List<INode> Connections { get; private set; }
-    [field: SerializeReference] public ICommand Executable { get; private set; }
-
     [SerializeField] private bool _wait;
+    [field: SerializeReference] public ICommand Executable { get; protected set; }
 
-    public CompositeNode(string type, bool wait, ICommand executable = null, List<INode> nodes = null)
+    public CompositeNode(string type, bool wait, ICommand executable = null) : base(type)
     {
-        Type = type;
-        Executable = executable;
         _wait = wait;
-
-        Connections = nodes ?? new();
+        Executable = executable;
     }
 
     public void Execute()
     {
         if(Executable is null)
         {
-            Continue();
+            ExecuteAllConnections();
             return;
         }
 
         if (_wait)
         {
-            Executable.Execute(Continue);
+            Executable.Execute(ExecuteAllConnections);
             return;
         }
 
         Executable.Execute();
-        Continue();
+        ExecuteAllConnections();
     }
 
-    public void Add(INode node)
+    private void ExecuteAllConnections()
     {
-        var contains = Contains(node);
-        if (!contains)
-            Connections.Add(node);
-    }
-
-    public void Remove(INode node)
-    {
-        var contains = Contains(node);
-        if (contains)
-            Connections.Remove(node);
-    }
-
-    public bool Contains(INode node)
-    {
-        return Connections.Contains(node);
-    }
-
-    private void Continue()
-    {
-        foreach (var node in Connections)
-            node.Execute();
+        foreach (var connection in Connections)
+            connection.Execute();
     }
 }
-

@@ -144,6 +144,74 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             ]
         },
         {
+            ""name"": ""Choosing"",
+            ""id"": ""d0201738-bd5c-4db5-97f9-ae6d62b6b7c8"",
+            ""actions"": [
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""5bbae46c-d110-4f98-8bc0-c5eaeab8fe27"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Next"",
+                    ""type"": ""Button"",
+                    ""id"": ""bb5a1dee-fdb5-4075-9915-feb3edbf2b1f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Previous"",
+                    ""type"": ""Button"",
+                    ""id"": ""44dd8f38-ed87-4505-80a8-f88bca3e1a0b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""0d2ee826-a6cc-4582-95de-6d7d68371655"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8ae5804b-d1d0-4072-bbf8-59f7c6464040"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Next"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""28703f69-01b9-4ca9-ab28-02062739d368"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Previous"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""Unity Editor"",
             ""id"": ""e1afbf7f-0253-48e2-91af-daae12805432"",
             ""actions"": [
@@ -269,6 +337,11 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         // Talking
         m_Talking = asset.FindActionMap("Talking", throwIfNotFound: true);
         m_Talking_Interact = m_Talking.FindAction("Interact", throwIfNotFound: true);
+        // Choosing
+        m_Choosing = asset.FindActionMap("Choosing", throwIfNotFound: true);
+        m_Choosing_Interact = m_Choosing.FindAction("Interact", throwIfNotFound: true);
+        m_Choosing_Next = m_Choosing.FindAction("Next", throwIfNotFound: true);
+        m_Choosing_Previous = m_Choosing.FindAction("Previous", throwIfNotFound: true);
         // Unity Editor
         m_UnityEditor = asset.FindActionMap("Unity Editor", throwIfNotFound: true);
         m_UnityEditor_Escape = m_UnityEditor.FindAction("Escape", throwIfNotFound: true);
@@ -437,6 +510,68 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     }
     public TalkingActions @Talking => new TalkingActions(this);
 
+    // Choosing
+    private readonly InputActionMap m_Choosing;
+    private List<IChoosingActions> m_ChoosingActionsCallbackInterfaces = new List<IChoosingActions>();
+    private readonly InputAction m_Choosing_Interact;
+    private readonly InputAction m_Choosing_Next;
+    private readonly InputAction m_Choosing_Previous;
+    public struct ChoosingActions
+    {
+        private @InputActions m_Wrapper;
+        public ChoosingActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Interact => m_Wrapper.m_Choosing_Interact;
+        public InputAction @Next => m_Wrapper.m_Choosing_Next;
+        public InputAction @Previous => m_Wrapper.m_Choosing_Previous;
+        public InputActionMap Get() { return m_Wrapper.m_Choosing; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(ChoosingActions set) { return set.Get(); }
+        public void AddCallbacks(IChoosingActions instance)
+        {
+            if (instance == null || m_Wrapper.m_ChoosingActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_ChoosingActionsCallbackInterfaces.Add(instance);
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
+            @Next.started += instance.OnNext;
+            @Next.performed += instance.OnNext;
+            @Next.canceled += instance.OnNext;
+            @Previous.started += instance.OnPrevious;
+            @Previous.performed += instance.OnPrevious;
+            @Previous.canceled += instance.OnPrevious;
+        }
+
+        private void UnregisterCallbacks(IChoosingActions instance)
+        {
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
+            @Next.started -= instance.OnNext;
+            @Next.performed -= instance.OnNext;
+            @Next.canceled -= instance.OnNext;
+            @Previous.started -= instance.OnPrevious;
+            @Previous.performed -= instance.OnPrevious;
+            @Previous.canceled -= instance.OnPrevious;
+        }
+
+        public void RemoveCallbacks(IChoosingActions instance)
+        {
+            if (m_Wrapper.m_ChoosingActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IChoosingActions instance)
+        {
+            foreach (var item in m_Wrapper.m_ChoosingActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_ChoosingActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public ChoosingActions @Choosing => new ChoosingActions(this);
+
     // Unity Editor
     private readonly InputActionMap m_UnityEditor;
     private List<IUnityEditorActions> m_UnityEditorActionsCallbackInterfaces = new List<IUnityEditorActions>();
@@ -599,6 +734,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     public interface ITalkingActions
     {
         void OnInteract(InputAction.CallbackContext context);
+    }
+    public interface IChoosingActions
+    {
+        void OnInteract(InputAction.CallbackContext context);
+        void OnNext(InputAction.CallbackContext context);
+        void OnPrevious(InputAction.CallbackContext context);
     }
     public interface IUnityEditorActions
     {

@@ -13,10 +13,14 @@ public interface INode
     public const string TYPEWRITER = "Typewriter";
     public const string EXIT = "Exit";
     public const string SFX = "Sfx";
+    public const string ENABLE_DECISIONS = "Open Decision";
+    public const string DISABLE_DECISIONS = "Close Decision";
+    public const string SET_DECISION_CHOICES = "Set Decision Choices";
 
-    List<INode> Connections { get; }
+    List<Connection> Connections { get; }
     ICommand Executable { get; }
-    void Add(INode node);
-    void Remove(INode node);
     void Execute();
+    Connection Get(int index);
+    Connection AddConnection();
+    void RemoveConnection(Connection connection);
 }

@@ -34,8 +34,9 @@ MonoBehaviour:
       data:
         <Type>k__BackingField: Entry
         <Connections>k__BackingField:
-        - rid: 8981177211230355793
-        - rid: 8981177242252476555
+        - <Nodes>k__BackingField:
+          - rid: 8981177211230355793
+          - rid: 8981177242252476555
         <Executable>k__BackingField:
           rid: -2
         _wait: 0
@@ -44,12 +45,13 @@ MonoBehaviour:
       data:
         <Node>k__BackingField:
           rid: 8981177211230355748
-        Position: {x: 638.08716, y: 339}
+        Position: {x: 413, y: 265}
     - rid: 8981177211230355748
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
         <Type>k__BackingField: Exit
-        <Connections>k__BackingField: []
+        <Connections>k__BackingField:
+        - <Nodes>k__BackingField: []
         <Executable>k__BackingField:
           rid: -2
         _wait: 0
@@ -63,7 +65,8 @@ MonoBehaviour:
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
         <Type>k__BackingField: Open
-        <Connections>k__BackingField: []
+        <Connections>k__BackingField:
+        - <Nodes>k__BackingField: []
         <Executable>k__BackingField:
           rid: 8981177211230355794
         _wait: 0
@@ -82,8 +85,9 @@ MonoBehaviour:
       data:
         <Type>k__BackingField: Typewriter
         <Connections>k__BackingField:
-        - rid: 8981177264092741678
-        - rid: 8981177211230355748
+        - <Nodes>k__BackingField:
+          - rid: 8981177264092741678
+          - rid: 8981177211230355748
         <Executable>k__BackingField:
           rid: 8981177242252476556
         _wait: 1
@@ -99,12 +103,13 @@ MonoBehaviour:
       data:
         <Node>k__BackingField:
           rid: 8981177264092741678
-        Position: {x: 638.08716, y: 77.00001}
+        Position: {x: 413, y: 77}
     - rid: 8981177264092741678
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
         <Type>k__BackingField: Close
-        <Connections>k__BackingField: []
+        <Connections>k__BackingField:
+        - <Nodes>k__BackingField: []
         <Executable>k__BackingField:
           rid: 8981177264092741679
         _wait: 0

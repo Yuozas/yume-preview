@@ -35,4 +35,9 @@ public static class ArrayExtensions
         }
         return null;
     }
+
+    public static int GetLastElementIndex<T>(this IEnumerable<T> source)
+    {
+        return source.Count() - 1;
+    }
 }
