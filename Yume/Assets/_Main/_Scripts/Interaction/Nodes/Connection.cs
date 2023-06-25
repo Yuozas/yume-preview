@@ -35,15 +35,13 @@ public class Connection
 
     public void Add(INode node)
     {
-        var contains = Contains(node);
-        if (!contains)
+        if (!Contains(node))
             Nodes.Add(node);
     }
 
     public void Remove(INode node)
     {
-        var contains = Contains(node);
-        if (contains)
+        if (Contains(node))
             Nodes.Remove(node);
     }
 
