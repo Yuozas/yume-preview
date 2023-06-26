@@ -3,16 +3,16 @@ using UnityEngine.SceneManagement;
 
 public class SceneHelper : ISceneHelper
 {
-    private readonly IRealmSaveManager _realmSaveManager;
+    private readonly IRealmActiveSaveHelper _realmActiveSaveHelper;
 
-    public SceneHelper(IRealmSaveManager realmSaveManager)
+    public SceneHelper(IRealmActiveSaveHelper realmActiveSaveHelper)
     {
-        _realmSaveManager = realmSaveManager;
+        _realmActiveSaveHelper = realmActiveSaveHelper;
     }
 
     public void LoadActiveSaveScene()
     {
-        using var realm = _realmSaveManager.GetActiveSave();
+        using var realm = _realmActiveSaveHelper.GetActiveSave();
         var playerDetails = realm.Get<ActiveCharacer>();
         SceneManager.LoadScene(playerDetails.Character.SceneName, LoadSceneMode.Single);
     }

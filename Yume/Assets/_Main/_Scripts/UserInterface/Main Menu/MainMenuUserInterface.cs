@@ -5,12 +5,12 @@ using UnityEngine.UIElements;
 
 public class MainMenuUserInterface : MonoBehaviour
 {
-    private IRealmSaveManager _saveManager;
     private VisualElement _buttonWrapper;
+    private IRealmSaveReadHelper _realmSaveReadHelper;
 
     private void Awake()
     {
-        _saveManager = ServiceLocator.SingletonProvider.Get<IRealmSaveManager>();
+        _realmSaveReadHelper = ServiceLocator.GetSingleton<IRealmSaveReadHelper>(); 
 
         var root = GetComponent<UIDocument>().rootVisualElement;
         var body = root.Q<VisualElement>("Body");
@@ -36,7 +36,7 @@ public class MainMenuUserInterface : MonoBehaviour
     private void SetupContinueButton()
     {
         var continueButton = _buttonWrapper.Q<Button>("ContinueButton");
-        if (_saveManager.AnySaveExists())
+        if (_realmSaveReadHelper.AnySaveExists())
         {
             continueButton.clicked += TriggerContinue;
             return;

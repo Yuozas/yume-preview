@@ -1,27 +1,27 @@
-﻿using FastDeepCloner;
-using Realms;
-using System;
-using System.Linq;
-
-public class RealmSaveManager : IRealmSaveManager
+﻿public class RealmSaveManager : IRealmSaveManager
 {
-    private readonly IRealmContext _realmContext;
     private readonly RealmSaveRegistry _realmSaveRegistry;
+    private readonly ICreateStorageHelper _createStorageHelper;
+    private readonly IRealmActiveSaveHelper _realmActiveSaveHelper;
 
-    public RealmSaveManager(IRealmContext realmContext, RealmSaveRegistry realmSaveRegistry)
+    public RealmSaveManager(RealmSaveRegistry realmSaveRegistry, ICreateStorageHelper createStorageHelper, 
+        IRealmActiveSaveHelper realmActiveSaveHelper)
     {
-        _realmContext = realmContext;
         _realmSaveRegistry = realmSaveRegistry;
+        _createStorageHelper = createStorageHelper;
+        _realmActiveSaveHelper = realmActiveSaveHelper;
     }
 
     public void CreateNewSave(CharacterRealmObject character)
     {
         _realmSaveRegistry.CreateNewSave($"{character.Name}'s little story.");
 
-        using var realm = GetActiveSave();
+        using var realm = _realmActiveSaveHelper.GetActiveSave();
         using var transaction = realm.BeginWrite();
         realm.Add(character);
         realm.Add(new ActiveCharacer { Character = character });
+        _createStorageHelper.CreateStorageForCharacter(realm, StorageScriptableObject.DemoBackpack);
+
         transaction.Commit();
     }
 
@@ -33,43 +33,5 @@ public class RealmSaveManager : IRealmSaveManager
     public void CopySave(long saveId)
     {
         _realmSaveRegistry.CopySave(saveId);
-    }
-
-    public bool AnySaveExists()
-    {
-        using var realm = _realmContext.GetGlobalRealm();
-        return realm.All<RealmSaveDetails>().Any(s => s.IsVisible);
-    }
-
-    /// <exception cref="ArgumentException">No active save found.</exception>
-    public Realm GetActiveSave()
-    {
-        using var activeSaveDetails = GetActiveSaveDetails();
-        return activeSaveDetails is null
-            ? throw new ArgumentException("No active save found.")
-            : _realmContext.GetRealm(activeSaveDetails.Result.SaveId.ToString());
-    }
-
-    public void ChangeActiveSave(long saveId)
-    {
-        using var globalRealm = _realmContext.GetGlobalRealm();
-        var save = globalRealm.Find<RealmSaveDetails>(saveId);
-        ChangeActiveSave(save);
-    }
-
-    public void ChangeActiveSave(RealmSaveDetails realmSave)
-    {
-        _realmSaveRegistry.ChangeActiveSave(realmSave);
-    }
-
-    public RealmSaveDetails[] GetAllSaveDetails()
-    {
-        using var globalRealm = _realmContext.GetGlobalRealm();
-        return globalRealm.All<RealmSaveDetails>().ToArray().Select(save => save.Clone()).ToArray();
-    }
-
-    public RealmResult<RealmSaveDetails> GetActiveSaveDetails()
-    {
-        return _realmSaveRegistry.GetActiveSaveDetails()?.Result.ActiveSaveDetails;
     }
 }

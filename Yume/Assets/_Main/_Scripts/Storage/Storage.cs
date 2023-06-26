@@ -15,4 +15,7 @@ public class Storage : RealmObject
 
     [Backlink(nameof(StorageSlot.Storage))]
     public IQueryable<StorageSlot> StorageSlots { get; }
+
+    [Backlink(nameof(StorageAllowedItemType.Storage))]
+    public IQueryable<StorageAllowedItemType> StorageAllowedItemTypes { get; }
 }

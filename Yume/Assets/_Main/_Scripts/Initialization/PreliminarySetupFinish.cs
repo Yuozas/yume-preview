@@ -16,7 +16,7 @@ public class PreliminarySetupFinish : IPreliminarySetup
         {
             if(debuggingRealm.SaveId is not 0)
             {
-                var realmSaveManager = ServiceLocator.SingletonProvider.Get<IRealmSaveManager>();
+                var realmSaveManager = ServiceLocator.SingletonProvider.Get<IRealmActiveSaveHelper>();
                 realmSaveManager.ChangeActiveSave(debuggingRealm.SaveId);
             }
             if(debuggingRealm.SceneName != SceneManager.GetActiveScene().name)

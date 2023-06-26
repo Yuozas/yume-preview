@@ -57,15 +57,13 @@ public class RealmDebugigngWindow : EditorWindow
 
     private void AddSaveIdIntegerField()
     {
-        var saveManager = ServiceLocator.GetSingleton<IRealmSaveManager>();
-
-        var allSaveIds = saveManager
+        var allSaveIds = ServiceLocator.GetSingleton<IRealmSaveReadHelper>()
             .GetAllSaveDetails()
             .Select(save => save.SaveId.ToString())
             .ToList();
 
         var defaultIndex = 0;
-        using var activeSaveDetails = saveManager.GetActiveSaveDetails();
+        using var activeSaveDetails = ServiceLocator.GetSingleton<IRealmActiveSaveHelper>().GetActiveSaveDetails();
         var index = allSaveIds.IndexOf(activeSaveDetails.Result.SaveId.ToString());
         if(index is not -1)
             defaultIndex = index;
