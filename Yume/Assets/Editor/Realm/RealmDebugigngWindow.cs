@@ -1,7 +1,6 @@
 using SwiftLocator.Services.ServiceLocatorServices;
 using System.Linq;
 using UnityEditor;
-using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class RealmDebugigngWindow : EditorWindow
@@ -58,30 +57,32 @@ public class RealmDebugigngWindow : EditorWindow
 
     private void AddSaveIdIntegerField()
     {
-        var numberField = new IntegerField
-        {
-            label = "Save id"
-        };
+        var saveManager = ServiceLocator.GetSingleton<IRealmSaveManager>();
 
-        using var realm = ServiceLocator.GetSingleton<IRealmContext>().GetGlobalRealm();
-        if (realm.TryGet<DebuggingRealm>(out var debuggingRealm))
-            numberField.value = debuggingRealm.SaveId;
+        var allSaveIds = saveManager
+            .GetAllSaveDetails()
+            .Select(save => save.SaveId.ToString())
+            .ToList();
 
-        numberField.RegisterValueChangedCallback(OnDebuggingSaveIdChanged);
+        var defaultIndex = 0;
+        using var activeSaveDetails = saveManager.GetActiveSaveDetails();
+        var index = allSaveIds.IndexOf(activeSaveDetails.Result.SaveId.ToString());
+        if(index is not -1)
+            defaultIndex = index;
 
-        rootVisualElement.Add(numberField);
+        var dropdownField = new DropdownField("Save id", allSaveIds, defaultIndex);
+
+        dropdownField.RegisterValueChangedCallback(OnDebuggingSaveIdChanged);
+
+        rootVisualElement.Add(dropdownField);
     }
 
-    private void OnDebuggingSaveIdChanged(ChangeEvent<int> evt)
+    private void OnDebuggingSaveIdChanged(ChangeEvent<string> evt)
     {
         using var realm = ServiceLocator.GetSingleton<IRealmContext>().GetGlobalRealm();
-        if (realm.TryGet<DebuggingRealm>(out var debuggingRealm))
-            realm.Write(() =>
-            {
-                debuggingRealm.SaveId = evt.newValue;
-                realm.Add(debuggingRealm, true);
-            });
-        else
-            realm.WriteAdd(new DebuggingRealm { SaveId = evt.newValue });
+        realm.WriteUpsert<DebuggingRealm>(debugginRealm =>
+        {
+            debugginRealm.SaveId = long.Parse(evt.newValue);
+        });
     }
 }
