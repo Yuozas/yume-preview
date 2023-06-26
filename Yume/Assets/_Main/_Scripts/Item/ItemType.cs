@@ -13,7 +13,7 @@ public readonly struct ItemType
     public static readonly ItemType Necklace = new(9, "Necklace");
     public static readonly ItemType Earring = new(10, "Earring");
 
-    public static Dictionary<int, ItemType> ItemTypes { get; } = ReflectionUtility.GetStaticFieldDictionary<ItemType>();
+    public static Dictionary<long, ItemType> ItemTypes { get; } = ReflectionUtility.GetStaticFieldDictionaryWithId<ItemType>();
 
     private ItemType(int id, string name)
     {
@@ -21,7 +21,7 @@ public readonly struct ItemType
         Name = name;
     }
 
-    public int Id { get; }
+    public long Id { get; }
     public string Name { get; }
 
     public static implicit operator ItemTypeRealmObject(ItemType itemType) => new() { Id = itemType.Id, Name = itemType.Name };

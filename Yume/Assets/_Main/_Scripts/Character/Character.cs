@@ -8,7 +8,7 @@ public readonly struct Character
     public static readonly Character Nova = new(3, CharacterType.MainType, "Nova");
     public static readonly Character Clar = new(4, CharacterType.MainType, "Clar");
 
-    public static Dictionary<int, Character> AllCharacters { get; } = ReflectionUtility.GetStaticFieldDictionary<Character>();
+    public static Dictionary<long, Character> AllCharacters { get; } = ReflectionUtility.GetStaticFieldDictionaryWithId<Character>();
 
     private Character(long id, CharacterType type, string name, string sceneName)
         : this(id, type, name)
