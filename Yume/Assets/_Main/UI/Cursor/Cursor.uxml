@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Body" style="flex-shrink: 0; width: 50px; height: 50px; position: absolute;">
+        <ui:VisualElement name="Cursor" style="width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/_Main/Graphics/Sprites/Modern%20User%20Interface/Modern_UI_Style_1.png?fileID=1259168085&amp;guid=1a4d1f89522da874c8a9331ccf49cf2a&amp;type=3#Cursor 1&apos;);" />
+    </ui:VisualElement>
+</ui:UXML>
