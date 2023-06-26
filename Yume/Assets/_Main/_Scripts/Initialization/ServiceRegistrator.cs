@@ -19,7 +19,6 @@ public class ServiceRegistrator : IPreliminarySetup
                 var realmSaveRegistry = new RealmSaveRegistry(realmContext);
                 return new RealmSaveManager(realmContext, realmSaveRegistry);
             })
-            .Register<CharacterDataHandler>()
             .Register<ISceneHelper, SceneHelper>();
     }
 }
