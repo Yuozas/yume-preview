@@ -13,8 +13,8 @@ public class SceneHelper : ISceneHelper
     public void LoadActiveSaveScene()
     {
         using var realm = _realmSaveManager.GetActiveSave();
-        var playerDetails = realm.Get<PlayerDetails>();
-        SceneManager.LoadScene(playerDetails.SceneName, LoadSceneMode.Single);
+        var playerDetails = realm.Get<ActiveCharacer>();
+        SceneManager.LoadScene(playerDetails.Character.SceneName, LoadSceneMode.Single);
     }
 
     public string[] GetAllSceneNames()

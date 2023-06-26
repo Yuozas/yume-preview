@@ -1,42 +1,37 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using Realms;
 
 public class CharacterDataHandler
 {
-    public readonly int EmberCharacterId = 0;
-    public readonly int AuraCharacterId = 1;
+    private readonly IRealmContext _realmContext;
 
-    private readonly Dictionary<int, DefaultCharacterData> _characters;
-    public CharacterDataHandler(SceneDataHandler sceneDataHandler)
+    public CharacterDataHandler(IRealmContext realmContext)
     {
-        _characters = new Dictionary<int, DefaultCharacterData>()
-        {
-            [EmberCharacterId] = new DefaultCharacterData(EmberCharacterId, DefaultCharacterData.MAIN_TYPE, "Ember", sceneDataHandler.DemoSceneName),
-            [AuraCharacterId] = new DefaultCharacterData(AuraCharacterId, DefaultCharacterData.MAIN_TYPE, "Aura", sceneDataHandler.DemoSceneName)
-        };
-        AddCharacter(new DefaultCharacterData(DefaultCharacterData.SUPPORT_TYPE, "Hazel"));
-        AddCharacter(new DefaultCharacterData(DefaultCharacterData.SUPPORT_TYPE, "Nova"));
-        AddCharacter(new DefaultCharacterData(DefaultCharacterData.SUPPORT_TYPE, "Clar"));
+        _realmContext = realmContext;
+        AddCharacterRelatedData();
     }
 
-    public DefaultCharacterData GetCharacterData(int id)
+    private void AddCharacterRelatedData()
     {
-        if(!_characters.ContainsKey(id))
-            throw new ArgumentException($"Character with id {id} does not exist.");
+        using var realm = _realmContext.GetGlobalRealm();
+        using var transaction = realm.BeginWrite();
 
-        return _characters[id];
+        AddCharacterTypes(realm);
+        AddCharacters(realm);
+
+        transaction.Commit();
     }
 
-    public DefaultCharacterData GetFirstCharacterWhere(Func<DefaultCharacterData, bool> predicate)
+    private void AddCharacters(Realm realm)
     {
-        return _characters.Values.First(predicate);
+        var characters = Character.AllCharacters.Values;
+        foreach (var character in characters)
+            realm.Add<CharacterRealmObject>(character, true);
     }
 
-    private void AddCharacter(DefaultCharacterData character) 
+    private void AddCharacterTypes(Realm realm)
     {
-        var newCharacterId = _characters.Values.Last().Id + 1;
-        var newCharacter = new DefaultCharacterData(newCharacterId, character);
-        _characters.Add(newCharacter.Id, newCharacter);
+        var characterTypes = CharacterType.AllTypes.Values;
+        foreach (var characterType in characterTypes)
+            realm.Add<CharacterTypeRealmObject>(characterType, true);
     }
 }

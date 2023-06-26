@@ -2,7 +2,7 @@
 
 public interface IRealmSaveManager
 {
-    void CreateNewSave(int characterId);
+    void CreateNewSave(CharacterRealmObject character);
     void DeleteSave(long saveId);
     void CopySave(long saveId);
     bool AnySaveExists();

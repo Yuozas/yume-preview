@@ -7,29 +7,22 @@ public class RealmSaveManager : IRealmSaveManager
 {
     private readonly IRealmContext _realmContext;
     private readonly RealmSaveRegistry _realmSaveRegistry;
-    private readonly CharacterDataHandler _characterDataHandler;
 
-    public RealmSaveManager(IRealmContext realmContext, RealmSaveRegistry realmSaveRegistry, 
-        CharacterDataHandler characterDataHandler)
+    public RealmSaveManager(IRealmContext realmContext, RealmSaveRegistry realmSaveRegistry)
     {
         _realmContext = realmContext;
         _realmSaveRegistry = realmSaveRegistry;
-        _characterDataHandler = characterDataHandler;
     }
 
-    public void CreateNewSave(int characterId)
+    public void CreateNewSave(CharacterRealmObject character)
     {
-        var character = _characterDataHandler.GetCharacterData(characterId);
-        if(character.Type is not DefaultCharacterData.MAIN_TYPE)
-            throw new ArgumentException("Only main characters can be used to create a new save");
         _realmSaveRegistry.CreateNewSave($"{character.Name}'s little story.");
 
         using var realm = GetActiveSave();
-        realm.WriteAdd(new PlayerDetails()
-        {
-            CharacterId = character.Id,
-            SceneName = character.SceneName
-        });
+        using var transaction = realm.BeginWrite();
+        realm.Add(character);
+        realm.Add(new ActiveCharacer { Character = character });
+        transaction.Commit();
     }
 
     public void DeleteSave(long saveId)

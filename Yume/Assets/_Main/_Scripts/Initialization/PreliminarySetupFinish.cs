@@ -26,7 +26,6 @@ public class PreliminarySetupFinish : IPreliminarySetup
             }
         }
 
-        var sceneDataHandler = ServiceLocator.SingletonProvider.Get<SceneDataHandler>();
-        SceneManager.LoadScene(sceneDataHandler.MainMenuSceneName, LoadSceneMode.Single);
+        SceneManager.LoadScene(Scene.MainMenuScene.Name, LoadSceneMode.Single);
     }
 }

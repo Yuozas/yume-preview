@@ -6,12 +6,9 @@ using UnityEngine.UIElements;
 public class SettingsUserInterface : MonoBehaviour
 {
     private VisualElement _backToMenuContainer;
-    private SceneDataHandler _sceneDataHandler;
 
     private void Awake()
     {
-        _sceneDataHandler = ServiceLocator.GetSingleton<SceneDataHandler>();
-
         var root = GetComponent<UIDocument>().rootVisualElement;
         var body = root.Q<VisualElement>("Body");
         _backToMenuContainer = body.Q<VisualElement>("BackToMenuContainer");
@@ -27,6 +24,6 @@ public class SettingsUserInterface : MonoBehaviour
 
     private void TriggerBack()
     {
-        SceneManager.LoadScene(_sceneDataHandler.MainMenuSceneName, LoadSceneMode.Single);
+        SceneManager.LoadScene(Scene.MainMenuScene.Name, LoadSceneMode.Single);
     }
 }

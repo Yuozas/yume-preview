@@ -9,14 +9,12 @@ public class ContinueUserInterface : MonoBehaviour
     [field: SerializeField] private VisualTreeAsset SaveItem { get; set; }
 
     private IRealmSaveManager _saveManager;
-    private SceneDataHandler _sceneDataHandler;
     private VisualElement _backToMenuContainer;
     private ScrollView _saveItemsScrollView;
 
     private void Awake()
     {
         _saveManager = ServiceLocator.SingletonProvider.Get<IRealmSaveManager>();
-        _sceneDataHandler = ServiceLocator.SingletonProvider.Get<SceneDataHandler>();
 
         var root = GetComponent<UIDocument>().rootVisualElement;
         _backToMenuContainer = root.Q<VisualElement>("BackToMenuContainer");
@@ -47,6 +45,6 @@ public class ContinueUserInterface : MonoBehaviour
 
     private void TriggerBack()
     {
-        SceneManager.LoadScene(_sceneDataHandler.MainMenuSceneName, LoadSceneMode.Single);
+        SceneManager.LoadScene(Scene.MainMenuScene.Name, LoadSceneMode.Single);
     }
 }

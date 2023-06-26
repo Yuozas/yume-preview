@@ -16,12 +16,10 @@ public class ServiceRegistrator : IPreliminarySetup
             .Register<IRealmSaveManager, RealmSaveManager>(serviceProvider =>
             {
                 var realmContext = serviceProvider.Get<IRealmContext>();
-                var characterDataHandler = serviceProvider.Get<CharacterDataHandler>();
                 var realmSaveRegistry = new RealmSaveRegistry(realmContext);
-                return new RealmSaveManager(realmContext, realmSaveRegistry, characterDataHandler);
+                return new RealmSaveManager(realmContext, realmSaveRegistry);
             })
             .Register<CharacterDataHandler>()
-            .Register<SceneDataHandler>()
             .Register<ISceneHelper, SceneHelper>();
     }
 }
