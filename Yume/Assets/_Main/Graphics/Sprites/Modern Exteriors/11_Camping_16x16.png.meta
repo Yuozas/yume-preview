@@ -15890,15 +15890,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 11_Camping_16x16_735
+      name: Camping_Tire_01
       rect:
         serializedVersion: 2
         x: 448
         y: 2256
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -77869,7 +77869,6 @@ TextureImporter:
       11_Camping_16x16_732: 314331141
       11_Camping_16x16_733: 2021084995
       11_Camping_16x16_734: -1016532207
-      11_Camping_16x16_735: -1719343631
       11_Camping_16x16_736: -166686251
       11_Camping_16x16_737: -1007081190
       11_Camping_16x16_738: -384022384
@@ -78204,6 +78203,7 @@ TextureImporter:
       Camping_Sign_03: 1445655033
       Camping_Sign_04: 1913887708
       Camping_Table_01: -1297794083
+      Camping_Tire_01: -1719343631
       Camping_Tree_01_Top: 384613072
       Camping_Tree_06_Bottom: -1648626300
       Camping_Tree_07_Bottom: -512483286
