@@ -23,5 +23,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Main/Scenes/Demo/Office_Demo.unity
     guid: 907f144a3894f0e43ba435b5eb7d0595
+  - enabled: 1
+    path: Assets/_Main/Scenes/Demo/Office_Outside_Demo.unity
+    guid: d065c0d024e34224b80e2977eb9dc0fd
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
