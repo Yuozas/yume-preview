@@ -3388,9 +3388,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.012127895
+    y: 0.012526097
     width: 1
-    height: 0.9746417
+    height: 0.9754193
   near clip plane: 0.1
   far clip plane: 5000
   field of view: 40
@@ -3419,7 +3419,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.75, y: -4, z: -10}
+  m_LocalPosition: {x: 11.374992, y: 2.625, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4214,6 +4214,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
   m_PrefabInstance: {fileID: 619431363}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &642106910 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+  m_PrefabInstance: {fileID: 1476485017}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &653002294
 PrefabInstance:
@@ -6986,6 +6991,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6444398548860109420, guid: a4cfcdc5512f54b47a623ee3a5df6c5f, type: 3}
   m_PrefabInstance: {fileID: 1170075486}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1172837521 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+  m_PrefabInstance: {fileID: 1268826506}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1176805175
 GameObject:
   m_ObjectHideFlags: 0
@@ -7205,6 +7215,9 @@ Transform:
   - {fileID: 329648879}
   - {fileID: 1425658594}
   - {fileID: 774657938}
+  - {fileID: 1652597595}
+  - {fileID: 642106910}
+  - {fileID: 1172837521}
   m_Father: {fileID: 160760410}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17774,6 +17787,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
   m_PrefabInstance: {fileID: 1264163782}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1268826506
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1176805176}
+    m_Modifications:
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 23.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191052212009425860, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_Name
+      value: Camping_Dead_Tree_01_Prefab (54)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
 --- !u!1001 &1301084129
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41007,6 +41081,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6565632517746809624, guid: d06bef55b3043d246ba5b0a783295ae6, type: 3}
   m_PrefabInstance: {fileID: 1462461643}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1476485017
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1176805176}
+    m_Modifications:
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191052212009425860, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_Name
+      value: Camping_Dead_Tree_01_Prefab (24)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
 --- !u!1001 &1478483146
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41205,6 +41340,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2614797303245224953, guid: 9a2d5cdf47edf314ab576928a49b7886, type: 3}
   m_PrefabInstance: {fileID: 1521559165}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1551743447
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1176805176}
+    m_Modifications:
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 22.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191052212009425860, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+      propertyPath: m_Name
+      value: Camping_Dead_Tree_01_Prefab (18)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
 --- !u!1001 &1570185066
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41705,6 +41901,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 715e183bd1c3faf41938ec3140312f43, type: 3}
+--- !u!4 &1652597595 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
+  m_PrefabInstance: {fileID: 1551743447}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1655215571
 PrefabInstance:
   m_ObjectHideFlags: 0
