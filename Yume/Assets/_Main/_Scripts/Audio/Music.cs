@@ -40,6 +40,9 @@ public class Music : MonoBehaviour
 #endif
     public void PlayInstant(AudioClip clip)
     {
+        if (CurrentSource.clip == clip)
+            return;
+
         CurrentSource.Stop();
 
         UpdateActiveSourceIndex();
@@ -48,6 +51,9 @@ public class Music : MonoBehaviour
 
     public void Play(AudioClip clip, float duration)
     {
+        if (CurrentSource.clip == clip)
+            return;
+
         UpdateActiveSourceIndex();
         SetClipAndPlay(clip);
 
@@ -56,6 +62,9 @@ public class Music : MonoBehaviour
 
     public void Play(MusicClipSettings settings)
     {
+        if (CurrentSource.clip == settings.Clip)
+            return;
+
         if(settings.CrossFadeDuration <= Mathf.Epsilon)
         {
             PlayInstant(settings.Clip);

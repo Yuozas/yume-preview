@@ -7742,15 +7742,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 11_Camping_16x16_316
+      name: Camping_Lifebelt_02
       rect:
         serializedVersion: 2
         x: 32
-        y: 2480
+        y: 2464
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -7847,15 +7847,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 11_Camping_16x16_321
+      name: Camping_Lifebelt_01
       rect:
         serializedVersion: 2
         x: 112
-        y: 2480
+        y: 2464
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -8309,27 +8309,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 11_Camping_16x16_344
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 2464
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dec2d653b478d06d0800000000000000
-      internalID: -3022611017807090451
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: 11_Camping_16x16_345
       rect:
         serializedVersion: 2
@@ -8409,27 +8388,6 @@ TextureImporter:
       bones: []
       spriteID: bbc9341f979bcd6b0800000000000000
       internalID: -5270133530540401477
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 11_Camping_16x16_349
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 2464
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a613ceb25d16cfa50800000000000000
-      internalID: 6556222725737427306
       vertices: []
       indices: 
       edges: []
@@ -13748,15 +13706,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 11_Camping_16x16_627
+      name: Camping_Barrel_01
       rect:
         serializedVersion: 2
         x: 0
         y: 2304
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -17381,13 +17339,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 11_Camping_16x16_812
+      name: Camping_Boat_01
       rect:
         serializedVersion: 2
         x: 32
-        y: 2192
-        width: 16
-        height: 16
+        y: 2144
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -17397,27 +17355,6 @@ TextureImporter:
       bones: []
       spriteID: 9cfe4a3ccd5640044aba0fbe488bf5fb
       internalID: -51860039
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 11_Camping_16x16_813
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 2192
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f7ccf8ec33edd24dbe906fce8ccb9d4
-      internalID: 2073513891
       vertices: []
       indices: 
       edges: []
@@ -17859,48 +17796,6 @@ TextureImporter:
       bones: []
       spriteID: 60d8d75af7e70ed46a67fca88bfc73c4
       internalID: 459761063
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 11_Camping_16x16_837
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 2176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ffddde1c15622fa4a95d053e98b34464
-      internalID: -1868805335
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 11_Camping_16x16_838
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 2176
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a3d843f9ada92c34ba23b8f72d975ddb
-      internalID: 421955861
       vertices: []
       indices: 
       edges: []
@@ -18494,48 +18389,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 11_Camping_16x16_867
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 2160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b1b5ca33de928774eabf0932d2a8a0be
-      internalID: -1878618375
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 11_Camping_16x16_868
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 2160
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a0148d79053f5c74fb0ca2542aaf7b71
-      internalID: 2147422771
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: 11_Camping_16x16_869
       rect:
         serializedVersion: 2
@@ -19119,48 +18972,6 @@ TextureImporter:
       bones: []
       spriteID: 922ca6b2ac12ff84bbefad525b627406
       internalID: 1793482365
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 11_Camping_16x16_897
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 2144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3058add00369e9f45a791c3e80f6531c
-      internalID: -49580738
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 11_Camping_16x16_898
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 2144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2f7cd1fbdb09bfb429190084a1dd52b6
-      internalID: 1320355935
       vertices: []
       indices: 
       edges: []
@@ -76846,7 +76657,6 @@ TextureImporter:
       11_Camping_16x16_3157: -821264975
       11_Camping_16x16_3158: 1493818442
       11_Camping_16x16_3159: 957037518
-      11_Camping_16x16_316: 6277736760858282921
       11_Camping_16x16_3160: 1002722571
       11_Camping_16x16_3161: 644727403
       11_Camping_16x16_3162: 896599799
@@ -76902,7 +76712,6 @@ TextureImporter:
       11_Camping_16x16_3207: -712421017
       11_Camping_16x16_3208: -732171072
       11_Camping_16x16_3209: -401422193
-      11_Camping_16x16_321: -5149456462065821530
       11_Camping_16x16_3210: 1657951028
       11_Camping_16x16_3211: 856582329
       11_Camping_16x16_3212: 1538214322
@@ -77754,7 +77563,6 @@ TextureImporter:
       11_Camping_16x16_624: -1541683509
       11_Camping_16x16_625: -6717349
       11_Camping_16x16_626: 727594593
-      11_Camping_16x16_627: 1820943245
       11_Camping_16x16_628: -300642331
       11_Camping_16x16_629: 363835145
       11_Camping_16x16_63: 7018394337651402632
@@ -77952,7 +77760,6 @@ TextureImporter:
       11_Camping_16x16_81: 1725682210847253366
       11_Camping_16x16_810: -666338402
       11_Camping_16x16_811: 629736089
-      11_Camping_16x16_812: -51860039
       11_Camping_16x16_813: 2073513891
       11_Camping_16x16_814: 35053256
       11_Camping_16x16_815: -1913239751
@@ -78152,8 +77959,10 @@ TextureImporter:
       11_Camping_16x16_999: -139222407
       Camping_Apples_01: -342384169
       Camping_Backpack_01_01: 2065952243
+      Camping_Barrel_01: 1820943245
       Camping_Binoculars_01: 365874404
       Camping_Binoculars_02: -768467227
+      Camping_Boat_01: -51860039
       Camping_Branch_01: -1515874727
       Camping_Branch_02: 243814710
       Camping_Branch_03: 809840127
@@ -78181,6 +77990,8 @@ TextureImporter:
       Camping_Leaf_05: -24443687
       Camping_Leaf_06: 1739745279
       Camping_Leaf_07: -2068836295
+      Camping_Lifebelt_01: -5149456462065821530
+      Camping_Lifebelt_02: 6277736760858282921
       Camping_Marshmallow_01: -2118886218
       Camping_Mushrooms_01: -646015375
       Camping_Mushrooms_02: 1086578539

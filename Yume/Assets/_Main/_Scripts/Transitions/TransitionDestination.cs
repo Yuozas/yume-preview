@@ -4,7 +4,7 @@ using UnityEngine;
 public class TransitionDestination : MonoBehaviour
 {
     [field: Header("References")]
-    [field: SerializeField] public Scriptable_TransitionDestination This { get; private set; }
+    [field: SerializeField] public TransitionDestinationScriptableObject This { get; private set; }
 
 #if UNITY_EDITOR
     [Header("Settings")]
