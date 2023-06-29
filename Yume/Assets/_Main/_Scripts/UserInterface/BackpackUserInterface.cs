@@ -33,21 +33,21 @@ public class BackpackUserInterface : MonoBehaviour
         _scrollView.contentContainer.Add(_slotContainer);
         _scrollView.horizontalScrollerVisibility = ScrollerVisibility.Hidden;
 
-        _scrollView.verticalScroller.Q<VisualElement>("unity-dragger-border").style.display = DisplayStyle.None;
-        _scrollView.verticalScroller.Q<VisualElement>("unity-tracker").style.display = DisplayStyle.None;
+        //_scrollView.verticalScroller.Q<VisualElement>("unity-dragger-border").style.display = DisplayStyle.None;
+        //_scrollView.verticalScroller.Q<VisualElement>("unity-tracker").style.display = DisplayStyle.None;
 
-        var scrollViewSlider = _scrollView.verticalScroller.Q<VisualElement>("unity-slider");
-        scrollViewSlider.style.backgroundImage = new StyleBackground(ScrollbarSprite);
+        //var scrollViewSlider = _scrollView.verticalScroller.Q<VisualElement>("unity-slider");
+        //scrollViewSlider.style.backgroundImage = new StyleBackground(ScrollbarSprite);
 
-        var scrollViewDragger = _scrollView.verticalScroller.Q<VisualElement>("unity-dragger");
-        scrollViewDragger.style.backgroundImage = new StyleBackground(ScrollbarDragger);
-        scrollViewDragger.style.height = 20;
+        //var scrollViewDragger = _scrollView.verticalScroller.Q<VisualElement>("unity-dragger");
+        //scrollViewDragger.style.backgroundImage = new StyleBackground(ScrollbarDragger);
+        //scrollViewDragger.style.height = 20;
 
-        var scrollViewLowButton = _scrollView.verticalScroller.Q<VisualElement>("unity-low-button");
-        scrollViewLowButton.style.backgroundImage = new StyleBackground(ScrollbarLowButton);
+        //var scrollViewLowButton = _scrollView.verticalScroller.Q<VisualElement>("unity-low-button");
+        //scrollViewLowButton.style.backgroundImage = new StyleBackground(ScrollbarLowButton);
 
-        var scrollViewHighButton = _scrollView.verticalScroller.Q<VisualElement>("unity-high-button");
-        scrollViewHighButton.style.backgroundImage = new StyleBackground(ScrollbarHighButton);
+        //var scrollViewHighButton = _scrollView.verticalScroller.Q<VisualElement>("unity-high-button");
+        //scrollViewHighButton.style.backgroundImage = new StyleBackground(ScrollbarHighButton);
     }
 
     private void SetupSlots()
