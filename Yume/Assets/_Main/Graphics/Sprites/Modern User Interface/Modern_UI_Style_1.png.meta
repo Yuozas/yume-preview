@@ -800,7 +800,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_UI_Style_1_33
+      name: Sub Frame 2
       rect:
         serializedVersion: 2
         x: 60
@@ -809,7 +809,7 @@ TextureImporter:
         height: 22
       alignment: 7
       pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 1, y: 1, z: 1, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -18481,7 +18481,6 @@ TextureImporter:
       Modern_UI_Style_1_327: 1693828847
       Modern_UI_Style_1_328: 422174131
       Modern_UI_Style_1_329: -1274953401
-      Modern_UI_Style_1_33: 1685838651
       Modern_UI_Style_1_330: -1794707861
       Modern_UI_Style_1_331: 794054063
       Modern_UI_Style_1_332: 13720278
@@ -19080,6 +19079,7 @@ TextureImporter:
       Small cursor: 811161382
       Star: -1773562576
       Sub Frame: 813368477
+      Sub Frame 2: 1685838651
       Yellow button: 209420594
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

@@ -1,8 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/_Main/UI/Storage/Backpack/Backpack%20Style.uss?fileID=7433441132597879392&amp;guid=02231499208343a48a0fab81e7797fbd&amp;type=3#Backpack Style" />
-    <ui:VisualElement name="Body" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
-        <ui:VisualElement name="Slot" style="background-image: url(&apos;project://database/Assets/_Main/Graphics/Sprites/Modern%20User%20Interface/Modern_UI_Style_1.png?fileID=1498562401&amp;guid=1a4d1f89522da874c8a9331ccf49cf2a&amp;type=3#Item Slot&apos;);">
-            <ui:VisualElement name="SlotItem" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);" />
-        </ui:VisualElement>
-    </ui:VisualElement>
-</ui:UXML>

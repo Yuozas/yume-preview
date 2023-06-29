@@ -495,12 +495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68070b9547531f14aa1b19e2b822a901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Slot>k__BackingField: {fileID: 9197481963319205126, guid: 406b04d0f878d2d4f8184f41133f2ebf, type: 3}
-  <SlotContainer>k__BackingField: {fileID: 9197481963319205126, guid: dee9fd29cdb9e5447839bb635d47eabc, type: 3}
-  <ScrollbarSprite>k__BackingField: {fileID: 1169080930, guid: 1a4d1f89522da874c8a9331ccf49cf2a, type: 3}
-  <ScrollbarLowButton>k__BackingField: {fileID: -86736655, guid: 1a4d1f89522da874c8a9331ccf49cf2a, type: 3}
-  <ScrollbarHighButton>k__BackingField: {fileID: 1618229976, guid: 1a4d1f89522da874c8a9331ccf49cf2a, type: 3}
-  <ScrollbarDragger>k__BackingField: {fileID: -215414629, guid: 1a4d1f89522da874c8a9331ccf49cf2a, type: 3}
+  <SlotSprite>k__BackingField: {fileID: 1498562401, guid: 1a4d1f89522da874c8a9331ccf49cf2a, type: 3}
 --- !u!4 &1643541251 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 690992673711579692, guid: 74cadd30136859e44aab63c080fd674c, type: 3}

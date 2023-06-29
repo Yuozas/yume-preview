@@ -5,7 +5,19 @@
             <ui:VisualElement name="BackpackIcon" class="icon-container" style="background-image: url(&apos;project://database/Assets/_Main/Graphics/Sprites/Modern%20User%20Interface/Modern_UI_Style_1.png?fileID=-12497140&amp;guid=1a4d1f89522da874c8a9331ccf49cf2a&amp;type=3#Active Icon&apos;);">
                 <ui:VisualElement name="Icon" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/_Main/Graphics/Sprites/Modern%20User%20Interface/Modern_UI_Style_1.png?fileID=-1686963143&amp;guid=1a4d1f89522da874c8a9331ccf49cf2a&amp;type=3#Backpack Icon&apos;);" />
             </ui:VisualElement>
-            <ui:ScrollView name="SlotScrollView" />
+            <ui:VisualElement name="ItemDescription">
+                <ui:VisualElement name="ItemDetails" style="background-image: url(&apos;project://database/Assets/_Main/Graphics/Sprites/Modern%20User%20Interface/Modern_UI_Style_1.png?fileID=1685838651&amp;guid=1a4d1f89522da874c8a9331ccf49cf2a&amp;type=3#Sub Frame 2&apos;);">
+                    <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="ItemName" />
+                    <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="ItemDescription" />
+                </ui:VisualElement>
+                <ui:VisualElement name="ButtonWrapper" style="background-image: url(&apos;project://database/Assets/_Main/Graphics/Sprites/Modern%20User%20Interface/Modern_UI_Style_1.png?fileID=1685838651&amp;guid=1a4d1f89522da874c8a9331ccf49cf2a&amp;type=3#Sub Frame 2&apos;);">
+                    <ui:Button text="Button" display-tooltip-when-elided="true" name="Discard" />
+                    <ui:Button text="Button" display-tooltip-when-elided="true" name="MoveItem" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="ScrollViewContainer" style="background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/_Main/Graphics/Sprites/Modern%20User%20Interface/Modern_UI_Style_1.png?fileID=813368477&amp;guid=1a4d1f89522da874c8a9331ccf49cf2a&amp;type=3#Sub Frame&apos;);">
+                <ui:ScrollView name="SlotScrollView" />
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

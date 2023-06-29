@@ -21,11 +21,49 @@
 }
 
 #Backpack {
+    display: flex;
+    flex-direction: row;
+
     width: 80%;
     margin-top: 10%;
     height: 70%;
-    padding: 50px;
+    padding: 40px 40px 25px 40px;
     -unity-slice-scale: 0.5px;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+#ScrollViewContainer {
+    width: 75%;
+    -unity-slice-scale: 0.5px;
+}
+
+#ItemDescription {
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#ItemDescription #ItemDetails {
+    padding: 10px;
+    -unity-slice-scale: 0.5px;
+}
+
+#ItemDescription #ButtonWrapper {
+    display: flex;
+
+    -unity-slice-scale: 0.5px;
+}
+
+#ItemDetails > #ItemName {
+	font-size: 20px;
+    
+	-unity-font-style: bold;
+	margin-bottom: 10px;
+}
+
+#ItemDetails > #ItemDescriptionText {
+	font-size: 12px;
 }
 
 #SlotContainer {
