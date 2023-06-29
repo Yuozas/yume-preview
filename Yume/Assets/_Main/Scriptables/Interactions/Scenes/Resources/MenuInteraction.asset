@@ -79,4 +79,4 @@ MonoBehaviour:
       data:
         Settings:
           Clip: {fileID: 8300000, guid: a0b510bdd500170458a4b46d5c1cbea9, type: 3}
-          CrossFadeDuration: 1
+          CrossFadeDuration: 3
