@@ -3,7 +3,7 @@ using UnityEngine;
 public class Npc : Entity, IInteractable
 {
     [Header("References")]
-    [SerializeField] private Interaction _interaction;
+    [SerializeField] private InteractionScriptableObject _interaction;
 
     public bool CanInteract()
     {

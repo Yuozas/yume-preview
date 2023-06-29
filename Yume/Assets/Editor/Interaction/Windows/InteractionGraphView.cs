@@ -14,7 +14,7 @@ public class InteractionGraphView : GraphView
     private readonly List<GraphNode> _graphNodes;
     private readonly EditorWindow _window;
 
-    private Interaction _interaction;
+    private InteractionScriptableObject _interaction;
     private InteractionSearchWindow _search;
 
     public InteractionGraphView(EditorWindow window)
@@ -33,7 +33,7 @@ public class InteractionGraphView : GraphView
         AssignNodeCreationRequest();
     }
 
-    public void Load(Interaction interaction)
+    public void Load(InteractionScriptableObject interaction)
     {
         Unload();
 
