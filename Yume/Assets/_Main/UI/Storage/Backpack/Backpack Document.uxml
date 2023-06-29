@@ -5,11 +5,7 @@
             <ui:VisualElement name="BackpackIcon" class="icon-container" style="background-image: url(&apos;project://database/Assets/_Main/Graphics/Sprites/Modern%20User%20Interface/Modern_UI_Style_1.png?fileID=-12497140&amp;guid=1a4d1f89522da874c8a9331ccf49cf2a&amp;type=3#Active Icon&apos;);">
                 <ui:VisualElement name="Icon" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/_Main/Graphics/Sprites/Modern%20User%20Interface/Modern_UI_Style_1.png?fileID=-1686963143&amp;guid=1a4d1f89522da874c8a9331ccf49cf2a&amp;type=3#Backpack Icon&apos;);" />
             </ui:VisualElement>
-            <ui:VisualElement name="SlotContainer" style="background-image: url(&apos;project://database/Assets/_Main/Graphics/Sprites/Modern%20User%20Interface/Modern_UI_Style_1.png?fileID=1297398125&amp;guid=1a4d1f89522da874c8a9331ccf49cf2a&amp;type=3#Backpack Slot Section&apos;);">
-                <ui:VisualElement name="Slot" style="background-image: url(&apos;project://database/Assets/_Main/Graphics/Sprites/Modern%20User%20Interface/Modern_UI_Style_1.png?fileID=1498562401&amp;guid=1a4d1f89522da874c8a9331ccf49cf2a&amp;type=3#Item Slot&apos;);">
-                    <ui:VisualElement name="SlotItem" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);" />
-                </ui:VisualElement>
-            </ui:VisualElement>
+            <ui:ScrollView name="SlotScrollView" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

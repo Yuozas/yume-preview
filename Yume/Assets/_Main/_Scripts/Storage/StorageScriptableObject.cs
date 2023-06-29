@@ -8,12 +8,12 @@ public class StorageScriptableObject : ScriptableObject
     static StorageScriptableObject()
     {
         DemoBackpack = CreateInstance<StorageScriptableObject>();
-        DemoBackpack.Id = 1;
+        DemoBackpack.Id = "1";
         DemoBackpack.Name = "Demo Backpack";
         DemoBackpack.Slots = 10;
     }
 
-    [field: SerializeField] public long Id { get; private set; }
+    [field: SerializeField] public string Id { get; private set; }
     [field: SerializeField] public string Name { get; private set; }
     [field: SerializeField] public int Slots { get; private set; }
 

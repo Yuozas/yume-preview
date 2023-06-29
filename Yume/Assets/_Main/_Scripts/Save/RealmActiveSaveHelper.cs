@@ -26,7 +26,7 @@ public class RealmActiveSaveHelper : IRealmActiveSaveHelper
         return _realmSaveRegistry.GetActiveSaveDetails()?.Result.ActiveSaveDetails;
     }
 
-    public void ChangeActiveSave(long saveId)
+    public void ChangeActiveSave(string saveId)
     {
         using var globalRealm = _realmContext.GetGlobalRealm();
         var save = globalRealm.Find<RealmSaveDetails>(saveId);

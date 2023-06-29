@@ -1,8 +1,6 @@
-﻿using Realms;
-
-public interface IRealmSaveManager
+﻿public interface IRealmSaveManager
 {
     void CreateNewSave(CharacterRealmObject character);
-    void DeleteSave(long saveId);
-    void CopySave(long saveId);
+    void DeleteSave(string saveId);
+    void CopySave(string saveId);
 }

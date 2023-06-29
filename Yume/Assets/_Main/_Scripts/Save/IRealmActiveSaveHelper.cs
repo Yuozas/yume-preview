@@ -6,6 +6,6 @@ public interface IRealmActiveSaveHelper
     Realm GetActiveSave();
 
     RealmResult<RealmSaveDetails> GetActiveSaveDetails();
-    void ChangeActiveSave(long saveId);
+    void ChangeActiveSave(string saveId);
     void ChangeActiveSave(RealmSaveDetails realmSave);
 }

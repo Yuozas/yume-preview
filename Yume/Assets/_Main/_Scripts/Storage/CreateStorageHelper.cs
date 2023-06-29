@@ -24,7 +24,7 @@ public class CreateStorageHelper : ICreateStorageHelper
         var slotsToAdd = storage.Slots - currentStorageSlotCount;
 
         for (var i = 0; i < slotsToAdd; i++)
-            realm.Add(new StorageSlot { Storage = storage });
+            realm.Add(new StorageSlot { Storage = storageInDb });
 
         if(slotsToAdd < 0)
         {

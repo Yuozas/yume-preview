@@ -1,10 +1,11 @@
+using MongoDB.Bson;
 using Realms;
 using System.Linq;
 
 public class Storage : RealmObject
 {
     [PrimaryKey]
-    public long Id { get; set; }
+    public string Id { get; set; } = ObjectId.GenerateNewId().ToString();
     public string Name { get; set; }
 
     [Backlink(nameof(CharacterHasStorage.Storage))]
@@ -15,7 +16,4 @@ public class Storage : RealmObject
 
     [Backlink(nameof(StorageSlot.Storage))]
     public IQueryable<StorageSlot> StorageSlots { get; }
-
-    [Backlink(nameof(StorageAllowedItemType.Storage))]
-    public IQueryable<StorageAllowedItemType> StorageAllowedItemTypes { get; }
 }

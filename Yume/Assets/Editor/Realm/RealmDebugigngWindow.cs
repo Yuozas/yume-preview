@@ -80,7 +80,7 @@ public class RealmDebugigngWindow : EditorWindow
         using var realm = ServiceLocator.GetSingleton<IRealmContext>().GetGlobalRealm();
         realm.WriteUpsert<DebuggingRealm>(debugginRealm =>
         {
-            debugginRealm.SaveId = long.Parse(evt.newValue);
+            debugginRealm.SaveDetails.SaveId = evt.newValue;
         });
     }
 }

@@ -14,10 +14,11 @@ public class PreliminarySetupFinish : IPreliminarySetup
         using var realm = ServiceLocator.SingletonProvider.Get<IRealmContext>().GetGlobalRealm();
         if(realm.TryGet<DebuggingRealm>(out var debuggingRealm))
         {
-            if(debuggingRealm.SaveId is not 0)
+            using var activeRealmSaveDetails = ServiceLocator.GetSingleton<IRealmActiveSaveHelper>().GetActiveSaveDetails();
+            if(debuggingRealm.SaveDetails is not null && activeRealmSaveDetails.Result?.SaveId != debuggingRealm.SaveDetails?.SaveId)
             {
                 var realmSaveManager = ServiceLocator.SingletonProvider.Get<IRealmActiveSaveHelper>();
-                realmSaveManager.ChangeActiveSave(debuggingRealm.SaveId);
+                realmSaveManager.ChangeActiveSave(debuggingRealm.SaveDetails.SaveId);
             }
             if(debuggingRealm.SceneName != SceneManager.GetActiveScene().name)
             {

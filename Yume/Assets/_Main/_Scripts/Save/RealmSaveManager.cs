@@ -25,12 +25,12 @@
         transaction.Commit();
     }
 
-    public void DeleteSave(long saveId)
+    public void DeleteSave(string saveId)
     {
         _realmSaveRegistry.DeleteSave(saveId);
     }
 
-    public void CopySave(long saveId)
+    public void CopySave(string saveId)
     {
         _realmSaveRegistry.CopySave(saveId);
     }

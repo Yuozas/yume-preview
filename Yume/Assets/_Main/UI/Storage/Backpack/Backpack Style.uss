@@ -1,44 +1,45 @@
 #Body {
-	background-color: rgba(0,0,0,0.5);
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .icon-container {
-	position: absolute;
-	top: -75;
-	width: 100px;
-	height: 100px;
-	padding: 25px 15px 10px 15px;
+    position: absolute;
+    top: -68px;
+    width: 80px;
+    height: 80px;
+    padding: 12.5px 10px 7.5px 10px;
 }
 
 #BackpackIcon {
-	left: 100;
+    left: 100px;
+    -unity-slice-scale: 0.3px;
 }
 
 #Backpack {
-	width: 80%;
-	margin-top: 10%;
-	height: 70%;
-	padding: 50px;
+    width: 80%;
+    margin-top: 10%;
+    height: 70%;
+    padding: 50px;
+    -unity-slice-scale: 0.5px;
 }
 
 #SlotContainer {
-	maring-left: auto;
-	margin-right: auto;
-	min-width: 0;
-	padding: 25px;
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;
-	justify-content: space-around;
-	align-items: center;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    -unity-slice-scale: 0.5px;
 }
 
 #Slot {
-	width: 50px;
-	height: 50px;
+    width: 50px;
+    height: 50px;
+    -unity-slice-scale: 0.5px;
+    margin: 5px 15px;
 }

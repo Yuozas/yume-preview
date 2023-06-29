@@ -33,11 +33,6 @@ public class StorageItemHelper : IStorageItemHelper
         if (slot.Item is not null)
             return false;
 
-        var allowedAnyType = storage.StorageAllowedItemTypes.Count() is 0;
-        if (!allowedAnyType && storage.StorageAllowedItemTypes.Any(itemType => itemType.ItemType != item.Type))
-            return false;
-
-
         activeRealm.Write(() =>
         {
             activeRealm.Add(item, true);

@@ -10,7 +10,7 @@ public static class RealmExtensions
         return realm.All<T>().First();
     }
 
-    public static bool TryGet<T>(this Realm realm, long key, out T realmObject) 
+    public static bool TryGet<T>(this Realm realm, string key, out T realmObject) 
         where T : RealmObject
     {
         realmObject = realm.Find<T>(key);
@@ -24,7 +24,7 @@ public static class RealmExtensions
         return realmObject is not null;
     }
 
-    public static void WriteUpsert<T>(this Realm realm, long key, Action<T> update)
+    public static void WriteUpsert<T>(this Realm realm, string key, Action<T> update)
     where T : RealmObject, new()
     {
         if (!realm.TryWriteUpdate(key, update))
@@ -50,7 +50,7 @@ public static class RealmExtensions
         realm.WriteSafe(() => realm.Add(realmObject, true));
     }
 
-    public static bool TryWriteUpdate<T>(this Realm realm, long key, Action<T> update) 
+    public static bool TryWriteUpdate<T>(this Realm realm, string key, Action<T> update) 
         where T : RealmObject
     {
         if (!realm.TryGet<T>(key, out var realmObject))

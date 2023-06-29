@@ -1,11 +1,11 @@
 using Realms;
 using System.Linq;
-using System;
+using MongoDB.Bson;
 
 public class Store : RealmObject
 {
     [PrimaryKey]
-    public long Id { get; set; } = DateTime.UtcNow.Ticks;
+    public string Id { get; set; } = ObjectId.GenerateNewId().ToString();
     public string Name { get; set; }
 
     [Backlink(nameof(StoreHasStorage.Store))]
