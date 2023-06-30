@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a56a6cac0d1a63b4f9bb1d60b90e0a14, type: 3}
+  m_Name: TransitionToOffice
+  m_EditorClassIdentifier: 
+  <UnityNodes>k__BackingField:
+  - rid: 8981177799078576179
+  - rid: 8981177799078576181
+  - rid: 8981177799078576183
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 8981177799078576179
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177799078576180
+        Position: {x: 481.46362, y: 582.54443}
+    - rid: 8981177799078576180
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Entry
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
+          - rid: 8981177799078576184
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: -2
+    - rid: 8981177799078576181
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177799078576182
+        Position: {x: 1052.416, y: 583}
+    - rid: 8981177799078576182
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Exit
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: -2
+    - rid: 8981177799078576183
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 8981177799078576184
+        Position: {x: 579.00006, y: 583}
+    - rid: 8981177799078576184
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Transition To Destination
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
+          - rid: 8981177799078576182
+        _wait: 1
+        <Executable>k__BackingField:
+          rid: 8981177799078576185
+    - rid: 8981177799078576185
+      type: {class: TransitionToDestinationCommand, ns: , asm: Assembly-CSharp}
+      data:
+        DestinationScriptableObject: {fileID: 11400000, guid: 96b2d1bb6642b7d40af9e55ea624fd74, type: 2}
