@@ -21,7 +21,6 @@ public class InteractionSearchWindow : ScriptableObject, ISearchWindowProvider
         const string Dialogue = "Dialogue";
         const string Audio = "Audio";
         const string Decision = "Decision";
-        const string Transitions = "Transition To Destination";
 
         return new List<SearchTreeEntry>()
         {
@@ -41,9 +40,7 @@ public class InteractionSearchWindow : ScriptableObject, ISearchWindowProvider
             CreateGroupEntry(Decision),
             CreateEntry(INode.ENABLE_DECISIONS),
             CreateEntry(INode.DISABLE_DECISIONS),
-            CreateEntry(INode.SET_DECISION_CHOICES),
-            CreateGroupEntry(Transitions),
-            CreateEntry(INode.TRANSITION_TO_DESTINATION),
+            CreateEntry(INode.SET_DECISION_CHOICES)
         };
     }
 

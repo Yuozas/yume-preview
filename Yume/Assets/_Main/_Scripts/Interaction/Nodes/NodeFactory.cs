@@ -22,7 +22,6 @@
             INode.ENABLE_DECISIONS => BuildEnableDecision(),
             INode.DISABLE_DECISIONS => BuildDisableDecision(),
             INode.SET_DECISION_CHOICES => BuildSetChoices(),
-            INode.TRANSITION_TO_DESTINATION => BuildTransitionToDestination(),
             _ => null,
         };
     }
@@ -80,12 +79,6 @@
     {
         var command = new DisableDialogueTogglerCommand(_type);
         return new CompositeNode(INode.DISABLE, false, command);
-    }
-
-    public INode BuildTransitionToDestination()
-    {
-        var command = new TransitionToDestinationCommand();
-        return new CompositeNode(INode.TRANSITION_TO_DESTINATION, true, command);
     }
 
     public INode BuildPortrait()

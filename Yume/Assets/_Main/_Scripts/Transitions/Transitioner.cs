@@ -3,7 +3,6 @@ using System.Linq;
 using UnityEngine;
 using SwiftLocator.Services.ServiceLocatorServices;
 using static UnityEngine.SceneManagement.SceneManager;
-using System;
 
 public class Transitioner
 {
@@ -12,7 +11,6 @@ public class Transitioner
     readonly private TransitionerAnimation _animation;
 
     private TransitionDestinationScriptableObject _to;
-    private Action _onFinished;
 
     public Transitioner()
     {
@@ -21,9 +19,8 @@ public class Transitioner
         _animation = ServiceLocator.GetSingleton<TransitionerAnimation>();
     }
 
-    public void Transition(TransitionDestinationScriptableObject to, Action onFinished = null)
+    public void Transition(TransitionDestinationScriptableObject to)
     {
-        _onFinished = onFinished;
         _to = to;
         _animation.ToDefault(Continue);
     }
@@ -67,6 +64,5 @@ public class Transitioner
         Get(to).Transition(transitionable);
 
         _animation.ToClear();
-        _onFinished?.Invoke();
     }
 }
