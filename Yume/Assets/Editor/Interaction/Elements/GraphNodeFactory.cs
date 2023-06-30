@@ -43,6 +43,9 @@ public class GraphNodeFactory
             case INode.SET_DECISION_CHOICES:
                 AddSetChoicesNodeElements(unity, drawables, view);
                 break;
+            case INode.TRANSITION_TO_DESTINATION:
+                AddTransitionToDestinationNodeElements(unity, drawables);
+                break;
         }
 
         if (unity.Type != INode.ENTRY)
@@ -162,6 +165,17 @@ public class GraphNodeFactory
         var extension = new DrawableExtensionContainer(button);
 
         drawables.Add(compositeOutput);
+        drawables.Add(extension);
+    }
+    private void AddTransitionToDestinationNodeElements(UnityNode unity, List<IDrawable> drawables)
+    {
+        var executable = (TransitionToDestinationCommand)unity.Node.Executable;
+        var field = CreateField("Scriptable", executable.DestinationScriptableObject);
+        field.RegisterValueChangedCallback(callback => executable.DestinationScriptableObject = (TransitionDestinationScriptableObject)callback.newValue);
+
+        var extension = new DrawableExtensionContainer(field);
+
+        AddSingularOutputPortContainer(drawables);
         drawables.Add(extension);
     }
 

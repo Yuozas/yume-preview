@@ -16,6 +16,7 @@ public interface INode
     public const string ENABLE_DECISIONS = "Open Decision";
     public const string DISABLE_DECISIONS = "Close Decision";
     public const string SET_DECISION_CHOICES = "Set Decision Choices";
+    public const string TRANSITION_TO_DESTINATION = "Transition To Destination";
 
     List<Connection> Connections { get; }
     ICommand Executable { get; }
