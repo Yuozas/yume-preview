@@ -36,8 +36,14 @@ public static class ArrayExtensions
         return null;
     }
 
-    public static int GetLastElementIndex<T>(this IEnumerable<T> source)
+    public static int GetLastElementIndex<T>(this IList<T> source)
     {
-        return source.Count() - 1;
+        return source.Count - 1;
+    }
+
+    public static T TakeRandom<T>(this IList<T> source)
+    {
+        var index = new Random().Next(0, source.Count);
+        return source[index];
     }
 }

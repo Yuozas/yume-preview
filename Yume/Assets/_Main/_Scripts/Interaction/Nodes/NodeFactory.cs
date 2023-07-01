@@ -15,7 +15,7 @@
             INode.ENABLE => BuildEnable(),
             INode.DISABLE => BuildDisable(),
             INode.MUSIC => BuildMusic(),
-            INode.SFX => BuildSfx(),
+            INode.PLAY_SOUND_EFFECT => BuildPlaySoundEffect(),
             INode.PORTRAIT => BuildPortrait(),
             INode.NAME => BuildName(),
             INode.TYPEWRITER => BuildTypewriter(),
@@ -70,10 +70,10 @@
         return new CompositeNode(INode.MUSIC, false, command);
     }
 
-    public INode BuildSfx()
+    public INode BuildPlaySoundEffect()
     {
-        var command = new PlaySfxClipCommand();
-        return new CompositeNode(INode.SFX, false, command);
+        var command = new PlaySoundEffectClipCommand();
+        return new CompositeNode(INode.PLAY_SOUND_EFFECT, false, command);
     }
 
     public INode BuildDisable()

@@ -2,6 +2,7 @@
 
 public class DialogueBuilder
 {
+    private const string TYPEWRITER_SOUNDS_PATH = "Typewriter";
     private Typewriter _typewriter;
     private Portrait _portrait;
     private Name _name;
@@ -18,7 +19,10 @@ public class DialogueBuilder
         var delayedExecutor = new DelayedExecutor(behaviour, settings);
         var typewriterIterator = new TypewriterIterator();
 
-        _typewriter = new Typewriter(delayedExecutor, typewriterIterator);
+        var clips = Resources.LoadAll<AudioClip>(TYPEWRITER_SOUNDS_PATH);
+        var soundEffectPlayer = new RandomSoundEffectPlayer(clips, 3);
+
+        _typewriter = new Typewriter(delayedExecutor, typewriterIterator, soundEffectPlayer);
         return this;
     }
 

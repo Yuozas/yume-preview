@@ -37,7 +37,7 @@ public class InteractionSearchWindow : ScriptableObject, ISearchWindowProvider
             CreateEntry(INode.TYPEWRITER),
             CreateGroupEntry(Audio),
             CreateEntry(INode.MUSIC),
-            CreateEntry(INode.SFX),
+            CreateEntry(INode.PLAY_SOUND_EFFECT),
             CreateGroupEntry(Decision),
             CreateEntry(INode.ENABLE_DECISIONS),
             CreateEntry(INode.DISABLE_DECISIONS),

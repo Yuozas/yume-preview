@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5482843670603181049}
   - component: {fileID: 4684659871465010691}
   m_Layer: 0
-  m_Name: Sfx
+  m_Name: SoundEffectAudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +42,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6896415849347515468}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac4e4394ba344ad4884b939e6d7f6c75, type: 3}
+  m_Script: {fileID: 11500000, guid: 18fe7674c02fdd54e8016d21adba2b26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _source: {fileID: 4684659871465010691}

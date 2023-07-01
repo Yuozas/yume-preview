@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class Sfx : MonoBehaviour
+public class SoundEffectAudioSource : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private AudioSource _source;
 
-    public void Play(SfxClipSettings settings)
+    public void Play(SoundEffectClipSettings settings)
     {
         _source.PlayOneShot(settings.Clip);
     }
