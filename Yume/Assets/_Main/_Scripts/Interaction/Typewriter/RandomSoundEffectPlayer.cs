@@ -22,7 +22,7 @@ public class RandomSoundEffectPlayer : ISoundEffectPlayer
         if (_current < _every)
             return;
 
-        var clip = _clips.GetRandom();
+        var clip = _clips.TakeRandom();
         var settings = new SoundEffectClipSettings(clip);
         _sfx.Play(settings);
 

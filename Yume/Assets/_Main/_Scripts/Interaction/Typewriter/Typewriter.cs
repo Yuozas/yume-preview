@@ -12,7 +12,7 @@ public class Typewriter
     private Action _onFinished;
 
     private const bool IGNORE_SPACE = true;
-    private const bool PLAY_TYPEWRITER_SOUND_EFFECT = false;
+    private const bool PLAY_SOUND_EFFECT = false;
 
     public Typewriter(DelayedExecutor executor, TypewriterIterator builder, ISoundEffectPlayer player)
     {
@@ -64,7 +64,7 @@ public class Typewriter
     private void Set()
     {
         _builder.Next();
-        if(PLAY_TYPEWRITER_SOUND_EFFECT)
+        if(PLAY_SOUND_EFFECT)
             _player.Play();
 
         OnUpdated?.Invoke(_builder.Current);
