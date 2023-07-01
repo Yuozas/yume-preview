@@ -46,6 +46,9 @@ public class GraphNodeFactory
             case INode.TRANSITION_TO_DESTINATION:
                 AddTransitionToDestinationNodeElements(unity, drawables);
                 break;
+            case INode.PLAY_SLIDER_GAME:
+                AddSliderGameNodeElements(unity, drawables);
+                break;
         }
 
         if (unity.Type != INode.ENTRY)
@@ -167,6 +170,13 @@ public class GraphNodeFactory
         drawables.Add(compositeOutput);
         drawables.Add(extension);
     }
+
+    private void AddSliderGameNodeElements(UnityNode unity, List<IDrawable> drawables)
+    {
+        var compositeOutput = new BoolOutputPortContainer(unity.Node);
+        drawables.Add(compositeOutput);
+    }
+
     private void AddTransitionToDestinationNodeElements(UnityNode unity, List<IDrawable> drawables)
     {
         var executable = (TransitionToDestinationCommand)unity.Node.Executable;

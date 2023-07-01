@@ -22,7 +22,7 @@ public class InteractionSearchWindow : ScriptableObject, ISearchWindowProvider
         const string Audio = "Audio";
         const string Decision = "Decision";
         const string Transitions = "Transition To Destination";
-
+        const string SliderGame = "Slider Game";
         return new List<SearchTreeEntry>()
         {
             CreateGroupEntry(Create, 0),
@@ -44,6 +44,10 @@ public class InteractionSearchWindow : ScriptableObject, ISearchWindowProvider
             CreateEntry(INode.SET_DECISION_CHOICES),
             CreateGroupEntry(Transitions),
             CreateEntry(INode.TRANSITION_TO_DESTINATION),
+            CreateGroupEntry(SliderGame),
+            CreateEntry(INode.ENABLE_SLIDER_GAME),
+            CreateEntry(INode.DISABLE_SLIDER_GAME),
+            CreateEntry(INode.PLAY_SLIDER_GAME),
         };
     }
 

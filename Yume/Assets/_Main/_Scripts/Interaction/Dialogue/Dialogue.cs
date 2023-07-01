@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System;
 
 public class Dialogue : ITogglerProvider
 {
@@ -20,9 +20,6 @@ public class Dialogue : ITogglerProvider
     public readonly Name Name;
     public IToggler Toggler { get; private set; }
 
-    public static event Action Enabled;
-    public event Action Disabled;
-
     public Dialogue(string type, Typewriter typewriter = null, Portrait portrait = null, Name name = null)
     {
         Type = type;
@@ -31,24 +28,93 @@ public class Dialogue : ITogglerProvider
         Name = name;
 
         Toggler = new Toggler();
+    }
+}
 
-        Toggler.OnEnable += InvokeEnabled;
-        Toggler.OnDisable += InvokeDisabled;
+public class SliderGame : ITogglerProvider
+{
+    public IToggler Toggler { get; private set; }
+    public event Action OnPercentageUpdated;
+    public SliderGameStage Current => _stages[_index];
+    public float CursorPosition { get; private set; }
+
+    private readonly SliderGameStage[] _stages;
+    private int _index;
+    private List<INode> _winNodes;
+    private List<INode> _loseNodes;
+    private readonly LoopPercentage _loopPercentage;
+
+
+    public SliderGame()
+    {
+        Toggler = new Toggler();
+
+        _stages = new SliderGameStage[3]
+        {
+            new SliderGameStage(0.3f),
+            new SliderGameStage(0.2f),
+            new SliderGameStage(0.1f)
+        };
+
+        _loopPercentage = new LoopPercentage();
+        _loopPercentage.OnUpdated += Set;
     }
 
-    ~Dialogue()
+    ~SliderGame()
     {
-        Toggler.OnEnable -= InvokeEnabled;
-        Toggler.OnDisable -= InvokeDisabled;
+        _loopPercentage.OnUpdated -= Set;
     }
 
-    private void InvokeEnabled()
+    public void Execute()
     {
-        Enabled?.Invoke();
+        Current.Execute(Increment, InvokeLose, CursorPosition);
     }
 
-    private void InvokeDisabled()
+    public void Begin(List<INode> winNodes, List<INode> loseNodes)
     {
-        Disabled?.Invoke();
+        _winNodes = winNodes;
+        _loseNodes = loseNodes;
+
+        SetIndex(0);
+        _loopPercentage.Begin(1f);
+    }
+
+    private void InvokeWin()
+    {
+        _loopPercentage.Stop();
+        foreach (var node in _winNodes)
+            node.Execute();
+    }
+
+    private void InvokeLose()
+    {
+        _loopPercentage.Stop();
+        foreach (var node in _loseNodes)
+            node.Execute();
+    }
+
+    private void SetIndex(int index)
+    {
+        _index = index;
+        OnPercentageUpdated?.Invoke();
+    }
+
+    private void Increment()
+    {
+        var index = _index + 1;
+        if(index >= _stages.Length)
+        {
+            InvokeWin();
+            return;
+        }
+
+        SetIndex(index);
+    }
+
+    private void Set(float percentage)
+    {
+        UnityEngine.Debug.Log("Set :: " + percentage);
+        CursorPosition = percentage;
+        OnPercentageUpdated?.Invoke();
     }
 }

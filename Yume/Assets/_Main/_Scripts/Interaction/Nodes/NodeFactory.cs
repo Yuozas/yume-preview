@@ -23,6 +23,9 @@
             INode.DISABLE_DECISIONS => BuildDisableDecision(),
             INode.SET_DECISION_CHOICES => BuildSetChoices(),
             INode.TRANSITION_TO_DESTINATION => BuildTransitionToDestination(),
+            INode.ENABLE_SLIDER_GAME => BuildEnableSlider(),
+            INode.DISABLE_SLIDER_GAME => BuildDisableSlider(),
+            INode.PLAY_SLIDER_GAME => BuildPlaySlider(),
             _ => null,
         };
     }
@@ -55,8 +58,25 @@
 
     public INode BuildEnableDecision()
     {
-        var command = new EnableDecisionsTogglerCommand();
+        var command = new EnableSliderGameTogglerCommand();
         return new CompositeNode(INode.ENABLE_DECISIONS, false, command);
+    }
+
+    public INode BuildDisableSlider()
+    {
+        var command = new DisableSliderGameTogglerCommand();
+        return new CompositeNode(INode.DISABLE_SLIDER_GAME, false, command);
+    }
+
+    public INode BuildPlaySlider()
+    {
+        return new SliderGameNode(INode.PLAY_SLIDER_GAME);
+    }
+
+    public INode BuildEnableSlider()
+    {
+        var command = new EnableSliderGameTogglerCommand();
+        return new CompositeNode(INode.ENABLE_SLIDER_GAME, false, command);
     }
 
     public INode BuildSetChoices()

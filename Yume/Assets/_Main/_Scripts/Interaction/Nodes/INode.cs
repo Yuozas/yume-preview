@@ -17,6 +17,9 @@ public interface INode
     public const string DISABLE_DECISIONS = "Close Decision";
     public const string SET_DECISION_CHOICES = "Set Decision Choices";
     public const string TRANSITION_TO_DESTINATION = "Transition To Destination";
+    public const string ENABLE_SLIDER_GAME = "Open Slider Game";
+    public const string DISABLE_SLIDER_GAME = "Close Slider Game";
+    public const string PLAY_SLIDER_GAME = "Play Slider Game";
 
     List<Connection> Connections { get; }
     ICommand Executable { get; }
