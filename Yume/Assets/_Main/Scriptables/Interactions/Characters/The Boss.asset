@@ -23,20 +23,64 @@ MonoBehaviour:
   - rid: 8981177264092741677
   - rid: 8981177380004430024
   - rid: 8981177380004430033
-  - rid: 8981177420305924119
   - rid: 8981177420305924219
   - rid: 8981177420305924222
   - rid: 8981177420305924225
   - rid: 8981177420305924235
   - rid: 8981177420305924238
   - rid: 8981177420305924241
-  - rid: 8981177420305924244
   - rid: 8981177420305924255
+  - rid: 4986929572184326151
+  - rid: 4986929572184326154
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
+    - rid: 4986929572184326151
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929572184326152
+        Position: {x: 1113, y: 43}
+    - rid: 4986929572184326152
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Play Sound Effect
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 4986929572184326153
+    - rid: 4986929572184326153
+      type: {class: PlaySoundEffectClipCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Settings:
+          Clip: {fileID: 8300000, guid: 3470424e6b240994381f438269a7b407, type: 3}
+    - rid: 4986929572184326154
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929572184326155
+        Position: {x: 1964.0002, y: 42.999985}
+    - rid: 4986929572184326155
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Play Sound Effect
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 4986929572184326156
+    - rid: 4986929572184326156
+      type: {class: PlaySoundEffectClipCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Settings:
+          Clip: {fileID: 8300000, guid: 3470424e6b240994381f438269a7b407, type: 3}
     - rid: 8981177211230355745
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
@@ -261,28 +305,6 @@ MonoBehaviour:
         Settings:
           Clip: {fileID: 8300000, guid: e184037b817c8d246af5c91f58708606, type: 3}
           CrossFadeDuration: 1
-    - rid: 8981177420305924119
-      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
-      data:
-        <Node>k__BackingField:
-          rid: 8981177420305924120
-        Position: {x: 1113, y: 119}
-    - rid: 8981177420305924120
-      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
-      data:
-        <Type>k__BackingField: Sfx
-        <Connections>k__BackingField:
-        - <Text>k__BackingField: 
-          <Sprite>k__BackingField: {fileID: 0}
-          <Nodes>k__BackingField: []
-        _wait: 0
-        <Executable>k__BackingField:
-          rid: 8981177420305924121
-    - rid: 8981177420305924121
-      type: {class: PlaySfxClipCommand, ns: , asm: Assembly-CSharp}
-      data:
-        Settings:
-          Clip: {fileID: 8300000, guid: 3470424e6b240994381f438269a7b407, type: 3}
     - rid: 8981177420305924219
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
@@ -322,8 +344,8 @@ MonoBehaviour:
         - <Text>k__BackingField: 
           <Sprite>k__BackingField: {fileID: 0}
           <Nodes>k__BackingField:
-          - rid: 8981177420305924120
           - rid: 8981177420305924226
+          - rid: 4986929572184326152
         _wait: 1
         <Executable>k__BackingField:
           rid: 8981177420305924224
@@ -401,8 +423,8 @@ MonoBehaviour:
         - <Text>k__BackingField: 
           <Sprite>k__BackingField: {fileID: 0}
           <Nodes>k__BackingField:
-          - rid: 8981177420305924245
           - rid: 8981177420305924242
+          - rid: 4986929572184326155
         _wait: 1
         <Executable>k__BackingField:
           rid: 8981177420305924240
@@ -438,28 +460,6 @@ MonoBehaviour:
         Settings:
           Sentence: Hahahahahahaha!
           Rate: 0.036
-    - rid: 8981177420305924244
-      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
-      data:
-        <Node>k__BackingField:
-          rid: 8981177420305924245
-        Position: {x: 1964, y: 118}
-    - rid: 8981177420305924245
-      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
-      data:
-        <Type>k__BackingField: Sfx
-        <Connections>k__BackingField:
-        - <Text>k__BackingField: 
-          <Sprite>k__BackingField: {fileID: 0}
-          <Nodes>k__BackingField: []
-        _wait: 0
-        <Executable>k__BackingField:
-          rid: 8981177420305924246
-    - rid: 8981177420305924246
-      type: {class: PlaySfxClipCommand, ns: , asm: Assembly-CSharp}
-      data:
-        Settings:
-          Clip: {fileID: 8300000, guid: 3470424e6b240994381f438269a7b407, type: 3}
     - rid: 8981177420305924255
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:

@@ -5,7 +5,7 @@ using System.Linq;
 public class Initializer : IPreliminarySetup
 {
     private const string MUSIC_PREFAB_FILE_NAME = "Music";
-    private const string SFX_PREFAB_FILE_NAME = "Sfx";
+    private const string SOUND_EFFECT_PREFAB_FILE_NAME = "SoundEffectAudioSource";
     private const string DIALOGUE_PREFAB_FILE_NAME = "DialoguesUserInterface";
     private const string SCENE_INTERACTIONS_FILE_PATH = "Interactions";
     private const string TRANSITIONER_ANIMATION_PREFAB_FILE_NAME = "TransitionerAnimation";
@@ -52,7 +52,7 @@ public class Initializer : IPreliminarySetup
         });
 
         ServiceLocator.SingletonRegistrator.Register(provider => {
-            var prefab = Resources.Load<Sfx>(SFX_PREFAB_FILE_NAME);
+            var prefab = Resources.Load<SoundEffectAudioSource>(SOUND_EFFECT_PREFAB_FILE_NAME);
             return Instantiator.InstantiateAndDontDestroy(prefab);
         });
 

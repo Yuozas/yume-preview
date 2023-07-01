@@ -37,7 +37,7 @@ public class GraphNodeFactory
             case INode.DISABLE:
                 AddDisableNodeElements(unity, drawables);
                 break;
-            case INode.SFX:
+            case INode.PLAY_SOUND_EFFECT:
                 AddSfxNodeElements(unity, drawables);
                 break;
             case INode.SET_DECISION_CHOICES:
@@ -79,11 +79,11 @@ public class GraphNodeFactory
 
     private static void AddSfxNodeElements(UnityNode unity, List<IDrawable> drawables)
     {
-        var executable = (PlaySfxClipCommand)unity.Node.Executable;
+        var executable = (PlaySoundEffectClipCommand)unity.Node.Executable;
 
         var clipField = CreateField("Sfx", executable.Settings.Clip);
         clipField.RegisterValueChangedCallback(callback =>
-            executable.Settings = new SfxClipSettings(callback.newValue as AudioClip)
+            executable.Settings = new SoundEffectClipSettings(callback.newValue as AudioClip)
         );
 
         var extension = new DrawableExtensionContainer(clipField);

@@ -40,4 +40,10 @@ public static class ArrayExtensions
     {
         return source.Count() - 1;
     }
+
+    public static T Random<T>(this IList<T> source)
+    {
+        var index = new Random().Next(0, source.Count);
+        return source[index];
+    }
 }
