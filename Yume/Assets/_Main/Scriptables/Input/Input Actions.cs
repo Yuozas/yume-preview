@@ -299,6 +299,15 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Backpack menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""4d53f75d-8fb1-4949-abce-382667562653"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -310,6 +319,17 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Exit "",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ac3c1b98-339b-41a9-b124-4f8519e6c39e"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Backpack menu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -352,6 +372,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         // In-game Menu
         m_IngameMenu = asset.FindActionMap("In-game Menu", throwIfNotFound: true);
         m_IngameMenu_Exit = m_IngameMenu.FindAction("Exit ", throwIfNotFound: true);
+        m_IngameMenu_Backpackmenu = m_IngameMenu.FindAction("Backpack menu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -676,11 +697,13 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_IngameMenu;
     private List<IIngameMenuActions> m_IngameMenuActionsCallbackInterfaces = new List<IIngameMenuActions>();
     private readonly InputAction m_IngameMenu_Exit;
+    private readonly InputAction m_IngameMenu_Backpackmenu;
     public struct IngameMenuActions
     {
         private @InputActions m_Wrapper;
         public IngameMenuActions(@InputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Exit => m_Wrapper.m_IngameMenu_Exit;
+        public InputAction @Backpackmenu => m_Wrapper.m_IngameMenu_Backpackmenu;
         public InputActionMap Get() { return m_Wrapper.m_IngameMenu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -693,6 +716,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Exit.started += instance.OnExit;
             @Exit.performed += instance.OnExit;
             @Exit.canceled += instance.OnExit;
+            @Backpackmenu.started += instance.OnBackpackmenu;
+            @Backpackmenu.performed += instance.OnBackpackmenu;
+            @Backpackmenu.canceled += instance.OnBackpackmenu;
         }
 
         private void UnregisterCallbacks(IIngameMenuActions instance)
@@ -700,6 +726,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Exit.started -= instance.OnExit;
             @Exit.performed -= instance.OnExit;
             @Exit.canceled -= instance.OnExit;
+            @Backpackmenu.started -= instance.OnBackpackmenu;
+            @Backpackmenu.performed -= instance.OnBackpackmenu;
+            @Backpackmenu.canceled -= instance.OnBackpackmenu;
         }
 
         public void RemoveCallbacks(IIngameMenuActions instance)
@@ -753,5 +782,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     public interface IIngameMenuActions
     {
         void OnExit(InputAction.CallbackContext context);
+        void OnBackpackmenu(InputAction.CallbackContext context);
     }
 }

@@ -1,22 +1,27 @@
-using SwiftLocator.Services.ServiceLocatorServices;
+﻿using SwiftLocator.Services.ServiceLocatorServices;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class BackpackUserInterface : MonoBehaviour
+[CreateAssetMenu(menuName = "InGameMenu/Backpack")]
+public class BackpackUserInterfaceScriptableObject : InGameMenuUserInterfaceScriptableObject
 {
-    [field: SerializeField] Sprite SlotSprite { get; set; }
+    [field: SerializeField] private Sprite SlotSprite { get; set; }
 
     private ScrollView _scrollView;
-
+    private Label _itemName;
+    private Label _itemDescription;
+    private VisualElement _itemImage;
     private VisualElement _slotContainer;
+    private VisualElement _activeSlot;
 
-    private void Awake()
+    protected override void SetupMenuElement()
     {
-        var root = GetComponent<UIDocument>().rootVisualElement;
-        var body = root.Q<VisualElement>("Body");
-        var backpack = body.Q<VisualElement>("Backpack");
-        _scrollView = backpack.Q<ScrollView>("SlotScrollView");
+        _scrollView = MenuElement.Q<ScrollView>("SlotScrollView");
+        _itemName = MenuElement.Q<Label>("ItemName");
+        _itemDescription = MenuElement.Q<Label>("ItemDescription");
+        _itemImage = MenuElement.Q<VisualElement>("ItemImage");
 
         SetupSlotContainer();
         SetupSlots();
@@ -53,11 +58,26 @@ public class BackpackUserInterface : MonoBehaviour
         if (storageSlot.Item is null)
             return slot;
 
+        var image = storageSlot.Item.ItemIcon?.ConvertByteArrayToSprite();
+        var itemBackgroundImage = _itemImage.style.backgroundImage = image == null
+            ? null
+            : new StyleBackground(image);
+
+        slot.AddManipulator(new Clickable(() =>
+        {
+            _activeSlot?.RemoveFromClassList("active-slot");
+            _activeSlot = slot;
+            _activeSlot.AddToClassList("active-slot");
+            _itemName.text = storageSlot.Item.Name;
+            _itemDescription.text = storageSlot.Item.Description;
+            _itemImage.style.backgroundImage = itemBackgroundImage;
+        }));
+
         var texture = new Texture2D(2, 2);
         texture.LoadImage(storageSlot.Item.ItemIcon);
 
         var slotItem = slot.Q<VisualElement>("SlotItem");
-        slotItem.style.backgroundImage = new StyleBackground();
+        slotItem.style.backgroundImage = itemBackgroundImage;
 
         return slot;
     }
