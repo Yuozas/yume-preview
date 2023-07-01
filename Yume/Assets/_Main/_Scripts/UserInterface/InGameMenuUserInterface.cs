@@ -22,12 +22,22 @@ public class InGameMenuUserInterface : MonoBehaviour
 
     public void EnterBackpack()
     {
+        if (_activeIndex == BACKPACK_INDEX)
+        {
+            Exit();
+            return;
+        }
         Enter();
         Switch(BackpackUserIterfaceScriptableObject, BACKPACK_INDEX);
     }
 
     public void EnterSettings()
     {
+        if (_activeIndex == SETTINGS_INDEX)
+        {
+            Exit();
+            return;
+        }
         Enter();
         Switch(SettingsUserIterfaceScriptableObject, SETTINGS_INDEX);
     }
@@ -44,9 +54,9 @@ public class InGameMenuUserInterface : MonoBehaviour
     {
         _root.style.display = DisplayStyle.Flex;
         _inputActions.IngameMenu.Enable();
-
         _inputActions.IngameMenu.Backpackmenu.performed += _ => EnterBackpack();
         _inputActions.IngameMenu.Exit.performed += _ => Exit();
+        _inputActions.IngameMenu.Settingsmenu.performed += _ => EnterSettings();
     }
 
     private void Start()

@@ -249,7 +249,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""id"": ""c55b4f52-140b-4ed0-a201-9b3f4cd869bb"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""initialStateCheck"": false
                 },
                 {
@@ -258,7 +258,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""id"": ""b3238317-bf21-430c-8a81-6d8591eabd1c"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""initialStateCheck"": false
                 }
             ],
@@ -297,7 +297,16 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""id"": ""b304ce11-9473-4e61-801e-9c6f9f6859ea"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Settings menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""dd071c73-e287-4c25-a33c-06e9e02e64ff"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
                     ""initialStateCheck"": false
                 },
                 {
@@ -306,7 +315,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""id"": ""4d53f75d-8fb1-4949-abce-382667562653"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""initialStateCheck"": false
                 }
             ],
@@ -317,7 +326,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""Exit "",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -330,6 +339,17 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
                     ""action"": ""Backpack menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ccb0fbba-a971-49c6-93e0-7dda2b9e45db"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Settings menu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -372,6 +392,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         // In-game Menu
         m_IngameMenu = asset.FindActionMap("In-game Menu", throwIfNotFound: true);
         m_IngameMenu_Exit = m_IngameMenu.FindAction("Exit ", throwIfNotFound: true);
+        m_IngameMenu_Settingsmenu = m_IngameMenu.FindAction("Settings menu", throwIfNotFound: true);
         m_IngameMenu_Backpackmenu = m_IngameMenu.FindAction("Backpack menu", throwIfNotFound: true);
     }
 
@@ -697,12 +718,14 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_IngameMenu;
     private List<IIngameMenuActions> m_IngameMenuActionsCallbackInterfaces = new List<IIngameMenuActions>();
     private readonly InputAction m_IngameMenu_Exit;
+    private readonly InputAction m_IngameMenu_Settingsmenu;
     private readonly InputAction m_IngameMenu_Backpackmenu;
     public struct IngameMenuActions
     {
         private @InputActions m_Wrapper;
         public IngameMenuActions(@InputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Exit => m_Wrapper.m_IngameMenu_Exit;
+        public InputAction @Settingsmenu => m_Wrapper.m_IngameMenu_Settingsmenu;
         public InputAction @Backpackmenu => m_Wrapper.m_IngameMenu_Backpackmenu;
         public InputActionMap Get() { return m_Wrapper.m_IngameMenu; }
         public void Enable() { Get().Enable(); }
@@ -716,6 +739,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Exit.started += instance.OnExit;
             @Exit.performed += instance.OnExit;
             @Exit.canceled += instance.OnExit;
+            @Settingsmenu.started += instance.OnSettingsmenu;
+            @Settingsmenu.performed += instance.OnSettingsmenu;
+            @Settingsmenu.canceled += instance.OnSettingsmenu;
             @Backpackmenu.started += instance.OnBackpackmenu;
             @Backpackmenu.performed += instance.OnBackpackmenu;
             @Backpackmenu.canceled += instance.OnBackpackmenu;
@@ -726,6 +752,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Exit.started -= instance.OnExit;
             @Exit.performed -= instance.OnExit;
             @Exit.canceled -= instance.OnExit;
+            @Settingsmenu.started -= instance.OnSettingsmenu;
+            @Settingsmenu.performed -= instance.OnSettingsmenu;
+            @Settingsmenu.canceled -= instance.OnSettingsmenu;
             @Backpackmenu.started -= instance.OnBackpackmenu;
             @Backpackmenu.performed -= instance.OnBackpackmenu;
             @Backpackmenu.canceled -= instance.OnBackpackmenu;
@@ -782,6 +811,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     public interface IIngameMenuActions
     {
         void OnExit(InputAction.CallbackContext context);
+        void OnSettingsmenu(InputAction.CallbackContext context);
         void OnBackpackmenu(InputAction.CallbackContext context);
     }
 }
