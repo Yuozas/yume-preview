@@ -60,12 +60,13 @@ public class SliderGame : ITogglerProvider
 
         _soundEffect = ServiceLocator.GetSingleton<SoundEffectAudioSource>();
 
-        _stages = new SliderGameStage[4]
+        _stages = new SliderGameStage[5]
         {
             new SliderGameStage(0.3f),
             new SliderGameStage(0.2f),
             new SliderGameStage(0.1f),
-            new SliderGameStage(0.05f)
+            new SliderGameStage(0.05f),
+            new SliderGameStage(0.025f)
         };
 
         _loopPercentage = new LoopPercentage();

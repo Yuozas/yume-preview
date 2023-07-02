@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a56a6cac0d1a63b4f9bb1d60b90e0a14, type: 3}
-  m_Name: WindturbineFix
+  m_Name: WindturbineFixed
   m_EditorClassIdentifier: 
   <UnityNodes>k__BackingField:
   - rid: 4986929572184326385
-  - rid: 4986929572184326387
-  - rid: 4986929572184326389
-  - rid: 4986929572184326512
-  - rid: 4986929572184326514
+  - rid: 4986929597601546455
+  - rid: 4986929597601546457
+  - rid: 4986929597601546460
+  - rid: 4986929597601546473
   references:
     version: 2
     RefIds:
@@ -37,18 +37,18 @@ MonoBehaviour:
         - <Text>k__BackingField: Choice
           <Sprite>k__BackingField: {fileID: 0}
           <Nodes>k__BackingField:
-          - rid: 4986929572184326390
-          - rid: 4986929572184326513
+          - rid: 4986929597601546458
+          - rid: 4986929597601546461
         _wait: 0
         <Executable>k__BackingField:
           rid: -2
-    - rid: 4986929572184326387
+    - rid: 4986929597601546455
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
         <Node>k__BackingField:
-          rid: 4986929572184326388
-        Position: {x: 1346.7391, y: 203.56525}
-    - rid: 4986929572184326388
+          rid: 4986929597601546456
+        Position: {x: 1105, y: 308.99997}
+    - rid: 4986929597601546456
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
         <Type>k__BackingField: Exit
@@ -59,62 +59,71 @@ MonoBehaviour:
         _wait: 0
         <Executable>k__BackingField:
           rid: -2
-    - rid: 4986929572184326389
+    - rid: 4986929597601546457
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
         <Node>k__BackingField:
-          rid: 4986929572184326390
-        Position: {x: 617, y: 215}
-    - rid: 4986929572184326390
+          rid: 4986929597601546458
+        Position: {x: 641.087, y: 61.39131}
+    - rid: 4986929597601546458
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
-        <Type>k__BackingField: Open Slider Game
+        <Type>k__BackingField: Open
         <Connections>k__BackingField:
         - <Text>k__BackingField: Choice
           <Sprite>k__BackingField: {fileID: 0}
           <Nodes>k__BackingField: []
         _wait: 0
         <Executable>k__BackingField:
-          rid: 4986929572184326391
-    - rid: 4986929572184326391
-      type: {class: EnableSliderGameTogglerCommand, ns: , asm: Assembly-CSharp}
-    - rid: 4986929572184326512
+          rid: 4986929597601546459
+    - rid: 4986929597601546459
+      type: {class: EnableDialogueTogglerCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Inspection
+    - rid: 4986929597601546460
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
         <Node>k__BackingField:
-          rid: 4986929572184326513
-        Position: {x: 660, y: 309}
-    - rid: 4986929572184326513
-      type: {class: SliderGameNode, ns: , asm: Assembly-CSharp}
+          rid: 4986929597601546461
+        Position: {x: 641, y: 218.99995}
+    - rid: 4986929597601546461
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
-        <Type>k__BackingField: Play Slider Game
+        <Type>k__BackingField: Typewriter
         <Connections>k__BackingField:
         - <Text>k__BackingField: Choice
           <Sprite>k__BackingField: {fileID: 0}
           <Nodes>k__BackingField:
-          - rid: 4986929572184326515
-          - rid: 4986929572184326388
-        - <Text>k__BackingField: Choice
-          <Sprite>k__BackingField: {fileID: 0}
-          <Nodes>k__BackingField:
-          - rid: 4986929572184326515
-          - rid: 4986929572184326388
-    - rid: 4986929572184326514
+          - rid: 4986929597601546474
+          - rid: 4986929597601546456
+        _wait: 1
+        <Executable>k__BackingField:
+          rid: 4986929597601546462
+    - rid: 4986929597601546462
+      type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Inspection
+        Settings:
+          Sentence: There is nothing I can't fix.
+          Rate: 0.036
+    - rid: 4986929597601546473
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
         <Node>k__BackingField:
-          rid: 4986929572184326515
-        Position: {x: 905, y: 6.4400024}
-    - rid: 4986929572184326515
+          rid: 4986929597601546474
+        Position: {x: 961, y: 61}
+    - rid: 4986929597601546474
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
-        <Type>k__BackingField: Close Slider Game
+        <Type>k__BackingField: Close
         <Connections>k__BackingField:
         - <Text>k__BackingField: Choice
           <Sprite>k__BackingField: {fileID: 0}
           <Nodes>k__BackingField: []
         _wait: 0
         <Executable>k__BackingField:
-          rid: 4986929572184326516
-    - rid: 4986929572184326516
-      type: {class: DisableSliderGameTogglerCommand, ns: , asm: Assembly-CSharp}
+          rid: 4986929597601546475
+    - rid: 4986929597601546475
+      type: {class: DisableDialogueTogglerCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Inspection

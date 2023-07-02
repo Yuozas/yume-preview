@@ -27,6 +27,7 @@
             INode.DISABLE_SLIDER_GAME => BuildDisableSlider(),
             INode.PLAY_SLIDER_GAME => BuildPlaySlider(),
             INode.WAIT => BuildWait(),
+            INode.INVOKE_SCRIPTABLE_OBJECT_EVENT => BuildScriptableObjectEvent(),
             _ => null,
         };
     }
@@ -78,6 +79,12 @@
     {
         var command = new WaitCommand();
         return new CompositeNode(INode.WAIT, true, command);
+    }
+
+    public INode BuildScriptableObjectEvent()
+    {
+        var command = new InvokeScriptableObjectEventCommand();
+        return new CompositeNode(INode.INVOKE_SCRIPTABLE_OBJECT_EVENT, false, command);
     }
 
     public INode BuildEnableSlider()

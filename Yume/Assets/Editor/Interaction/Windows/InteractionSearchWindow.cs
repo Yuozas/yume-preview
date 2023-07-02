@@ -52,6 +52,7 @@ public class InteractionSearchWindow : ScriptableObject, ISearchWindowProvider
             CreateEntry(INode.PLAY_SLIDER_GAME),
             CreateGroupEntry(Utility),
             CreateEntry(INode.WAIT),
+            CreateEntry(INode.INVOKE_SCRIPTABLE_OBJECT_EVENT),
         };
     }
 

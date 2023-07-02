@@ -52,6 +52,9 @@ public class GraphNodeFactory
             case INode.WAIT:
                 AddWaitNodeElements(unity, drawables, view);
                 break;
+            case INode.INVOKE_SCRIPTABLE_OBJECT_EVENT:
+                AddScriptableObjectEventNodeElements(unity, drawables);
+                break;
         }
 
         if (unity.Type != INode.ENTRY)
@@ -183,6 +186,20 @@ public class GraphNodeFactory
     {
         var compositeOutput = new BoolOutputPortContainer(unity.Node);
         drawables.Add(compositeOutput);
+    }
+    
+    private void AddScriptableObjectEventNodeElements(UnityNode unity, List<IDrawable> drawables)
+    {
+        var executable = (InvokeScriptableObjectEventCommand)unity.Node.Executable;
+        var field = CreateField("Event", executable.EventScriptableObject);
+
+        field.RegisterValueChangedCallback(callback =>
+            executable.EventScriptableObject = (EventScriptableObject)callback.newValue
+        );
+
+        var extension = new DrawableExtensionContainer(field);
+
+        drawables.Add(extension);
     }
 
     private void AddWaitNodeElements(UnityNode unity, List<IDrawable> drawables, GraphView view)

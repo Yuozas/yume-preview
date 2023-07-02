@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7353600375867277460}
   - component: {fileID: 8756499348379692734}
-  - component: {fileID: 7550726018161278620}
   m_Layer: 0
   m_Name: Electricity_Structure_01_Prefab
   m_TagString: Untagged
@@ -80,19 +79,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.7572873, y: 1.0619011}
   m_EdgeRadius: 0
---- !u!114 &7550726018161278620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5636212073709839130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21f1aee8b03d6954e83dddb5b9f28a46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _interaction: {fileID: 11400000, guid: c4b3ee36eb94cc54685e64522f184a7e, type: 2}
 --- !u!1 &8350089887018548944
 GameObject:
   m_ObjectHideFlags: 0
