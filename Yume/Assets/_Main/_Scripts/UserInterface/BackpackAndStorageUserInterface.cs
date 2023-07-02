@@ -59,6 +59,8 @@ public class BackpackAndStorageUserInterface : MonoBehaviour
 
         var storagesButtonsContainer = panel.Q<VisualElement>("StoragesButtonsContainer");
         KeyBuilder.Build(storagesButtonsContainer);
+
+        Exit();
     }
 
     private void SetupStorage(string storageId)
