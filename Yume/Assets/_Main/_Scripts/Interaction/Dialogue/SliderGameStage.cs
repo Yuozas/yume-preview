@@ -6,7 +6,6 @@ public class SliderGameStage
     public readonly float TargetBoxElementHalfSize;
     public readonly float TargetBoxSpawnPosition;
 
-
     private Action _onWin;
     private Action _onLose;
 
@@ -17,7 +16,6 @@ public class SliderGameStage
         var margin = 0.05f;
         TargetBoxSpawnPosition = UnityEngine.Random.Range(TargetBoxElementHalfSize + margin, 1 - TargetBoxElementHalfSize - margin);
     }
-
 
     public void Execute(Action onWin, Action onLose, float cursorPosition)
     {
@@ -34,6 +32,4 @@ public class SliderGameStage
 
         _onLose?.Invoke();
     }
-
-
 }

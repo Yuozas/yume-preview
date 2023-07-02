@@ -11,7 +11,6 @@ public abstract class CoroutineHandler
     public bool Running => _ienumerator is not null;
     public bool Paused { get; private set; }
 
-
     public CoroutineHandler(MonoBehaviour behaviour)
     {
         var @default = ServiceLocator.GetSingleton<MonoBehaviour>();
