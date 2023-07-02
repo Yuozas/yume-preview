@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1881349743717887211}
   - component: {fileID: 3668879671153643187}
+  - component: {fileID: 1044820065960582437}
   m_Layer: 0
   m_Name: Camping_Chopped_Tree_01_Prefab
   m_TagString: Untagged
@@ -79,6 +80,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.1875448, y: 0.50106955}
   m_EdgeRadius: 0
+--- !u!114 &1044820065960582437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840672098738706144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b3872e84bb87f4fa631ae8d048e86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interaction: {fileID: 11400000, guid: 0afd3923872016e49abef9a67a42b8cc, type: 2}
 --- !u!1 &7179021969413419967
 GameObject:
   m_ObjectHideFlags: 0

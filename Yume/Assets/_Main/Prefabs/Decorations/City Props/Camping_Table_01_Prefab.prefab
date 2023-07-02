@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8609169412931689330}
   - component: {fileID: 900355945788607878}
+  - component: {fileID: 3377809556446161081}
   m_Layer: 0
   m_Name: Camping_Table_01_Prefab
   m_TagString: Untagged
@@ -79,6 +80,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.0045354, y: 1.762106}
   m_EdgeRadius: 0
+--- !u!114 &3377809556446161081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6963481085954174534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b3872e84bb87f4fa631ae8d048e86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interaction: {fileID: 11400000, guid: aafe9c418624ecf4991692ab1f2c7d2f, type: 2}
 --- !u!1 &7634518300608858932
 GameObject:
   m_ObjectHideFlags: 0
