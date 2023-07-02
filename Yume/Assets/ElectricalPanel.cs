@@ -17,7 +17,7 @@ public class ElectricalPanel : MonoBehaviour, IInteractable
 
     private void OnDisable()
     {
-        _event.Event += Execute;
+        _event.Event -= Execute;
     }
 
     private void Execute()
