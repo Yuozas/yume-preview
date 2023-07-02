@@ -62,6 +62,12 @@ public class Initializer : IPreliminarySetup
             var prefab = Resources.Load<InGameMenuLaunchHandler>("In-game Menu Launcher"); 
             return Instantiator.InstantiateAndDontDestroy(prefab);
         });
+        ServiceLocator.SingletonRegistrator.Register(provider =>
+        {
+            var prefab = Resources.Load<GameObject>("Storage Canvas");
+            var instantiated = Instantiator.InstantiateAndDontDestroy(prefab);
+            return instantiated.GetComponentInChildren<BackpackAndStorageUserInterface>();
+        });
 
         var prefab = Resources.Load<DialoguesUserInterface>("DialoguesUserInterface");
         Instantiator.InstantiateAndDontDestroy(prefab);

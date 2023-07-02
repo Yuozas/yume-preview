@@ -1,0 +1,34 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Main/UI/Storage/Two%20Storage%20Style.uss?fileID=7433441132597879392&amp;guid=25bffe64e8daaae4b8964af38ac3b115&amp;type=3#Two Storage Style" />
+    <Style src="project://database/Assets/_Main/UI/Keyboard/Button%20Style.uss?fileID=7433441132597879392&amp;guid=6760872bf6be7e040a77d7a0354c1cc7&amp;type=3#Button Style" />
+    <ui:VisualElement name="MultipleStorages">
+        <ui:VisualElement name="Panel" style="background-image: url(&apos;project://database/Assets/_Main/Graphics/Sprites/Modern%20User%20Interface/Modern_UI_Style_1.png?fileID=-1527888967&amp;guid=1a4d1f89522da874c8a9331ccf49cf2a&amp;type=3#Main Frame&apos;); -unity-background-scale-mode: stretch-to-fill; transform-origin: center; scale: 1 1;">
+            <ui:VisualElement name="StorageTitleAbsoluteContainer" class="title-container1" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+                <ui:VisualElement name="StorageTitleWrapper" class="icon-container" style="background-image: url(&apos;project://database/Assets/_Main/Graphics/Sprites/Modern%20User%20Interface/Modern_UI_Style_1.png?fileID=-12497140&amp;guid=1a4d1f89522da874c8a9331ccf49cf2a&amp;type=3#Active Icon&apos;);">
+                    <ui:Label tabindex="-1" text="Storage Name" display-tooltip-when-elided="true" name="Title" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="StorageTitleAbsoluteContainer" class="title-container2" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+                <ui:VisualElement name="StorageTitleWrapper" class="icon-container" style="background-image: url(&apos;project://database/Assets/_Main/Graphics/Sprites/Modern%20User%20Interface/Modern_UI_Style_1.png?fileID=-12497140&amp;guid=1a4d1f89522da874c8a9331ccf49cf2a&amp;type=3#Active Icon&apos;);">
+                    <ui:Label tabindex="-1" text="Storage Name" display-tooltip-when-elided="true" name="Title" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Storages">
+                <ui:VisualElement name="ItemPanel">
+                    <ui:VisualElement name="ItemDetails" style="background-image: url(&apos;project://database/Assets/_Main/Graphics/Sprites/Modern%20User%20Interface/Modern_UI_Style_1.png?fileID=1297398125&amp;guid=1a4d1f89522da874c8a9331ccf49cf2a&amp;type=3#Backpack Slot Section&apos;);">
+                        <ui:VisualElement name="LeftContainer">
+                            <ui:VisualElement name="ItemImage" />
+                            <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="ItemName" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="RightContainer">
+                            <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="ItemDescription" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="StorageContent" />
+                <ui:VisualElement name="StorageContent" />
+            </ui:VisualElement>
+            <ui:VisualElement name="StoragesButtonsContainer" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

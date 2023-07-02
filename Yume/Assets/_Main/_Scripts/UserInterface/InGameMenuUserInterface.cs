@@ -8,8 +8,6 @@ public class InGameMenuUserInterface : MonoBehaviour
     [field: SerializeField] private InGameMenuUserInterfaceScriptableObject BackpackUserIterfaceScriptableObject { get; set; }
     [field: SerializeField] private InGameMenuUserInterfaceScriptableObject SettingsUserIterfaceScriptableObject { get; set; }
 
-    private VisualElement _menuContent;
-
     private const int BACKPACK_INDEX = 0;
     private const int SETTINGS_INDEX = 1;
     private readonly int[] _keys = new[] { BACKPACK_INDEX, SETTINGS_INDEX };
@@ -65,7 +63,6 @@ public class InGameMenuUserInterface : MonoBehaviour
 
         var body = _root.Q<VisualElement>("InGameMenu");
         var menu = body.Q<VisualElement>("Menu");
-        _menuContent = menu.Q<VisualElement>("MenuContent");
         var menuIconConainers = menu.Query<VisualElement>("MenuIconAbsoluteContainer").ToList();
         _inputActions = new InputActions();
 
@@ -97,10 +94,8 @@ public class InGameMenuUserInterface : MonoBehaviour
         if(index == _activeIndex)
             return;
 
-        _menuContent.Clear();
-
         _activeIndex = index;
-        inGameMenu.SetupMenuElement(_menuContent);
+        inGameMenu.SetupMenuElement("MenuContent", _root);
         SwitchActiveIcon(index);
     }
 

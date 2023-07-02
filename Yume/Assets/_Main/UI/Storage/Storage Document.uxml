@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Main/UI/Storage/Storage%20Style.uss?fileID=7433441132597879392&amp;guid=ba1c6cae37c1de2469aa1f2020037f17&amp;type=3#Storage Style" />
+    <Style src="project://database/Assets/_Main/UI/Storage/Two%20Storage%20Style.uss?fileID=7433441132597879392&amp;guid=25bffe64e8daaae4b8964af38ac3b115&amp;type=3#Two Storage Style" />
+    <ui:VisualElement name="Body" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+        <ui:VisualElement name="ScrollViewContainer" style="background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/_Main/Graphics/Sprites/Modern%20User%20Interface/Modern_UI_Style_1.png?fileID=813368477&amp;guid=1a4d1f89522da874c8a9331ccf49cf2a&amp;type=3#Sub Frame&apos;);">
+            <ui:ScrollView name="SlotScrollView" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,4 +1,6 @@
-﻿public class RealmSaveManager : IRealmSaveManager
+﻿using UnityEngine;
+
+public class RealmSaveManager : IRealmSaveManager
 {
     private readonly RealmSaveRegistry _realmSaveRegistry;
     private readonly ICreateStorageHelper _createStorageHelper;
@@ -20,7 +22,7 @@
         using var transaction = realm.BeginWrite();
         realm.Add(character);
         realm.Add(new ActiveCharacer { Character = character });
-        _createStorageHelper.CreateStorageForCharacter(realm, StorageScriptableObject.DemoBackpack);
+        _createStorageHelper.CreateStorageForCharacter(realm, GetDemoStorage());
 
         transaction.Commit();
     }
@@ -33,5 +35,15 @@
     public void CopySave(string saveId)
     {
         _realmSaveRegistry.CopySave(saveId);
+    }
+
+    // Todo. Refactor. This should not be here.
+    private StorageScriptableObject GetDemoStorage()
+    {
+        var demoBackpack = ScriptableObject.CreateInstance<StorageScriptableObject>();
+        demoBackpack.Id = "1";
+        demoBackpack.Name = "Demo Backpack";
+        demoBackpack.Slots = 10;
+        return demoBackpack;
     }
 }

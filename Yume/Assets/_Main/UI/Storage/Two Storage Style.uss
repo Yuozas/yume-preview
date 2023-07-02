@@ -1,0 +1,126 @@
+#MultipleStorages {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-container1 {
+    left: 100px;
+}
+
+.title-container2 {
+    right: 100px;
+}
+
+#StorageTitleAbsoluteContainer {
+    top: -55px;
+    width: 150px;
+    height: 60px;
+    position: absolute;
+    overflow: hidden;
+}
+
+#StorageTitleAbsoluteContainer.active{
+    top: -68px;
+    height: 80px;
+}
+
+#StorageTitleWrapper {
+    padding: 12.5px 10px 7.5px 10px;
+    -unity-slice-scale: 0.3px;
+    min-height: 80px;
+    min-width: 150px;
+}
+
+#StorageTitleWrapper #Title {
+    font-size: 15px;
+	-unity-text-align: middle-center;
+	-unity-font-style: bold;
+}
+
+#Panel {
+    width: 80%;
+    margin-top: 10%;
+    height: 70%;
+    padding: 40px 40px 25px 40px;
+    -unity-slice-scale: 0.5px;
+    display: flex;
+    flex-direction: column;
+}
+
+#Storages {
+    display: flex;
+    flex-direction: row;
+    height: 85%;
+}
+
+#StorageContent {
+    width: 40%;
+    height: 100%;
+}
+
+#ScrollViewContainer {
+    -unity-slice-scale: 0.5px;
+    padding: 10px;
+}
+
+#SlotContainer {
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    -unity-slice-scale: 0.5px;
+}
+
+#Slot {
+    width: 50px;
+    height: 50px;
+    -unity-slice-scale: 0.5px;
+    margin: 5px 15px;
+}
+
+#StoragesButtonsContainer {
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#ItemPanel {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#ItemPanel #ItemDetails {
+    padding: 10px;
+    -unity-slice-scale: 0.5px;
+}
+
+#ItemPanel #ItemDetails #LeftContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#ItemPanel #ItemImage {
+    width: 64px;
+    height: 64px;
+    margin-right: 10px;
+}
+
+#ItemPanel #ItemName {
+    -unity-text-align: middle-center;
+	font-size: 20px;
+    
+	-unity-font-style: bold;
+	margin-bottom: 10px;
+}
+
+#ItemPanel #ItemDescription {
+	font-size: 12px;
+}

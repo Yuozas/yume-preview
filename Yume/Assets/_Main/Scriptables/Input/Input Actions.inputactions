@@ -332,6 +332,54 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Storage",
+            "id": "d21f6d29-f414-45da-a4a2-c808b931de86",
+            "actions": [
+                {
+                    "name": "Exit ",
+                    "type": "Button",
+                    "id": "379b561c-eee6-4968-ab88-38505a1c47de",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "25bcb6ea-f5eb-46db-a7ce-02ce61132e93",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "14ca2ade-27c5-4453-9764-9375206079c8",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Exit ",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3996c892-97f5-4b83-888c-38ae1e022b37",
+                    "path": "<Keyboard>/m",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

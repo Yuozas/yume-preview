@@ -1,4 +1,5 @@
 using Realms;
+using System;
 using System.Linq;
 
 public class StorageItemHelper : IStorageItemHelper
@@ -40,5 +41,23 @@ public class StorageItemHelper : IStorageItemHelper
         });
 
         return true;
+    }
+
+    public void MoveFromTo(string storageIdFrom, string storageIdTo, Item item)
+    {
+        using var realm = _realmActiveSaveHelper.GetActiveSave();
+        var updatedStorageTo = realm.TryWriteUpdate<StorageSlot>(storageIdTo, to =>
+        {
+            if(!realm.TryGet<StorageSlot>(storageIdFrom, out var from))
+                throw new ArgumentException($"Invalid {storageIdFrom}");
+            else if(from.Item.Id != item.Id)
+                throw new ArgumentException($"Invalid {item.Id}");
+
+            from.Item = null;
+            to.Item = item;
+        });
+
+        if (!updatedStorageTo)
+            throw new ArgumentException($"Invalid {storageIdTo}");
     }
 }

@@ -103,4 +103,9 @@ public static class RealmExtensions
         if (!hasOwnTransaction)
             newTransaction.Commit();
     }
+
+    public static Transaction StartTransaction(this Realm realm)
+    {
+        return realm.BeginWrite();
+    }
 }

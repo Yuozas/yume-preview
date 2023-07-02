@@ -15,6 +15,8 @@ public class MouseCursor : MonoBehaviour
         HideCursor();
         var root = GetComponent<UIDocument>().rootVisualElement;
         _cursor = root.Q<VisualElement>("Body");
+        _cursor.pickingMode = PickingMode.Ignore;
+        _cursor.Q<VisualElement>("Cursor").pickingMode = PickingMode.Ignore;
     }
 
     private void OnApplicationFocus(bool focus)
@@ -25,7 +27,7 @@ public class MouseCursor : MonoBehaviour
 
     private void Update()
     {
-        Vector2 mousePosition = Input.mousePosition;
+        var mousePosition = Input.mousePosition;
         mousePosition.y = Screen.height - mousePosition.y;
         _cursor.style.left = mousePosition.x;
         _cursor.style.top = mousePosition.y;

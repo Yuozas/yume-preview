@@ -1,18 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.UIElements;
 
-public abstract class InGameMenuUserInterfaceScriptableObject : ScriptableObject
+[CreateAssetMenu(menuName = "In Game Menu")]
+public class InGameMenuUserInterfaceScriptableObject : ScriptableObject
 {
     [field: SerializeField] private Sprite Icon { get; set; }
-    [field: SerializeField] private VisualTreeAsset MenuElementTree { get; set; }
+    [field: SerializeField] private StorageElementUserInterfaceScriptableObject StorageUserInterfaceScriptableObject { get; set; }
 
-    protected VisualElement MenuElement { get; private set; }
-
-    public void SetupMenuElement(VisualElement menuContent)
+    public void SetupMenuElement(string menuContentContainerPath, VisualElement root)
     {
-        MenuElement = MenuElementTree.CloneTree().Q<VisualElement>("Body");
-        menuContent.Add(MenuElement);
-        SetupMenuElement();
+        StorageUserInterfaceScriptableObject.SetupMenuElement(menuContentContainerPath, root);
     }
 
     public void SetupIcon(VisualElement menuIconContainer)
@@ -20,6 +17,4 @@ public abstract class InGameMenuUserInterfaceScriptableObject : ScriptableObject
         var icon = menuIconContainer.Q<VisualElement>("Icon");
         icon.style.backgroundImage = new StyleBackground(Icon);
     }
-
-    protected abstract void SetupMenuElement();
 }

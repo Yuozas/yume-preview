@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Main/UI/Keyboard/Button%20Style.uss?fileID=7433441132597879392&amp;guid=6760872bf6be7e040a77d7a0354c1cc7&amp;type=3#Button Style" />
+    <ui:VisualElement name="ButtonBody" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+        <ui:VisualElement name="Button" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+            <ui:VisualElement name="Image" style="background-image: url(&apos;project://database/Assets/_Main/Graphics/Sprites/Pixel%20Keyboard%20Keys%20-%20for%20UI/Keyboard%20Extras.png?fileID=2659928716049758086&amp;guid=c2b6ae57ab2f7dd4e989069eaf5e5fe2&amp;type=3#Esc Keyboard Button&apos;);" />
+            <ui:Label tabindex="-1" text="Action Name" display-tooltip-when-elided="true" name="ActionName" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

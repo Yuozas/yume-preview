@@ -1,0 +1,21 @@
+#Button {
+    height: 100%;
+    width: auto;
+    max-width: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#Button #Image{
+    width: 32px;
+    height: 32px;
+    margin-right: 5px;
+}
+
+#Button #ActionName{
+    flex-grow: 1;
+    height: 100%;
+    -unity-text-align: middle-left;
+    font-size: 10px;
+}

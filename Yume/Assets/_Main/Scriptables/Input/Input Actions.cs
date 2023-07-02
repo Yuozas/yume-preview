@@ -354,6 +354,54 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Storage"",
+            ""id"": ""d21f6d29-f414-45da-a4a2-c808b931de86"",
+            ""actions"": [
+                {
+                    ""name"": ""Exit "",
+                    ""type"": ""Button"",
+                    ""id"": ""379b561c-eee6-4968-ab88-38505a1c47de"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Button"",
+                    ""id"": ""25bcb6ea-f5eb-46db-a7ce-02ce61132e93"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""14ca2ade-27c5-4453-9764-9375206079c8"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Exit "",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3996c892-97f5-4b83-888c-38ae1e022b37"",
+                    ""path"": ""<Keyboard>/m"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -394,6 +442,10 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_IngameMenu_Exit = m_IngameMenu.FindAction("Exit ", throwIfNotFound: true);
         m_IngameMenu_Settingsmenu = m_IngameMenu.FindAction("Settings menu", throwIfNotFound: true);
         m_IngameMenu_Backpackmenu = m_IngameMenu.FindAction("Backpack menu", throwIfNotFound: true);
+        // Storage
+        m_Storage = asset.FindActionMap("Storage", throwIfNotFound: true);
+        m_Storage_Exit = m_Storage.FindAction("Exit ", throwIfNotFound: true);
+        m_Storage_Move = m_Storage.FindAction("Move", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -775,6 +827,60 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         }
     }
     public IngameMenuActions @IngameMenu => new IngameMenuActions(this);
+
+    // Storage
+    private readonly InputActionMap m_Storage;
+    private List<IStorageActions> m_StorageActionsCallbackInterfaces = new List<IStorageActions>();
+    private readonly InputAction m_Storage_Exit;
+    private readonly InputAction m_Storage_Move;
+    public struct StorageActions
+    {
+        private @InputActions m_Wrapper;
+        public StorageActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Exit => m_Wrapper.m_Storage_Exit;
+        public InputAction @Move => m_Wrapper.m_Storage_Move;
+        public InputActionMap Get() { return m_Wrapper.m_Storage; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(StorageActions set) { return set.Get(); }
+        public void AddCallbacks(IStorageActions instance)
+        {
+            if (instance == null || m_Wrapper.m_StorageActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_StorageActionsCallbackInterfaces.Add(instance);
+            @Exit.started += instance.OnExit;
+            @Exit.performed += instance.OnExit;
+            @Exit.canceled += instance.OnExit;
+            @Move.started += instance.OnMove;
+            @Move.performed += instance.OnMove;
+            @Move.canceled += instance.OnMove;
+        }
+
+        private void UnregisterCallbacks(IStorageActions instance)
+        {
+            @Exit.started -= instance.OnExit;
+            @Exit.performed -= instance.OnExit;
+            @Exit.canceled -= instance.OnExit;
+            @Move.started -= instance.OnMove;
+            @Move.performed -= instance.OnMove;
+            @Move.canceled -= instance.OnMove;
+        }
+
+        public void RemoveCallbacks(IStorageActions instance)
+        {
+            if (m_Wrapper.m_StorageActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IStorageActions instance)
+        {
+            foreach (var item in m_Wrapper.m_StorageActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_StorageActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public StorageActions @Storage => new StorageActions(this);
     private int m_KeyboardSchemeIndex = -1;
     public InputControlScheme KeyboardScheme
     {
@@ -813,5 +919,10 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         void OnExit(InputAction.CallbackContext context);
         void OnSettingsmenu(InputAction.CallbackContext context);
         void OnBackpackmenu(InputAction.CallbackContext context);
+    }
+    public interface IStorageActions
+    {
+        void OnExit(InputAction.CallbackContext context);
+        void OnMove(InputAction.CallbackContext context);
     }
 }

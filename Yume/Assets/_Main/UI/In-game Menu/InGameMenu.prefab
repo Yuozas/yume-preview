@@ -66,5 +66,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68070b9547531f14aa1b19e2b822a901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <BackpackUserIterfaceScriptableObject>k__BackingField: {fileID: 11400000, guid: 8645e1d2cd581c04c98be826be4ba1d2, type: 2}
-  <SettingsUserIterfaceScriptableObject>k__BackingField: {fileID: 11400000, guid: 9dce32a1d02d62e49b485b764f5a06d9, type: 2}
+  <BackpackUserIterfaceScriptableObject>k__BackingField: {fileID: 11400000, guid: 79c428d461af26249937ba31fbce0963, type: 2}
+  <SettingsUserIterfaceScriptableObject>k__BackingField: {fileID: 11400000, guid: 3b1a55d93c55d6447856600c070ec1c0, type: 2}
