@@ -37,11 +37,23 @@ public class GraphNodeFactory
             case INode.DISABLE:
                 AddDisableNodeElements(unity, drawables);
                 break;
-            case INode.SFX:
+            case INode.PLAY_SOUND_EFFECT:
                 AddSfxNodeElements(unity, drawables);
                 break;
             case INode.SET_DECISION_CHOICES:
                 AddSetChoicesNodeElements(unity, drawables, view);
+                break;
+            case INode.TRANSITION_TO_DESTINATION:
+                AddTransitionToDestinationNodeElements(unity, drawables);
+                break;
+            case INode.PLAY_SLIDER_GAME:
+                AddSliderGameNodeElements(unity, drawables);
+                break;
+            case INode.WAIT:
+                AddWaitNodeElements(unity, drawables, view);
+                break;
+            case INode.INVOKE_SCRIPTABLE_OBJECT_EVENT:
+                AddScriptableObjectEventNodeElements(unity, drawables);
                 break;
         }
 
@@ -76,14 +88,19 @@ public class GraphNodeFactory
 
     private static void AddSfxNodeElements(UnityNode unity, List<IDrawable> drawables)
     {
-        var executable = (PlaySfxClipCommand)unity.Node.Executable;
+        var executable = (PlaySoundEffectClipCommand)unity.Node.Executable;
 
         var clipField = CreateField("Sfx", executable.Settings.Clip);
         clipField.RegisterValueChangedCallback(callback =>
-            executable.Settings = new SfxClipSettings(callback.newValue as AudioClip)
+            executable.Settings = new SoundEffectClipSettings(callback.newValue as AudioClip, executable.Settings.VolumeScale)
         );
 
-        var extension = new DrawableExtensionContainer(clipField);
+        var floatField = new FloatField("Volume Scale") { value = executable.Settings.VolumeScale };
+        floatField.RegisterValueChangedCallback(callback =>
+            executable.Settings = new SoundEffectClipSettings(executable.Settings.Clip, callback.newValue)
+        );
+
+        var extension = new DrawableExtensionContainer(clipField, floatField);
         drawables.Add(extension);
     }
 
@@ -162,6 +179,53 @@ public class GraphNodeFactory
         var extension = new DrawableExtensionContainer(button);
 
         drawables.Add(compositeOutput);
+        drawables.Add(extension);
+    }
+
+    private void AddSliderGameNodeElements(UnityNode unity, List<IDrawable> drawables)
+    {
+        var compositeOutput = new BoolOutputPortContainer(unity.Node);
+        drawables.Add(compositeOutput);
+    }
+    
+    private void AddScriptableObjectEventNodeElements(UnityNode unity, List<IDrawable> drawables)
+    {
+        var executable = (InvokeScriptableObjectEventCommand)unity.Node.Executable;
+        var field = CreateField("Event", executable.EventScriptableObject);
+
+        field.RegisterValueChangedCallback(callback =>
+            executable.EventScriptableObject = (EventScriptableObject)callback.newValue
+        );
+
+        var extension = new DrawableExtensionContainer(field);
+
+        drawables.Add(extension);
+    }
+
+    private void AddWaitNodeElements(UnityNode unity, List<IDrawable> drawables, GraphView view)
+    {
+        var executable = (WaitCommand)unity.Node.Executable;
+        var field = new FloatField("Duration") { value = executable.Duration };
+
+        field.RegisterValueChangedCallback(callback =>
+            executable.Duration = callback.newValue
+        );
+
+        AddSingularOutputPortContainer(drawables);
+        var extension = new DrawableExtensionContainer(field);
+
+        drawables.Add(extension);
+    }
+
+    private void AddTransitionToDestinationNodeElements(UnityNode unity, List<IDrawable> drawables)
+    {
+        var executable = (TransitionToDestinationCommand)unity.Node.Executable;
+        var field = CreateField("Scriptable", executable.DestinationScriptableObject);
+        field.RegisterValueChangedCallback(callback => executable.DestinationScriptableObject = (TransitionDestinationScriptableObject)callback.newValue);
+
+        var extension = new DrawableExtensionContainer(field);
+
+        AddSingularOutputPortContainer(drawables);
         drawables.Add(extension);
     }
 

@@ -23,20 +23,149 @@ MonoBehaviour:
   - rid: 8981177264092741677
   - rid: 8981177380004430024
   - rid: 8981177380004430033
-  - rid: 8981177420305924119
   - rid: 8981177420305924219
   - rid: 8981177420305924222
   - rid: 8981177420305924225
   - rid: 8981177420305924235
   - rid: 8981177420305924238
   - rid: 8981177420305924241
-  - rid: 8981177420305924244
   - rid: 8981177420305924255
+  - rid: 4986929572184326151
+  - rid: 4986929572184326154
+  - rid: 4986929597601546870
+  - rid: 4986929597601546873
+  - rid: 4986929597601546876
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
+    - rid: 4986929572184326151
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929572184326152
+        Position: {x: 1113, y: 43.000008}
+    - rid: 4986929572184326152
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Play Sound Effect
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 4986929572184326153
+    - rid: 4986929572184326153
+      type: {class: PlaySoundEffectClipCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Settings:
+          Clip: {fileID: 8300000, guid: 3470424e6b240994381f438269a7b407, type: 3}
+          VolumeScale: 1
+    - rid: 4986929572184326154
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929572184326155
+        Position: {x: 1964.0002, y: 42.999985}
+    - rid: 4986929572184326155
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Play Sound Effect
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 4986929572184326156
+    - rid: 4986929572184326156
+      type: {class: PlaySoundEffectClipCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Settings:
+          Clip: {fileID: 8300000, guid: 3470424e6b240994381f438269a7b407, type: 3}
+          VolumeScale: 1
+    - rid: 4986929597601546870
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929597601546871
+        Position: {x: 2517.7495, y: 264.99997}
+    - rid: 4986929597601546871
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Typewriter
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
+          - rid: 4986929597601546874
+        _wait: 1
+        <Executable>k__BackingField:
+          rid: 4986929597601546872
+    - rid: 4986929597601546872
+      type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+        Settings:
+          Sentence: Also, by the way...
+          Rate: 0.036
+    - rid: 4986929597601546873
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929597601546874
+        Position: {x: 2792.7, y: 265.00006}
+    - rid: 4986929597601546874
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Typewriter
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
+          - rid: 4986929597601546877
+        _wait: 1
+        <Executable>k__BackingField:
+          rid: 4986929597601546875
+    - rid: 4986929597601546875
+      type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+        Settings:
+          Sentence: 'Could you repair the electricity panel? I will give you this
+            lockpick
+
+            that I found in the trash-can.'
+          Rate: 0.036
+    - rid: 4986929597601546876
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929597601546877
+        Position: {x: 3180.5652, y: 265}
+    - rid: 4986929597601546877
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Typewriter
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
+          - rid: 8981177380004430034
+          - rid: 8981177264092741678
+          - rid: 8981177211230355748
+        _wait: 1
+        <Executable>k__BackingField:
+          rid: 4986929597601546878
+    - rid: 4986929597601546878
+      type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+        Settings:
+          Sentence: Thanks!
+          Rate: 0.036
     - rid: 8981177211230355745
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
@@ -48,30 +177,34 @@ MonoBehaviour:
       data:
         <Type>k__BackingField: Entry
         <Connections>k__BackingField:
-        - <Nodes>k__BackingField:
+        - <Text>k__BackingField: 
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
           - rid: 8981177380004430025
           - rid: 8981177211230355780
           - rid: 8981177211230355773
           - rid: 8981177211230355793
           - rid: 8981177242252476555
+        _wait: 0
         <Executable>k__BackingField:
           rid: -2
-        _wait: 0
     - rid: 8981177211230355747
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
         <Node>k__BackingField:
           rid: 8981177211230355748
-        Position: {x: 2575, y: 154}
+        Position: {x: 3488.1555, y: 158.99997}
     - rid: 8981177211230355748
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
         <Type>k__BackingField: Exit
         <Connections>k__BackingField:
-        - <Nodes>k__BackingField: []
+        - <Text>k__BackingField: 
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
         <Executable>k__BackingField:
           rid: -2
-        _wait: 0
     - rid: 8981177211230355772
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
@@ -83,10 +216,12 @@ MonoBehaviour:
       data:
         <Type>k__BackingField: Name
         <Connections>k__BackingField:
-        - <Nodes>k__BackingField: []
+        - <Text>k__BackingField: 
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
         <Executable>k__BackingField:
           rid: 8981177211230355774
-        _wait: 0
     - rid: 8981177211230355774
       type: {class: SetDialogueNameSettingsCommand, ns: , asm: Assembly-CSharp}
       data:
@@ -104,10 +239,12 @@ MonoBehaviour:
       data:
         <Type>k__BackingField: Portrait
         <Connections>k__BackingField:
-        - <Nodes>k__BackingField: []
+        - <Text>k__BackingField: 
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
         <Executable>k__BackingField:
           rid: 8981177211230355781
-        _wait: 0
     - rid: 8981177211230355781
       type: {class: SetDialoguePortraitSettingsCommand, ns: , asm: Assembly-CSharp}
       data:
@@ -126,10 +263,12 @@ MonoBehaviour:
       data:
         <Type>k__BackingField: Open
         <Connections>k__BackingField:
-        - <Nodes>k__BackingField: []
+        - <Text>k__BackingField: 
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
         <Executable>k__BackingField:
           rid: 8981177211230355794
-        _wait: 0
     - rid: 8981177211230355794
       type: {class: EnableDialogueTogglerCommand, ns: , asm: Assembly-CSharp}
       data:
@@ -145,11 +284,13 @@ MonoBehaviour:
       data:
         <Type>k__BackingField: Typewriter
         <Connections>k__BackingField:
-        - <Nodes>k__BackingField:
+        - <Text>k__BackingField: 
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
           - rid: 8981177242252476582
+        _wait: 1
         <Executable>k__BackingField:
           rid: 8981177242252476556
-        _wait: 1
     - rid: 8981177242252476556
       type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
       data:
@@ -168,11 +309,13 @@ MonoBehaviour:
       data:
         <Type>k__BackingField: Typewriter
         <Connections>k__BackingField:
-        - <Nodes>k__BackingField:
+        - <Text>k__BackingField: 
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
           - rid: 8981177420305924220
+        _wait: 1
         <Executable>k__BackingField:
           rid: 8981177242252476583
-        _wait: 1
     - rid: 8981177242252476583
       type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
       data:
@@ -185,16 +328,18 @@ MonoBehaviour:
       data:
         <Node>k__BackingField:
           rid: 8981177264092741678
-        Position: {x: 2574.6074, y: 37.70999}
+        Position: {x: 3488.1555, y: 42.999992}
     - rid: 8981177264092741678
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
         <Type>k__BackingField: Close
         <Connections>k__BackingField:
-        - <Nodes>k__BackingField: []
+        - <Text>k__BackingField: 
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
         <Executable>k__BackingField:
           rid: 8981177264092741679
-        _wait: 0
     - rid: 8981177264092741679
       type: {class: DisableDialogueTogglerCommand, ns: , asm: Assembly-CSharp}
       data:
@@ -210,10 +355,12 @@ MonoBehaviour:
       data:
         <Type>k__BackingField: Music
         <Connections>k__BackingField:
-        - <Nodes>k__BackingField: []
+        - <Text>k__BackingField: 
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
         <Executable>k__BackingField:
           rid: 8981177380004430026
-        _wait: 0
     - rid: 8981177380004430026
       type: {class: PlayMusicClipCommand, ns: , asm: Assembly-CSharp}
       data:
@@ -225,42 +372,24 @@ MonoBehaviour:
       data:
         <Node>k__BackingField:
           rid: 8981177380004430034
-        Position: {x: 2574.6074, y: -97.29002}
+        Position: {x: 3488.1555, y: -92.000015}
     - rid: 8981177380004430034
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
         <Type>k__BackingField: Music
         <Connections>k__BackingField:
-        - <Nodes>k__BackingField: []
+        - <Text>k__BackingField: 
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
         <Executable>k__BackingField:
           rid: 8981177380004430035
-        _wait: 0
     - rid: 8981177380004430035
       type: {class: PlayMusicClipCommand, ns: , asm: Assembly-CSharp}
       data:
         Settings:
           Clip: {fileID: 8300000, guid: e184037b817c8d246af5c91f58708606, type: 3}
           CrossFadeDuration: 1
-    - rid: 8981177420305924119
-      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
-      data:
-        <Node>k__BackingField:
-          rid: 8981177420305924120
-        Position: {x: 1113, y: 119}
-    - rid: 8981177420305924120
-      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
-      data:
-        <Type>k__BackingField: Sfx
-        <Connections>k__BackingField:
-        - <Nodes>k__BackingField: []
-        <Executable>k__BackingField:
-          rid: 8981177420305924121
-        _wait: 0
-    - rid: 8981177420305924121
-      type: {class: PlaySfxClipCommand, ns: , asm: Assembly-CSharp}
-      data:
-        Settings:
-          Clip: {fileID: 8300000, guid: 3470424e6b240994381f438269a7b407, type: 3}
     - rid: 8981177420305924219
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
@@ -272,11 +401,13 @@ MonoBehaviour:
       data:
         <Type>k__BackingField: Typewriter
         <Connections>k__BackingField:
-        - <Nodes>k__BackingField:
+        - <Text>k__BackingField: 
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
           - rid: 8981177420305924223
+        _wait: 1
         <Executable>k__BackingField:
           rid: 8981177420305924221
-        _wait: 1
     - rid: 8981177420305924221
       type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
       data:
@@ -295,12 +426,14 @@ MonoBehaviour:
       data:
         <Type>k__BackingField: Typewriter
         <Connections>k__BackingField:
-        - <Nodes>k__BackingField:
-          - rid: 8981177420305924120
+        - <Text>k__BackingField: 
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
           - rid: 8981177420305924226
+          - rid: 4986929572184326152
+        _wait: 1
         <Executable>k__BackingField:
           rid: 8981177420305924224
-        _wait: 1
     - rid: 8981177420305924224
       type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
       data:
@@ -319,11 +452,13 @@ MonoBehaviour:
       data:
         <Type>k__BackingField: Typewriter
         <Connections>k__BackingField:
-        - <Nodes>k__BackingField:
+        - <Text>k__BackingField: 
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
           - rid: 8981177420305924236
+        _wait: 1
         <Executable>k__BackingField:
           rid: 8981177420305924227
-        _wait: 1
     - rid: 8981177420305924227
       type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
       data:
@@ -342,11 +477,13 @@ MonoBehaviour:
       data:
         <Type>k__BackingField: Typewriter
         <Connections>k__BackingField:
-        - <Nodes>k__BackingField:
+        - <Text>k__BackingField: 
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
           - rid: 8981177420305924239
+        _wait: 1
         <Executable>k__BackingField:
           rid: 8981177420305924237
-        _wait: 1
     - rid: 8981177420305924237
       type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
       data:
@@ -368,12 +505,14 @@ MonoBehaviour:
       data:
         <Type>k__BackingField: Typewriter
         <Connections>k__BackingField:
-        - <Nodes>k__BackingField:
-          - rid: 8981177420305924245
+        - <Text>k__BackingField: 
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
           - rid: 8981177420305924242
+          - rid: 4986929572184326155
+        _wait: 1
         <Executable>k__BackingField:
           rid: 8981177420305924240
-        _wait: 1
     - rid: 8981177420305924240
       type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
       data:
@@ -392,11 +531,13 @@ MonoBehaviour:
       data:
         <Type>k__BackingField: Typewriter
         <Connections>k__BackingField:
-        - <Nodes>k__BackingField:
+        - <Text>k__BackingField: 
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
           - rid: 8981177420305924256
+        _wait: 1
         <Executable>k__BackingField:
           rid: 8981177420305924243
-        _wait: 1
     - rid: 8981177420305924243
       type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
       data:
@@ -404,26 +545,6 @@ MonoBehaviour:
         Settings:
           Sentence: Hahahahahahaha!
           Rate: 0.036
-    - rid: 8981177420305924244
-      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
-      data:
-        <Node>k__BackingField:
-          rid: 8981177420305924245
-        Position: {x: 1964, y: 118}
-    - rid: 8981177420305924245
-      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
-      data:
-        <Type>k__BackingField: Sfx
-        <Connections>k__BackingField:
-        - <Nodes>k__BackingField: []
-        <Executable>k__BackingField:
-          rid: 8981177420305924246
-        _wait: 0
-    - rid: 8981177420305924246
-      type: {class: PlaySfxClipCommand, ns: , asm: Assembly-CSharp}
-      data:
-        Settings:
-          Clip: {fileID: 8300000, guid: 3470424e6b240994381f438269a7b407, type: 3}
     - rid: 8981177420305924255
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
@@ -435,13 +556,13 @@ MonoBehaviour:
       data:
         <Type>k__BackingField: Typewriter
         <Connections>k__BackingField:
-        - <Nodes>k__BackingField:
-          - rid: 8981177380004430034
-          - rid: 8981177264092741678
-          - rid: 8981177211230355748
+        - <Text>k__BackingField: 
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
+          - rid: 4986929597601546871
+        _wait: 1
         <Executable>k__BackingField:
           rid: 8981177420305924257
-        _wait: 1
     - rid: 8981177420305924257
       type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
       data:

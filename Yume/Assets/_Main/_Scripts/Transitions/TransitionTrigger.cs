@@ -4,7 +4,7 @@ using UnityEngine;
 public class TransitionTrigger : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private Scriptable_TransitionDestination _destination;
+    [SerializeField] private TransitionDestinationScriptableObject _destination;
 
 #if UNITY_EDITOR
     [SerializeField] private BoxCollider2D _collider;

@@ -9,7 +9,7 @@ public class InteractionGraphWindow : EditorWindow
     public const string PATH = "Tools/" + TITLE;
 
     private InteractionGraphView _view;
-    private Interaction _interaction;
+    private InteractionScriptableObject _interaction;
 
     private bool _autoLoad = true;
 
@@ -42,7 +42,7 @@ public class InteractionGraphWindow : EditorWindow
 
         var field = new ObjectField()
         {
-            objectType = typeof(Interaction),
+            objectType = typeof(InteractionScriptableObject),
             allowSceneObjects = false,
             value = _interaction
         };
@@ -68,7 +68,7 @@ public class InteractionGraphWindow : EditorWindow
 
     private void HandleInteractionChanged(ChangeEvent<Object> @event)
     {
-        _interaction = @event.newValue as Interaction;
+        _interaction = @event.newValue as InteractionScriptableObject;
         if(_interaction is null)
         {
             _view.Unload();

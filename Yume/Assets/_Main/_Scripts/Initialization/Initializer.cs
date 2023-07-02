@@ -4,6 +4,13 @@ using System.Linq;
 
 public class Initializer : IPreliminarySetup
 {
+    private const string MUSIC_PREFAB_FILE_NAME = "Music";
+    private const string SOUND_EFFECT_PREFAB_FILE_NAME = "SoundEffectAudioSource";
+    private const string DIALOGUE_PREFAB_FILE_NAME = "DialoguesUserInterface";
+    private const string SCENE_INTERACTIONS_FILE_PATH = "Interactions";
+    private const string TRANSITIONER_ANIMATION_PREFAB_FILE_NAME = "TransitionerAnimation";
+    private const string SLIDER_GAME_USER_INTERFACE_FILE_NAME = "SliderGameUserInterface";
+
     public void Setup()
     {
         if (!Application.isPlaying)
@@ -35,18 +42,23 @@ public class Initializer : IPreliminarySetup
         ServiceLocator.SingletonRegistrator.Register(provider => new InSceneCharacter());
 
         ServiceLocator.SingletonRegistrator.Register(provider => {
-            var prefab = Resources.Load<TransitionerAnimation>("TransitionerAnimation");
+            var prefab = Resources.Load<TransitionerAnimation>(TRANSITIONER_ANIMATION_PREFAB_FILE_NAME);
             var instantiated = Instantiator.InstantiateAndDontDestroy(prefab);
             return instantiated;
         });
 
         ServiceLocator.SingletonRegistrator.Register(provider => {
-            var prefab = Resources.Load<Music>("Music");
+            var prefab = Resources.Load<Music>(MUSIC_PREFAB_FILE_NAME);
             return Instantiator.InstantiateAndDontDestroy(prefab);
         });
 
         ServiceLocator.SingletonRegistrator.Register(provider => {
-            var prefab = Resources.Load<Sfx>("Sfx");
+            var prefab = Resources.Load<SoundEffectAudioSource>(SOUND_EFFECT_PREFAB_FILE_NAME);
+            return Instantiator.InstantiateAndDontDestroy(prefab);
+        });
+
+        ServiceLocator.SingletonRegistrator.Register(provider => {
+            var prefab = Resources.Load<SliderGameUserInterface>(SLIDER_GAME_USER_INTERFACE_FILE_NAME);
             return Instantiator.InstantiateAndDontDestroy(prefab);
         });
 
@@ -69,7 +81,12 @@ public class Initializer : IPreliminarySetup
             return instantiated.GetComponentInChildren<BackpackAndStorageUserInterface>();
         });
 
-        var prefab = Resources.Load<DialoguesUserInterface>("DialoguesUserInterface");
+        var prefab = Resources.Load<DialoguesUserInterface>(DIALOGUE_PREFAB_FILE_NAME);
         Instantiator.InstantiateAndDontDestroy(prefab);
+
+        var interactions = Resources.LoadAll<SceneInteractionScriptableObject>(SCENE_INTERACTIONS_FILE_PATH);
+        _ = new SceneInteractionExecutor(interactions);
+
+        ServiceLocator.SingletonRegistrator.Register(provider => new SliderGame());
     }
 }

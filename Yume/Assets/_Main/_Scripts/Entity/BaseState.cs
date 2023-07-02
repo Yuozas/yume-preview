@@ -14,7 +14,7 @@ public class BaseState
     public bool TryTransition()
     {
         foreach (var transition in _transitions)
-            if (transition.Key.Invoke())
+            if (transition.Key())
             {
                 _states.Set(transition.Value);
                 return true;

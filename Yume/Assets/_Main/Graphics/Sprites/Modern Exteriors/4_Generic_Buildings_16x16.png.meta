@@ -1,0 +1,2437 @@
+fileFormatVersion: 2
+guid: ec2e73baa30f72b44899dfa7a8f444b6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4435387181282241595
+    second: 4_Generic_Buildings_16x16_0
+  - first:
+      213: 4590371891250110472
+    second: 4_Generic_Buildings_16x16_1
+  - first:
+      213: 5822501877812142121
+    second: 4_Generic_Buildings_16x16_2
+  - first:
+      213: -7084809397235340237
+    second: 4_Generic_Buildings_16x16_3
+  - first:
+      213: 5807462743020345574
+    second: 4_Generic_Buildings_16x16_4
+  - first:
+      213: -6567851199434467595
+    second: 4_Generic_Buildings_16x16_5
+  - first:
+      213: 846247895987367478
+    second: 4_Generic_Buildings_16x16_6
+  - first:
+      213: 6474211556317259852
+    second: 4_Generic_Buildings_16x16_7
+  - first:
+      213: 5489575076536829432
+    second: 4_Generic_Buildings_16x16_8
+  - first:
+      213: 908968026424422668
+    second: 4_Generic_Buildings_16x16_9
+  - first:
+      213: 3352452075934717632
+    second: 4_Generic_Buildings_16x16_10
+  - first:
+      213: 7994726600081873422
+    second: 4_Generic_Buildings_16x16_11
+  - first:
+      213: -3641840042143727659
+    second: 4_Generic_Buildings_16x16_12
+  - first:
+      213: -6892027366559196170
+    second: 4_Generic_Buildings_16x16_13
+  - first:
+      213: -1396728866709224471
+    second: 4_Generic_Buildings_16x16_14
+  - first:
+      213: 7706002859490448824
+    second: 4_Generic_Buildings_16x16_15
+  - first:
+      213: -6245644091432755842
+    second: 4_Generic_Buildings_16x16_16
+  - first:
+      213: -1757278844171848936
+    second: 4_Generic_Buildings_16x16_17
+  - first:
+      213: 7952255008375098257
+    second: 4_Generic_Buildings_16x16_18
+  - first:
+      213: -8645819514133867187
+    second: 4_Generic_Buildings_16x16_19
+  - first:
+      213: -3873548497635970165
+    second: 4_Generic_Buildings_16x16_20
+  - first:
+      213: 3716157330024966386
+    second: 4_Generic_Buildings_16x16_21
+  - first:
+      213: -4857563342937634551
+    second: 4_Generic_Buildings_16x16_22
+  - first:
+      213: -4115470829988106049
+    second: 4_Generic_Buildings_16x16_23
+  - first:
+      213: -43166460023487776
+    second: 4_Generic_Buildings_16x16_24
+  - first:
+      213: 2938883881118860780
+    second: 4_Generic_Buildings_16x16_25
+  - first:
+      213: 1149062853201467214
+    second: 4_Generic_Buildings_16x16_26
+  - first:
+      213: -4924572866769449054
+    second: 4_Generic_Buildings_16x16_27
+  - first:
+      213: 7109437047758623308
+    second: 4_Generic_Buildings_16x16_28
+  - first:
+      213: 1514974575808379044
+    second: 4_Generic_Buildings_16x16_29
+  - first:
+      213: -6106019030311770989
+    second: 4_Generic_Buildings_16x16_30
+  - first:
+      213: 2283616376991507516
+    second: 4_Generic_Buildings_16x16_31
+  - first:
+      213: -5073380238927408629
+    second: 4_Generic_Buildings_16x16_32
+  - first:
+      213: 6482777331772451074
+    second: 4_Generic_Buildings_16x16_33
+  - first:
+      213: 2590802837118495593
+    second: 4_Generic_Buildings_16x16_34
+  - first:
+      213: 938329369680188728
+    second: 4_Generic_Buildings_16x16_35
+  - first:
+      213: 2608578766892091769
+    second: 4_Generic_Buildings_16x16_36
+  - first:
+      213: 6792417881403842723
+    second: 4_Generic_Buildings_16x16_37
+  - first:
+      213: -1635746540008302050
+    second: 4_Generic_Buildings_16x16_38
+  - first:
+      213: 6412124463700087060
+    second: 4_Generic_Buildings_16x16_39
+  - first:
+      213: 704600129146318264
+    second: 4_Generic_Buildings_16x16_40
+  - first:
+      213: -9150364190715410085
+    second: 4_Generic_Buildings_16x16_41
+  - first:
+      213: 8865202052694900873
+    second: 4_Generic_Buildings_16x16_42
+  - first:
+      213: 1173929262041449885
+    second: 4_Generic_Buildings_16x16_43
+  - first:
+      213: 1561969001344551157
+    second: 4_Generic_Buildings_16x16_44
+  - first:
+      213: 6526583484197717931
+    second: 4_Generic_Buildings_16x16_45
+  - first:
+      213: 3040347616989022108
+    second: 4_Generic_Buildings_16x16_46
+  - first:
+      213: -1000637142465872419
+    second: 4_Generic_Buildings_16x16_47
+  - first:
+      213: 4066517866946897131
+    second: 4_Generic_Buildings_16x16_48
+  - first:
+      213: 9003225056372574460
+    second: 4_Generic_Buildings_16x16_49
+  - first:
+      213: -4309876673472816401
+    second: 4_Generic_Buildings_16x16_50
+  - first:
+      213: 5257695776675791951
+    second: 4_Generic_Buildings_16x16_51
+  - first:
+      213: 5766505357527827128
+    second: 4_Generic_Buildings_16x16_52
+  - first:
+      213: -1399259447541504065
+    second: 4_Generic_Buildings_16x16_53
+  - first:
+      213: 1184379885206370709
+    second: 4_Generic_Buildings_16x16_54
+  - first:
+      213: -1718762336246595212
+    second: 4_Generic_Buildings_16x16_55
+  - first:
+      213: -330809074479994224
+    second: 4_Generic_Buildings_16x16_56
+  - first:
+      213: -5704895832411399821
+    second: 4_Generic_Buildings_16x16_57
+  - first:
+      213: 5798963950546944220
+    second: 4_Generic_Buildings_16x16_58
+  - first:
+      213: -2137707252900853076
+    second: 4_Generic_Buildings_16x16_59
+  - first:
+      213: -5727625384481712023
+    second: 4_Generic_Buildings_16x16_60
+  - first:
+      213: 6032436329921049360
+    second: 4_Generic_Buildings_16x16_61
+  - first:
+      213: 4516525567604712433
+    second: 4_Generic_Buildings_16x16_62
+  - first:
+      213: 4520027313582678958
+    second: 4_Generic_Buildings_16x16_63
+  - first:
+      213: 559067958060279166
+    second: 4_Generic_Buildings_16x16_64
+  - first:
+      213: 1982281946635211939
+    second: 4_Generic_Buildings_16x16_65
+  - first:
+      213: 1323949336465333849
+    second: 4_Generic_Buildings_16x16_66
+  - first:
+      213: -1921812688521183184
+    second: 4_Generic_Buildings_16x16_67
+  - first:
+      213: 6897935446303840664
+    second: 4_Generic_Buildings_16x16_68
+  - first:
+      213: -6723821179824131063
+    second: 4_Generic_Buildings_16x16_69
+  - first:
+      213: -4435877384815607207
+    second: 4_Generic_Buildings_16x16_70
+  - first:
+      213: -7828446990261774671
+    second: 4_Generic_Buildings_16x16_71
+  - first:
+      213: 6578617737905082477
+    second: 4_Generic_Buildings_16x16_72
+  - first:
+      213: -5258570036920092910
+    second: 4_Generic_Buildings_16x16_73
+  - first:
+      213: 5782493253500844718
+    second: 4_Generic_Buildings_16x16_74
+  - first:
+      213: -4380366473341906423
+    second: 4_Generic_Buildings_16x16_75
+  - first:
+      213: 8892291641191941347
+    second: 4_Generic_Buildings_16x16_76
+  - first:
+      213: -8586925481475101959
+    second: 4_Generic_Buildings_16x16_77
+  - first:
+      213: 3311110983374745231
+    second: 4_Generic_Buildings_16x16_78
+  - first:
+      213: -4599508523283955187
+    second: 4_Generic_Buildings_16x16_79
+  - first:
+      213: 6356188742835416978
+    second: 4_Generic_Buildings_16x16_80
+  - first:
+      213: -2477150950009888683
+    second: 4_Generic_Buildings_16x16_81
+  - first:
+      213: 4912876798094389331
+    second: 4_Generic_Buildings_16x16_82
+  - first:
+      213: -182071590254450264
+    second: 4_Generic_Buildings_16x16_83
+  - first:
+      213: -2622303305114552012
+    second: 4_Generic_Buildings_16x16_84
+  - first:
+      213: 5802101877475885037
+    second: 4_Generic_Buildings_16x16_85
+  - first:
+      213: 517991651957131787
+    second: 4_Generic_Buildings_16x16_86
+  - first:
+      213: 5254708016210219405
+    second: 4_Generic_Buildings_16x16_87
+  - first:
+      213: 1815679995206270866
+    second: 4_Generic_Buildings_16x16_88
+  - first:
+      213: 3002401149561941861
+    second: 4_Generic_Buildings_16x16_89
+  - first:
+      213: -4437120006006042450
+    second: 4_Generic_Buildings_16x16_90
+  - first:
+      213: 9200722159864535839
+    second: 4_Generic_Buildings_16x16_91
+  - first:
+      213: 7524881841834824766
+    second: 4_Generic_Buildings_16x16_92
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1807
+        width: 97
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3c26a54429ad8d30800000000000000
+      internalID: 4435387181282241595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 1807
+        width: 34
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 800a6ec0ae644bf30800000000000000
+      internalID: 4590371891250110472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_2
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 1807
+        width: 34
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 920a903eb9eadc050800000000000000
+      internalID: 5822501877812142121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_3
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 1807
+        width: 98
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33c2070e363bdad90800000000000000
+      internalID: -7084809397235340237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_4
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 1807
+        width: 34
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e81b047890489050800000000000000
+      internalID: 5807462743020345574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_5
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 1807
+        width: 34
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f6d510d12e4ad4a0800000000000000
+      internalID: -6567851199434467595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_6
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 1807
+        width: 97
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63eaf305af97ebb00800000000000000
+      internalID: 846247895987367478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1631
+        width: 97
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c48e40fcb1509d950800000000000000
+      internalID: 6474211556317259852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_8
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 1631
+        width: 34
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f5c0d47273ee2c40800000000000000
+      internalID: 5489575076536829432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_9
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 1631
+        width: 34
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c013737aa9d4d9c00800000000000000
+      internalID: 908968026424422668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_10
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 1631
+        width: 98
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c61c98a66d468e20800000000000000
+      internalID: 3352452075934717632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_11
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 1631
+        width: 34
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0a1f322c79f2fe60800000000000000
+      internalID: 7994726600081873422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_12
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 1631
+        width: 34
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dfba37e6c5957dc0800000000000000
+      internalID: -3641840042143727659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_13
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 1631
+        width: 97
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fbd7f920a99a50a0800000000000000
+      internalID: -6892027366559196170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_14
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 1551
+        width: 82
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e34344fe72dd9ce0800000000000000
+      internalID: -1396728866709224471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_15
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 1519
+        width: 82
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b59216c5c831fa60800000000000000
+      internalID: 7706002859490448824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_16
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 1327
+        width: 114
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7d12a82ac30359a0800000000000000
+      internalID: -6245644091432755842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_17
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 1455
+        width: 98
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 813f3d1a334ec97e0800000000000000
+      internalID: -1757278844171848936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1295
+        width: 225
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19bc4891cc51c5e60800000000000000
+      internalID: 7952255008375098257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_19
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 1327
+        width: 98
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4519eb95f0e30880800000000000000
+      internalID: -8645819514133867187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_20
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 1231
+        width: 98
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b83f8221a246e3ac0800000000000000
+      internalID: -3873548497635970165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_21
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 1279
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f82a911761729330800000000000000
+      internalID: 3716157330024966386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_22
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 1231
+        width: 114
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9094e3640e7769cb0800000000000000
+      internalID: -4857563342937634551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_23
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 1167
+        width: 98
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb0b317b519e2e6c0800000000000000
+      internalID: -4115470829988106049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_24
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 1231
+        width: 66
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e2c6145554a66ff0800000000000000
+      internalID: -43166460023487776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_25
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1183
+        width: 65
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce5063aa15309c820800000000000000
+      internalID: 2938883881118860780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_26
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 1055
+        width: 146
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e479ba5b39a42ff00800000000000000
+      internalID: 1149062853201467214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_27
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 1055
+        width: 66
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2af0ea5b11768abb0800000000000000
+      internalID: -4924572866769449054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_28
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 1055
+        width: 82
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4297a8d35bc9a260800000000000000
+      internalID: 7109437047758623308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_29
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1148
+        width: 33
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a87eca9955460510800000000000000
+      internalID: 1514974575808379044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_30
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1131
+        width: 55
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 394ed720b00134ba0800000000000000
+      internalID: -6106019030311770989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_31
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 1135
+        width: 98
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c34e7d9eef801bf10800000000000000
+      internalID: 2283616376991507516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_32
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1103
+        width: 34
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b02de387d8bb799b0800000000000000
+      internalID: -5073380238927408629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_33
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 1039
+        width: 98
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2096042d2a377f950800000000000000
+      internalID: 6482777331772451074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_34
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1074
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96ba585247164f320800000000000000
+      internalID: 2590802837118495593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_35
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 847
+        width: 178
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8359a1a179d950d00800000000000000
+      internalID: 938329369680188728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_36
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 991
+        width: 66
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 979ca315198833420800000000000000
+      internalID: 2608578766892091769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_37
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 991
+        width: 82
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a0661b4314834e50800000000000000
+      internalID: 6792417881403842723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_38
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 975
+        width: 98
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1a1b3c3039ac49e0800000000000000
+      internalID: -1635746540008302050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_39
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 909
+        width: 66
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4119f621a317cf850800000000000000
+      internalID: 6412124463700087060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_40
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 909
+        width: 82
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bde576951e37c900800000000000000
+      internalID: 704600129146318264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_41
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 847
+        width: 98
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5904fecf30630180800000000000000
+      internalID: -9150364190715410085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_42
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 847
+        width: 98
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98081fc0c46870b70800000000000000
+      internalID: 8865202052694900873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_43
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 784
+        width: 63
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d95ca6fa172aa4010800000000000000
+      internalID: 1173929262041449885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_44
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 751
+        width: 114
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f84053f78a3da510800000000000000
+      internalID: 1561969001344551157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_45
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 765
+        width: 66
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba7498c7915139a50800000000000000
+      internalID: 6526583484197717931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_46
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 765
+        width: 82
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9706589c0c713a20800000000000000
+      internalID: 3040347616989022108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_47
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 655
+        width: 97
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddd724e02d50d12f0800000000000000
+      internalID: -1000637142465872419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_48
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 703
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be42624647c2f6830800000000000000
+      internalID: 4066517866946897131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_49
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 704
+        width: 66
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf8cbf5dc71e1fc70800000000000000
+      internalID: 9003225056372574460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_50
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 719
+        width: 129
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fea19eb000e3034c0800000000000000
+      internalID: -4309876673472816401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_51
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 655
+        width: 66
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4405d1d37617f840800000000000000
+      internalID: 5257695776675791951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_52
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 655
+        width: 98
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b245d6021eb60050800000000000000
+      internalID: 5766505357527827128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_53
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 688
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb7eda032f4d49ce0800000000000000
+      internalID: -1399259447541504065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_54
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 673
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 599f7d00b33cf6010800000000000000
+      internalID: 1184379885206370709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_55
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 690
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47183b6f2cab528e0800000000000000
+      internalID: -1718762336246595212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_56
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 690
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09ae42346eab86bf0800000000000000
+      internalID: -330809074479994224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_57
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 690
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 379138c577324d0b0800000000000000
+      internalID: -5704895832411399821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_58
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 688
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd085a12dfe0a7050800000000000000
+      internalID: 5798963950546944220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_59
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 671
+        width: 129
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caa811d54965552e0800000000000000
+      internalID: -2137707252900853076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_60
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 673
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 968157f1f036380b0800000000000000
+      internalID: -5727625384481712023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_61
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 675
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 013fa1f71e487b350800000000000000
+      internalID: 6032436329921049360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_62
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 673
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f36c0cf21cedae30800000000000000
+      internalID: 4516525567604712433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_63
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 673
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea3a821c4ec5abe30800000000000000
+      internalID: 4520027313582678958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_64
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 673
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e756c75885532c700800000000000000
+      internalID: 559067958060279166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_65
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 657
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a49cd98dea728b10800000000000000
+      internalID: 1982281946635211939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_66
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 657
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95e51ac28ec9f5210800000000000000
+      internalID: 1323949336465333849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_67
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 659
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0304bdfba895455e0800000000000000
+      internalID: -1921812688521183184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_68
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 657
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8991488ddb36abf50800000000000000
+      internalID: 6897935446303840664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_69
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 657
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 904b553e24030b2a0800000000000000
+      internalID: -6723821179824131063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_70
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 657
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95280e255099072c0800000000000000
+      internalID: -4435877384815607207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_71
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 623
+        width: 129
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b6987270f4cb5390800000000000000
+      internalID: -7828446990261774671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_72
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 641
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d609ae44af1fb4b50800000000000000
+      internalID: 6578617737905082477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_73
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 641
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2177dda996ec507b0800000000000000
+      internalID: -5258570036920092910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_74
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 643
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaab2032afa8f3050800000000000000
+      internalID: 5782493253500844718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_75
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 641
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 902dc6296efc533c0800000000000000
+      internalID: -4380366473341906423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_76
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 641
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e4cb606224c76b70800000000000000
+      internalID: 8892291641191941347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_77
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 641
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fa2de325cc15d880800000000000000
+      internalID: -8586925481475101959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_78
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 479
+        width: 97
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8e22f775ed63fd20800000000000000
+      internalID: 3311110983374745231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_79
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 479
+        width: 66
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0247480e534b20c0800000000000000
+      internalID: -4599508523283955187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_80
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 271
+        width: 162
+        height: 370
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29faa0e2cf7b53850800000000000000
+      internalID: 6356188742835416978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_81
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 415
+        width: 98
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 550a3a1e5546f9dd0800000000000000
+      internalID: -2477150950009888683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_82
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 415
+        width: 97
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 350bca71b6b0e2440800000000000000
+      internalID: 4912876798094389331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_83
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 415
+        width: 66
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a961337ad6297df0800000000000000
+      internalID: -182071590254450264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_84
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 333
+        width: 97
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 439705d9905bb9bd0800000000000000
+      internalID: -2622303305114552012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_85
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 333
+        width: 66
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: defb39daae4358050800000000000000
+      internalID: 5802101877475885037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_86
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 207
+        width: 98
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0ac58bb9a6403700800000000000000
+      internalID: 517991651957131787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_87
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 271
+        width: 98
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d819b90a9197ce840800000000000000
+      internalID: 5254708016210219405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_88
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 189
+        width: 97
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29f7d04f557923910800000000000000
+      internalID: 1815679995206270866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_89
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 189
+        width: 66
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56f2dd820fbaaa920800000000000000
+      internalID: 3002401149561941861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_90
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 175
+        width: 98
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea01b380dde2c62c0800000000000000
+      internalID: -4437120006006042450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_91
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 200
+        width: 63
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1b5acf8e088faf70800000000000000
+      internalID: 9200722159864535839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 4_Generic_Buildings_16x16_92
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 0
+        width: 98
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e341a57aa20cd6860800000000000000
+      internalID: 7524881841834824766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      4_Generic_Buildings_16x16_0: 4435387181282241595
+      4_Generic_Buildings_16x16_1: 4590371891250110472
+      4_Generic_Buildings_16x16_10: 3352452075934717632
+      4_Generic_Buildings_16x16_11: 7994726600081873422
+      4_Generic_Buildings_16x16_12: -3641840042143727659
+      4_Generic_Buildings_16x16_13: -6892027366559196170
+      4_Generic_Buildings_16x16_14: -1396728866709224471
+      4_Generic_Buildings_16x16_15: 7706002859490448824
+      4_Generic_Buildings_16x16_16: -6245644091432755842
+      4_Generic_Buildings_16x16_17: -1757278844171848936
+      4_Generic_Buildings_16x16_18: 7952255008375098257
+      4_Generic_Buildings_16x16_19: -8645819514133867187
+      4_Generic_Buildings_16x16_2: 5822501877812142121
+      4_Generic_Buildings_16x16_20: -3873548497635970165
+      4_Generic_Buildings_16x16_21: 3716157330024966386
+      4_Generic_Buildings_16x16_22: -4857563342937634551
+      4_Generic_Buildings_16x16_23: -4115470829988106049
+      4_Generic_Buildings_16x16_24: -43166460023487776
+      4_Generic_Buildings_16x16_25: 2938883881118860780
+      4_Generic_Buildings_16x16_26: 1149062853201467214
+      4_Generic_Buildings_16x16_27: -4924572866769449054
+      4_Generic_Buildings_16x16_28: 7109437047758623308
+      4_Generic_Buildings_16x16_29: 1514974575808379044
+      4_Generic_Buildings_16x16_3: -7084809397235340237
+      4_Generic_Buildings_16x16_30: -6106019030311770989
+      4_Generic_Buildings_16x16_31: 2283616376991507516
+      4_Generic_Buildings_16x16_32: -5073380238927408629
+      4_Generic_Buildings_16x16_33: 6482777331772451074
+      4_Generic_Buildings_16x16_34: 2590802837118495593
+      4_Generic_Buildings_16x16_35: 938329369680188728
+      4_Generic_Buildings_16x16_36: 2608578766892091769
+      4_Generic_Buildings_16x16_37: 6792417881403842723
+      4_Generic_Buildings_16x16_38: -1635746540008302050
+      4_Generic_Buildings_16x16_39: 6412124463700087060
+      4_Generic_Buildings_16x16_4: 5807462743020345574
+      4_Generic_Buildings_16x16_40: 704600129146318264
+      4_Generic_Buildings_16x16_41: -9150364190715410085
+      4_Generic_Buildings_16x16_42: 8865202052694900873
+      4_Generic_Buildings_16x16_43: 1173929262041449885
+      4_Generic_Buildings_16x16_44: 1561969001344551157
+      4_Generic_Buildings_16x16_45: 6526583484197717931
+      4_Generic_Buildings_16x16_46: 3040347616989022108
+      4_Generic_Buildings_16x16_47: -1000637142465872419
+      4_Generic_Buildings_16x16_48: 4066517866946897131
+      4_Generic_Buildings_16x16_49: 9003225056372574460
+      4_Generic_Buildings_16x16_5: -6567851199434467595
+      4_Generic_Buildings_16x16_50: -4309876673472816401
+      4_Generic_Buildings_16x16_51: 5257695776675791951
+      4_Generic_Buildings_16x16_52: 5766505357527827128
+      4_Generic_Buildings_16x16_53: -1399259447541504065
+      4_Generic_Buildings_16x16_54: 1184379885206370709
+      4_Generic_Buildings_16x16_55: -1718762336246595212
+      4_Generic_Buildings_16x16_56: -330809074479994224
+      4_Generic_Buildings_16x16_57: -5704895832411399821
+      4_Generic_Buildings_16x16_58: 5798963950546944220
+      4_Generic_Buildings_16x16_59: -2137707252900853076
+      4_Generic_Buildings_16x16_6: 846247895987367478
+      4_Generic_Buildings_16x16_60: -5727625384481712023
+      4_Generic_Buildings_16x16_61: 6032436329921049360
+      4_Generic_Buildings_16x16_62: 4516525567604712433
+      4_Generic_Buildings_16x16_63: 4520027313582678958
+      4_Generic_Buildings_16x16_64: 559067958060279166
+      4_Generic_Buildings_16x16_65: 1982281946635211939
+      4_Generic_Buildings_16x16_66: 1323949336465333849
+      4_Generic_Buildings_16x16_67: -1921812688521183184
+      4_Generic_Buildings_16x16_68: 6897935446303840664
+      4_Generic_Buildings_16x16_69: -6723821179824131063
+      4_Generic_Buildings_16x16_7: 6474211556317259852
+      4_Generic_Buildings_16x16_70: -4435877384815607207
+      4_Generic_Buildings_16x16_71: -7828446990261774671
+      4_Generic_Buildings_16x16_72: 6578617737905082477
+      4_Generic_Buildings_16x16_73: -5258570036920092910
+      4_Generic_Buildings_16x16_74: 5782493253500844718
+      4_Generic_Buildings_16x16_75: -4380366473341906423
+      4_Generic_Buildings_16x16_76: 8892291641191941347
+      4_Generic_Buildings_16x16_77: -8586925481475101959
+      4_Generic_Buildings_16x16_78: 3311110983374745231
+      4_Generic_Buildings_16x16_79: -4599508523283955187
+      4_Generic_Buildings_16x16_8: 5489575076536829432
+      4_Generic_Buildings_16x16_80: 6356188742835416978
+      4_Generic_Buildings_16x16_81: -2477150950009888683
+      4_Generic_Buildings_16x16_82: 4912876798094389331
+      4_Generic_Buildings_16x16_83: -182071590254450264
+      4_Generic_Buildings_16x16_84: -2622303305114552012
+      4_Generic_Buildings_16x16_85: 5802101877475885037
+      4_Generic_Buildings_16x16_86: 517991651957131787
+      4_Generic_Buildings_16x16_87: 5254708016210219405
+      4_Generic_Buildings_16x16_88: 1815679995206270866
+      4_Generic_Buildings_16x16_89: 3002401149561941861
+      4_Generic_Buildings_16x16_9: 908968026424422668
+      4_Generic_Buildings_16x16_90: -4437120006006042450
+      4_Generic_Buildings_16x16_91: 9200722159864535839
+      4_Generic_Buildings_16x16_92: 7524881841834824766
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -212,6 +212,34 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             ]
         },
         {
+            ""name"": ""Slider"",
+            ""id"": ""c9ab0a6a-b0c2-4b3d-8a7d-c15eb6f9ae35"",
+            ""actions"": [
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""1170bb8c-32fd-460e-9313-987350cacb10"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""7e15eb0e-d3a1-415b-99ad-81418d8ef465"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""Unity Editor"",
             ""id"": ""e1afbf7f-0253-48e2-91af-daae12805432"",
             ""actions"": [
@@ -430,6 +458,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_Choosing_Interact = m_Choosing.FindAction("Interact", throwIfNotFound: true);
         m_Choosing_Next = m_Choosing.FindAction("Next", throwIfNotFound: true);
         m_Choosing_Previous = m_Choosing.FindAction("Previous", throwIfNotFound: true);
+        // Slider
+        m_Slider = asset.FindActionMap("Slider", throwIfNotFound: true);
+        m_Slider_Interact = m_Slider.FindAction("Interact", throwIfNotFound: true);
         // Unity Editor
         m_UnityEditor = asset.FindActionMap("Unity Editor", throwIfNotFound: true);
         m_UnityEditor_Escape = m_UnityEditor.FindAction("Escape", throwIfNotFound: true);
@@ -665,6 +696,52 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         }
     }
     public ChoosingActions @Choosing => new ChoosingActions(this);
+
+    // Slider
+    private readonly InputActionMap m_Slider;
+    private List<ISliderActions> m_SliderActionsCallbackInterfaces = new List<ISliderActions>();
+    private readonly InputAction m_Slider_Interact;
+    public struct SliderActions
+    {
+        private @InputActions m_Wrapper;
+        public SliderActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Interact => m_Wrapper.m_Slider_Interact;
+        public InputActionMap Get() { return m_Wrapper.m_Slider; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(SliderActions set) { return set.Get(); }
+        public void AddCallbacks(ISliderActions instance)
+        {
+            if (instance == null || m_Wrapper.m_SliderActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_SliderActionsCallbackInterfaces.Add(instance);
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
+        }
+
+        private void UnregisterCallbacks(ISliderActions instance)
+        {
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
+        }
+
+        public void RemoveCallbacks(ISliderActions instance)
+        {
+            if (m_Wrapper.m_SliderActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ISliderActions instance)
+        {
+            foreach (var item in m_Wrapper.m_SliderActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_SliderActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public SliderActions @Slider => new SliderActions(this);
 
     // Unity Editor
     private readonly InputActionMap m_UnityEditor;
@@ -904,6 +981,10 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnNext(InputAction.CallbackContext context);
         void OnPrevious(InputAction.CallbackContext context);
+    }
+    public interface ISliderActions
+    {
+        void OnInteract(InputAction.CallbackContext context);
     }
     public interface IUnityEditorActions
     {

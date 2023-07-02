@@ -1,0 +1,438 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a56a6cac0d1a63b4f9bb1d60b90e0a14, type: 3}
+  m_Name: Tadas
+  m_EditorClassIdentifier: 
+  <UnityNodes>k__BackingField:
+  - rid: 4986929597601546555
+  - rid: 4986929597601546559
+  - rid: 4986929597601546562
+  - rid: 4986929597601546936
+  - rid: 4986929597601546939
+  - rid: 4986929606641582084
+  - rid: 4986929606641582102
+  - rid: 4986929606641582118
+  - rid: 4986929606641582121
+  - rid: 4986929606641582124
+  - rid: 4986929606641582127
+  - rid: 4986929606641582130
+  - rid: 4986929606641582132
+  - rid: 4986929606641582135
+  - rid: 4986929606641582138
+  - rid: 4986929606641582141
+  - rid: 4986929606641582144
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 4986929597601546555
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929597601546556
+        Position: {x: 310, y: 345}
+    - rid: 4986929597601546556
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Entry
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
+          - rid: 4986929597601546560
+          - rid: 4986929597601546937
+          - rid: 4986929606641582085
+          - rid: 4986929597601546940
+          - rid: 4986929597601546563
+          - rid: 4986929606641582125
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: -2
+    - rid: 4986929597601546559
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929597601546560
+        Position: {x: 464, y: 229}
+    - rid: 4986929597601546560
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Open
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 4986929597601546561
+    - rid: 4986929597601546561
+      type: {class: EnableDialogueTogglerCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+    - rid: 4986929597601546562
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929597601546563
+        Position: {x: 464.0001, y: 443.8501}
+    - rid: 4986929597601546563
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Typewriter
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
+          - rid: 4986929606641582103
+        _wait: 1
+        <Executable>k__BackingField:
+          rid: 4986929597601546564
+    - rid: 4986929597601546564
+      type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+        Settings:
+          Sentence: ...
+          Rate: 0.036
+    - rid: 4986929597601546936
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929597601546937
+        Position: {x: 464, y: -205.4}
+    - rid: 4986929597601546937
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Name
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 4986929597601546938
+    - rid: 4986929597601546938
+      type: {class: SetDialogueNameSettingsCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+        Settings:
+          Name: "Kaizer-\u017Di\u017Eek Lobster Foundation"
+    - rid: 4986929597601546939
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929597601546940
+        Position: {x: 464, y: -6}
+    - rid: 4986929597601546940
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Portrait
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 4986929597601546941
+    - rid: 4986929597601546941
+      type: {class: SetDialoguePortraitSettingsCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+        Settings:
+          Face: {fileID: 21300000, guid: 3fb175a547a17dd4584e8301b5743224, type: 3}
+          Hair: {fileID: 0}
+    - rid: 4986929606641582084
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929606641582085
+        Position: {x: 464, y: 728}
+    - rid: 4986929606641582085
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Play Sound Effect
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 4986929606641582086
+    - rid: 4986929606641582086
+      type: {class: PlaySoundEffectClipCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Settings:
+          Clip: {fileID: 8300000, guid: ac8e3c2c1bf97d242936f41d5e1da203, type: 3}
+          VolumeScale: 1.5
+    - rid: 4986929606641582102
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929606641582103
+        Position: {x: 815, y: 555}
+    - rid: 4986929606641582103
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Typewriter
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
+          - rid: 4986929606641582119
+          - rid: 4986929606641582122
+        _wait: 1
+        <Executable>k__BackingField:
+          rid: 4986929606641582104
+    - rid: 4986929606641582104
+      type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+        Settings:
+          Sentence: Koki nx suda jus cia man davet..?
+          Rate: 0.036
+    - rid: 4986929606641582118
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929606641582119
+        Position: {x: 1093, y: 555}
+    - rid: 4986929606641582119
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Typewriter
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
+          - rid: 4986929606641582128
+          - rid: 4986929606641582131
+        _wait: 1
+        <Executable>k__BackingField:
+          rid: 4986929606641582120
+    - rid: 4986929606641582120
+      type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+        Settings:
+          Sentence: As jum nx 2 menesius daviau, o jus nx nieko nepadaret.
+          Rate: 0.036
+    - rid: 4986929606641582121
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929606641582122
+        Position: {x: 1093, y: 758}
+    - rid: 4986929606641582122
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Play Sound Effect
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 4986929606641582123
+    - rid: 4986929606641582123
+      type: {class: PlaySoundEffectClipCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Settings:
+          Clip: {fileID: 8300000, guid: b28ff000e684ff042bc17fd8b3cc1cb6, type: 3}
+          VolumeScale: 1
+    - rid: 4986929606641582124
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929606641582125
+        Position: {x: 477.4787, y: 1070.3917}
+    - rid: 4986929606641582125
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Music
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 4986929606641582126
+    - rid: 4986929606641582126
+      type: {class: PlayMusicClipCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Settings:
+          Clip: {fileID: 8300000, guid: c9fd408ee22a38c49bd48498c5df2c9a, type: 3}
+          CrossFadeDuration: 1
+    - rid: 4986929606641582127
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929606641582128
+        Position: {x: 1437.8003, y: 367.00006}
+    - rid: 4986929606641582128
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Open Decision
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 4986929606641582129
+    - rid: 4986929606641582129
+      type: {class: EnableDecisionsTogglerCommand, ns: , asm: Assembly-CSharp}
+    - rid: 4986929606641582130
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929606641582131
+        Position: {x: 1456.75, y: 555}
+    - rid: 4986929606641582131
+      type: {class: ChoicesNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Set Decision Choices
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Duok mum daugiau laiko...
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
+          - rid: 4986929606641582133
+          - rid: 4986929606641582145
+          - rid: 4986929606641582142
+        - <Text>k__BackingField: Neaiskink nx.
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
+          - rid: 4986929606641582133
+          - rid: 4986929606641582145
+          - rid: 4986929606641582142
+        - <Text>k__BackingField: Kas atsitiko sitam lygiui, ka tu padarei?
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
+          - rid: 4986929606641582133
+          - rid: 4986929606641582145
+          - rid: 4986929606641582136
+    - rid: 4986929606641582132
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929606641582133
+        Position: {x: 2038, y: 367}
+    - rid: 4986929606641582133
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Close Decision
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 4986929606641582134
+    - rid: 4986929606641582134
+      type: {class: DisableDecisionsTogglerCommand, ns: , asm: Assembly-CSharp}
+    - rid: 4986929606641582135
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929606641582136
+        Position: {x: 2029, y: 973.0001}
+    - rid: 4986929606641582136
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Typewriter
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
+          - rid: 4986929606641582139
+        _wait: 1
+        <Executable>k__BackingField:
+          rid: 4986929606641582137
+    - rid: 4986929606641582137
+      type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+        Settings:
+          Sentence: Tavo mama.
+          Rate: 0.036
+    - rid: 4986929606641582138
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929606641582139
+        Position: {x: 2494.9165, y: 820}
+    - rid: 4986929606641582139
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Invoke Scriptable Object Event
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 4986929606641582140
+    - rid: 4986929606641582140
+      type: {class: InvokeScriptableObjectEventCommand, ns: , asm: Assembly-CSharp}
+      data:
+        EventScriptableObject: {fileID: 11400000, guid: f37f974f255d71b40bf9091bd48c864e, type: 2}
+    - rid: 4986929606641582141
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929606641582142
+        Position: {x: 2029, y: 769.0001}
+    - rid: 4986929606641582142
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Typewriter
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
+          - rid: 4986929606641582139
+        _wait: 1
+        <Executable>k__BackingField:
+          rid: 4986929606641582143
+    - rid: 4986929606641582143
+      type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Conversation
+        Settings:
+          Sentence: '...Ka tu nx man pasakei? Sunaikinau sita lygi, sunaikinsiu
+
+            ir
+            tavo mama.'
+          Rate: 0.036
+    - rid: 4986929606641582144
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929606641582145
+        Position: {x: 2029, y: 1130}
+    - rid: 4986929606641582145
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Play Sound Effect
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 4986929606641582146
+    - rid: 4986929606641582146
+      type: {class: PlaySoundEffectClipCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Settings:
+          Clip: {fileID: 8300000, guid: 3bb0671299138f344a527baa3ca46665, type: 3}
+          VolumeScale: 1

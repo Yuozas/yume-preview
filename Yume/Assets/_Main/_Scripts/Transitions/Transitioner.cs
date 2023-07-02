@@ -3,6 +3,7 @@ using System.Linq;
 using UnityEngine;
 using SwiftLocator.Services.ServiceLocatorServices;
 using static UnityEngine.SceneManagement.SceneManager;
+using System;
 
 public class Transitioner
 {
@@ -10,7 +11,8 @@ public class Transitioner
     readonly private InSceneCharacter _resolver;
     readonly private TransitionerAnimation _animation;
 
-    private Scriptable_TransitionDestination _to;
+    private TransitionDestinationScriptableObject _to;
+    private Action _onFinished;
 
     public Transitioner()
     {
@@ -19,8 +21,9 @@ public class Transitioner
         _animation = ServiceLocator.GetSingleton<TransitionerAnimation>();
     }
 
-    public void Transition(Scriptable_TransitionDestination to)
+    public void Transition(TransitionDestinationScriptableObject to, Action onFinished = null)
     {
+        _onFinished = onFinished;
         _to = to;
         _animation.ToDefault(Continue);
     }
@@ -28,7 +31,7 @@ public class Transitioner
     private void Continue()
     {
         var scene = GetActiveScene();
-        if (scene.name == _to.Scene)
+        if (scene.name == _to.SceneName)
         {
             TransitionToDestination(_to);
             return;
@@ -47,22 +50,23 @@ public class Transitioner
         _destinations.Remove(destination);
     }
 
-    private TransitionDestination Get(Scriptable_TransitionDestination to)
+    private TransitionDestination Get(TransitionDestinationScriptableObject to)
     {
         return _destinations.First(destination => destination.This == to);
     }
 
-    private async void Load(Scriptable_TransitionDestination to)
+    private async void Load(TransitionDestinationScriptableObject to)
     {
-        await LoadSceneAsync(to.Scene);
+        await LoadSceneAsync(to.SceneName);
         TransitionToDestination(to);
     }
 
-    private void TransitionToDestination(Scriptable_TransitionDestination to)
+    private void TransitionToDestination(TransitionDestinationScriptableObject to)
     {
         var transitionable = (ITransitionable)_resolver.Get();
         Get(to).Transition(transitionable);
 
         _animation.ToClear();
+        _onFinished?.Invoke();
     }
 }

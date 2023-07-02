@@ -6,15 +6,18 @@ public class Typewriter
 {
     [SerializeReference] private DelayedExecutor _executor;
     [SerializeReference] private TypewriterIterator _builder;
+    [SerializeReference] private ISoundEffectPlayer _player;
 
     public event Action<string> OnUpdated;
     private Action _onFinished;
 
     private const bool IGNORE_SPACE = true;
+    private const bool PLAY_SOUND_EFFECT = false;
 
-    public Typewriter(DelayedExecutor executor, TypewriterIterator builder)
+    public Typewriter(DelayedExecutor executor, TypewriterIterator builder, ISoundEffectPlayer player)
     {
         _builder = builder;
+        _player = player;
         _executor = executor;
         _executor.OnUpdated += Set;
     }
@@ -61,6 +64,9 @@ public class Typewriter
     private void Set()
     {
         _builder.Next();
+        if(PLAY_SOUND_EFFECT)
+            _player.Play();
+
         OnUpdated?.Invoke(_builder.Current);
     }
 }

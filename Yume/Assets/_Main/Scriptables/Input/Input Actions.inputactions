@@ -190,6 +190,34 @@
             ]
         },
         {
+            "name": "Slider",
+            "id": "c9ab0a6a-b0c2-4b3d-8a7d-c15eb6f9ae35",
+            "actions": [
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "1170bb8c-32fd-460e-9313-987350cacb10",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7e15eb0e-d3a1-415b-99ad-81418d8ef465",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "Unity Editor",
             "id": "e1afbf7f-0253-48e2-91af-daae12805432",
             "actions": [

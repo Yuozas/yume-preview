@@ -5,22 +5,20 @@ using System;
 public class TransitionerAnimation : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private Image _image;
+    [SerializeField] private CanvasGroup _group;
 
-    [Header("Settings")]
-    [SerializeField] private Color _clear;
-    [SerializeField] private Color _default;
-
-    public const float DURATION = 0.33f;
+    public const float DURATION = 0.5f;
 
     private Percentage _percentage;
-    private Color _from;
-    private Color _to;
+    private float _from;
+    private float _to;
 
     private void Awake()
     {
         _percentage = new Percentage(this);
         _percentage.OnUpdated += Set;
+
+        _group.alpha = 0f;
     }
 
     private void OnDestroy()
@@ -30,22 +28,22 @@ public class TransitionerAnimation : MonoBehaviour
 
     public void ToClear()
     {
-        _from = _default;
-        _to = _clear;
+        _from = 1f;
+        _to = 0f;
 
         _percentage.Begin(DURATION);
     }
 
     public void ToDefault(Action onCompleted = null)
     {
-        _from = _clear;
-        _to = _default;
+        _from = 0f;
+        _to = 1f;
 
         _percentage.Begin(DURATION, onCompleted);
     }
 
     private void Set(float percentage)
     {
-        _image.color = Color.Lerp(_from, _to, percentage);
+        _group.alpha = Mathf.Lerp(_from, _to, percentage);
     }
 }
