@@ -47,6 +47,7 @@ public class ElectricalPanel : MonoBehaviour, IInteractable
 
         if (_screwDriverFoundEvent.Invoked)
             _interaction.Interact();
-        else _noScrewDriver.Interact();
+        else 
+            _noScrewDriver.Interact();
     }
 }
