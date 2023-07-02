@@ -60,7 +60,7 @@
 
     public INode BuildEnableDecision()
     {
-        var command = new EnableSliderGameTogglerCommand();
+        var command = new EnableDecisionsTogglerCommand();
         return new CompositeNode(INode.ENABLE_DECISIONS, false, command);
     }
 

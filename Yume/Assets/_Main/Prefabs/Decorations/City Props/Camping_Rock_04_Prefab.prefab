@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 808978057446643442}
   - component: {fileID: 5959716484181504868}
+  - component: {fileID: 8634963790632306889}
   m_Layer: 0
   m_Name: Camping_Rock_04_Prefab
   m_TagString: Untagged
@@ -115,7 +116,7 @@ Transform:
   m_Children:
   - {fileID: 549157742892546825}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &5959716484181504868
 BoxCollider2D:
@@ -163,3 +164,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.75, y: 0.25}
   m_EdgeRadius: 0
+--- !u!114 &8634963790632306889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6833397665688236702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b3872e84bb87f4fa631ae8d048e86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interaction: {fileID: 11400000, guid: 3c6010d141cd44446a37b3cbd5d57960, type: 2}

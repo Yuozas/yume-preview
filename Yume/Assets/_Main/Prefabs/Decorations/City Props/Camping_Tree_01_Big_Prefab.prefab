@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 403702089651966691}
   - component: {fileID: 7734199884857201236}
+  - component: {fileID: 8904335210990596481}
   m_Layer: 0
   m_Name: Camping_Tree_01_Big_Prefab
   m_TagString: Untagged
@@ -115,7 +116,7 @@ Transform:
   m_Children:
   - {fileID: 3420685085715272545}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &7734199884857201236
 BoxCollider2D:
@@ -163,3 +164,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.375, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &8904335210990596481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3434481959209740155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b3872e84bb87f4fa631ae8d048e86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interaction: {fileID: 11400000, guid: 0d68475846763a743b0e46e5f481ca79, type: 2}

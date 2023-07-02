@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a56a6cac0d1a63b4f9bb1d60b90e0a14, type: 3}
+  m_Name: Outside_Cut_Tree
+  m_EditorClassIdentifier: 
+  <UnityNodes>k__BackingField:
+  - rid: 4986929597601546555
+  - rid: 4986929597601546557
+  - rid: 4986929597601546559
+  - rid: 4986929597601546562
+  - rid: 4986929597601546569
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 4986929597601546555
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929597601546556
+        Position: {x: 310, y: 345}
+    - rid: 4986929597601546556
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Entry
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
+          - rid: 4986929597601546560
+          - rid: 4986929597601546563
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: -2
+    - rid: 4986929597601546557
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929597601546558
+        Position: {x: 1372, y: 345}
+    - rid: 4986929597601546558
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Exit
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: -2
+    - rid: 4986929597601546559
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929597601546560
+        Position: {x: 464, y: 229}
+    - rid: 4986929597601546560
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Open
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 4986929597601546561
+    - rid: 4986929597601546561
+      type: {class: EnableDialogueTogglerCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Inspection
+    - rid: 4986929597601546562
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929597601546563
+        Position: {x: 660, y: 391}
+    - rid: 4986929597601546563
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Typewriter
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
+          - rid: 4986929597601546570
+          - rid: 4986929597601546558
+        _wait: 1
+        <Executable>k__BackingField:
+          rid: 4986929597601546564
+    - rid: 4986929597601546564
+      type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Inspection
+        Settings:
+          Sentence: Someone must have forgotten their axe.
+          Rate: 0.036
+    - rid: 4986929597601546569
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929597601546570
+        Position: {x: 1372, y: 217}
+    - rid: 4986929597601546570
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Close
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 4986929597601546571
+    - rid: 4986929597601546571
+      type: {class: DisableDialogueTogglerCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Inspection

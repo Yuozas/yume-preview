@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2184905442476672346}
   - component: {fileID: 7483174148640750668}
+  - component: {fileID: 6624817355703253537}
   m_Layer: 0
   m_Name: Camping_Sign_03_Prefab
   m_TagString: Untagged
@@ -79,6 +80,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.5, y: 0.25}
   m_EdgeRadius: 0
+--- !u!114 &6624817355703253537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3742827783290459781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b3872e84bb87f4fa631ae8d048e86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interaction: {fileID: 11400000, guid: 190f90535d4e7b14196e0eba1b964225, type: 2}
 --- !u!1 &8368872492118847345
 GameObject:
   m_ObjectHideFlags: 0
