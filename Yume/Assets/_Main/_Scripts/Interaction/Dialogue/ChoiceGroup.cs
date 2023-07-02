@@ -31,18 +31,18 @@ public class ChoiceGroup
 
     public void Next()
     {
-        var index = _index + 1;
-        if (index >= _choices.Count)
-            index = 0;
+        var index = _index - 1;
+        if (index < 0)
+            index = _choices.GetLastElementIndex();
 
         SetAndInvoke(index);
     }
 
     public void Previous()
     {
-        var index = _index - 1;
-        if (index < 0)
-            index = _choices.GetLastElementIndex();
+        var index = _index + 1;
+        if (index >= _choices.Count)
+            index = 0;
 
         SetAndInvoke(index);
     }

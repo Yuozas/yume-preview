@@ -4,6 +4,26 @@ public class Tadas : Entity, IInteractable
 {
     [Header("References")]
     [SerializeField] private InteractionScriptableObject _interaction;
+    [SerializeField] private EventScriptableObject _event;
+
+    private void OnEnable()
+    {
+        _event.Event += Quit;
+    }
+
+    private void OnDisable()
+    {
+        _event.Event -= Quit;
+    }
+
+    private void Quit()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
 
     public bool CanInteract()
     {
