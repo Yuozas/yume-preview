@@ -23,6 +23,13 @@ public class PlayableEntity : Entity, ITransitionable
 
         CreateAndAssignPhysicsMaterial();
 
+        _decisions = ServiceLocator.GetSingleton<Decisions>();
+        _dialogueResolver = ServiceLocator.GetSingleton<DialogueResolver>();
+        _slider = ServiceLocator.GetSingleton<SliderGame>();
+
+        _characterResolver = ServiceLocator.GetSingleton<InSceneCharacter>();
+        _characterResolver.Set(this);
+
         _input = new InputActions();
 
         var movement = new Movement(_rigidbody, _animations, _direction);
@@ -50,12 +57,6 @@ public class PlayableEntity : Entity, ITransitionable
 
     private void Start()
     {
-        _decisions = ServiceLocator.GetSingleton<Decisions>();
-        _dialogueResolver = ServiceLocator.GetSingleton<DialogueResolver>();
-        _slider = ServiceLocator.GetSingleton<SliderGame>();
-
-        _characterResolver = ServiceLocator.GetSingleton<InSceneCharacter>();
-        _characterResolver.Set(this);
         _states.Set<Walking>();
     }
 
