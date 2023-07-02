@@ -177,8 +177,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21f1aee8b03d6954e83dddb5b9f28a46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _noScrewDriver: {fileID: 11400000, guid: 8ac95ad0607b1424591fcd923ad76ae9, type: 2}
   _interaction: {fileID: 11400000, guid: c4b3ee36eb94cc54685e64522f184a7e, type: 2}
   _fixedInteraction: {fileID: 11400000, guid: 58198e60961d0e54c8c4c637929595fb, type: 2}
+  _screwDriverFoundEvent: {fileID: 11400000, guid: 9eec13c1b3afe184db85c1e2eecde590, type: 2}
   _event: {fileID: 11400000, guid: 17f200dddd98c1d47921348487ad9bc0, type: 2}
   _turbine: {fileID: 0}
   _particle: {fileID: 6665309582727669715}

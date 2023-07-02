@@ -137,7 +137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5009796263206796069}
   - component: {fileID: 6222668848723062524}
-  - component: {fileID: 4763098965911262955}
+  - component: {fileID: 4587943122608140207}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -206,7 +206,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.3800578, y: 2.0755723}
   m_EdgeRadius: 0
---- !u!114 &4763098965911262955
+--- !u!114 &4587943122608140207
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -215,10 +215,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6280784981335105848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73b3872e84bb87f4fa631ae8d048e86e, type: 3}
+  m_Script: {fileID: 11500000, guid: 85082891a14072744acc6114d1cb1ae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interaction: {fileID: 11400000, guid: 4815eeb954ed18f4fbae5fd862d28118, type: 2}
+  _needLockPick: {fileID: 11400000, guid: 80da671aee2224c41a8b9a975550f485, type: 2}
+  _gameToUnlock: {fileID: 11400000, guid: 4815eeb954ed18f4fbae5fd862d28118, type: 2}
+  _enter: {fileID: 11400000, guid: 45dc11958ee006044b447d7ba35fd400, type: 2}
+  _lockPickFound: {fileID: 11400000, guid: 257f50ac1fd6efe4bb6757047b293bc8, type: 2}
+  _doorUnlocked: {fileID: 11400000, guid: 80c9d3ea3dc3cf44e9f3894b449c9356, type: 2}
 --- !u!1 &8303229766644601206
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a56a6cac0d1a63b4f9bb1d60b90e0a14, type: 3}
+  m_Name: NeedLockPick
+  m_EditorClassIdentifier: 
+  <UnityNodes>k__BackingField:
+  - rid: 4986929597601546780
+  - rid: 4986929597601546782
+  - rid: 4986929597601546784
+  - rid: 4986929597601546787
+  - rid: 4986929597601546790
+  - rid: 4986929597601546793
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 4986929597601546780
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929597601546781
+        Position: {x: 413, y: 356}
+    - rid: 4986929597601546781
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Entry
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
+          - rid: 4986929597601546785
+          - rid: 4986929597601546788
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: -2
+    - rid: 4986929597601546782
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929597601546783
+        Position: {x: 1230, y: 356}
+    - rid: 4986929597601546783
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Exit
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: -2
+    - rid: 4986929597601546784
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929597601546785
+        Position: {x: 561, y: 195}
+    - rid: 4986929597601546785
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Open
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 4986929597601546786
+    - rid: 4986929597601546786
+      type: {class: EnableDialogueTogglerCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Inspection
+    - rid: 4986929597601546787
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929597601546788
+        Position: {x: 561, y: 356}
+    - rid: 4986929597601546788
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Typewriter
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
+          - rid: 4986929597601546791
+        _wait: 1
+        <Executable>k__BackingField:
+          rid: 4986929597601546789
+    - rid: 4986929597601546789
+      type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Inspection
+        Settings:
+          Sentence: The door is locked.
+          Rate: 0.036
+    - rid: 4986929597601546790
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929597601546791
+        Position: {x: 827, y: 356}
+    - rid: 4986929597601546791
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Typewriter
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
+          - rid: 4986929597601546794
+          - rid: 4986929597601546783
+        _wait: 1
+        <Executable>k__BackingField:
+          rid: 4986929597601546792
+    - rid: 4986929597601546792
+      type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Inspection
+        Settings:
+          Sentence: I could open this with a lock-pick.
+          Rate: 0.036
+    - rid: 4986929597601546793
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929597601546794
+        Position: {x: 1126, y: 195}
+    - rid: 4986929597601546794
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Close
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 4986929597601546795
+    - rid: 4986929597601546795
+      type: {class: DisableDialogueTogglerCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Inspection
