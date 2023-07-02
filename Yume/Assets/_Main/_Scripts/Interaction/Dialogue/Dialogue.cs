@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System;
+using SwiftLocator.Services.ServiceLocatorServices;
+using UnityEngine;
 
 public class Dialogue : ITogglerProvider
 {
@@ -35,25 +37,35 @@ public class SliderGame : ITogglerProvider
 {
     public IToggler Toggler { get; private set; }
     public event Action OnPercentageUpdated;
-    public SliderGameStage Current => _stages[_index];
+
     public float CursorPosition { get; private set; }
 
-    private readonly SliderGameStage[] _stages;
-    private int _index;
+    public int Index { get; private set; }
+    public int Total => _stages.Length;
+    public SliderGameStage Current => _stages[Index];
+
     private List<INode> _winNodes;
     private List<INode> _loseNodes;
+    private readonly SliderGameStage[] _stages;
     private readonly LoopPercentage _loopPercentage;
-
+    private readonly SoundEffectAudioSource _soundEffect;
+    private readonly DelayedExecutor _executor;
 
     public SliderGame()
     {
         Toggler = new Toggler();
 
-        _stages = new SliderGameStage[3]
+        var settings = new DelayedExecutorSettings(1, 0.75f);
+        _executor = new DelayedExecutor(settings: settings);
+
+        _soundEffect = ServiceLocator.GetSingleton<SoundEffectAudioSource>();
+
+        _stages = new SliderGameStage[4]
         {
             new SliderGameStage(0.3f),
             new SliderGameStage(0.2f),
-            new SliderGameStage(0.1f)
+            new SliderGameStage(0.1f),
+            new SliderGameStage(0.05f)
         };
 
         _loopPercentage = new LoopPercentage();
@@ -67,7 +79,11 @@ public class SliderGame : ITogglerProvider
 
     public void Execute()
     {
-        Current.Execute(Increment, InvokeLose, CursorPosition);
+        if (_executor.Running || _executor.Paused)
+            return;
+
+        _loopPercentage.Pause();
+        Current.Execute(PlaySoundEffectAndIncrement, InvokeLose, CursorPosition);
     }
 
     public void Begin(List<INode> winNodes, List<INode> loseNodes)
@@ -88,6 +104,10 @@ public class SliderGame : ITogglerProvider
 
     private void InvokeLose()
     {
+        var clip = Resources.Load<AudioClip>("Incorrect");
+        var settings = new SoundEffectClipSettings(clip, 8);
+        _soundEffect.Play(settings);
+
         _loopPercentage.Stop();
         foreach (var node in _loseNodes)
             node.Execute();
@@ -95,14 +115,24 @@ public class SliderGame : ITogglerProvider
 
     private void SetIndex(int index)
     {
-        _index = index;
+        Index = index;
         OnPercentageUpdated?.Invoke();
+    }
+
+    private void PlaySoundEffectAndIncrement()
+    {
+        var clip = Resources.Load<AudioClip>("Correct");
+        var settings = new SoundEffectClipSettings(clip, 8);
+        _soundEffect.Play(settings);
+
+        _executor.Begin(Increment);
     }
 
     private void Increment()
     {
-        var index = _index + 1;
-        if(index >= _stages.Length)
+        _loopPercentage.Unpause();
+        var index = Index + 1;
+        if (index >= _stages.Length)
         {
             InvokeWin();
             return;
@@ -113,7 +143,6 @@ public class SliderGame : ITogglerProvider
 
     private void Set(float percentage)
     {
-        UnityEngine.Debug.Log("Set :: " + percentage);
         CursorPosition = percentage;
         OnPercentageUpdated?.Invoke();
     }

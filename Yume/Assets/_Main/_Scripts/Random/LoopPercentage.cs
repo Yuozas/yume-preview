@@ -23,8 +23,11 @@ public class LoopPercentage : CoroutineHandler
         var percentage = 0f;
         while (true)
         {
-            percentage = _increase ? Increase(percentage) : Decrease(percentage);
-            OnUpdated?.Invoke(percentage);
+            if (!Paused)
+            {
+                percentage = _increase ? Increase(percentage) : Decrease(percentage);
+                OnUpdated?.Invoke(percentage);
+            }
 
             yield return null;
         }

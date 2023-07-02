@@ -9,6 +9,8 @@ public abstract class CoroutineHandler
     private IEnumerator _ienumerator;
 
     public bool Running => _ienumerator is not null;
+    public bool Paused { get; private set; }
+
 
     public CoroutineHandler(MonoBehaviour behaviour)
     {
@@ -28,9 +30,20 @@ public abstract class CoroutineHandler
     public void Begin(Action onFinished = null)
     {
         Stop();
+        Unpause();
 
         _ienumerator = Execute(onFinished);
         _behaviour.StartCoroutine(_ienumerator);
+    }
+
+    public void Pause()
+    {
+        Paused = true;
+    }
+
+    public void Unpause()
+    {
+        Paused = false;
     }
 
     protected abstract IEnumerator Execute(Action onFinished);

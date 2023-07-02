@@ -1,5 +1,6 @@
 using SwiftLocator.Services.ServiceLocatorServices;
 using UnityEngine;
+using TMPro;
 
 public class SliderGameUserInterface : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class SliderGameUserInterface : MonoBehaviour
     [SerializeField] private RectTransform _slider;
     [SerializeField] private RectTransform _zone;
     [SerializeField] private RectTransform _green;
+    [SerializeField] private TMP_Text _text;
 
     private SliderGame _game;
     private IToggler _toggler;
@@ -52,5 +54,7 @@ public class SliderGameUserInterface : MonoBehaviour
         _green.localPosition = Vector3.Lerp(left, right, stage.TargetBoxSpawnPosition);
 
         _slider.localPosition = Vector3.Lerp(left, right, _game.CursorPosition);
+
+        _text.text = (_game.Index + 1) + "\\" + _game.Total;
     }
 }

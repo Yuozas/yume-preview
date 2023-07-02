@@ -26,6 +26,7 @@
             INode.ENABLE_SLIDER_GAME => BuildEnableSlider(),
             INode.DISABLE_SLIDER_GAME => BuildDisableSlider(),
             INode.PLAY_SLIDER_GAME => BuildPlaySlider(),
+            INode.WAIT => BuildWait(),
             _ => null,
         };
     }
@@ -71,6 +72,12 @@
     public INode BuildPlaySlider()
     {
         return new SliderGameNode(INode.PLAY_SLIDER_GAME);
+    }
+
+    public INode BuildWait()
+    {
+        var command = new WaitCommand();
+        return new CompositeNode(INode.WAIT, true, command);
     }
 
     public INode BuildEnableSlider()
