@@ -23,6 +23,11 @@
             INode.DISABLE_DECISIONS => BuildDisableDecision(),
             INode.SET_DECISION_CHOICES => BuildSetChoices(),
             INode.TRANSITION_TO_DESTINATION => BuildTransitionToDestination(),
+            INode.ENABLE_SLIDER_GAME => BuildEnableSlider(),
+            INode.DISABLE_SLIDER_GAME => BuildDisableSlider(),
+            INode.PLAY_SLIDER_GAME => BuildPlaySlider(),
+            INode.WAIT => BuildWait(),
+            INode.INVOKE_SCRIPTABLE_OBJECT_EVENT => BuildScriptableObjectEvent(),
             _ => null,
         };
     }
@@ -55,8 +60,37 @@
 
     public INode BuildEnableDecision()
     {
-        var command = new EnableDecisionsTogglerCommand();
+        var command = new EnableSliderGameTogglerCommand();
         return new CompositeNode(INode.ENABLE_DECISIONS, false, command);
+    }
+
+    public INode BuildDisableSlider()
+    {
+        var command = new DisableSliderGameTogglerCommand();
+        return new CompositeNode(INode.DISABLE_SLIDER_GAME, false, command);
+    }
+
+    public INode BuildPlaySlider()
+    {
+        return new SliderGameNode(INode.PLAY_SLIDER_GAME);
+    }
+
+    public INode BuildWait()
+    {
+        var command = new WaitCommand();
+        return new CompositeNode(INode.WAIT, true, command);
+    }
+
+    public INode BuildScriptableObjectEvent()
+    {
+        var command = new InvokeScriptableObjectEventCommand();
+        return new CompositeNode(INode.INVOKE_SCRIPTABLE_OBJECT_EVENT, false, command);
+    }
+
+    public INode BuildEnableSlider()
+    {
+        var command = new EnableSliderGameTogglerCommand();
+        return new CompositeNode(INode.ENABLE_SLIDER_GAME, false, command);
     }
 
     public INode BuildSetChoices()

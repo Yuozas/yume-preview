@@ -3065,11 +3065,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
   m_PrefabInstance: {fileID: 490413264}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &491958548 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8905131927422071362, guid: 715e183bd1c3faf41938ec3140312f43, type: 3}
-  m_PrefabInstance: {fileID: 1651463398}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3172,9 +3167,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.012127895
+    y: 0
     width: 1
-    height: 0.9746417
+    height: 1
   near clip plane: 0.1
   far clip plane: 5000
   field of view: 40
@@ -7023,7 +7018,7 @@ Transform:
   - {fileID: 1685110697}
   - {fileID: 1655215572}
   - {fileID: 778220722}
-  - {fileID: 491958548}
+  - {fileID: 8905131925771134628}
   - {fileID: 774657938}
   - {fileID: 1652597595}
   - {fileID: 642106910}
@@ -41552,75 +41547,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2614797303245224953, guid: 9a2d5cdf47edf314ab576928a49b7886, type: 3}
   m_PrefabInstance: {fileID: 1643415727}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1651463398
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1176805176}
-    m_Modifications:
-    - target: {fileID: 5191140863111209179, guid: 715e183bd1c3faf41938ec3140312f43, type: 3}
-      propertyPath: m_Size.x
-      value: 1.7572873
-      objectReference: {fileID: 0}
-    - target: {fileID: 6987435584547823377, guid: 715e183bd1c3faf41938ec3140312f43, type: 3}
-      propertyPath: m_Name
-      value: Electricity_Structure_01_Prefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 8905131927422071362, guid: 715e183bd1c3faf41938ec3140312f43, type: 3}
-      propertyPath: m_RootOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8905131927422071362, guid: 715e183bd1c3faf41938ec3140312f43, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 7.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8905131927422071362, guid: 715e183bd1c3faf41938ec3140312f43, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8905131927422071362, guid: 715e183bd1c3faf41938ec3140312f43, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8905131927422071362, guid: 715e183bd1c3faf41938ec3140312f43, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8905131927422071362, guid: 715e183bd1c3faf41938ec3140312f43, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8905131927422071362, guid: 715e183bd1c3faf41938ec3140312f43, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8905131927422071362, guid: 715e183bd1c3faf41938ec3140312f43, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8905131927422071362, guid: 715e183bd1c3faf41938ec3140312f43, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8905131927422071362, guid: 715e183bd1c3faf41938ec3140312f43, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8905131927422071362, guid: 715e183bd1c3faf41938ec3140312f43, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8961632914669431510, guid: 715e183bd1c3faf41938ec3140312f43, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 1925302610, guid: 7ef6046f9a67bd64e9406063f4a7d3ea, type: 3}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 715e183bd1c3faf41938ec3140312f43, type: 3}
 --- !u!4 &1652597595 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
@@ -44255,6 +44181,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6961665609657986603, guid: 794bc92a53cf6164d945bb931873ddf4, type: 3}
   m_PrefabInstance: {fileID: 2096872694}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2103375861 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3341210948117929578, guid: 70e6c12a0f52ad642a8f58019ce30254, type: 3}
+  m_PrefabInstance: {fileID: 811521234}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78a2ba7788ae05444a76ca6f62b51d25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2126043847
 GameObject:
   m_ObjectHideFlags: 0
@@ -44434,6 +44371,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2614797303245224953, guid: 9a2d5cdf47edf314ab576928a49b7886, type: 3}
   m_PrefabInstance: {fileID: 2139916206}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &58733409960245150
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1176805176}
+    m_Modifications:
+    - target: {fileID: 5636212073709839130, guid: 701b62346558c6e499c3797a02982a10, type: 3}
+      propertyPath: m_Name
+      value: Electricity_Structure_01_Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353600375867277460, guid: 701b62346558c6e499c3797a02982a10, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353600375867277460, guid: 701b62346558c6e499c3797a02982a10, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353600375867277460, guid: 701b62346558c6e499c3797a02982a10, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353600375867277460, guid: 701b62346558c6e499c3797a02982a10, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353600375867277460, guid: 701b62346558c6e499c3797a02982a10, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353600375867277460, guid: 701b62346558c6e499c3797a02982a10, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353600375867277460, guid: 701b62346558c6e499c3797a02982a10, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353600375867277460, guid: 701b62346558c6e499c3797a02982a10, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353600375867277460, guid: 701b62346558c6e499c3797a02982a10, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353600375867277460, guid: 701b62346558c6e499c3797a02982a10, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353600375867277460, guid: 701b62346558c6e499c3797a02982a10, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 701b62346558c6e499c3797a02982a10, type: 3}
 --- !u!1001 &76430149976103236
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45818,6 +45816,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1176805176}
     m_Modifications:
+    - target: {fileID: 3514863262112745764, guid: 715e183bd1c3faf41938ec3140312f43, type: 3}
+      propertyPath: _turbine
+      value: 
+      objectReference: {fileID: 2103375861}
     - target: {fileID: 6987435584547823377, guid: 715e183bd1c3faf41938ec3140312f43, type: 3}
       propertyPath: m_Name
       value: Electricity_Structure_02_Prefab
@@ -46871,6 +46873,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 253823c9506c536438be59d826d70fde, type: 3}
+--- !u!4 &8905131925771134628 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7353600375867277460, guid: 701b62346558c6e499c3797a02982a10, type: 3}
+  m_PrefabInstance: {fileID: 58733409960245150}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9124763524370402739 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4587929575338953727, guid: 462dbc2377c3a5a4aacf21bd3d89d5f5, type: 3}

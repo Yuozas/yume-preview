@@ -5,13 +5,24 @@ public class WindTurbine : MonoBehaviour
     [Header("References")]
     [SerializeField] private Animator _animator;
 
-    [Header("Settings")]
-    [SerializeField] private bool _activated;
+    [field: Header("Settings")]
+    [field: SerializeField] public bool Activated { get; private set; }
 
     private const string ACTIVATED_ANIMATOR_PARAMETER = "Activated";
 
     private void Start()
     {
-        _animator.SetBool(ACTIVATED_ANIMATOR_PARAMETER, _activated);
+        SetParameter();
+    }
+
+    private void SetParameter()
+    {
+        _animator.SetBool(ACTIVATED_ANIMATOR_PARAMETER, Activated);
+    }
+
+    public void Set(bool value)
+    {
+        Activated = value;
+        SetParameter();
     }
 }

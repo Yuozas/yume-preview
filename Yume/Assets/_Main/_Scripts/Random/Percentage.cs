@@ -5,6 +5,7 @@ using System;
 public class Percentage : CoroutineHandler
 {
     public event Action<float> OnUpdated;
+
     private float _duration;
 
     public Percentage(MonoBehaviour behaviour) : base(behaviour) { }

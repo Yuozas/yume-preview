@@ -7,6 +7,6 @@ public class SoundEffectAudioSource : MonoBehaviour
 
     public void Play(SoundEffectClipSettings settings)
     {
-        _source.PlayOneShot(settings.Clip);
+        _source.PlayOneShot(settings.Clip, settings.VolumeScale);
     }
 }

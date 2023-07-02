@@ -42,7 +42,7 @@ MonoBehaviour:
       data:
         <Node>k__BackingField:
           rid: 4986929572184326152
-        Position: {x: 1113, y: 43}
+        Position: {x: 1113, y: 43.000008}
     - rid: 4986929572184326152
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
@@ -59,6 +59,7 @@ MonoBehaviour:
       data:
         Settings:
           Clip: {fileID: 8300000, guid: 3470424e6b240994381f438269a7b407, type: 3}
+          VolumeScale: 1
     - rid: 4986929572184326154
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
@@ -81,6 +82,7 @@ MonoBehaviour:
       data:
         Settings:
           Clip: {fileID: 8300000, guid: 3470424e6b240994381f438269a7b407, type: 3}
+          VolumeScale: 1
     - rid: 8981177211230355745
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:

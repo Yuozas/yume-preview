@@ -24,7 +24,6 @@ MonoBehaviour:
   - rid: 8981177686387064838
   - rid: 8981177686387064856
   - rid: 8981177687593713781
-  - rid: 8981177690256048145
   references:
     version: 2
     RefIds:
@@ -73,7 +72,7 @@ MonoBehaviour:
       data:
         Type: Conversation
         Settings:
-          Name: ???
+          Name: Npc
     - rid: 8981177211230355779
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
@@ -142,7 +141,7 @@ MonoBehaviour:
       data:
         Type: Conversation
         Settings:
-          Sentence: I don't even work here.
+          Sentence: Hmm...
           Rate: 0.036
     - rid: 8981177685725937666
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
@@ -159,7 +158,9 @@ MonoBehaviour:
           <Sprite>k__BackingField: {fileID: 0}
           <Nodes>k__BackingField:
           - rid: 8981177685725937670
-          - rid: 8981177690256048146
+          - rid: 8981177687593713782
+          - rid: 8981177686387064857
+          - rid: 8981177686387064833
         _wait: 1
         <Executable>k__BackingField:
           rid: 8981177685725937668
@@ -168,7 +169,7 @@ MonoBehaviour:
       data:
         Type: Conversation
         Settings:
-          Sentence: I come here everyday to steal food and sleep.
+          Sentence: We need to fix the electricity panel.
           Rate: 0.036
     - rid: 8981177685725937669
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
@@ -279,24 +280,3 @@ MonoBehaviour:
           rid: 8981177687593713783
     - rid: 8981177687593713783
       type: {class: DisableDecisionsTogglerCommand, ns: , asm: Assembly-CSharp}
-    - rid: 8981177690256048145
-      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
-      data:
-        <Node>k__BackingField:
-          rid: 8981177690256048146
-        Position: {x: 669, y: 274.99997}
-    - rid: 8981177690256048146
-      type: {class: ChoicesNode, ns: , asm: Assembly-CSharp}
-      data:
-        <Type>k__BackingField: Set Decision Choices
-        <Connections>k__BackingField:
-        - <Text>k__BackingField: Open Shop
-          <Sprite>k__BackingField: {fileID: -742520751, guid: 1a4d1f89522da874c8a9331ccf49cf2a, type: 3}
-          <Nodes>k__BackingField:
-          - rid: 8981177687593713782
-          - rid: 8981177686387064857
-        - <Text>k__BackingField: Bye
-          <Sprite>k__BackingField: {fileID: 0}
-          <Nodes>k__BackingField:
-          - rid: 8981177686387064833
-          - rid: 8981177687593713782

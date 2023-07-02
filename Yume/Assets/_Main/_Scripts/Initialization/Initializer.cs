@@ -9,6 +9,7 @@ public class Initializer : IPreliminarySetup
     private const string DIALOGUE_PREFAB_FILE_NAME = "DialoguesUserInterface";
     private const string SCENE_INTERACTIONS_FILE_PATH = "Interactions";
     private const string TRANSITIONER_ANIMATION_PREFAB_FILE_NAME = "TransitionerAnimation";
+    private const string SLIDER_GAME_USER_INTERFACE_FILE_NAME = "SliderGameUserInterface";
 
     public void Setup()
     {
@@ -56,6 +57,11 @@ public class Initializer : IPreliminarySetup
             return Instantiator.InstantiateAndDontDestroy(prefab);
         });
 
+        ServiceLocator.SingletonRegistrator.Register(provider => {
+            var prefab = Resources.Load<SliderGameUserInterface>(SLIDER_GAME_USER_INTERFACE_FILE_NAME);
+            return Instantiator.InstantiateAndDontDestroy(prefab);
+        });
+
         ServiceLocator.SingletonRegistrator.Register(provider => new Decisions());
 
         var prefab = Resources.Load<DialoguesUserInterface>(DIALOGUE_PREFAB_FILE_NAME);
@@ -63,5 +69,7 @@ public class Initializer : IPreliminarySetup
 
         var interactions = Resources.LoadAll<SceneInteractionScriptableObject>(SCENE_INTERACTIONS_FILE_PATH);
         _ = new SceneInteractionExecutor(interactions);
+
+        ServiceLocator.SingletonRegistrator.Register(provider => new SliderGame());
     }
 }
