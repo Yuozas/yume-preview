@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2100207544888648913}
   - component: {fileID: 6473558990467684372}
+  - component: {fileID: 5839855947011189021}
   m_Layer: 0
   m_Name: Camping_Backpack_01_01_Prefab
   m_TagString: Untagged
@@ -79,6 +80,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.93898916, y: 0.499578}
   m_EdgeRadius: 0
+--- !u!114 &5839855947011189021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426825274917093556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6946658decf784d45ac5e4282c34b07a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interaction: {fileID: 11400000, guid: 2e35e373648b5c749bf1d81356d1ce50, type: 2}
+  _event: {fileID: 11400000, guid: 9eec13c1b3afe184db85c1e2eecde590, type: 2}
 --- !u!1 &3235353338768897456
 GameObject:
   m_ObjectHideFlags: 0
