@@ -14,7 +14,8 @@ public class SliderGameStage
     {
         TargetBoxElementSize = size;
         TargetBoxElementHalfSize = size / 2f;
-        TargetBoxSpawnPosition = UnityEngine.Random.Range(TargetBoxElementHalfSize, 1 - TargetBoxElementHalfSize);
+        var margin = 0.05f;
+        TargetBoxSpawnPosition = UnityEngine.Random.Range(TargetBoxElementHalfSize + margin, 1 - TargetBoxElementHalfSize - margin);
     }
 
 

@@ -121,10 +121,12 @@ public class SliderGame : ITogglerProvider
 
     private void PlaySoundEffectAndIncrement()
     {
-        var clip = Resources.Load<AudioClip>("Correct");
-        var settings = new SoundEffectClipSettings(clip, 8);
-        _soundEffect.Play(settings);
+        var index = Index + 1;
 
+        var clip = Resources.Load<AudioClip>(index < _stages.Length ? "Correct" : "Success");
+        var settings = new SoundEffectClipSettings(clip, index < _stages.Length ? 8 : 0.75f);
+
+        _soundEffect.Play(settings);
         _executor.Begin(Increment);
     }
 
