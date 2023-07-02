@@ -25,9 +25,9 @@ public class PlayableEntity : Entity, ITransitionable
 
         _decisions = ServiceLocator.GetSingleton<Decisions>();
         _dialogueResolver = ServiceLocator.GetSingleton<DialogueResolver>();
-        _characterResolver = ServiceLocator.GetSingleton<InSceneCharacter>();
         _slider = ServiceLocator.GetSingleton<SliderGame>();
 
+        _characterResolver = ServiceLocator.GetSingleton<InSceneCharacter>();
         _characterResolver.Set(this);
 
         _input = new InputActions();

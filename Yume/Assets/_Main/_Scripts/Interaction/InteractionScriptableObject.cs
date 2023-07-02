@@ -14,12 +14,14 @@ public class InteractionScriptableObject : ScriptableObject
         UnityNodes.Clear();
         Save();
     }
+#endif
 
     public void Interact()
     {
         UnityNodes.First(node => node.Type is INode.ENTRY).Node.Execute();
     }
 
+#if UNITY_EDITOR
     public bool Contains(string type)
     {
         return UnityNodes.Any(node => node.Type == type);
