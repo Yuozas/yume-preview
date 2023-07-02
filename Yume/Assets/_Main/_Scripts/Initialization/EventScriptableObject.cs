@@ -5,7 +5,6 @@ using UnityEngine;
 public class EventScriptableObject : ScriptableObject
 {
     public event Action Event;
-
     public void Invoke()
     {
         Event?.Invoke();
