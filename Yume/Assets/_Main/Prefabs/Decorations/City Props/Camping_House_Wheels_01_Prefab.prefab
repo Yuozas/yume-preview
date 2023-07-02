@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1054904377741040783}
   - component: {fileID: 6314775694718328257}
   - component: {fileID: 2243586174219684107}
-  - component: {fileID: 6645283152420313450}
   m_Layer: 0
   m_Name: Camping_House_Wheels_01_Prefab
   m_TagString: Untagged
@@ -32,6 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3006300202589281162}
+  - {fileID: 5009796263206796069}
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -127,13 +127,46 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.8138995, y: 2.65}
   m_EdgeRadius: 0
---- !u!61 &6645283152420313450
+--- !u!1 &6280784981335105848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5009796263206796069}
+  - component: {fileID: 6222668848723062524}
+  - component: {fileID: 4763098965911262955}
+  m_Layer: 0
+  m_Name: Door
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5009796263206796069
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6280784981335105848}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1054904377741040783}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &6222668848723062524
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1500108362586328197}
+  m_GameObject: {fileID: 6280784981335105848}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -173,6 +206,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.3800578, y: 2.0755723}
   m_EdgeRadius: 0
+--- !u!114 &4763098965911262955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6280784981335105848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b3872e84bb87f4fa631ae8d048e86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interaction: {fileID: 11400000, guid: 4815eeb954ed18f4fbae5fd862d28118, type: 2}
 --- !u!1 &8303229766644601206
 GameObject:
   m_ObjectHideFlags: 0
