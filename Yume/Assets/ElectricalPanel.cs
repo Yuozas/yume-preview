@@ -12,6 +12,11 @@ public class ElectricalPanel : MonoBehaviour, IInteractable
     private void OnEnable()
     {
         _event.Event += Execute;
+        if(_event.Invoked)
+        {
+            _particle.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            _turbine.Set(true);
+        }
     }
 
     private void OnDisable()
