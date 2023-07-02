@@ -10,6 +10,11 @@ public readonly struct Character
 
     public static Dictionary<string, Character> AllCharacters { get; } = ReflectionUtility.GetStaticFieldDictionaryWithId<Character>();
 
+    public string Id { get; }
+    public CharacterType Type { get; }
+    public string Name { get; }
+    public string SceneName { get; }
+
     private Character(string id, CharacterType type, string name, string sceneName)
         : this(id, type, name)
     {
@@ -23,11 +28,6 @@ public readonly struct Character
         Name = name;
         SceneName = string.Empty;
     }
-
-    public string Id { get; }
-    public CharacterType Type { get; }
-    public string Name { get; }
-    public string SceneName { get; }
 
     public static implicit operator CharacterRealmObject(Character character) => new()
     {

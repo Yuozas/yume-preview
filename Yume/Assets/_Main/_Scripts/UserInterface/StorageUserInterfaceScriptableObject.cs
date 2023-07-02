@@ -20,10 +20,7 @@ public abstract class StorageUserInterfaceScriptableObject : StorageElementUserI
 
     protected VisualElement GetSlotContainer()
     {
-        return new VisualElement
-        {
-            name = "SlotContainer"
-        };
+        return new VisualElement { name = "SlotContainer" };
     }
 
     protected virtual void OnSlotClicked(VisualElement slot, StorageSlot storageSlot, StyleBackground itemBackgroundImage)
@@ -83,17 +80,10 @@ public abstract class StorageUserInterfaceScriptableObject : StorageElementUserI
 
     private VisualElement CreateSlotVisualElement()
     {
-        var slot = new VisualElement
-        {
-            name = "Slot"
-        };
+        var slot = new VisualElement { name = "Slot" };
 
         slot.style.backgroundImage = new StyleBackground(SlotSprite);
-
-        slot.contentContainer.Add(new VisualElement()
-        {
-            name = "SlotItem"
-        });
+        slot.contentContainer.Add(new VisualElement() { name = "SlotItem" });
 
         return slot;
     }

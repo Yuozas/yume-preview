@@ -7,8 +7,8 @@ using UnityEngine.UIElements;
 public abstract class StorageElementUserInterfaceScriptableObject : ScriptableObject
 {
     [field: SerializeField] private VisualTreeAsset MenuElementTree { get; set; }
-    protected virtual bool MultipleContents { get; }
 
+    protected virtual bool MultipleContents { get; }
     protected VisualElement RootElement { get; private set; }
 
     private string _containerPath;

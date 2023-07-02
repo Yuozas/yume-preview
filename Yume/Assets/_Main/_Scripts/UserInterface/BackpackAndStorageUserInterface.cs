@@ -5,13 +5,13 @@ using UnityEngine.UIElements;
 
 public class BackpackAndStorageUserInterface : MonoBehaviour
 {
+    [field: SerializeField] private KeyboardKeyUserIterfaceBuilder KeyBuilder { get; set; }
+    [field: SerializeField] private TwoStorageUserInterfaceScriptableObject TwoStorageUserInterfaceScriptableObject { get; set; }
+
     private InputActions _inputAction;
     private VisualElement _root;
     private VisualElement _backpackTitleContainer;
     private VisualElement _storageTitleContainer;
-
-    [field: SerializeField] private KeyboardKeyUserIterfaceBuilder KeyBuilder { get; set; }
-    [field: SerializeField] private TwoStorageUserInterfaceScriptableObject TwoStorageUserInterfaceScriptableObject { get; set; }
 
     private string ActiveStorageSlotId { get; set; }
     private string StorageId { get; set; }

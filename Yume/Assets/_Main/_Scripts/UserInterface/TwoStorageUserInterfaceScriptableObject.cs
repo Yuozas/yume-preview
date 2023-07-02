@@ -15,14 +15,12 @@ public class TwoStorageUserInterfaceScriptableObject : StorageUserInterfaceScrip
 
     public void SetupFirstTitle(VisualElement menuTitleContainer, string title)
     {
-        var label = menuTitleContainer.Q<Label>("Title");
-        label.text = title;
+        menuTitleContainer.Q<Label>("Title").text = title;
     }
 
     public void SetupSecondTitle(VisualElement menuTitleContainer, string title)
     {
-        var label = menuTitleContainer.Q<Label>("Title");
-        label.text = title;
+        menuTitleContainer.Q<Label>("Title").text = title;
     }
 
     public void SetupFirstSavedSlots(IQueryable<StorageSlot> slots)

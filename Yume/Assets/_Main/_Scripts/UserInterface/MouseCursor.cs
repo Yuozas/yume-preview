@@ -27,8 +27,7 @@ public class MouseCursor : MonoBehaviour
 
     private void Update()
     {
-        var mousePosition = Input.mousePosition;
-        mousePosition.y = Screen.height - mousePosition.y;
+        var mousePosition = Input.mousePosition.With(y: Screen.height - Input.mousePosition.y);
         _cursor.style.left = mousePosition.x;
         _cursor.style.top = mousePosition.y;
     }

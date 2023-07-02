@@ -6,12 +6,12 @@ public readonly struct Scene
     public static readonly Scene ContinueScene = "Continue";
     public static readonly Scene DemoScene = "Office_Demo";
 
+    public string Name { get; }
+
     private Scene(string name)
     {
         Name = name;
     }
-
-    public string Name { get; }
 
     public static implicit operator Scene(string sceneName) => new(sceneName);
 }
