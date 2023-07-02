@@ -1,32 +1,39 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class MouseCursor : MonoBehaviour
 {
-    [SerializeField] Sprite _defaultCursor;
-    SpriteRenderer _spriteRenderer;
+    private VisualElement _cursor;
 
-    void OnDisable() => Cursor.visible = true;
-
-    void OnEnable()
+    private void OnDisable()
     {
-        HideCursor();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        SetDefaultCursor();
+        UnityEngine.Cursor.visible = true;
     }
 
-    void OnApplicationFocus(bool focus)
+    private void OnEnable()
+    {
+        HideCursor();
+        var root = GetComponent<UIDocument>().rootVisualElement;
+        _cursor = root.Q<VisualElement>("Body");
+        _cursor.pickingMode = PickingMode.Ignore;
+        _cursor.Q<VisualElement>("Cursor").pickingMode = PickingMode.Ignore;
+    }
+
+    private void OnApplicationFocus(bool focus)
     {
         if (focus)
             HideCursor();
     }
 
-    void Update()
+    private void Update()
     {
-        var mousePositionByCamera = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = new Vector3(mousePositionByCamera.x, mousePositionByCamera.y, transform.position.z);
+        var mousePosition = Input.mousePosition.With(y: Screen.height - Input.mousePosition.y);
+        _cursor.style.left = mousePosition.x;
+        _cursor.style.top = mousePosition.y;
     }
 
-    public void SetDefaultCursor() => _spriteRenderer.sprite = _defaultCursor;
-
-    void HideCursor() => Cursor.visible = false;
+    private void HideCursor()
+    {
+        UnityEngine.Cursor.visible = false;
+    }
 }

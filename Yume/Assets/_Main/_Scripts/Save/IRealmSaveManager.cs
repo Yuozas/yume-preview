@@ -1,17 +1,6 @@
-﻿using Realms;
-
-public interface IRealmSaveManager
+﻿public interface IRealmSaveManager
 {
-    void CreateNewSave(int characterId);
-    void DeleteSave(long saveId);
-    void CopySave(long saveId);
-    bool AnySaveExists();
-
-    /// <exception cref="ArgumentException">No active save found.</exception>
-    Realm GetActiveSave();
-    
-    void ChangeActiveSave(RealmSaveDetails realmSave);
-    void ChangeActiveSave(long saveId);
-    RealmSaveDetails[] GetAllSaveDetails();
-    RealmResult<RealmSaveDetails> GetActiveSaveDetails();
+    void CreateNewSave(CharacterRealmObject character);
+    void DeleteSave(string saveId);
+    void CopySave(string saveId);
 }

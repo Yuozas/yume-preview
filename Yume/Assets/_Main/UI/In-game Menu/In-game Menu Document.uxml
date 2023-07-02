@@ -1,0 +1,19 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Main/UI/In-game%20Menu/In-game%20Menu%20Style.uss?fileID=7433441132597879392&amp;guid=02231499208343a48a0fab81e7797fbd&amp;type=3#In-game Menu Style" />
+    <Style src="project://database/Assets/_Main/UI/In-game%20Menu/Backpack%20Menu%20Style.uss?fileID=7433441132597879392&amp;guid=ec2b2e000de79f74a87f072ba2bc83d2&amp;type=3#Backpack Menu Style" />
+    <ui:VisualElement name="InGameMenu">
+        <ui:VisualElement name="Menu" style="background-image: url(&apos;project://database/Assets/_Main/Graphics/Sprites/Modern%20User%20Interface/Modern_UI_Style_1.png?fileID=-1527888967&amp;guid=1a4d1f89522da874c8a9331ccf49cf2a&amp;type=3#Main Frame&apos;); -unity-background-scale-mode: stretch-to-fill; transform-origin: center; scale: 1 1;">
+            <ui:VisualElement name="MenuIconAbsoluteContainer" class="icon-container1" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+                <ui:VisualElement name="MenuIconWrapper" class="icon-container" style="background-image: url(&apos;project://database/Assets/_Main/Graphics/Sprites/Modern%20User%20Interface/Modern_UI_Style_1.png?fileID=-12497140&amp;guid=1a4d1f89522da874c8a9331ccf49cf2a&amp;type=3#Active Icon&apos;);">
+                    <ui:VisualElement name="Icon" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="MenuIconAbsoluteContainer" class="icon-container2" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+                <ui:VisualElement name="MenuIconWrapper" class="icon-container" style="background-image: url(&apos;project://database/Assets/_Main/Graphics/Sprites/Modern%20User%20Interface/Modern_UI_Style_1.png?fileID=-12497140&amp;guid=1a4d1f89522da874c8a9331ccf49cf2a&amp;type=3#Active Icon&apos;);">
+                    <ui:VisualElement name="Icon" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="MenuContent" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

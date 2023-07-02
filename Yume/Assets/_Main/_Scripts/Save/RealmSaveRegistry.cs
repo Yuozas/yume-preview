@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using System;
 
 public class RealmSaveRegistry
 {
@@ -14,7 +15,7 @@ public class RealmSaveRegistry
         using var globalRealm = _realmContext.GetGlobalRealm();
         var newSave = new RealmSaveDetails
         {
-            SaveId = DateTimeOffset.UtcNow.ToUnixTimeSeconds(),
+            SaveId = ObjectId.GenerateNewId().ToString(),
             DisplayName = saveName,
             Date = DateTime.UtcNow,
             IsVisible = true
@@ -23,7 +24,7 @@ public class RealmSaveRegistry
         ChangeActiveSave(newSave);
     }
 
-    public void DeleteSave(long saveId)
+    public void DeleteSave(string saveId)
     {
         using var globalRealm = _realmContext.GetGlobalRealm();
         globalRealm.TryWriteUpdate<RealmSaveDetails>(saveId, realmSaveDetails =>
@@ -32,7 +33,7 @@ public class RealmSaveRegistry
         });
     }
 
-    public void CopySave(long saveId)
+    public void CopySave(string saveId)
     {
         using var globalRealm = _realmContext.GetGlobalRealm();
 
@@ -41,7 +42,7 @@ public class RealmSaveRegistry
 
         var newSave = new RealmSaveDetails
         {
-            SaveId = DateTimeOffset.UtcNow.ToUnixTimeSeconds(),
+            SaveId = ObjectId.GenerateNewId().ToString(),
             DisplayName = save.DisplayName,
             Date = DateTime.UtcNow
         };

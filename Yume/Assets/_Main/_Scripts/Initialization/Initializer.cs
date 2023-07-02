@@ -63,6 +63,23 @@ public class Initializer : IPreliminarySetup
         });
 
         ServiceLocator.SingletonRegistrator.Register(provider => new Decisions());
+        ServiceLocator.SingletonRegistrator.Register(provider =>
+        {
+            var prefab = Resources.Load<GameObject>("In-Game Menu Canvas");
+            var instantiated = Instantiator.InstantiateAndDontDestroy(prefab);
+            return instantiated.GetComponentInChildren<InGameMenuUserInterface>();
+        });
+        ServiceLocator.SingletonRegistrator.Register(provider =>
+        {
+            var prefab = Resources.Load<InGameMenuLaunchHandler>("In-game Menu Launcher"); 
+            return Instantiator.InstantiateAndDontDestroy(prefab);
+        });
+        ServiceLocator.SingletonRegistrator.Register(provider =>
+        {
+            var prefab = Resources.Load<GameObject>("Storage Canvas");
+            var instantiated = Instantiator.InstantiateAndDontDestroy(prefab);
+            return instantiated.GetComponentInChildren<BackpackAndStorageUserInterface>();
+        });
 
         var prefab = Resources.Load<DialoguesUserInterface>(DIALOGUE_PREFAB_FILE_NAME);
         Instantiator.InstantiateAndDontDestroy(prefab);

@@ -17,7 +17,7 @@ public class SceneInteractionExecutor
         SceneManager.sceneLoaded -= Execute;
     }
 
-    private void Execute(Scene scene, LoadSceneMode type)
+    private void Execute(UnityEngine.SceneManagement.Scene scene, LoadSceneMode type)
     {
         var scriptableObject = _scriptableObjects.FirstOrDefault(scriptable => scriptable.SceneName == scene.name);
         if (scriptableObject is not null)

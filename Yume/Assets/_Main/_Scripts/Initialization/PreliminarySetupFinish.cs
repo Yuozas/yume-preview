@@ -14,10 +14,11 @@ public class PreliminarySetupFinish : IPreliminarySetup
         using var realm = ServiceLocator.SingletonProvider.Get<IRealmContext>().GetGlobalRealm();
         if(realm.TryGet<DebuggingRealm>(out var debuggingRealm))
         {
-            if(debuggingRealm.SaveId is not 0)
+            using var activeRealmSaveDetails = ServiceLocator.GetSingleton<IRealmActiveSaveHelper>().GetActiveSaveDetails();
+            if(debuggingRealm.SaveDetails is not null && activeRealmSaveDetails.Result?.SaveId != debuggingRealm.SaveDetails?.SaveId)
             {
-                var realmSaveManager = ServiceLocator.SingletonProvider.Get<IRealmSaveManager>();
-                realmSaveManager.ChangeActiveSave(debuggingRealm.SaveId);
+                var realmSaveManager = ServiceLocator.SingletonProvider.Get<IRealmActiveSaveHelper>();
+                realmSaveManager.ChangeActiveSave(debuggingRealm.SaveDetails.SaveId);
             }
             if(debuggingRealm.SceneName != SceneManager.GetActiveScene().name)
             {
@@ -26,7 +27,6 @@ public class PreliminarySetupFinish : IPreliminarySetup
             }
         }
 
-        var sceneDataHandler = ServiceLocator.SingletonProvider.Get<SceneDataHandler>();
-        SceneManager.LoadScene(sceneDataHandler.MainMenuSceneName, LoadSceneMode.Single);
+        SceneManager.LoadScene(Scene.MainMenuScene.Name, LoadSceneMode.Single);
     }
 }

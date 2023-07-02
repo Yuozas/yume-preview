@@ -1,82 +1,49 @@
-﻿using FastDeepCloner;
-using Realms;
-using System;
-using System.Linq;
+﻿using UnityEngine;
 
 public class RealmSaveManager : IRealmSaveManager
 {
-    private readonly IRealmContext _realmContext;
     private readonly RealmSaveRegistry _realmSaveRegistry;
-    private readonly CharacterDataHandler _characterDataHandler;
+    private readonly ICreateStorageHelper _createStorageHelper;
+    private readonly IRealmActiveSaveHelper _realmActiveSaveHelper;
 
-    public RealmSaveManager(IRealmContext realmContext, RealmSaveRegistry realmSaveRegistry, 
-        CharacterDataHandler characterDataHandler)
+    public RealmSaveManager(RealmSaveRegistry realmSaveRegistry, ICreateStorageHelper createStorageHelper, 
+        IRealmActiveSaveHelper realmActiveSaveHelper)
     {
-        _realmContext = realmContext;
         _realmSaveRegistry = realmSaveRegistry;
-        _characterDataHandler = characterDataHandler;
+        _createStorageHelper = createStorageHelper;
+        _realmActiveSaveHelper = realmActiveSaveHelper;
     }
 
-    public void CreateNewSave(int characterId)
+    public void CreateNewSave(CharacterRealmObject character)
     {
-        var character = _characterDataHandler.GetCharacterData(characterId);
-        if(character.Type is not DefaultCharacterData.MAIN_TYPE)
-            throw new ArgumentException("Only main characters can be used to create a new save");
         _realmSaveRegistry.CreateNewSave($"{character.Name}'s little story.");
 
-        using var realm = GetActiveSave();
-        realm.WriteAdd(new PlayerDetails()
-        {
-            CharacterId = character.Id,
-            SceneName = character.SceneName
-        });
+        using var realm = _realmActiveSaveHelper.GetActiveSave();
+        using var transaction = realm.BeginWrite();
+        realm.Add(character);
+        realm.Add(new ActiveCharacer { Character = character });
+        _createStorageHelper.CreateStorageForCharacter(realm, GetDemoStorage());
+
+        transaction.Commit();
     }
 
-    public void DeleteSave(long saveId)
+    public void DeleteSave(string saveId)
     {
         _realmSaveRegistry.DeleteSave(saveId);
     }
 
-    public void CopySave(long saveId)
+    public void CopySave(string saveId)
     {
         _realmSaveRegistry.CopySave(saveId);
     }
 
-    public bool AnySaveExists()
+    // Todo. Refactor. This should not be here.
+    private StorageScriptableObject GetDemoStorage()
     {
-        using var realm = _realmContext.GetGlobalRealm();
-        return realm.All<RealmSaveDetails>().Any(s => s.IsVisible);
-    }
-
-    /// <exception cref="ArgumentException">No active save found.</exception>
-    public Realm GetActiveSave()
-    {
-        using var activeSaveDetails = GetActiveSaveDetails();
-        return activeSaveDetails is null
-            ? throw new ArgumentException("No active save found.")
-            : _realmContext.GetRealm(activeSaveDetails.Result.SaveId.ToString());
-    }
-
-    public void ChangeActiveSave(long saveId)
-    {
-        using var globalRealm = _realmContext.GetGlobalRealm();
-        var save = globalRealm.Find<RealmSaveDetails>(saveId);
-        ChangeActiveSave(save);
-    }
-
-    public void ChangeActiveSave(RealmSaveDetails realmSave)
-    {
-        _realmSaveRegistry.ChangeActiveSave(realmSave);
-    }
-
-    public RealmSaveDetails[] GetAllSaveDetails()
-    {
-        using var globalRealm = _realmContext.GetGlobalRealm();
-        return globalRealm.All<RealmSaveDetails>().ToArray().Select(save => save.Clone()).ToArray();
-    }
-
-    public RealmResult<RealmSaveDetails> GetActiveSaveDetails()
-    {
-        return _realmSaveRegistry.GetActiveSaveDetails()?.Result.ActiveSaveDetails;
+        var demoBackpack = ScriptableObject.CreateInstance<StorageScriptableObject>();
+        demoBackpack.Id = "1";
+        demoBackpack.Name = "Demo Backpack";
+        demoBackpack.Slots = 10;
+        return demoBackpack;
     }
 }

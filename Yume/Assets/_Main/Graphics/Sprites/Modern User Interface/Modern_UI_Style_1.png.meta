@@ -464,7 +464,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_UI_Style_1_17
+      name: Slider Down
       rect:
         serializedVersion: 2
         x: 374
@@ -800,7 +800,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_UI_Style_1_33
+      name: Sub Frame 2
       rect:
         serializedVersion: 2
         x: 60
@@ -809,7 +809,7 @@ TextureImporter:
         height: 22
       alignment: 7
       pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 1, y: 1, z: 1, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1136,7 +1136,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_UI_Style_1_49
+      name: Slider Up
       rect:
         serializedVersion: 2
         x: 374
@@ -6269,7 +6269,7 @@ TextureImporter:
         height: 26
       alignment: 7
       pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 5, y: 3, z: 5, w: 7}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -18310,7 +18310,6 @@ TextureImporter:
       Modern_UI_Style_1_167: -2127290737
       Modern_UI_Style_1_168: 2058036140
       Modern_UI_Style_1_169: 6548619
-      Modern_UI_Style_1_17: 1618229976
       Modern_UI_Style_1_170: 1348751888
       Modern_UI_Style_1_171: 1911882727
       Modern_UI_Style_1_172: 1304481486
@@ -18482,7 +18481,6 @@ TextureImporter:
       Modern_UI_Style_1_327: 1693828847
       Modern_UI_Style_1_328: 422174131
       Modern_UI_Style_1_329: -1274953401
-      Modern_UI_Style_1_33: 1685838651
       Modern_UI_Style_1_330: -1794707861
       Modern_UI_Style_1_331: 794054063
       Modern_UI_Style_1_332: 13720278
@@ -18656,7 +18654,6 @@ TextureImporter:
       Modern_UI_Style_1_487: -1112730622
       Modern_UI_Style_1_488: -393205469
       Modern_UI_Style_1_489: -291488593
-      Modern_UI_Style_1_49: -86736655
       Modern_UI_Style_1_490: 2103142728
       Modern_UI_Style_1_491: 1313189875
       Modern_UI_Style_1_492: -176344299
@@ -19077,9 +19074,12 @@ TextureImporter:
       Scrollbar: 1169080930
       Search Input: -875630578
       Settings: 726841540
+      Slider Down: 1618229976
+      Slider Up: -86736655
       Small cursor: 811161382
       Star: -1773562576
       Sub Frame: 813368477
+      Sub Frame 2: 1685838651
       Yellow button: 209420594
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

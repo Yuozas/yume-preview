@@ -10,7 +10,7 @@ public static class PreliminarySetup
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
     public static async void Setup()
     {
-        if(SceneManager.GetActiveScene().buildIndex is not 0)
+        if(Application.isPlaying && SceneManager.GetActiveScene().buildIndex is not 0)
         {
             await SceneManager.LoadSceneAsync(0);
             ClearConsole();

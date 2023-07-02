@@ -13,15 +13,15 @@ public class ServiceRegistrator : IPreliminarySetup
     {
         ServiceLocator.SingletonRegistrator
             .Register<IRealmContext, RealmContext>()
-            .Register<IRealmSaveManager, RealmSaveManager>(serviceProvider =>
-            {
-                var realmContext = serviceProvider.Get<IRealmContext>();
-                var characterDataHandler = serviceProvider.Get<CharacterDataHandler>();
-                var realmSaveRegistry = new RealmSaveRegistry(realmContext);
-                return new RealmSaveManager(realmContext, realmSaveRegistry, characterDataHandler);
-            })
-            .Register<CharacterDataHandler>()
-            .Register<SceneDataHandler>()
-            .Register<ISceneHelper, SceneHelper>();
+            .Register<RealmSaveRegistry>()
+            .Register<IRealmSaveManager, RealmSaveManager>()
+            .Register<ISceneHelper, SceneHelper>()
+            .Register<ICreateStorageHelper, CreateStorageHelper>()
+            .Register<IStorageItemHelper, StorageItemHelper>()
+            .Register<IRealmActiveSaveHelper, RealmActiveSaveHelper>()
+            .Register<IRealmSaveReadHelper, RealmSaveReadHelper>()
+            .Register<IActiveCharacterHelper, ActiveCharacterHelper>()
+            .Register<IStorageReadHelper, StorageReadHelper>()
+            .Register<IStorageManager, StorageManager>();
     }
 }

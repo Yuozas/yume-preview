@@ -5,14 +5,12 @@ using UnityEngine.UIElements;
 
 public class MainMenuUserInterface : MonoBehaviour
 {
-    private IRealmSaveManager _saveManager;
-    private SceneDataHandler _sceneDataHandler;
     private VisualElement _buttonWrapper;
+    private IRealmSaveReadHelper _realmSaveReadHelper;
 
     private void Awake()
     {
-        _saveManager = ServiceLocator.SingletonProvider.Get<IRealmSaveManager>();
-        _sceneDataHandler = ServiceLocator.SingletonProvider.Get<SceneDataHandler>();
+        _realmSaveReadHelper = ServiceLocator.GetSingleton<IRealmSaveReadHelper>(); 
 
         var root = GetComponent<UIDocument>().rootVisualElement;
         var body = root.Q<VisualElement>("Body");
@@ -32,13 +30,13 @@ public class MainMenuUserInterface : MonoBehaviour
 
     private void TriggerNewGame()
     {
-        SceneManager.LoadScene(_sceneDataHandler.NewGameSceneName, LoadSceneMode.Single);
+        SceneManager.LoadScene(Scene.NewGameScene.Name, LoadSceneMode.Single);
     }
 
     private void SetupContinueButton()
     {
         var continueButton = _buttonWrapper.Q<Button>("ContinueButton");
-        if (_saveManager.AnySaveExists())
+        if (_realmSaveReadHelper.AnySaveExists())
         {
             continueButton.clicked += TriggerContinue;
             return;
@@ -49,7 +47,7 @@ public class MainMenuUserInterface : MonoBehaviour
 
     private void TriggerContinue()
     {
-        SceneManager.LoadScene(_sceneDataHandler.ContinueSceneName, LoadSceneMode.Single);
+        SceneManager.LoadScene(Scene.ContinueScene.Name, LoadSceneMode.Single);
     }
 
     private void SetupSettingsButton()
@@ -60,7 +58,7 @@ public class MainMenuUserInterface : MonoBehaviour
 
     private void TriggerSettings()
     {
-        SceneManager.LoadScene(_sceneDataHandler.SettingsSceneName, LoadSceneMode.Single);
+        SceneManager.LoadScene(Scene.SettingsScene.Name, LoadSceneMode.Single);
     }
 
     private void SetupQuitGameButton()
