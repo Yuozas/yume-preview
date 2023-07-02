@@ -52,7 +52,7 @@ public abstract class StorageUserInterfaceScriptableObject : StorageElementUserI
         scrollView.horizontalScrollerVisibility = ScrollerVisibility.Hidden;
     }
 
-    protected void SetupSlots(VisualElement slotContainer, IQueryable<StorageSlot> slots)
+    protected void SetupSlots(VisualElement slotContainer, StorageSlot[] slots)
     {
         var visualSlots = slots.Select(SetupSlot).ToArray();
         foreach (var slot in visualSlots)

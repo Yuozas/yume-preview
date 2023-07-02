@@ -7,8 +7,8 @@ using UnityEngine.UIElements;
 [CreateAssetMenu(menuName = "Multiple Storage")]
 public class TwoStorageUserInterfaceScriptableObject : StorageUserInterfaceScriptableObject
 {
-    private IQueryable<StorageSlot> FirstSavedSlots { get; set; }
-    private IQueryable<StorageSlot> SecondSavedSlots { get; set; }
+    private StorageSlot[] FirstSavedSlots { get; set; }
+    private StorageSlot[] SecondSavedSlots { get; set; }
     private Action<StorageSlot> SlotClickedAction { get; set; }
 
     protected override bool MultipleContents => true;
@@ -27,12 +27,12 @@ public class TwoStorageUserInterfaceScriptableObject : StorageUserInterfaceScrip
 
     public void SetupFirstSavedSlots(IQueryable<StorageSlot> slots)
     {
-        FirstSavedSlots = slots;
+        FirstSavedSlots = slots.GetDetatched();
     }
 
     public void SetupSecondSavedSlots(IQueryable<StorageSlot> slots)
     {
-        SecondSavedSlots = slots;
+        SecondSavedSlots = slots.GetDetatched();
     }
 
     public void SetupOnSlotClick(Action<StorageSlot> clickedStorageSlot)
@@ -56,7 +56,7 @@ public class TwoStorageUserInterfaceScriptableObject : StorageUserInterfaceScrip
         SlotClickedAction(storageSlot);
     }
 
-    private void Setup(ScrollView scrollView, IQueryable<StorageSlot> slots)
+    private void Setup(ScrollView scrollView, StorageSlot[] slots)
     {
         var slotContainer = GetSlotContainer();
         SetupScrollView(scrollView, slotContainer);

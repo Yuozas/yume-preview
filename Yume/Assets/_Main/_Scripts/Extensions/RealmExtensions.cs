@@ -1,9 +1,19 @@
+using FastDeepCloner;
 using Realms;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 public static class RealmExtensions
 {
+    public static T[] GetDetatched<T>(this IQueryable<T> values) where T : RealmObject
+    {
+        var result = new List<T>();
+        foreach(var value in values)
+            result.Add(value.Clone(FieldType.PropertyInfo));
+        return result.ToArray();
+    }
+
     public static T Get<T>(this Realm realm) 
         where T : RealmObject
     {

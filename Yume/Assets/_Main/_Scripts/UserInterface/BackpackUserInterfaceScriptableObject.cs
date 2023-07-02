@@ -1,4 +1,5 @@
 ﻿using SwiftLocator.Services.ServiceLocatorServices;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -14,6 +15,7 @@ public class BackpackUserInterfaceScriptableObject : StorageUserInterfaceScripta
         SetupScrollView(scrollView, slotContainer);
 
         using var backpack = ServiceLocator.GetSingleton<IActiveCharacterHelper>().GetBackpack();
-        SetupSlots(slotContainer, backpack.Result.StorageSlots);
+        var backpackArray = backpack.Result.StorageSlots.GetDetatched();
+        SetupSlots(slotContainer, backpackArray);
     }
 }
