@@ -1,8 +1,10 @@
+using SwiftLocator.Services.ServiceLocatorServices;
 using UnityEngine;
 
 public class Npc : Entity, IInteractable
 {
     [Header("References")]
+    [SerializeField] private ItemScriptableObject _item;
     [SerializeField] private InteractionScriptableObject _interaction;
     [SerializeField] private InteractionScriptableObject _giveInteraction;
     [SerializeField] private InteractionScriptableObject _goAwayInteraction;
@@ -15,6 +17,17 @@ public class Npc : Entity, IInteractable
         return _interaction is not null;
     }
 
+    private void OnEnable()
+    {
+        _obtainedLockPick.Event += AddItemToBackpack;
+    }
+
+    private void OnDisable()
+    {
+
+        _obtainedLockPick.Event -= AddItemToBackpack;
+    }
+
     public void Interact()
     {
         if (_obtainedLockPick.Invoked)
@@ -23,5 +36,12 @@ public class Npc : Entity, IInteractable
             _giveInteraction.Interact();
         else
             _interaction.Interact();
+    }
+
+    private void AddItemToBackpack()
+    {
+        if (_item == null)
+            return;
+        ServiceLocator.GetSingleton<IStorageItemHelper>().TryAddItemToBackpack(_item);
     }
 }
