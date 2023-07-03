@@ -62,15 +62,13 @@ public abstract class StorageUserInterfaceScriptableObject : StorageElementUserI
         if (storageSlot.Item is null)
             return slot;
 
-        var image = storageSlot.Item.ItemIcon?.ConvertByteArrayToSprite();
+        var image = Resources.Load<Sprite>(storageSlot.Item.IconPath);
+
         var itemBackgroundImage = ItemImage.style.backgroundImage = image == null
             ? null
             : new StyleBackground(image);
 
         slot.AddManipulator(new Clickable(() => OnSlotClicked(slot, storageSlot, itemBackgroundImage)));
-
-        var texture = new Texture2D(2, 2);
-        texture.LoadImage(storageSlot.Item.ItemIcon);
 
         var slotItem = slot.Q<VisualElement>("SlotItem");
         slotItem.style.backgroundImage = itemBackgroundImage;

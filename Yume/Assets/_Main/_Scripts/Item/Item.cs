@@ -7,7 +7,7 @@ public class Item : RealmObject
     public string Id { get; set; }
     public string Name { get; set; }
     public string Description { get; set; }
-    public byte[] ItemIcon { get; set; }
+    public string IconPath { get; set; }
 
     [Backlink(nameof(StorageSlot.Item))]
     public IQueryable<StorageSlot> StorageSlots { get; }

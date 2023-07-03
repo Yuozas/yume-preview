@@ -37,7 +37,7 @@ public class Pickupable : MonoBehaviour, IInteractable
     private void AddToInventoryAndSelfDestroy()
     {
         // Todo. Should notify user if backpack is full. Otherwise throw.
-        if(!ServiceLocator.SingletonProvider.Get<IStorageItemHelper>().TryAddItemToBackpack(_item))
+        if(_item != null && !ServiceLocator.SingletonProvider.Get<IStorageItemHelper>().TryAddItemToBackpack(_item))
             Debug.LogWarning($"Failed to add {_item.name} to backpack");
 
         SelfDestroy();
