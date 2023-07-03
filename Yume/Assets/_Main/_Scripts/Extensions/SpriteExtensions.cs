@@ -1,6 +1,6 @@
-using UnityEngine;
-using System;
 using UnityEditor;
+using System;
+using UnityEngine;
 
 public static class SpriteExtensions
 {
@@ -16,6 +16,13 @@ public static class SpriteExtensions
             _ => throw new Exception("The string path does not contain the 'Resources/' segment.")
         };
 
-        return path[startIndex..];
+        var result = path[startIndex..];
+
+        // Remove the file extension
+        var lastDotIndex = result.LastIndexOf('.');
+        if (lastDotIndex >= 0)
+            result = result[..lastDotIndex];
+
+        return result;
     }
 }
