@@ -88,5 +88,6 @@ public class Initializer : IPreliminarySetup
         _ = new SceneInteractionExecutor(interactions);
 
         ServiceLocator.SingletonRegistrator.Register(provider => new SliderGame());
+        ServiceLocator.SingletonRegistrator.Register(provider => new Journal());
     }
 }
