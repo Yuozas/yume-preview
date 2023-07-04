@@ -35,6 +35,7 @@ MonoBehaviour:
   - rid: 4986929597601546870
   - rid: 4986929597601546873
   - rid: 4986929597601546876
+  - rid: 4986929651826557017
   references:
     version: 2
     RefIds:
@@ -166,6 +167,27 @@ MonoBehaviour:
         Settings:
           Sentence: Thanks!
           Rate: 0.036
+    - rid: 4986929651826557017
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929651826557018
+        Position: {x: -38, y: 502}
+    - rid: 4986929651826557018
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Invoke Scriptable Object Event
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 4986929651826557019
+    - rid: 4986929651826557019
+      type: {class: InvokeScriptableObjectEventCommand, ns: , asm: Assembly-CSharp}
+      data:
+        EventScriptableObject: {fileID: 11400000, guid: 9f550d877309d8543b772a931ca5aebe, type: 2}
     - rid: 8981177211230355745
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
@@ -185,6 +207,7 @@ MonoBehaviour:
           - rid: 8981177211230355773
           - rid: 8981177211230355793
           - rid: 8981177242252476555
+          - rid: 4986929651826557018
         _wait: 0
         <Executable>k__BackingField:
           rid: -2

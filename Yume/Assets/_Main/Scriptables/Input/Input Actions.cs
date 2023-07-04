@@ -44,6 +44,15 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Quests"",
+                    ""type"": ""Button"",
+                    ""id"": ""aea4a1ca-7248-4acf-a111-44e3cf57c364"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -110,6 +119,17 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
                     ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c1f7dada-0a2d-450a-8bbf-61a829bff5e4"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Quests"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -430,6 +450,34 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""BrowsingQuests"",
+            ""id"": ""c26f10ed-4b45-4c90-bf65-b7321dd44f0a"",
+            ""actions"": [
+                {
+                    ""name"": ""Quit"",
+                    ""type"": ""Button"",
+                    ""id"": ""ba077e33-f916-47a6-b7c5-88b02021370e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""23077b5e-8ab3-4df4-bafd-4e06e4815b07"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Quit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -450,6 +498,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_Walking = asset.FindActionMap("Walking", throwIfNotFound: true);
         m_Walking_Movement = m_Walking.FindAction("Movement", throwIfNotFound: true);
         m_Walking_Interact = m_Walking.FindAction("Interact", throwIfNotFound: true);
+        m_Walking_Quests = m_Walking.FindAction("Quests", throwIfNotFound: true);
         // Talking
         m_Talking = asset.FindActionMap("Talking", throwIfNotFound: true);
         m_Talking_Interact = m_Talking.FindAction("Interact", throwIfNotFound: true);
@@ -477,6 +526,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_Storage = asset.FindActionMap("Storage", throwIfNotFound: true);
         m_Storage_Exit = m_Storage.FindAction("Exit ", throwIfNotFound: true);
         m_Storage_Move = m_Storage.FindAction("Move", throwIfNotFound: true);
+        // BrowsingQuests
+        m_BrowsingQuests = asset.FindActionMap("BrowsingQuests", throwIfNotFound: true);
+        m_BrowsingQuests_Quit = m_BrowsingQuests.FindAction("Quit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -540,12 +592,14 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private List<IWalkingActions> m_WalkingActionsCallbackInterfaces = new List<IWalkingActions>();
     private readonly InputAction m_Walking_Movement;
     private readonly InputAction m_Walking_Interact;
+    private readonly InputAction m_Walking_Quests;
     public struct WalkingActions
     {
         private @InputActions m_Wrapper;
         public WalkingActions(@InputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Walking_Movement;
         public InputAction @Interact => m_Wrapper.m_Walking_Interact;
+        public InputAction @Quests => m_Wrapper.m_Walking_Quests;
         public InputActionMap Get() { return m_Wrapper.m_Walking; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -561,6 +615,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
+            @Quests.started += instance.OnQuests;
+            @Quests.performed += instance.OnQuests;
+            @Quests.canceled += instance.OnQuests;
         }
 
         private void UnregisterCallbacks(IWalkingActions instance)
@@ -571,6 +628,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
+            @Quests.started -= instance.OnQuests;
+            @Quests.performed -= instance.OnQuests;
+            @Quests.canceled -= instance.OnQuests;
         }
 
         public void RemoveCallbacks(IWalkingActions instance)
@@ -958,6 +1018,52 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         }
     }
     public StorageActions @Storage => new StorageActions(this);
+
+    // BrowsingQuests
+    private readonly InputActionMap m_BrowsingQuests;
+    private List<IBrowsingQuestsActions> m_BrowsingQuestsActionsCallbackInterfaces = new List<IBrowsingQuestsActions>();
+    private readonly InputAction m_BrowsingQuests_Quit;
+    public struct BrowsingQuestsActions
+    {
+        private @InputActions m_Wrapper;
+        public BrowsingQuestsActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Quit => m_Wrapper.m_BrowsingQuests_Quit;
+        public InputActionMap Get() { return m_Wrapper.m_BrowsingQuests; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(BrowsingQuestsActions set) { return set.Get(); }
+        public void AddCallbacks(IBrowsingQuestsActions instance)
+        {
+            if (instance == null || m_Wrapper.m_BrowsingQuestsActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_BrowsingQuestsActionsCallbackInterfaces.Add(instance);
+            @Quit.started += instance.OnQuit;
+            @Quit.performed += instance.OnQuit;
+            @Quit.canceled += instance.OnQuit;
+        }
+
+        private void UnregisterCallbacks(IBrowsingQuestsActions instance)
+        {
+            @Quit.started -= instance.OnQuit;
+            @Quit.performed -= instance.OnQuit;
+            @Quit.canceled -= instance.OnQuit;
+        }
+
+        public void RemoveCallbacks(IBrowsingQuestsActions instance)
+        {
+            if (m_Wrapper.m_BrowsingQuestsActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IBrowsingQuestsActions instance)
+        {
+            foreach (var item in m_Wrapper.m_BrowsingQuestsActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_BrowsingQuestsActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public BrowsingQuestsActions @BrowsingQuests => new BrowsingQuestsActions(this);
     private int m_KeyboardSchemeIndex = -1;
     public InputControlScheme KeyboardScheme
     {
@@ -971,6 +1077,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnQuests(InputAction.CallbackContext context);
     }
     public interface ITalkingActions
     {
@@ -1005,5 +1112,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     {
         void OnExit(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
+    }
+    public interface IBrowsingQuestsActions
+    {
+        void OnQuit(InputAction.CallbackContext context);
     }
 }

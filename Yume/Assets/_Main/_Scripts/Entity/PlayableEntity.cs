@@ -16,6 +16,7 @@ public class PlayableEntity : Entity, ITransitionable
     private DialogueResolver _dialogueResolver;
     private Decisions _decisions;
     private SliderGame _slider;
+    private Quests _quests;
 
     protected override void Awake()
     {
@@ -26,6 +27,7 @@ public class PlayableEntity : Entity, ITransitionable
         _decisions = ServiceLocator.GetSingleton<Decisions>();
         _dialogueResolver = ServiceLocator.GetSingleton<DialogueResolver>();
         _slider = ServiceLocator.GetSingleton<SliderGame>();
+        _quests = ServiceLocator.GetSingleton<Quests>();
 
         _characterResolver = ServiceLocator.GetSingleton<InSceneCharacter>();
         _characterResolver.Set(this);
@@ -85,6 +87,7 @@ public class PlayableEntity : Entity, ITransitionable
             [ToTalking] = typeof(Talking),
             [ToChoosing] = typeof(Choosing),
             [ToSlider] = typeof(PlayingSliderGame),
+            [ToBrowsingQuests] = typeof(BrowsingQuests),
         };
 
         var choosingTransitions = new Dictionary<Func<bool>, Type>()
@@ -101,12 +104,18 @@ public class PlayableEntity : Entity, ITransitionable
             [ToChoosing] = typeof(Choosing)
         };
 
+        var browsingQuestsTransitions = new Dictionary<Func<bool>, Type>()
+        {
+            [ToWalking] = typeof(Walking),
+        };
+
         var states = new IState[]
         {
             new Walking(_input.Walking, movement, _direction, interaction, walkingTransitions),
             new Choosing(_input.Choosing, choosingTransitions),
             new PlayingSliderGame(_input.Slider, sliderGameTransitions),
-            new Talking(_input.Talking, talkingTransitions)
+            new Talking(_input.Talking, talkingTransitions),
+            new BrowsingQuests(_input.BrowsingQuests, browsingQuestsTransitions)
         };
 
         _states = new States(states);
@@ -115,12 +124,17 @@ public class PlayableEntity : Entity, ITransitionable
     private bool ToWalking()
     {
         var dialogues = _dialogueResolver.Resolve();
-        return dialogues.All(dialogue => !dialogue.Toggler.Enabled) && !_decisions.Toggler.Enabled && !_slider.Toggler.Enabled;
+        return dialogues.All(dialogue => !dialogue.Toggler.Enabled) && !_decisions.Toggler.Enabled && !_slider.Toggler.Enabled && !_quests.Toggler.Enabled;
     }
 
     private bool ToSlider()
     {
         return _slider.Toggler.Enabled;
+    }
+
+    private bool ToBrowsingQuests()
+    {
+        return _quests.Toggler.Enabled;
     }
 
     private bool ToTalking()

@@ -22,6 +22,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Quests",
+                    "type": "Button",
+                    "id": "aea4a1ca-7248-4acf-a111-44e3cf57c364",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -88,6 +97,17 @@
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c1f7dada-0a2d-450a-8bbf-61a829bff5e4",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Quests",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -404,6 +424,34 @@
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "BrowsingQuests",
+            "id": "c26f10ed-4b45-4c90-bf65-b7321dd44f0a",
+            "actions": [
+                {
+                    "name": "Quit",
+                    "type": "Button",
+                    "id": "ba077e33-f916-47a6-b7c5-88b02021370e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "23077b5e-8ab3-4df4-bafd-4e06e4815b07",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Quit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

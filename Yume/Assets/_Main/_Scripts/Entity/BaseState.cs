@@ -3,20 +3,20 @@ using System;
 
 public class BaseState
 {
-    protected readonly Dictionary<Func<bool>, Type> _transitions;
-    protected States _states;
+    protected readonly Dictionary<Func<bool>, Type> Transitions;
+    protected States States;
 
     public BaseState(Dictionary<Func<bool>, Type> transitions)
     {
-        _transitions = transitions;
+        Transitions = transitions;
     }
 
     public bool TryTransition()
     {
-        foreach (var transition in _transitions)
+        foreach (var transition in Transitions)
             if (transition.Key())
             {
-                _states.Set(transition.Value);
+                States.Set(transition.Value);
                 return true;
             }
 
@@ -25,6 +25,6 @@ public class BaseState
 
     public void Set(States states)
     {
-        _states = states;
+        States = states;
     }
 }

@@ -71,7 +71,7 @@ public class Initializer : IPreliminarySetup
         });
         ServiceLocator.SingletonRegistrator.Register(provider =>
         {
-            var prefab = Resources.Load<InGameMenuLaunchHandler>("In-game Menu Launcher"); 
+            var prefab = Resources.Load<InGameMenuLaunchHandler>("In-game Menu Launcher");
             return Instantiator.InstantiateAndDontDestroy(prefab);
         });
         ServiceLocator.SingletonRegistrator.Register(provider =>
@@ -88,6 +88,17 @@ public class Initializer : IPreliminarySetup
         _ = new SceneInteractionExecutor(interactions);
 
         ServiceLocator.SingletonRegistrator.Register(provider => new SliderGame());
-        ServiceLocator.SingletonRegistrator.Register(provider => new Journal());
+        ServiceLocator.SingletonRegistrator.Register(provider =>
+        {
+            var introductionsQuest = Resources.Load<QuestScriptableObject>("Introductions_Quest");
+            var tiresQuest = Resources.Load<QuestScriptableObject>("Tire_Quest");
+            return new Quests(introductionsQuest, tiresQuest);
+        });
+
+        ServiceLocator.SingletonRegistrator.Register(provider =>
+        {
+            var prefab = Resources.Load<QuestsUserInterface>("QuestsUserInterface");
+            return Instantiator.InstantiateAndDontDestroy(prefab);
+        });
     }
 }
