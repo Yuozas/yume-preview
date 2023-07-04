@@ -111,7 +111,10 @@ public static class RealmExtensions
         action();
 
         if (!hasOwnTransaction)
+        {
             newTransaction.Commit();
+            newTransaction.Dispose();
+        }
     }
 
     public static Transaction StartTransaction(this Realm realm)

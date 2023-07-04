@@ -27,6 +27,20 @@ public class StorageItemHelper : IStorageItemHelper
         return TryAddItemToStorage(item, firstEmptySlot, activeRealm);
     }
 
+    public bool TryAddItemToStorage(Item item, Storage storage)
+    {
+        if (item is null)
+            return false;
+
+        using var activeRealm = _realmActiveSaveHelper.GetActiveSave();
+
+        var firstEmptySlot = storage.StorageSlots.FirstOrDefault(s => s.Item == null);
+        if (firstEmptySlot is null)
+            return false;
+
+        return TryAddItemToStorage(item, firstEmptySlot, activeRealm);
+    }
+
     public bool TryAddItemToBackpack(Item item, int slotIndex)
     {
         if (item is null)
@@ -46,22 +60,30 @@ public class StorageItemHelper : IStorageItemHelper
         return TryAddItemToStorage(item, slot, activeRealm);
     }
 
-    public void MoveFromTo(string storageIdFrom, string storageIdTo, Item item)
+    public bool TryMoveFromTo(string storageSlotIdFrom, string storageIdTo, Item item)
     {
         using var realm = _realmActiveSaveHelper.GetActiveSave();
-        var updatedStorageTo = realm.TryWriteUpdate<StorageSlot>(storageIdTo, to =>
+        using var transaction = realm.StartTransaction();
+
+        if (!realm.TryGet<Storage>(storageIdTo, out var storageTo))
+            throw new ArgumentException($"Invalid {storageIdTo} passed.");
+
+        if(!realm.TryGet<StorageSlot>(storageSlotIdFrom, out var fromSlot))
+            throw new ArgumentException($"Invalid {storageSlotIdFrom} passed.");
+
+        if(fromSlot.Item is null)
+            throw new ArgumentException($"Invalid slot passed no item.");
+
+        fromSlot.Item = null;
+
+        if (!TryAddItemToStorage(item, storageTo))
         {
-            if(!realm.TryGet<StorageSlot>(storageIdFrom, out var from))
-                throw new ArgumentException($"Invalid {storageIdFrom}");
-            else if(from.Item.Id != item.Id)
-                throw new ArgumentException($"Invalid {item.Id}");
+            transaction.Rollback();
+            return false;
+        }
 
-            from.Item = null;
-            to.Item = item;
-        });
-
-        if (!updatedStorageTo)
-            throw new ArgumentException($"Invalid {storageIdTo}");
+        transaction.Commit();
+        return true;
     }
 
     private Storage GetStorage(Realm activeRealm)
@@ -80,7 +102,7 @@ public class StorageItemHelper : IStorageItemHelper
         if (slot.Item is not null)
             return false;
 
-        activeRealm.Write(() =>
+        activeRealm.WriteSafe(() =>
         {
             activeRealm.Add(item, true);
             slot.Item = item;
