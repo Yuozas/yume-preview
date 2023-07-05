@@ -31,7 +31,7 @@ public class TransitionDestination : MonoBehaviour
 
     public void Transition(ITransitionable transitionable)
     {
-        transitionable.Transition(transform.position, _direction);
+        transitionable.SetPositionAndFacingDirection(transform.position, _direction);
     }
 
 #if UNITY_EDITOR

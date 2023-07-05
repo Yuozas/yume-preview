@@ -5,9 +5,9 @@ using UnityEngine;
 public class EventScriptableObject : ScriptableObject
 {
     public event Action Event;
-    public bool Invoked;
+    [NonSerialized] public bool Invoked;
 
-    public void Invoke()
+    public void InvokeEvent()
     {
         Event?.Invoke();
         Invoked = true;
