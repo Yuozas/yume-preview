@@ -8,11 +8,9 @@ public class SelectableQuestUserInterface : MonoBehaviour
     [SerializeField] private TMP_Text _text;
 
     public QuestScriptableObject Quest { get; private set; }
-    private QuestsUserInterface _quests;
 
-    public void Initialize(QuestsUserInterface quests, QuestScriptableObject quest)
+    public void Initialize(QuestScriptableObject quest)
     {
-        _quests = quests;
         Quest = quest;
         Quest.OnCompleted += UpdateVisualization;
 
@@ -22,11 +20,6 @@ public class SelectableQuestUserInterface : MonoBehaviour
     private void OnDestroy()
     {
         Quest.OnCompleted -= UpdateVisualization;
-    }
-
-    public void Button_Select()
-    {
-        _quests.Select(this);
     }
 
     private void UpdateVisualization()

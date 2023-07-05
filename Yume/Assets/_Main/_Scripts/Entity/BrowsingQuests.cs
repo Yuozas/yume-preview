@@ -19,18 +19,32 @@ public class BrowsingQuests : BaseState, IState
     {
         _actions.Enable();
         _actions.Quit.performed += DisableQuests;
+        _actions.Next.performed += Next;
+        _actions.Previous.performed += Previous;
     }
 
     public void Exit()
     {
         _actions.Disable();
         _actions.Quit.performed -= DisableQuests;
+        _actions.Next.performed -= Next;
+        _actions.Previous.performed -= Previous;
     }
 
     public void Tick()
     {
         if (TryTransition())
             return;
+    }
+
+    private void Next(InputAction.CallbackContext context)
+    {
+        _quests.Next();
+    }
+
+    private void Previous(InputAction.CallbackContext context)
+    {
+        _quests.Previous();
     }
 
     private void DisableQuests(InputAction.CallbackContext context)

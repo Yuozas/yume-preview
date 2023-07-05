@@ -100,5 +100,13 @@ public class Initializer : IPreliminarySetup
             var prefab = Resources.Load<QuestsUserInterface>("QuestsUserInterface");
             return Instantiator.InstantiateAndDontDestroy(prefab);
         });
+
+        ServiceLocator.SingletonRegistrator.Register(provider => new Notifications());
+
+        ServiceLocator.SingletonRegistrator.Register(provider =>
+        {
+            var prefab = Resources.Load<NotificationsUserInterface>("Notifications");
+            return Instantiator.InstantiateAndDontDestroy(prefab);
+        });
     }
 }

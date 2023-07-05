@@ -463,6 +463,24 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Next"",
+                    ""type"": ""Button"",
+                    ""id"": ""60554597-25e2-49a4-b72a-f4cd270c87da"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Previous"",
+                    ""type"": ""Button"",
+                    ""id"": ""4cd67b2d-479d-448e-aa2b-1b1bf6631faa"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -474,6 +492,28 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
                     ""action"": ""Quit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1510ca47-c05f-49a7-a324-b9b128e05783"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Next"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dfd73308-fd23-4bb1-8a27-7799c35c3aec"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Previous"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -529,6 +569,8 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         // BrowsingQuests
         m_BrowsingQuests = asset.FindActionMap("BrowsingQuests", throwIfNotFound: true);
         m_BrowsingQuests_Quit = m_BrowsingQuests.FindAction("Quit", throwIfNotFound: true);
+        m_BrowsingQuests_Next = m_BrowsingQuests.FindAction("Next", throwIfNotFound: true);
+        m_BrowsingQuests_Previous = m_BrowsingQuests.FindAction("Previous", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1023,11 +1065,15 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_BrowsingQuests;
     private List<IBrowsingQuestsActions> m_BrowsingQuestsActionsCallbackInterfaces = new List<IBrowsingQuestsActions>();
     private readonly InputAction m_BrowsingQuests_Quit;
+    private readonly InputAction m_BrowsingQuests_Next;
+    private readonly InputAction m_BrowsingQuests_Previous;
     public struct BrowsingQuestsActions
     {
         private @InputActions m_Wrapper;
         public BrowsingQuestsActions(@InputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Quit => m_Wrapper.m_BrowsingQuests_Quit;
+        public InputAction @Next => m_Wrapper.m_BrowsingQuests_Next;
+        public InputAction @Previous => m_Wrapper.m_BrowsingQuests_Previous;
         public InputActionMap Get() { return m_Wrapper.m_BrowsingQuests; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1040,6 +1086,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Quit.started += instance.OnQuit;
             @Quit.performed += instance.OnQuit;
             @Quit.canceled += instance.OnQuit;
+            @Next.started += instance.OnNext;
+            @Next.performed += instance.OnNext;
+            @Next.canceled += instance.OnNext;
+            @Previous.started += instance.OnPrevious;
+            @Previous.performed += instance.OnPrevious;
+            @Previous.canceled += instance.OnPrevious;
         }
 
         private void UnregisterCallbacks(IBrowsingQuestsActions instance)
@@ -1047,6 +1099,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Quit.started -= instance.OnQuit;
             @Quit.performed -= instance.OnQuit;
             @Quit.canceled -= instance.OnQuit;
+            @Next.started -= instance.OnNext;
+            @Next.performed -= instance.OnNext;
+            @Next.canceled -= instance.OnNext;
+            @Previous.started -= instance.OnPrevious;
+            @Previous.performed -= instance.OnPrevious;
+            @Previous.canceled -= instance.OnPrevious;
         }
 
         public void RemoveCallbacks(IBrowsingQuestsActions instance)
@@ -1116,5 +1174,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     public interface IBrowsingQuestsActions
     {
         void OnQuit(InputAction.CallbackContext context);
+        void OnNext(InputAction.CallbackContext context);
+        void OnPrevious(InputAction.CallbackContext context);
     }
 }

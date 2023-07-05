@@ -1,6 +1,7 @@
 using SwiftLocator.Services.ServiceLocatorServices;
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 public class QuestsUserInterface : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class QuestsUserInterface : MonoBehaviour
         _selectables = new();
         _quests = ServiceLocator.GetSingleton<Quests>();
         _quests.OnAdded += InstantiateAndAdd;
+        _quests.OnSelectedQuestIndexUpdated += SelectBasedOnIndex;
 
         _toggler = _quests.Toggler;
         Set(_toggler.Enabled);
@@ -32,7 +34,14 @@ public class QuestsUserInterface : MonoBehaviour
     private void OnDestroy()
     {
         _quests.OnAdded -= InstantiateAndAdd;
+        _quests.OnSelectedQuestIndexUpdated -= SelectBasedOnIndex;
         _toggler.OnUpdated -= Set;
+    }
+
+    private void SelectBasedOnIndex(int index)
+    {
+        var selectable = _selectables[index];
+        Select(selectable);
     }
 
     public void Select(SelectableQuestUserInterface selected)
@@ -70,7 +79,7 @@ public class QuestsUserInterface : MonoBehaviour
     private void InstantiateAndAdd(QuestScriptableObject entry)
     {
         var instantiated = Instantiate(_prefab, _holder);
-        instantiated.Initialize(this, entry);
+        instantiated.Initialize(entry);
 
         _selectables.Add(instantiated);
     }
