@@ -139,7 +139,7 @@ MonoBehaviour:
           Sentence: 'Could you repair the electricity panel? I will give you this
             lockpick
 
-            that I found in the trash-can.'
+            that I found in the bin.'
           Rate: 0.036
     - rid: 4986929597601546876
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}

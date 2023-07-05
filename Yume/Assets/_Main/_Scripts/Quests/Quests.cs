@@ -27,18 +27,18 @@ public class Quests
 
     public void Next()
     {
-        _index++;
-        if (_index >= _quests.Count)
-            _index = 0;
+        _index--;
+        if (_index < 0)
+            _index = _quests.Count - 1;
 
         OnSelectedQuestIndexUpdated?.Invoke(_index);
     }
 
     public void Previous()
     {
-        _index--;
-        if (_index < 0)
-            _index = _quests.Count - 1;
+        _index++;
+        if (_index >= _quests.Count)
+            _index = 0;
 
         OnSelectedQuestIndexUpdated?.Invoke(_index);
     }
@@ -50,6 +50,8 @@ public class Quests
         {
             _notifications.Add("Quests updated");
             _quests.Add(entry);
+            entry.Initialize();
+
             OnAdded?.Invoke(entry);
         }
     }
