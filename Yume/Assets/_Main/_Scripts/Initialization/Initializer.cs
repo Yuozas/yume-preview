@@ -104,7 +104,7 @@ public class Initializer : IPreliminarySetup
 
         ServiceLocator.SingletonRegistrator.Register(provider =>
         {
-            var prefab = Resources.Load<NotificationsUserInterface>("Notifications");
+            var prefab = Resources.Load<NotificationsUserInterface>("NotificationsUserInterface");
             return Instantiator.InstantiateAndDontDestroy(prefab);
         });
     }
