@@ -39,7 +39,7 @@ public class PlayableEntity : Entity, ITransitionable
 
         Physics2D.queriesStartInColliders = false;
 
-        AddStates(movement, interaction);
+        CreateAndAddStatesToStateMachine(movement, interaction);
     }
 
     private void OnDestroy()
@@ -67,46 +67,46 @@ public class PlayableEntity : Entity, ITransitionable
         _states.Tick();
     }
 
-    public void Transition(Vector3 position, Vector2 direction)
+    public void SetPositionAndFacingDirection(Vector3 position, Vector2 direction)
     {
         transform.position = position;
         SetDirection(direction);
     }
 
-    private void AddStates(Movement movement, MultipleInteractor interaction)
+    private void CreateAndAddStatesToStateMachine(Movement movement, MultipleInteractor interaction)
     {
         var talkingTransitions = new Dictionary<Func<bool>, Type>()
         {
-            [ToWalking] = typeof(Walking),
-            [ToChoosing] = typeof(Choosing),
-            [ToSlider] = typeof(PlayingSliderGame),
+            [ShouldTransitionToWalkingState] = typeof(Walking),
+            [ShouldTransitionToChoosingState] = typeof(Choosing),
+            [ShouldTransitionToSliderState] = typeof(PlayingSliderGame),
         };
 
         var walkingTransitions = new Dictionary<Func<bool>, Type>()
         {
-            [ToTalking] = typeof(Talking),
-            [ToChoosing] = typeof(Choosing),
-            [ToSlider] = typeof(PlayingSliderGame),
-            [ToBrowsingQuests] = typeof(BrowsingQuests),
+            [ShouldTransitionToTalkingState] = typeof(Talking),
+            [ShouldTransitionToChoosingState] = typeof(Choosing),
+            [ShouldTransitionToSliderState] = typeof(PlayingSliderGame),
+            [ShouldTransitionToBrowsingQuestsState] = typeof(BrowsingQuests),
         };
 
         var choosingTransitions = new Dictionary<Func<bool>, Type>()
         {
-            [ToTalking] = typeof(Talking),
-            [ToWalking] = typeof(Walking),
-            [ToSlider] = typeof(PlayingSliderGame),
+            [ShouldTransitionToTalkingState] = typeof(Talking),
+            [ShouldTransitionToWalkingState] = typeof(Walking),
+            [ShouldTransitionToSliderState] = typeof(PlayingSliderGame),
         };
 
         var sliderGameTransitions = new Dictionary<Func<bool>, Type>()
         {
-            [ToTalking] = typeof(Talking),
-            [ToWalking] = typeof(Walking),
-            [ToChoosing] = typeof(Choosing)
+            [ShouldTransitionToTalkingState] = typeof(Talking),
+            [ShouldTransitionToWalkingState] = typeof(Walking),
+            [ShouldTransitionToChoosingState] = typeof(Choosing)
         };
 
         var browsingQuestsTransitions = new Dictionary<Func<bool>, Type>()
         {
-            [ToWalking] = typeof(Walking),
+            [ShouldTransitionToWalkingState] = typeof(Walking),
         };
 
         var states = new IState[]
@@ -121,29 +121,29 @@ public class PlayableEntity : Entity, ITransitionable
         _states = new States(states);
     }
 
-    private bool ToWalking()
+    private bool ShouldTransitionToWalkingState()
     {
         var dialogues = _dialogueResolver.Resolve();
         return dialogues.All(dialogue => !dialogue.Toggler.Enabled) && !_decisions.Toggler.Enabled && !_slider.Toggler.Enabled && !_quests.Toggler.Enabled;
     }
 
-    private bool ToSlider()
+    private bool ShouldTransitionToSliderState()
     {
         return _slider.Toggler.Enabled;
     }
 
-    private bool ToBrowsingQuests()
+    private bool ShouldTransitionToBrowsingQuestsState()
     {
         return _quests.Toggler.Enabled;
     }
 
-    private bool ToTalking()
+    private bool ShouldTransitionToTalkingState()
     {
         var dialogues = _dialogueResolver.Resolve();
         return dialogues.Any(dialogue => dialogue.Toggler.Enabled) && !_decisions.Toggler.Enabled && !_slider.Toggler.Enabled;
     }
 
-    private bool ToChoosing()
+    private bool ShouldTransitionToChoosingState()
     {
         return _decisions.Toggler.Enabled && !_slider.Toggler.Enabled;
     }
