@@ -1,3 +1,4 @@
+using SwiftLocator.Services.ServiceLocatorServices;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -16,6 +17,7 @@ public class Quests
 
     public Quests(params QuestScriptableObject[] quests)
     {
+        _notifications = ServiceLocator.GetSingleton<Notifications>();
         _quests = quests.ToList();
         foreach (var entry in _quests)
             entry.Initialize();

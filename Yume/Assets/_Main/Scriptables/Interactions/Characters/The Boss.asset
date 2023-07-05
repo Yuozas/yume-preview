@@ -36,6 +36,7 @@ MonoBehaviour:
   - rid: 4986929597601546873
   - rid: 4986929597601546876
   - rid: 4986929651826557017
+  - rid: 4986929671791181847
   references:
     version: 2
     RefIds:
@@ -157,6 +158,7 @@ MonoBehaviour:
           - rid: 8981177380004430034
           - rid: 8981177264092741678
           - rid: 8981177211230355748
+          - rid: 4986929671791181848
         _wait: 1
         <Executable>k__BackingField:
           rid: 4986929597601546878
@@ -188,6 +190,27 @@ MonoBehaviour:
       type: {class: InvokeScriptableObjectEventCommand, ns: , asm: Assembly-CSharp}
       data:
         EventScriptableObject: {fileID: 11400000, guid: 9f550d877309d8543b772a931ca5aebe, type: 2}
+    - rid: 4986929671791181847
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929671791181848
+        Position: {x: 3473, y: 478}
+    - rid: 4986929671791181848
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Add Quest
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 4986929671791181849
+    - rid: 4986929671791181849
+      type: {class: AddQuestCommand, ns: , asm: Assembly-CSharp}
+      data:
+        QuestScriptableObject: {fileID: 11400000, guid: 850e03b9b79663d40a006635638f431d, type: 2}
     - rid: 8981177211230355745
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:

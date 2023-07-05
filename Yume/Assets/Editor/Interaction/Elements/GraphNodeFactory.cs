@@ -55,6 +55,9 @@ public class GraphNodeFactory
             case INode.INVOKE_SCRIPTABLE_OBJECT_EVENT:
                 AddScriptableObjectEventNodeElements(unity, drawables);
                 break;
+            case INode.ADD_QUEST:
+                AddQuestNodeElements(unity, drawables);
+                break;
         }
 
         if (unity.Type != INode.ENTRY)
@@ -195,6 +198,20 @@ public class GraphNodeFactory
 
         field.RegisterValueChangedCallback(callback =>
             executable.EventScriptableObject = (EventScriptableObject)callback.newValue
+        );
+
+        var extension = new DrawableExtensionContainer(field);
+
+        drawables.Add(extension);
+    }
+
+    private void AddQuestNodeElements(UnityNode unity, List<IDrawable> drawables)
+    {
+        var executable = (AddQuestCommand)unity.Node.Executable;
+        var field = CreateField("Quest", executable.QuestScriptableObject);
+
+        field.RegisterValueChangedCallback(callback =>
+            executable.QuestScriptableObject = (QuestScriptableObject)callback.newValue
         );
 
         var extension = new DrawableExtensionContainer(field);
