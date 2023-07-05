@@ -4,27 +4,27 @@ using System;
 public class BaseState
 {
     protected readonly Dictionary<Func<bool>, Type> Transitions;
-    protected States States;
+    protected StateMachine StateMachine;
 
     public BaseState(Dictionary<Func<bool>, Type> transitions)
     {
         Transitions = transitions;
     }
 
-    public bool TryTransition()
+    public bool TryTransitionToAnotherState()
     {
         foreach (var transition in Transitions)
             if (transition.Key())
             {
-                States.Set(transition.Value);
+                StateMachine.SetState(transition.Value);
                 return true;
             }
 
         return false;
     }
 
-    public void Set(States states)
+    public void SetReferenceToStateMachine(StateMachine states)
     {
-        States = states;
+        StateMachine = states;
     }
 }

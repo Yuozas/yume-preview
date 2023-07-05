@@ -14,25 +14,24 @@ public class SelectedQuestUserInterface : MonoBehaviour
     public void Initialize(QuestScriptableObject quest)
     {
         _quest = quest;
-        SetAlpha(quest);
+        UpdateElementOpacity(quest);
 
-        _text.text = "<size=150%>" + quest.Title + "</size>"
-            + Environment.NewLine + Environment.NewLine
-            + quest.Description;
+        var title = quest.Title.SetSizeByPercentage(150);
+        _text.text = $"{title}{Environment.NewLine}{Environment.NewLine}{quest.Description}";
     }
 
-    private void SetAlpha(QuestScriptableObject quest)
+    private void UpdateElementOpacity(QuestScriptableObject quest)
     {
         _group.alpha = quest.Completed ? 0.5f : 1f;
     }
 
     private void Update()
     {
-        SetAlpha(_quest);
+        UpdateElementOpacity(_quest);
     }
 
-    public void Set(bool active)
+    public void SetElementVisibility(bool visible)
     {
-        _visualization.SetActive(active);
+        _visualization.SetActive(visible);
     }
 }

@@ -7,7 +7,7 @@ public class EventScriptableObject : ScriptableObject
     public event Action Event;
     [NonSerialized] public bool Invoked;
 
-    public void Invoke()
+    public void InvokeEvent()
     {
         Event?.Invoke();
         Invoked = true;

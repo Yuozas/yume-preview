@@ -21,30 +21,29 @@ public class QuestsUserInterface : MonoBehaviour
     {
         _selectables = new();
         _quests = ServiceLocator.GetSingleton<Quests>();
-        _quests.OnAdded += InstantiateAndAdd;
-        _quests.OnSelectedQuestIndexUpdated += SelectBasedOnIndex;
+        _quests.OnAdded += InstantiateAndAddElement;
+        _quests.OnSelectedQuestIndexUpdated += SelectElementByIndex;
 
         _toggler = _quests.Toggler;
-        Set(_toggler.Enabled);
-        _toggler.OnUpdated += Set;
+        SetElementVisibility(_toggler.Enabled);
+        _toggler.OnUpdated += SetElementVisibility;
 
-        Populate();
+        InstantiateAndAddElements();
     }
 
     private void OnDestroy()
     {
-        _quests.OnAdded -= InstantiateAndAdd;
-        _quests.OnSelectedQuestIndexUpdated -= SelectBasedOnIndex;
-        _toggler.OnUpdated -= Set;
+        _quests.OnAdded -= InstantiateAndAddElement;
+        _quests.OnSelectedQuestIndexUpdated -= SelectElementByIndex;
+        _toggler.OnUpdated -= SetElementVisibility;
     }
 
-    private void SelectBasedOnIndex(int index)
+    private void SelectElementByIndex(int index)
     {
-        var selectable = _selectables[index];
-        Select(selectable);
+        UpdateSelectedElementAndInformationWindow(_selectables[index]);
     }
 
-    public void Select(SelectableQuestUserInterface selected)
+    public void UpdateSelectedElementAndInformationWindow(SelectableQuestUserInterface selected)
     {
         _selectedQuest = selected;
         if(_selectedQuest is null)
@@ -64,19 +63,19 @@ public class QuestsUserInterface : MonoBehaviour
             _arrow.transform.position = _arrow.transform.position.With(y: _selectedQuest.transform.position.y);
     }
 
-    private void Populate()
+    private void InstantiateAndAddElements()
     {
-        Clear();
+        RemoveElements();
 
         var entries = _quests.Entries;
         foreach (var entry in entries)
-            InstantiateAndAdd(entry);
+            InstantiateAndAddElement(entry);
 
-        var selectable = _selectables.Count is 0? null : _selectables[0];
-        Select(selectable);
+        var selectable = _selectables.Count is 0 ? null : _selectables[0];
+        UpdateSelectedElementAndInformationWindow(selectable);
     }
 
-    private void InstantiateAndAdd(QuestScriptableObject entry)
+    private void InstantiateAndAddElement(QuestScriptableObject entry)
     {
         var instantiated = Instantiate(_prefab, _holder);
         instantiated.Initialize(entry);
@@ -84,7 +83,7 @@ public class QuestsUserInterface : MonoBehaviour
         _selectables.Add(instantiated);
     }
 
-    private void Clear()
+    private void RemoveElements()
     {
         foreach (var selectable in _selectables)
             Destroy(selectable.gameObject);
@@ -92,8 +91,8 @@ public class QuestsUserInterface : MonoBehaviour
         _selectables.Clear();
     }
 
-    private void Set(bool active)
+    private void SetElementVisibility(bool visible)
     {
-        _visualization.SetActive(active);
+        _visualization.SetActive(visible);
     }
 }

@@ -38,7 +38,7 @@ public class Choosing : BaseState, IState
 
     public void Tick()
     {
-        _ = TryTransition();
+        _ = TryTransitionToAnotherState();
     }
 
     public void Exit()

@@ -28,7 +28,7 @@ public class PlayingSliderGame : BaseState, IState
 
     public void Tick()
     {
-        if (TryTransition())
+        if (TryTransitionToAnotherState())
             return;
     }
 

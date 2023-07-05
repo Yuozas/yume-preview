@@ -18,38 +18,37 @@ public class BrowsingQuests : BaseState, IState
     public void Enter()
     {
         _actions.Enable();
-        _actions.Quit.performed += DisableQuests;
-        _actions.Next.performed += Next;
-        _actions.Previous.performed += Previous;
+        _actions.Quit.performed += HideQuestsUserInterfaceWindow;
+        _actions.Next.performed += SelectNextQuest;
+        _actions.Previous.performed += SelectPreviousQuest;
     }
 
     public void Exit()
     {
         _actions.Disable();
-        _actions.Quit.performed -= DisableQuests;
-        _actions.Next.performed -= Next;
-        _actions.Previous.performed -= Previous;
+        _actions.Quit.performed -= HideQuestsUserInterfaceWindow;
+        _actions.Next.performed -= SelectNextQuest;
+        _actions.Previous.performed -= SelectPreviousQuest;
     }
 
     public void Tick()
     {
-        if (TryTransition())
+        if (TryTransitionToAnotherState())
             return;
     }
 
-    private void Next(InputAction.CallbackContext context)
+    private void SelectNextQuest(InputAction.CallbackContext context)
     {
         _quests.Next();
     }
 
-    private void Previous(InputAction.CallbackContext context)
+    private void SelectPreviousQuest(InputAction.CallbackContext context)
     {
         _quests.Previous();
     }
 
-    private void DisableQuests(InputAction.CallbackContext context)
+    private void HideQuestsUserInterfaceWindow(InputAction.CallbackContext context)
     {
         _quests.Toggler.Disable();
     }
-
 }

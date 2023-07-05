@@ -10,7 +10,7 @@ public class PlayableEntity : Entity, ITransitionable
     [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private BoxCollider2D _collider;
 
-    private States _states;
+    private StateMachine _states;
     private InputActions _input;
     private InSceneCharacter _characterResolver;
     private DialogueResolver _dialogueResolver;
@@ -59,7 +59,7 @@ public class PlayableEntity : Entity, ITransitionable
 
     private void Start()
     {
-        _states.Set<Walking>();
+        _states.SetState<Walking>();
     }
 
     private void Update()
@@ -118,7 +118,7 @@ public class PlayableEntity : Entity, ITransitionable
             new BrowsingQuests(_input.BrowsingQuests, browsingQuestsTransitions)
         };
 
-        _states = new States(states);
+        _states = new StateMachine(states);
     }
 
     private bool ShouldTransitionToWalkingState()

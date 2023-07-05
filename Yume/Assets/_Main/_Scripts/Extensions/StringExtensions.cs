@@ -13,4 +13,9 @@ public static class StringExtensions
     {
         return text.Where(char.IsWhiteSpace).Count();
     }
+
+    public static string SetSizeByPercentage(this string text, int percentage)
+    {
+        return $"<size={percentage}%>{text}</size>";
+    }
 }
