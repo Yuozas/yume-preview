@@ -14,6 +14,7 @@ public readonly struct Character
     public CharacterType Type { get; }
     public string Name { get; }
     public string SceneName { get; }
+    private float PossesedMoney { get; }
 
     private Character(string id, CharacterType type, string name, string sceneName)
         : this(id, type, name)
@@ -27,6 +28,7 @@ public readonly struct Character
         Type = type;
         Name = name;
         SceneName = string.Empty;
+        PossesedMoney = 1;
     }
 
     public static implicit operator CharacterRealmObject(Character character) => new()
@@ -34,6 +36,7 @@ public readonly struct Character
         Id = character.Id,
         Name = character.Name,
         SceneName = character.SceneName,
-        CharacterType = character.Type
+        CharacterType = character.Type,
+        PossesedMoney = character.PossesedMoney
     };
 }

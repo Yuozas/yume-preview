@@ -10,6 +10,7 @@ public abstract class StorageUserInterfaceScriptableObject : StorageElementUserI
     protected Label ItemName;
     protected Label ItemDescription;
     protected VisualElement ItemImage;
+    protected VisualElement ItemDetails;
     protected VisualElement ActiveSlot;
 
     protected override void SetupMenuElement()
@@ -25,6 +26,8 @@ public abstract class StorageUserInterfaceScriptableObject : StorageElementUserI
 
     protected virtual void OnSlotClicked(VisualElement slot, StorageSlot storageSlot, StyleBackground itemBackgroundImage)
     {
+        ItemDetails.style.display = DisplayStyle.Flex;
+
         ActiveSlot?.RemoveFromClassList("active-slot");
         ActiveSlot = slot;
         ActiveSlot.AddToClassList("active-slot");
@@ -35,9 +38,11 @@ public abstract class StorageUserInterfaceScriptableObject : StorageElementUserI
 
     protected virtual void SetupItemDescription()
     {
-        ItemName = RootElement.Q<Label>("ItemName");
-        ItemDescription = RootElement.Q<Label>("ItemDescription");
-        ItemImage = RootElement.Q<VisualElement>("ItemImage");
+        ItemDetails = RootElement.Q<VisualElement>("ItemDetails");
+        ItemName = ItemDetails.Q<Label>("ItemName");
+        ItemDescription = ItemDetails.Q<Label>("ItemDescription");
+        ItemImage = ItemDetails.Q<VisualElement>("ItemImage");
+        ItemDetails.style.display = DisplayStyle.None;
     }
 
     protected abstract void Setup();
@@ -62,15 +67,13 @@ public abstract class StorageUserInterfaceScriptableObject : StorageElementUserI
         if (storageSlot.Item is null)
             return slot;
 
-        var image = storageSlot.Item.ItemIcon?.ConvertByteArrayToSprite();
-        var itemBackgroundImage = ItemImage.style.backgroundImage = image == null
+        var image = Resources.Load<Sprite>(storageSlot.Item.IconPath);
+
+        var itemBackgroundImage = image == null
             ? null
             : new StyleBackground(image);
 
         slot.AddManipulator(new Clickable(() => OnSlotClicked(slot, storageSlot, itemBackgroundImage)));
-
-        var texture = new Texture2D(2, 2);
-        texture.LoadImage(storageSlot.Item.ItemIcon);
 
         var slotItem = slot.Q<VisualElement>("SlotItem");
         slotItem.style.backgroundImage = itemBackgroundImage;

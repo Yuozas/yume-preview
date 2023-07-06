@@ -1,4 +1,5 @@
 using Realms;
+using System;
 using System.Linq;
 
 public class CreateStorageHelper : ICreateStorageHelper
@@ -33,5 +34,26 @@ public class CreateStorageHelper : ICreateStorageHelper
 
             realm.RemoveRange(slotsToRemoveFromStorage);
         }
+    }
+
+    public void CreateStorage(Realm realm, Storage storage)
+    {
+        realm.Add(storage, true);
+    }
+
+    public void CreateSlots(Realm realm, params StorageSlot[] storageSlots)
+    {
+        if (storageSlots is not { Length: > 0 })
+            throw new ArgumentException("No storage slots pasesed.");
+        foreach (var slot in storageSlots)
+            realm.Add(slot);
+    }
+
+    public void CreateSlotPrices(Realm realm, params StorageSlotHasPrice[] storageSlotHasPrices)
+    {
+        if (storageSlotHasPrices is not { Length: > 0 })
+            throw new ArgumentException("No storage slot prices passed.");
+        foreach (var slotPrice in storageSlotHasPrices)
+            realm.Add(slotPrice);
     }
 }

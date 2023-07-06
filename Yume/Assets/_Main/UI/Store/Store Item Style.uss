@@ -1,0 +1,39 @@
+#Item {
+	display: flex;
+	flex-direction: row;
+	height: 64px;
+	width: 100%;
+}
+
+#Item #Container1 {
+	margin-right: 16px;
+    -unity-slice-scale: 0.5px;
+}
+
+#Item #Container1 #Image {
+	width: 64px;
+	height: 64px;
+}
+
+#Item #Container2 {
+	display: flex;
+	flex-direction: row;
+	flex-grow: 1;
+    -unity-slice-scale: 0.5px;
+	padding: 6px;
+	justify-content: center;
+	align-items: center;
+}
+
+#Item #Container2 #ItemName {
+	font-size: 16px;
+	padding-right: 16px;
+	padding-left: 16px;
+	-unity-text-align: middle-center;
+	flex-grow: 1;
+}
+
+#Item #Container2 #ItemBuyButton {
+	width: 58px;
+	height: 58px;
+}

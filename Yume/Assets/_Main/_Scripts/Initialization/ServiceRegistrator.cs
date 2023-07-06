@@ -22,6 +22,9 @@ public class ServiceRegistrator : IPreliminarySetup
             .Register<IRealmSaveReadHelper, RealmSaveReadHelper>()
             .Register<IActiveCharacterHelper, ActiveCharacterHelper>()
             .Register<IStorageReadHelper, StorageReadHelper>()
-            .Register<IStorageManager, StorageManager>();
+            .Register<IStorageManager, StorageManager>()
+            .Register<IStoreManager, StoreManager>()
+            .Register<IStoreReadHelper, StoreReadHelper>()
+            .Register<IPurchaseManager, PurchaseManager>();
     }
 }

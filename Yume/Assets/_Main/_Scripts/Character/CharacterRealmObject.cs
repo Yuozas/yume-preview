@@ -8,6 +8,7 @@ public class CharacterRealmObject : RealmObject
     public int Type { get; set; }
     public string Name { get; set; }
     public string SceneName { get; set; }
+    public float PossesedMoney { get; set; }
 
     [Ignored]
     public CharacterType CharacterType

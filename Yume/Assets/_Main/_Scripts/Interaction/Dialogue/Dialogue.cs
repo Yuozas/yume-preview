@@ -66,7 +66,7 @@ public class SliderGame : ITogglerProvider
             new SliderGameStage(0.2f),
             new SliderGameStage(0.1f),
             new SliderGameStage(0.05f),
-            new SliderGameStage(0.025f)
+            new SliderGameStage(0.5f)
         };
 
         _loopPercentage = new LoopPercentage();

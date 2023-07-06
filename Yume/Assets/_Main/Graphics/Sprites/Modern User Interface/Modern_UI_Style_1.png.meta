@@ -3869,13 +3869,13 @@ TextureImporter:
       name: Item Slot
       rect:
         serializedVersion: 2
-        x: 15
-        y: 399
-        width: 18
-        height: 18
+        x: 16
+        y: 400
+        width: 17
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 1, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -6134,7 +6134,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_UI_Style_1_287
+      name: Cart Brown Not pressed
       rect:
         serializedVersion: 2
         x: 873
@@ -13568,7 +13568,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_UI_Style_1_641
+      name: Coin Small 1
       rect:
         serializedVersion: 2
         x: 210
@@ -18224,7 +18224,9 @@ TextureImporter:
       Backpack Slot Section: 1297398125
       Bag: -742520751
       Book: 16535161
+      Cart Brown Not pressed: -558479235
       Close Frame: 103831350
+      Coin Small 1: 885831004
       Cursor 1: 1259168085
       Cursor 2: -1374743336
       Dark button: -718108175
@@ -18438,7 +18440,6 @@ TextureImporter:
       Modern_UI_Style_1_284: 157896894
       Modern_UI_Style_1_285: -289819507
       Modern_UI_Style_1_286: 1015788924
-      Modern_UI_Style_1_287: -558479235
       Modern_UI_Style_1_288: 978690179
       Modern_UI_Style_1_289: -1432236201
       Modern_UI_Style_1_29: 1780412180
@@ -18813,7 +18814,6 @@ TextureImporter:
       Modern_UI_Style_1_639: 676694811
       Modern_UI_Style_1_64: 373992796
       Modern_UI_Style_1_640: -1938096878
-      Modern_UI_Style_1_641: 885831004
       Modern_UI_Style_1_642: 1642168345
       Modern_UI_Style_1_643: -890736386
       Modern_UI_Style_1_644: 1671082468

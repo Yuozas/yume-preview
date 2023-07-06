@@ -1,0 +1,24 @@
+Body {
+	width: 100%;
+	height: 100%;
+}
+
+#PossesedMoney {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	margin-right: 10px;
+}
+
+#Amount {
+	-unity-font-style: bold;
+	font-size: 20px;
+	margin-right: 10px;
+	-unity-text-align: middle-center;
+}
+
+#Coin {
+	height: 40px;
+	width: 40px;
+}

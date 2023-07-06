@@ -1,22 +1,28 @@
+using UnityEditor;
+using System;
 using UnityEngine;
 
 public static class SpriteExtensions
 {
-    public static byte[] ToBytes(this Sprite sprite)
+    public static string GetResourcesPath(this Sprite sprite)
     {
-        return sprite.texture.EncodeToPNG();
-    }
+        const string searchString = "Resources/";
 
-    public static Sprite ConvertByteArrayToSprite(this byte[] spriteBytes)
-    {
-        var texture =  spriteBytes.ConvertByteArrayToTexture2d();
-        return Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
-    }
+        var path = AssetDatabase.GetAssetPath(sprite);
 
-    public static Texture2D ConvertByteArrayToTexture2d(this byte[] spriteBytes)
-    {
-        var texture = new Texture2D(2, 2);
-        texture.LoadImage(spriteBytes);
-        return texture;
+        var startIndex = path.LastIndexOf(searchString) switch
+        {
+            var index when index >= 0 => index + searchString.Length,
+            _ => throw new Exception("The string path does not contain the 'Resources/' segment.")
+        };
+
+        var result = path[startIndex..];
+
+        // Remove the file extension
+        var lastDotIndex = result.LastIndexOf('.');
+        if (lastDotIndex >= 0)
+            result = result[..lastDotIndex];
+
+        return result;
     }
 }

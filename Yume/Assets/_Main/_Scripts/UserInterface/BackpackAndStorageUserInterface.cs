@@ -1,7 +1,9 @@
 using SwiftLocator.Services.ServiceLocatorServices;
 using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
+using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 
 public class BackpackAndStorageUserInterface : MonoBehaviour
 {
@@ -22,15 +24,7 @@ public class BackpackAndStorageUserInterface : MonoBehaviour
         _inputAction.Storage.Enable();
         SubscribeInputs();
 
-        TwoStorageUserInterfaceScriptableObject.SetupOnSlotClick(slot =>
-        {
-            ActiveStorageSlotId = slot.Id;
-        });
-
-        SetupStorage(storageId);
-        SetupBackpack();
-
-        TwoStorageUserInterfaceScriptableObject.SetupMenuElement("StorageContent", _root);
+        Reload(storageId);
 
         _root.style.display = DisplayStyle.Flex;
     }
@@ -43,6 +37,19 @@ public class BackpackAndStorageUserInterface : MonoBehaviour
         ActiveStorageSlotId = null;
 
         _root.style.display = DisplayStyle.None;
+    }
+
+    private void Reload(string storageId)
+    {
+        TwoStorageUserInterfaceScriptableObject.SetupOnSlotClick(slot =>
+        {
+            ActiveStorageSlotId = slot.Id;
+        });
+
+        SetupStorage(storageId);
+        SetupBackpack();
+
+        TwoStorageUserInterfaceScriptableObject.SetupMenuElement("StorageContent", _root);
     }
 
     private void Awake()
@@ -109,8 +116,10 @@ public class BackpackAndStorageUserInterface : MonoBehaviour
         var storageItemHelper = ServiceLocator.GetSingleton<IStorageItemHelper>();
 
         if (storageSlot.Result.Storage.Id == BackpackStorageId)
-            storageItemHelper.MoveFromTo(BackpackStorageId, StorageId, storageSlot.Result.Item);
+            storageItemHelper.TryMoveFromTo(storageSlot.Result.Id, StorageId, storageSlot.Result.Item);
         else
-            storageItemHelper.MoveFromTo(StorageId, BackpackStorageId, storageSlot.Result.Item);
+            storageItemHelper.TryMoveFromTo(storageSlot.Result.Id, BackpackStorageId, storageSlot.Result.Item);
+
+        Reload(StorageId);
     }
 }
