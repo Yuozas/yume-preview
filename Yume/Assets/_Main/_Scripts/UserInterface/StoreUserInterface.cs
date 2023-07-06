@@ -12,6 +12,8 @@ public class StoreUserInterface : MonoBehaviour
     private VisualElement _root;
     private Label _itemCostLabel;
 
+    public bool Active => _root.style.display != DisplayStyle.None;
+
     private void Awake()
     {
         _root = GetComponent<UIDocument>().rootVisualElement;

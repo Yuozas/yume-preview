@@ -12,6 +12,7 @@ public class Walking : BaseState, IState
     private readonly IInteractor _interaction;
     private readonly InputActions.WalkingActions _walking;
     private readonly Quests _quests;
+    private readonly InGameMenuUserInterface _inGame;
 
     public Walking(InputActions.WalkingActions actions, Movement movement, Direction direction, IInteractor interaction, Dictionary<Func<bool>, Type> transitions) 
        : base(transitions)
@@ -22,6 +23,7 @@ public class Walking : BaseState, IState
         _direction = direction;
         _interaction = interaction;
 
+        _inGame = ServiceLocator.GetSingleton<InGameMenuUserInterface>();
         _quests = ServiceLocator.GetSingleton<Quests>();
     }
 
@@ -62,6 +64,9 @@ public class Walking : BaseState, IState
 
     private void EnableQuests(InputAction.CallbackContext context)
     {
+        if (_inGame.Active)
+            return;
+
         _quests.Toggler.Enable();
     }
 

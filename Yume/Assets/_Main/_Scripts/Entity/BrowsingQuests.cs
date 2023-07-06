@@ -52,3 +52,37 @@ public class BrowsingQuests : BaseState, IState
         _quests.Toggler.Disable();
     }
 }
+
+public class BrowsingShop : BaseState, IState
+{
+    private readonly InputActions.BrowsingShopActions _actions;
+
+    public BrowsingShop(InputActions.BrowsingShopActions actions, Dictionary<Func<bool>, Type> transitions)
+       : base(transitions)
+    {
+        _actions = actions;
+    }
+
+    public void Enter()
+    {
+        _actions.Enable();
+        _actions.Quit.performed += HideShopUserInterfaceWindow;
+    }
+
+    public void Exit()
+    {
+        _actions.Disable();
+        _actions.Quit.performed -= HideShopUserInterfaceWindow;
+    }
+
+    public void Tick()
+    {
+        if (TryTransitionToAnotherState())
+            return;
+    }
+
+    private void HideShopUserInterfaceWindow(InputAction.CallbackContext context)
+    {
+        ServiceLocator.GetSingleton<StoreUserInterface>().Exit();
+    }
+}

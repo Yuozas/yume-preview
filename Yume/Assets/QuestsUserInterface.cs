@@ -38,6 +38,11 @@ public class QuestsUserInterface : MonoBehaviour
         _toggler.OnUpdated -= SetElementVisibility;
     }
 
+    public void Button_Quit()
+    {
+        _quests.Toggler.Disable();
+    }
+
     private void SelectElementByIndex(int index)
     {
         UpdateSelectedElementAndInformationWindow(_selectables[index]);

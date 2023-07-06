@@ -8,6 +8,8 @@ public class InGameMenuUserInterface : MonoBehaviour
     [field: SerializeField] private InGameMenuUserInterfaceScriptableObject BackpackUserIterfaceScriptableObject { get; set; }
     [field: SerializeField] private InGameMenuUserInterfaceScriptableObject SettingsUserIterfaceScriptableObject { get; set; }
 
+    public bool Active => _root.style.display != DisplayStyle.None;
+
     private const int BACKPACK_INDEX = 0;
     private const int SETTINGS_INDEX = 1;
     private readonly int[] _keys = new[] { BACKPACK_INDEX, SETTINGS_INDEX };

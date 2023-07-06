@@ -58,6 +58,9 @@ public class GraphNodeFactory
             case INode.ADD_QUEST:
                 AddQuestNodeElements(unity, drawables);
                 break;
+            case INode.OPEN_SHOP:
+                AddOpenShopNodeElements(unity, drawables);
+                break;
         }
 
         if (unity.Type != INode.ENTRY)
@@ -204,7 +207,7 @@ public class GraphNodeFactory
 
         drawables.Add(extension);
     }
-
+    
     private void AddQuestNodeElements(UnityNode unity, List<IDrawable> drawables)
     {
         var executable = (AddQuestCommand)unity.Node.Executable;
@@ -212,6 +215,20 @@ public class GraphNodeFactory
 
         field.RegisterValueChangedCallback(callback =>
             executable.QuestScriptableObject = (QuestScriptableObject)callback.newValue
+        );
+
+        var extension = new DrawableExtensionContainer(field);
+
+        drawables.Add(extension);
+    }
+
+    private void AddOpenShopNodeElements(UnityNode unity, List<IDrawable> drawables)
+    {
+        var executable = (OpenShopCommand)unity.Node.Executable;
+        var field = CreateField("Store", executable.StoreScriptableObject);
+
+        field.RegisterValueChangedCallback(callback =>
+            executable.StoreScriptableObject = (StoreScriptableObject)callback.newValue
         );
 
         var extension = new DrawableExtensionContainer(field);
