@@ -25,6 +25,7 @@ MonoBehaviour:
   - rid: 8981177380004430033
   - rid: 4986929597601546886
   - rid: 4986929597601546889
+  - rid: 4986929686808363153
   references:
     version: 2
     RefIds:
@@ -74,6 +75,27 @@ MonoBehaviour:
         Settings:
           Clip: {fileID: 8300000, guid: 89e3361a9dfa7bb4bbb96069eb8d38ea, type: 3}
           VolumeScale: 0.75
+    - rid: 4986929686808363153
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929686808363154
+        Position: {x: 1098.9501, y: 429.30002}
+    - rid: 4986929686808363154
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Invoke Scriptable Object Event
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 4986929686808363155
+    - rid: 4986929686808363155
+      type: {class: InvokeScriptableObjectEventCommand, ns: , asm: Assembly-CSharp}
+      data:
+        EventScriptableObject: {fileID: 11400000, guid: 9f550d877309d8543b772a931ca5aebe, type: 2}
     - rid: 8981177211230355745
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
@@ -225,6 +247,7 @@ MonoBehaviour:
           - rid: 8981177264092741678
           - rid: 8981177211230355748
           - rid: 4986929597601546890
+          - rid: 4986929686808363154
         _wait: 1
         <Executable>k__BackingField:
           rid: 8981177242252476583
