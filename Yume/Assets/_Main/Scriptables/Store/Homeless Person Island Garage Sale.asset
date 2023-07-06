@@ -16,3 +16,5 @@ MonoBehaviour:
   <StoreName>k__BackingField: Homeless Person Island Garage Sale
   <StoreItems>k__BackingField:
   - {fileID: 11400000, guid: 7ae7621f303cacd4f8c12c9a2ee72f15, type: 2}
+  <Sprite>k__BackingField: {fileID: -1066215805, guid: b991628c5debdb547bf34663838c85c6, type: 3}
+  <IconPath>k__BackingField: PG_Skin_7

@@ -41,12 +41,12 @@ public class CreateStorageHelper : ICreateStorageHelper
         realm.Add(storage, true);
     }
 
-    public void CreateSlots(Realm relam, params StorageSlot[] storageSlots)
+    public void CreateSlots(Realm realm, params StorageSlot[] storageSlots)
     {
         if (storageSlots is not { Length: > 0 })
             throw new ArgumentException("No storage slots pasesed.");
         foreach (var slot in storageSlots)
-            relam.Add(slot);
+            realm.Add(slot);
     }
 
     public void CreateSlotPrices(Realm realm, params StorageSlotHasPrice[] storageSlotHasPrices)

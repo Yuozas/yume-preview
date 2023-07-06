@@ -36,7 +36,8 @@ public class StoreManager : IStoreManager
         var store = new Store
         {
             Id = storeScriptable.Id,
-            Name = storeScriptable.StoreName
+            Name = storeScriptable.StoreName,
+            IconPath = storeScriptable.IconPath
         };
         realm.Add(store);
 

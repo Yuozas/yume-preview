@@ -1,4 +1,5 @@
 using SwiftLocator.Services.ServiceLocatorServices;
+using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -27,6 +28,13 @@ public class StoreUserInterface : MonoBehaviour
         SetupItemCost();
         SetupCharacterPossesedMoney();
         SetupStoreTitle(store.Result);
+        SetupStoreImage(store.Result.IconPath);
+    }
+
+    private void SetupStoreImage(string path)
+    {
+        var storeImage = _root.Q<VisualElement>("StoreImage");
+        storeImage.style.backgroundImage = new StyleBackground(Resources.Load<Sprite>(path));
     }
 
     private void SetupStoreTitle(Store store)
@@ -59,8 +67,8 @@ public class StoreUserInterface : MonoBehaviour
         var moneyContainer = moneyContainerTree.Q<VisualElement>("PossesedMoney");
 
         var money = ServiceLocator.GetSingleton<IActiveCharacterHelper>().GetPossesedMoney();
-        var possesedMoeny = moneyContainer.Q<Label>("Amount");
-        possesedMoeny.text = money.ToString();
+        var possesedMoney = moneyContainer.Q<Label>("Amount");
+        possesedMoney.text = money.ToString();
 
         itemPriceContainer.contentContainer.Add(moneyContainer);
     }

@@ -24,7 +24,6 @@ public class Npc : Entity, IInteractable
 
     private void OnDisable()
     {
-
         _obtainedLockPick.Event -= AddItemToBackpack;
     }
 

@@ -3619,9 +3619,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.013333334
+    y: 0
     width: 1
-    height: 0.97247314
+    height: 1
   near clip plane: 0.1
   far clip plane: 5000
   field of view: 40
@@ -4428,6 +4428,7 @@ MonoBehaviour:
   _animator: {fileID: 951014418}
   _facing: {x: 0, y: -1}
   _interaction: {fileID: 11400000, guid: 089e8d53b5b5a344a9584cf0bafeffe6, type: 2}
+  _store: {fileID: 11400000, guid: 3e98166db856259418095349c7d87fa7, type: 2}
 --- !u!1001 &762847998
 PrefabInstance:
   m_ObjectHideFlags: 0
