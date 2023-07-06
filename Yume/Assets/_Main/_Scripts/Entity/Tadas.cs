@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using SwiftLocator.Services.ServiceLocatorServices;
+using UnityEngine;
 
 public class Tadas : Entity, IInteractable
 {
@@ -18,6 +19,7 @@ public class Tadas : Entity, IInteractable
 
     private void Quit()
     {
+        ServiceLocator.GetSingleton<IRealmSaveManager>().DeleteActiveSave();
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else

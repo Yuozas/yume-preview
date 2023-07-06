@@ -27,6 +27,12 @@ public class RealmSaveManager : IRealmSaveManager
         transaction.Commit();
     }
 
+    public void DeleteActiveSave()
+    {
+        using var activeSaveDetails = _realmActiveSaveHelper.GetActiveSaveDetails();
+        DeleteSave(activeSaveDetails.Result.SaveId.ToString());
+    }
+
     public void DeleteSave(string saveId)
     {
         _realmSaveRegistry.DeleteSave(saveId);
