@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a56a6cac0d1a63b4f9bb1d60b90e0a14, type: 3}
-  m_Name: Outside_Boat
+  m_Name: Shop_Boat
   m_EditorClassIdentifier: 
   <UnityNodes>k__BackingField:
   - rid: 4986929597601546555
@@ -108,7 +108,7 @@ MonoBehaviour:
       data:
         Type: Inspection
         Settings:
-          Sentence: Would you like to travel to the south-dock?
+          Sentence: Would you like to travel to main-land?
           Rate: 0.036
     - rid: 4986929597601546569
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
@@ -213,4 +213,4 @@ MonoBehaviour:
     - rid: 4986929686808363070
       type: {class: TransitionToDestinationCommand, ns: , asm: Assembly-CSharp}
       data:
-        DestinationScriptableObject: {fileID: 11400000, guid: 3e39a143a9b66a64f9369564464f91cb, type: 2}
+        DestinationScriptableObject: {fileID: 11400000, guid: 2b7d896af2071824ebed5d38de6f0e01, type: 2}

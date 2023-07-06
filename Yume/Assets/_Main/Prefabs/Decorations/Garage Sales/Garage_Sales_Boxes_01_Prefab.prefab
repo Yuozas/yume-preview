@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2348101326785675964}
   - component: {fileID: 1386416910438734157}
   - component: {fileID: 9217733393615561539}
+  - component: {fileID: 8901306252915006681}
   m_Layer: 0
   m_Name: Garage_Sales_Boxes_01_Prefab
   m_TagString: Untagged
@@ -33,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 4336724432504827329}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2348101326785675964
 BoxCollider2D:
@@ -173,6 +174,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.93722486, y: 0.6260233}
   m_EdgeRadius: 0
+--- !u!114 &8901306252915006681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4942196287998071701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b3872e84bb87f4fa631ae8d048e86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interaction: {fileID: 11400000, guid: faa76d2b3cb382647bb25d6ea81d52a8, type: 2}
 --- !u!1 &8548312042921348457
 GameObject:
   m_ObjectHideFlags: 0

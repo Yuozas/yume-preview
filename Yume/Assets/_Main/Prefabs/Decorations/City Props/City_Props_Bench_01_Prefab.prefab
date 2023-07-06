@@ -179,6 +179,7 @@ GameObject:
   - component: {fileID: 8318142884797785382}
   - component: {fileID: 6073960943839447618}
   - component: {fileID: 8648806998359961880}
+  - component: {fileID: 6841813258989328525}
   m_Layer: 0
   m_Name: City_Props_Bench_01_Prefab
   m_TagString: Untagged
@@ -202,7 +203,7 @@ Transform:
   - {fileID: 6509050965473345982}
   - {fileID: 7219712998532139314}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &6073960943839447618
 BoxCollider2D:
@@ -262,6 +263,19 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortAtRoot: 0
+--- !u!114 &6841813258989328525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8755797621002378343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b3872e84bb87f4fa631ae8d048e86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interaction: {fileID: 11400000, guid: ad924473efa46c84b8767da2a9329faa, type: 2}
 --- !u!1 &9206500529642413156
 GameObject:
   m_ObjectHideFlags: 0

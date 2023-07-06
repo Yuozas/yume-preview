@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5864114372159735046}
   - component: {fileID: 5471880249650812016}
+  - component: {fileID: 2728981935625387591}
   m_Layer: 0
   m_Name: City_Props_Bin_01_Prefab
   m_TagString: Untagged
@@ -79,6 +80,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.6876812, y: 0.51240087}
   m_EdgeRadius: 0
+--- !u!114 &2728981935625387591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4462393296791427211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b3872e84bb87f4fa631ae8d048e86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interaction: {fileID: 11400000, guid: 425840ad11e9b3b4d83979bae76c4648, type: 2}
 --- !u!1 &9096810280321566853
 GameObject:
   m_ObjectHideFlags: 0

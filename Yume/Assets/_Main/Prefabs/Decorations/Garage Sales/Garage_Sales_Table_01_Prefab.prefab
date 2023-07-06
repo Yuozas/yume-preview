@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7468749876505622074}
   - component: {fileID: 1067811613980300268}
+  - component: {fileID: 6133212507449844539}
   m_Layer: 0
   m_Name: Garage_Sales_Table_01_Prefab
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 8032749814313521263}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1067811613980300268
 BoxCollider2D:
@@ -79,6 +80,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.625, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6133212507449844539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725539391427155747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b3872e84bb87f4fa631ae8d048e86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interaction: {fileID: 11400000, guid: faa76d2b3cb382647bb25d6ea81d52a8, type: 2}
 --- !u!1 &5819498207113276026
 GameObject:
   m_ObjectHideFlags: 0
