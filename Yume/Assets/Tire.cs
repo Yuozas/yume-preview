@@ -1,3 +1,4 @@
+using SwiftLocator.Services.ServiceLocatorServices;
 using UnityEngine;
 
 public class Tire : MonoBehaviour
@@ -17,6 +18,7 @@ public class Tire : MonoBehaviour
 
     private void Close()
     {
+        ServiceLocator.GetSingleton<IRealmSaveManager>().DeleteActiveSave();
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
