@@ -21,7 +21,7 @@ MonoBehaviour:
   - rid: 4986929597601546722
   - rid: 4986929597601546725
   - rid: 4986929597601546727
-  - rid: 4986929597601546733
+  - rid: 4986929686808363068
   references:
     version: 2
     RefIds:
@@ -51,7 +51,7 @@ MonoBehaviour:
       data:
         <Node>k__BackingField:
           rid: 4986929597601546558
-        Position: {x: 1780, y: 511}
+        Position: {x: 1943, y: 743}
     - rid: 4986929597601546558
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
@@ -115,7 +115,7 @@ MonoBehaviour:
       data:
         <Node>k__BackingField:
           rid: 4986929597601546570
-        Position: {x: 1691, y: 190}
+        Position: {x: 1854, y: 422}
     - rid: 4986929597601546570
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
@@ -164,8 +164,10 @@ MonoBehaviour:
         - <Text>k__BackingField: Yes
           <Sprite>k__BackingField: {fileID: 0}
           <Nodes>k__BackingField:
+          - rid: 4986929686808363069
+          - rid: 4986929597601546570
           - rid: 4986929597601546728
-          - rid: 4986929597601546734
+          - rid: 4986929597601546558
         - <Text>k__BackingField: Do something else
           <Sprite>k__BackingField: {fileID: 0}
           <Nodes>k__BackingField:
@@ -177,7 +179,7 @@ MonoBehaviour:
       data:
         <Node>k__BackingField:
           rid: 4986929597601546728
-        Position: {x: 1691, y: 328}
+        Position: {x: 1854, y: 560}
     - rid: 4986929597601546728
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
@@ -191,29 +193,24 @@ MonoBehaviour:
           rid: 4986929597601546729
     - rid: 4986929597601546729
       type: {class: DisableDecisionsTogglerCommand, ns: , asm: Assembly-CSharp}
-    - rid: 4986929597601546733
+    - rid: 4986929686808363068
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
         <Node>k__BackingField:
-          rid: 4986929597601546734
-        Position: {x: 1366.3478, y: 632.4783}
-    - rid: 4986929597601546734
+          rid: 4986929686808363069
+        Position: {x: 1312, y: 248}
+    - rid: 4986929686808363069
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
-        <Type>k__BackingField: Typewriter
+        <Type>k__BackingField: Transition To Destination
         <Connections>k__BackingField:
         - <Text>k__BackingField: Choice
           <Sprite>k__BackingField: {fileID: 0}
-          <Nodes>k__BackingField:
-          - rid: 4986929597601546570
-          - rid: 4986929597601546558
+          <Nodes>k__BackingField: []
         _wait: 1
         <Executable>k__BackingField:
-          rid: 4986929597601546735
-    - rid: 4986929597601546735
-      type: {class: ExecuteDialogueTypewriterCommand, ns: , asm: Assembly-CSharp}
+          rid: 4986929686808363070
+    - rid: 4986929686808363070
+      type: {class: TransitionToDestinationCommand, ns: , asm: Assembly-CSharp}
       data:
-        Type: Inspection
-        Settings:
-          Sentence: Not yet implemented.
-          Rate: 0.036
+        DestinationScriptableObject: {fileID: 11400000, guid: 3e39a143a9b66a64f9369564464f91cb, type: 2}
