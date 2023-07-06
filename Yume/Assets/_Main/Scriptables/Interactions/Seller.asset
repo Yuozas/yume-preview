@@ -20,6 +20,10 @@ MonoBehaviour:
   - rid: 4986929686808363098
   - rid: 4986929686808363101
   - rid: 4986929686808363104
+  - rid: 4986929699546202117
+  - rid: 4986929699546202120
+  - rid: 4986929699546202122
+  - rid: 4986929699546202125
   references:
     version: 2
     RefIds:
@@ -51,7 +55,7 @@ MonoBehaviour:
       data:
         <Node>k__BackingField:
           rid: 4986929686808363091
-        Position: {x: 983.00006, y: 590}
+        Position: {x: 1201, y: 882.10004}
     - rid: 4986929686808363091
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
@@ -145,8 +149,8 @@ MonoBehaviour:
         - <Text>k__BackingField: Choice
           <Sprite>k__BackingField: {fileID: 0}
           <Nodes>k__BackingField:
-          - rid: 4986929686808363091
-          - rid: 4986929686808363105
+          - rid: 4986929699546202118
+          - rid: 4986929699546202121
         _wait: 1
         <Executable>k__BackingField:
           rid: 4986929686808363103
@@ -155,14 +159,14 @@ MonoBehaviour:
       data:
         Type: Conversation
         Settings:
-          Sentence: Welcome to my shop.
+          Sentence: Welcome!
           Rate: 0.036
     - rid: 4986929686808363104
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
       data:
         <Node>k__BackingField:
           rid: 4986929686808363105
-        Position: {x: 982.8151, y: 750.00006}
+        Position: {x: 1188.0001, y: 1032.1001}
     - rid: 4986929686808363105
       type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
       data:
@@ -178,3 +182,86 @@ MonoBehaviour:
       type: {class: DisableDialogueTogglerCommand, ns: , asm: Assembly-CSharp}
       data:
         Type: Conversation
+    - rid: 4986929699546202117
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929699546202118
+        Position: {x: 631.5001, y: 551.00006}
+    - rid: 4986929699546202118
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Open Decision
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 4986929699546202119
+    - rid: 4986929699546202119
+      type: {class: EnableDecisionsTogglerCommand, ns: , asm: Assembly-CSharp}
+    - rid: 4986929699546202120
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929699546202121
+        Position: {x: 632, y: 712}
+    - rid: 4986929699546202121
+      type: {class: ChoicesNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Set Decision Choices
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Open shop
+          <Sprite>k__BackingField: {fileID: -742520751, guid: 1a4d1f89522da874c8a9331ccf49cf2a, type: 3}
+          <Nodes>k__BackingField:
+          - rid: 4986929699546202123
+          - rid: 4986929686808363105
+          - rid: 4986929699546202126
+          - rid: 4986929686808363091
+        - <Text>k__BackingField: Do something else
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField:
+          - rid: 4986929699546202123
+          - rid: 4986929686808363105
+          - rid: 4986929686808363091
+    - rid: 4986929699546202122
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929699546202123
+        Position: {x: 1138.1001, y: 551.00006}
+    - rid: 4986929699546202123
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Close Decision
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 4986929699546202124
+    - rid: 4986929699546202124
+      type: {class: DisableDecisionsTogglerCommand, ns: , asm: Assembly-CSharp}
+    - rid: 4986929699546202125
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929699546202126
+        Position: {x: 1201.3, y: 712}
+    - rid: 4986929699546202126
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Open Shop
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 4986929699546202127
+    - rid: 4986929699546202127
+      type: {class: OpenShopCommand, ns: , asm: Assembly-CSharp}
+      data:
+        StoreScriptableObject: {fileID: 11400000, guid: 3e98166db856259418095349c7d87fa7, type: 2}

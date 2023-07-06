@@ -29,6 +29,7 @@
             INode.WAIT => BuildWait(),
             INode.INVOKE_SCRIPTABLE_OBJECT_EVENT => BuildScriptableObjectEvent(),
             INode.ADD_QUEST => BuildAddQuest(),
+            INode.OPEN_SHOP => BuildOpenShop(),
             _ => null,
         };
     }
@@ -92,6 +93,12 @@
     {
         var command = new AddQuestCommand();
         return new CompositeNode(INode.ADD_QUEST, false, command);
+    }
+
+    public INode BuildOpenShop()
+    {
+        var command = new OpenShopCommand();
+        return new CompositeNode(INode.OPEN_SHOP, false, command);
     }
 
     public INode BuildEnableSlider()

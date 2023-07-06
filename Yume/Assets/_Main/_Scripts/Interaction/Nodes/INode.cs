@@ -23,6 +23,7 @@ public interface INode
     public const string WAIT = "Wait";
     public const string INVOKE_SCRIPTABLE_OBJECT_EVENT = "Invoke Scriptable Object Event";
     public const string ADD_QUEST = "Add Quest";
+    public const string OPEN_SHOP = "Open Shop";
 
     List<Connection> Connections { get; }
     ICommand Executable { get; }

@@ -17,6 +17,7 @@ public class PlayableEntity : Entity, ITransitionable
     private Decisions _decisions;
     private SliderGame _slider;
     private Quests _quests;
+    private StoreUserInterface _store;
 
     protected override void Awake()
     {
@@ -28,6 +29,7 @@ public class PlayableEntity : Entity, ITransitionable
         _dialogueResolver = ServiceLocator.GetSingleton<DialogueResolver>();
         _slider = ServiceLocator.GetSingleton<SliderGame>();
         _quests = ServiceLocator.GetSingleton<Quests>();
+        _store = ServiceLocator.GetSingleton<StoreUserInterface>();
 
         _characterResolver = ServiceLocator.GetSingleton<InSceneCharacter>();
         _characterResolver.Set(this);
@@ -80,6 +82,7 @@ public class PlayableEntity : Entity, ITransitionable
             [ShouldTransitionToWalkingState] = typeof(Walking),
             [ShouldTransitionToChoosingState] = typeof(Choosing),
             [ShouldTransitionToSliderState] = typeof(PlayingSliderGame),
+            [ShouldTransitionToBrowsingShopState] = typeof(BrowsingShop),
         };
 
         var walkingTransitions = new Dictionary<Func<bool>, Type>()
@@ -88,6 +91,7 @@ public class PlayableEntity : Entity, ITransitionable
             [ShouldTransitionToChoosingState] = typeof(Choosing),
             [ShouldTransitionToSliderState] = typeof(PlayingSliderGame),
             [ShouldTransitionToBrowsingQuestsState] = typeof(BrowsingQuests),
+            [ShouldTransitionToBrowsingShopState] = typeof(BrowsingShop),
         };
 
         var choosingTransitions = new Dictionary<Func<bool>, Type>()
@@ -95,6 +99,7 @@ public class PlayableEntity : Entity, ITransitionable
             [ShouldTransitionToTalkingState] = typeof(Talking),
             [ShouldTransitionToWalkingState] = typeof(Walking),
             [ShouldTransitionToSliderState] = typeof(PlayingSliderGame),
+            [ShouldTransitionToBrowsingShopState] = typeof(BrowsingShop),
         };
 
         var sliderGameTransitions = new Dictionary<Func<bool>, Type>()
@@ -109,13 +114,19 @@ public class PlayableEntity : Entity, ITransitionable
             [ShouldTransitionToWalkingState] = typeof(Walking),
         };
 
+        var browsingShopTransitions = new Dictionary<Func<bool>, Type>()
+        {
+            [ShouldTransitionToWalkingState] = typeof(Walking),
+        };
+
         var states = new IState[]
         {
             new Walking(_input.Walking, movement, _direction, interaction, walkingTransitions),
             new Choosing(_input.Choosing, choosingTransitions),
             new PlayingSliderGame(_input.Slider, sliderGameTransitions),
             new Talking(_input.Talking, talkingTransitions),
-            new BrowsingQuests(_input.BrowsingQuests, browsingQuestsTransitions)
+            new BrowsingQuests(_input.BrowsingQuests, browsingQuestsTransitions),
+            new BrowsingShop(_input.BrowsingShop, browsingShopTransitions)
         };
 
         _states = new StateMachine(states);
@@ -124,7 +135,7 @@ public class PlayableEntity : Entity, ITransitionable
     private bool ShouldTransitionToWalkingState()
     {
         var dialogues = _dialogueResolver.Resolve();
-        return dialogues.All(dialogue => !dialogue.Toggler.Enabled) && !_decisions.Toggler.Enabled && !_slider.Toggler.Enabled && !_quests.Toggler.Enabled;
+        return dialogues.All(dialogue => !dialogue.Toggler.Enabled) && !_decisions.Toggler.Enabled && !_slider.Toggler.Enabled && !_quests.Toggler.Enabled && !_store.Active;
     }
 
     private bool ShouldTransitionToSliderState()
@@ -135,6 +146,11 @@ public class PlayableEntity : Entity, ITransitionable
     private bool ShouldTransitionToBrowsingQuestsState()
     {
         return _quests.Toggler.Enabled;
+    }
+
+    private bool ShouldTransitionToBrowsingShopState()
+    {
+        return _store.Active;
     }
 
     private bool ShouldTransitionToTalkingState()

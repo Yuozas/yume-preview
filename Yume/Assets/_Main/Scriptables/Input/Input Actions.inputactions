@@ -475,6 +475,28 @@
                 },
                 {
                     "name": "",
+                    "id": "e2808ec1-58a2-4c04-8fc5-407d12683a17",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Quit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f57b21db-09a0-47e9-b6b5-7641811bb1c9",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Quit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "1510ca47-c05f-49a7-a324-b9b128e05783",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
@@ -492,6 +514,45 @@
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "Previous",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "BrowsingShop",
+            "id": "652ea9ee-d858-42e3-a85c-89bcf0f469c7",
+            "actions": [
+                {
+                    "name": "Quit",
+                    "type": "Button",
+                    "id": "b386fe7e-2ec2-4f3e-9ff5-31f73a578dcc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "1024622c-7d5f-4286-a47e-c188eb39c4ff",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Quit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "127ddf17-6627-4dfc-955e-77c747428a77",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Quit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

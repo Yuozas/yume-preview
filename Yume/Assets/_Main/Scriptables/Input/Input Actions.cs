@@ -497,6 +497,28 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""e2808ec1-58a2-4c04-8fc5-407d12683a17"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Quit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f57b21db-09a0-47e9-b6b5-7641811bb1c9"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Quit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""1510ca47-c05f-49a7-a324-b9b128e05783"",
                     ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
@@ -514,6 +536,45 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
                     ""action"": ""Previous"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""BrowsingShop"",
+            ""id"": ""652ea9ee-d858-42e3-a85c-89bcf0f469c7"",
+            ""actions"": [
+                {
+                    ""name"": ""Quit"",
+                    ""type"": ""Button"",
+                    ""id"": ""b386fe7e-2ec2-4f3e-9ff5-31f73a578dcc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""1024622c-7d5f-4286-a47e-c188eb39c4ff"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Quit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""127ddf17-6627-4dfc-955e-77c747428a77"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Quit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -571,6 +632,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_BrowsingQuests_Quit = m_BrowsingQuests.FindAction("Quit", throwIfNotFound: true);
         m_BrowsingQuests_Next = m_BrowsingQuests.FindAction("Next", throwIfNotFound: true);
         m_BrowsingQuests_Previous = m_BrowsingQuests.FindAction("Previous", throwIfNotFound: true);
+        // BrowsingShop
+        m_BrowsingShop = asset.FindActionMap("BrowsingShop", throwIfNotFound: true);
+        m_BrowsingShop_Quit = m_BrowsingShop.FindAction("Quit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1122,6 +1186,52 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         }
     }
     public BrowsingQuestsActions @BrowsingQuests => new BrowsingQuestsActions(this);
+
+    // BrowsingShop
+    private readonly InputActionMap m_BrowsingShop;
+    private List<IBrowsingShopActions> m_BrowsingShopActionsCallbackInterfaces = new List<IBrowsingShopActions>();
+    private readonly InputAction m_BrowsingShop_Quit;
+    public struct BrowsingShopActions
+    {
+        private @InputActions m_Wrapper;
+        public BrowsingShopActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Quit => m_Wrapper.m_BrowsingShop_Quit;
+        public InputActionMap Get() { return m_Wrapper.m_BrowsingShop; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(BrowsingShopActions set) { return set.Get(); }
+        public void AddCallbacks(IBrowsingShopActions instance)
+        {
+            if (instance == null || m_Wrapper.m_BrowsingShopActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_BrowsingShopActionsCallbackInterfaces.Add(instance);
+            @Quit.started += instance.OnQuit;
+            @Quit.performed += instance.OnQuit;
+            @Quit.canceled += instance.OnQuit;
+        }
+
+        private void UnregisterCallbacks(IBrowsingShopActions instance)
+        {
+            @Quit.started -= instance.OnQuit;
+            @Quit.performed -= instance.OnQuit;
+            @Quit.canceled -= instance.OnQuit;
+        }
+
+        public void RemoveCallbacks(IBrowsingShopActions instance)
+        {
+            if (m_Wrapper.m_BrowsingShopActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IBrowsingShopActions instance)
+        {
+            foreach (var item in m_Wrapper.m_BrowsingShopActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_BrowsingShopActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public BrowsingShopActions @BrowsingShop => new BrowsingShopActions(this);
     private int m_KeyboardSchemeIndex = -1;
     public InputControlScheme KeyboardScheme
     {
@@ -1176,5 +1286,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         void OnQuit(InputAction.CallbackContext context);
         void OnNext(InputAction.CallbackContext context);
         void OnPrevious(InputAction.CallbackContext context);
+    }
+    public interface IBrowsingShopActions
+    {
+        void OnQuit(InputAction.CallbackContext context);
     }
 }
