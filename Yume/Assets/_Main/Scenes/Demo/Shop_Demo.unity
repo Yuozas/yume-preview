@@ -3619,9 +3619,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.010416667
+    y: 0.013333334
     width: 1
-    height: 0.9739584
+    height: 0.97247314
   near clip plane: 0.1
   far clip plane: 5000
   field of view: 40
@@ -3650,7 +3650,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.0000052, y: -7.375, z: -10}
+  m_LocalPosition: {x: 0, y: -5.509651, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4316,8 +4316,9 @@ GameObject:
   - component: {fileID: 737026546}
   - component: {fileID: 737026544}
   - component: {fileID: 737026543}
+  - component: {fileID: 737026547}
   m_Layer: 0
-  m_Name: Npc
+  m_Name: Seller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4412,6 +4413,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &737026547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737026542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10c77426a011bed408f2c3e3638e0bc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 951014418}
+  _facing: {x: 0, y: -1}
+  _interaction: {fileID: 11400000, guid: 089e8d53b5b5a344a9584cf0bafeffe6, type: 2}
 --- !u!1001 &762847998
 PrefabInstance:
   m_ObjectHideFlags: 0
