@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Main/UI/Store/Possesed%20Money%20Style.uss?fileID=7433441132597879392&amp;guid=9592978cd8449974ca08a7d98a39f840&amp;type=3#Possesed Money Style" />
+    <ui:VisualElement name="Body">
+        <ui:VisualElement name="PossesedMoney" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+            <ui:Label tabindex="-1" text="0000" display-tooltip-when-elided="true" name="Amount" />
+            <ui:VisualElement name="Coin" style="background-image: url(&apos;project://database/Assets/_Main/Graphics/Sprites/Modern%20User%20Interface/Modern_UI_Style_1.png?fileID=885831004&amp;guid=1a4d1f89522da874c8a9331ccf49cf2a&amp;type=3#Coin Small 1&apos;);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,96 @@
+#Body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	flex-direction: row;
+}
+
+#StoreContainer {
+	max-height: 500px;
+	height: 50%;
+	max-width: 1000px;
+	min-width: 400px;
+	width: 80%;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5% 4%;
+
+    -unity-slice-scale: 0.5px;
+}
+
+#ItemsContainer {
+	height: 100%;
+	flex-grow: 5;
+	padding: 5px;
+    -unity-slice-scale: 0.5px;
+}
+
+#Details {
+	height: 100%;
+	flex-grow: 2;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 36px;
+	padding-right: 36px;
+}
+
+#Details #StoreImageContainer {
+	flex-grow: 1;
+	width: 100%;
+    -unity-slice-scale: 0.5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    -unity-slice-scale: 0.4px;
+}
+
+#StoreImageContainer #StoreImage {
+	width: 64px;
+	height: 64px;
+}
+
+#Details #ItemPrice {
+	height: 64px;
+	width: 100%;
+    -unity-slice-scale: 0.4px;
+}
+
+#PossedMoneyContainer {
+	height: 64px;
+	width: 300px;
+	position: absolute;
+	bottom: -40px;
+    -unity-slice-scale: 0.4px;
+}
+
+#StoreTitleAbsoluteContainer {
+	max-height: 100px;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: -80px;
+	left: 0;
+    -unity-slice-scale: 0.4px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#StoreTitleContainer {
+	min-width: 200px;
+	height: 100%;
+    -unity-slice-scale: 0.5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 40px;
+	-unity-font-style: bold;
+	padding: 20px 10px;
+    -unity-slice-scale: 0.4px;
+}

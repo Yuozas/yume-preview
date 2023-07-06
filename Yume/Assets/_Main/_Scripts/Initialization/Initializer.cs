@@ -80,6 +80,12 @@ public class Initializer : IPreliminarySetup
             var instantiated = Instantiator.InstantiateAndDontDestroy(prefab);
             return instantiated.GetComponentInChildren<BackpackAndStorageUserInterface>();
         });
+        ServiceLocator.SingletonRegistrator.Register(provider =>
+        {
+            var prefab = Resources.Load<GameObject>("Store Canvas");
+            var instantiated = Instantiator.InstantiateAndDontDestroy(prefab);
+            return instantiated.GetComponentInChildren<StoreUserInterface>();
+        });
 
         var prefab = Resources.Load<DialoguesUserInterface>(DIALOGUE_PREFAB_FILE_NAME);
         Instantiator.InstantiateAndDontDestroy(prefab);

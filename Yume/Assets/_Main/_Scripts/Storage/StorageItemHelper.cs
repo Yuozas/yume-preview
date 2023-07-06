@@ -65,18 +65,7 @@ public class StorageItemHelper : IStorageItemHelper
         using var realm = _realmActiveSaveHelper.GetActiveSave();
         using var transaction = realm.StartTransaction();
 
-        if (!realm.TryGet<Storage>(storageIdTo, out var storageTo))
-            throw new ArgumentException($"Invalid {storageIdTo} passed.");
-
-        if(!realm.TryGet<StorageSlot>(storageSlotIdFrom, out var fromSlot))
-            throw new ArgumentException($"Invalid {storageSlotIdFrom} passed.");
-
-        if(fromSlot.Item is null)
-            throw new ArgumentException($"Invalid slot passed no item.");
-
-        fromSlot.Item = null;
-
-        if (!TryAddItemToStorage(item, storageTo))
+        if(!TryMoveFromTo(storageSlotIdFrom, storageIdTo, item, realm))
         {
             transaction.Rollback();
             return false;
@@ -84,6 +73,22 @@ public class StorageItemHelper : IStorageItemHelper
 
         transaction.Commit();
         return true;
+    }
+
+    public bool TryMoveFromTo(string storageSlotIdFrom, string storageIdTo, Item item, Realm realm)
+    {
+        if (!realm.TryGet<Storage>(storageIdTo, out var storageTo))
+            throw new ArgumentException($"Invalid {storageIdTo} passed.");
+
+        if (!realm.TryGet<StorageSlot>(storageSlotIdFrom, out var fromSlot))
+            throw new ArgumentException($"Invalid {storageSlotIdFrom} passed.");
+
+        if (fromSlot.Item is null)
+            throw new ArgumentException($"Invalid slot passed no item.");
+
+        fromSlot.Item = null;
+
+        return TryAddItemToStorage(item, storageTo);
     }
 
     private Storage GetStorage(Realm activeRealm)

@@ -1,6 +1,5 @@
-﻿using System.Linq;
-
-public interface IActiveCharacterHelper
+﻿public interface IActiveCharacterHelper
 {
     RealmResult<Storage> GetBackpack();
+    float GetPossesedMoney();
 }

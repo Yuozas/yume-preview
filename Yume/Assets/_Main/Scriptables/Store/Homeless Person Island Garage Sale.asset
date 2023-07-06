@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ba40197e56927b4a8754eae7c8cc3c8, type: 3}
+  m_Name: Homeless Person Island Garage Sale
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: 1
+  <StoreName>k__BackingField: Homeless Person Island Garage Sale
+  <StoreItems>k__BackingField:
+  - {fileID: 11400000, guid: 7ae7621f303cacd4f8c12c9a2ee72f15, type: 2}

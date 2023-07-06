@@ -14,4 +14,10 @@ public class ActiveCharacterHelper : IActiveCharacterHelper
         var activeRealm = _realmActiveSaveHelper.GetActiveSave();
         return activeRealm.Get<ActiveCharacer>().Character.CharacterHasStorages.First().Storage;
     }
+
+    public float GetPossesedMoney()
+    {
+        var activeRealm = _realmActiveSaveHelper.GetActiveSave();
+        return activeRealm.Get<ActiveCharacer>().Character.PossesedMoney;
+    }
 }
