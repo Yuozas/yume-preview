@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83f64814e188f7e408633af39d8be79a, type: 3}
+  m_Name: Investigate_House_Quest
+  m_EditorClassIdentifier: 
+  _event: {fileID: 11400000, guid: 80c9d3ea3dc3cf44e9f3894b449c9356, type: 2}
+  _title: Kaizer House
+  _description: Unlock the door to Kaizer house. It's located in the north.

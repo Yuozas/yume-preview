@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System;
 
 public class NotificationUserInterface : MonoBehaviour
 {
@@ -13,10 +14,15 @@ public class NotificationUserInterface : MonoBehaviour
     [SerializeField] private float _to = 0f;
     [SerializeField] private AnimationCurve _curve;
 
+    public string Name { get; private set; }
     private Percentage _percentage;
+    private Action<NotificationUserInterface> _action;
 
-    public void Initialize(string name)
+    public void Initialize(string name, Action<NotificationUserInterface> action)
     {
+        Name = name;
+
+        _action = action;
         _text.text = name;
 
         _percentage = new Percentage(this);
@@ -38,6 +44,7 @@ public class NotificationUserInterface : MonoBehaviour
 
     private void SelfDestroy()
     {
+        _action?.Invoke(this);
         Destroy(gameObject);
     }
 }

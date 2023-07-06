@@ -17,6 +17,7 @@ MonoBehaviour:
   - rid: 4986929686808363050
   - rid: 4986929686808363052
   - rid: 4986929686808363055
+  - rid: 4986929686808363170
   references:
     version: 2
     RefIds:
@@ -73,6 +74,7 @@ MonoBehaviour:
           <Sprite>k__BackingField: {fileID: 0}
           <Nodes>k__BackingField:
           - rid: 4986929686808363051
+          - rid: 4986929686808363171
         _wait: 1
         <Executable>k__BackingField:
           rid: 4986929686808363054
@@ -102,5 +104,26 @@ MonoBehaviour:
           rid: 4986929686808363057
     - rid: 4986929686808363057
       type: {class: EnableDialogueTogglerCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Inspection
+    - rid: 4986929686808363170
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929686808363171
+        Position: {x: 771, y: 159}
+    - rid: 4986929686808363171
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Close
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 4986929686808363172
+    - rid: 4986929686808363172
+      type: {class: DisableDialogueTogglerCommand, ns: , asm: Assembly-CSharp}
       data:
         Type: Inspection

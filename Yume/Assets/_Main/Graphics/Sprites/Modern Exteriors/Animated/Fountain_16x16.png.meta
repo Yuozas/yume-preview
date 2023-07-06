@@ -1,31 +1,10 @@
 fileFormatVersion: 2
-guid: f143d075040083f4d9057883d7bcc212
+guid: 7678ddf775fe1ea4f91c4f43ae0ca7e8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5004391047665634739
-    second: Wind_Turbine_1_16x16_0
-  - first:
-      213: 2455530987949786059
-    second: Wind_Turbine_1_16x16_1
-  - first:
-      213: 4399679662904679593
-    second: Wind_Turbine_1_16x16_2
-  - first:
-      213: -10488572045803817
-    second: Wind_Turbine_1_16x16_3
-  - first:
-      213: -8157079061539957021
-    second: Wind_Turbine_1_16x16_4
-  - first:
-      213: -2741671983335349649
-    second: Wind_Turbine_1_16x16_5
-  - first:
-      213: -9108083710828607138
-    second: Wind_Turbine_1_16x16_6
-  - first:
-      213: -8351152204443729290
-    second: Wind_Turbine_1_16x16_7
+      213: -8851888366770427553
+    second: Fountain_16x16_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -131,169 +110,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wind_Turbine_1_16x16_0
+      name: Fountain_16x16_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 112
-        height: 160
-      alignment: 9
-      pivot: {x: 0.5, y: 0.03125}
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d42beb64bd4dc8ab0800000000000000
-      internalID: -5004391047665634739
+      spriteID: 41a0fd10e5dc3b047a9cd021886bfa04
+      internalID: 373849785
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wind_Turbine_1_16x16_1
+      name: Fountain_16x16_1
       rect:
         serializedVersion: 2
-        x: 112
+        x: 32
         y: 0
-        width: 112
-        height: 160
-      alignment: 9
-      pivot: {x: 0.5, y: 0.03125}
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: bc306bf6c6cc31220800000000000000
-      internalID: 2455530987949786059
+      spriteID: cdefac2b27f29d14c8cf5459d5fd8bc8
+      internalID: -2090231649
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wind_Turbine_1_16x16_2
+      name: Fountain_16x16_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89d5876cacd88344c82272ce1e6de283
+      internalID: -1233882769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fountain_16x16_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bcc406d8138e8b4dad72716e6b76b7e
+      internalID: 2101919369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fountain_16x16_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edf3c9a781b717e4e90d3b2a38d0a093
+      internalID: -1181325061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fountain_16x16_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b73ea8fc65de04b468379f902294cbe6
+      internalID: 1454909461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fountain_16x16_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95641b4ca5580fd42a310007792708ef
+      internalID: 708835882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fountain_16x16_7
       rect:
         serializedVersion: 2
         x: 224
         y: 0
-        width: 112
-        height: 160
-      alignment: 9
-      pivot: {x: 0.5, y: 0.03125}
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9ac91f8c75dce0d30800000000000000
-      internalID: 4399679662904679593
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wind_Turbine_1_16x16_3
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 0
-        width: 112
-        height: 160
-      alignment: 9
-      pivot: {x: 0.5, y: 0.03125}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7de320503bcbadff0800000000000000
-      internalID: -10488572045803817
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wind_Turbine_1_16x16_4
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 0
-        width: 112
-        height: 160
-      alignment: 9
-      pivot: {x: 0.5, y: 0.03125}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3e65224cfcb3cce80800000000000000
-      internalID: -8157079061539957021
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wind_Turbine_1_16x16_5
-      rect:
-        serializedVersion: 2
-        x: 560
-        y: 0
-        width: 112
-        height: 160
-      alignment: 9
-      pivot: {x: 0.5, y: 0.03125}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f62e7ae6bdf93f9d0800000000000000
-      internalID: -2741671983335349649
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wind_Turbine_1_16x16_6
-      rect:
-        serializedVersion: 2
-        x: 672
-        y: 0
-        width: 112
-        height: 160
-      alignment: 9
-      pivot: {x: 0.5, y: 0.03125}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e590a872f16999180800000000000000
-      internalID: -9108083710828607138
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wind_Turbine_1_16x16_7
-      rect:
-        serializedVersion: 2
-        x: 784
-        y: 0
-        width: 112
-        height: 160
-      alignment: 9
-      pivot: {x: 0.5, y: 0.03125}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 67249ecf05fba1c80800000000000000
-      internalID: -8351152204443729290
+      spriteID: 76870083efdb7b14d9aaa4e9cae1a476
+      internalID: 728961600
       vertices: []
       indices: 
       edges: []
@@ -301,7 +280,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 2dafc6d2b2358e647bdb9963407dda7c
+    spriteID: 72e07f1f4cf0ef5458ba5541c276af8b
     internalID: 0
     vertices: []
     indices: 
@@ -309,14 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Wind_Turbine_1_16x16_0: -5004391047665634739
-      Wind_Turbine_1_16x16_1: 2455530987949786059
-      Wind_Turbine_1_16x16_2: 4399679662904679593
-      Wind_Turbine_1_16x16_3: -10488572045803817
-      Wind_Turbine_1_16x16_4: -8157079061539957021
-      Wind_Turbine_1_16x16_5: -2741671983335349649
-      Wind_Turbine_1_16x16_6: -9108083710828607138
-      Wind_Turbine_1_16x16_7: -8351152204443729290
+      Fountain_16x16_0: 373849785
+      Fountain_16x16_1: -2090231649
+      Fountain_16x16_2: -1233882769
+      Fountain_16x16_3: 2101919369
+      Fountain_16x16_4: -1181325061
+      Fountain_16x16_5: 1454909461
+      Fountain_16x16_6: 708835882
+      Fountain_16x16_7: 728961600
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -17,6 +17,7 @@ MonoBehaviour:
   - rid: 4986929686808363028
   - rid: 4986929686808363030
   - rid: 4986929686808363033
+  - rid: 4986929686808363167
   references:
     version: 2
     RefIds:
@@ -94,6 +95,7 @@ MonoBehaviour:
           <Sprite>k__BackingField: {fileID: 0}
           <Nodes>k__BackingField:
           - rid: 4986929686808363029
+          - rid: 4986929686808363168
         _wait: 1
         <Executable>k__BackingField:
           rid: 4986929686808363035
@@ -104,3 +106,24 @@ MonoBehaviour:
         Settings:
           Sentence: This is a very comfortable looking bench.
           Rate: 0.036
+    - rid: 4986929686808363167
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929686808363168
+        Position: {x: 851.5, y: 200}
+    - rid: 4986929686808363168
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Close
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 4986929686808363169
+    - rid: 4986929686808363169
+      type: {class: DisableDialogueTogglerCommand, ns: , asm: Assembly-CSharp}
+      data:
+        Type: Inspection

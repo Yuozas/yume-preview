@@ -91,7 +91,8 @@ public class Initializer : IPreliminarySetup
         ServiceLocator.SingletonRegistrator.Register(provider =>
         {
             var introductionsQuest = Resources.Load<QuestScriptableObject>("Introductions_Quest");
-            return new Quests(introductionsQuest);
+            var investigateQuest = Resources.Load<QuestScriptableObject>("Investigate_House_Quest");
+            return new Quests(introductionsQuest, investigateQuest);
         });
 
         ServiceLocator.SingletonRegistrator.Register(provider =>
