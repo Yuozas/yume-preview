@@ -13,7 +13,7 @@ public class InvokeScriptableObjectEventCommand : ICommand
 
     public void Execute(Action onFinished = null)
     {
-        EventScriptableObject.Invoke();
+        EventScriptableObject.InvokeEvent();
         onFinished?.Invoke();
     }
 }

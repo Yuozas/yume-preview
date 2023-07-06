@@ -4,5 +4,5 @@
     void Tick() { }
     void Exit() { }
 
-    void Set(States states);
+    void SetReferenceToStateMachine(StateMachine states);
 }

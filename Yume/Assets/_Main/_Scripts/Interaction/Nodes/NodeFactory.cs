@@ -28,6 +28,7 @@
             INode.PLAY_SLIDER_GAME => BuildPlaySlider(),
             INode.WAIT => BuildWait(),
             INode.INVOKE_SCRIPTABLE_OBJECT_EVENT => BuildScriptableObjectEvent(),
+            INode.ADD_QUEST => BuildAddQuest(),
             _ => null,
         };
     }
@@ -85,6 +86,12 @@
     {
         var command = new InvokeScriptableObjectEventCommand();
         return new CompositeNode(INode.INVOKE_SCRIPTABLE_OBJECT_EVENT, false, command);
+    }
+
+    public INode BuildAddQuest()
+    {
+        var command = new AddQuestCommand();
+        return new CompositeNode(INode.ADD_QUEST, false, command);
     }
 
     public INode BuildEnableSlider()

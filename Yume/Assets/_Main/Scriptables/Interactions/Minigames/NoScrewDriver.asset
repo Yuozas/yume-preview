@@ -19,6 +19,8 @@ MonoBehaviour:
   - rid: 4986929597601546831
   - rid: 4986929597601546834
   - rid: 4986929597601546837
+  - rid: 4986929671791181863
+  - rid: 4986929686808363124
   references:
     version: 2
     RefIds:
@@ -122,6 +124,8 @@ MonoBehaviour:
           <Nodes>k__BackingField:
           - rid: 4986929597601546838
           - rid: 4986929597601546827
+          - rid: 4986929671791181864
+          - rid: 4986929686808363125
         _wait: 1
         <Executable>k__BackingField:
           rid: 4986929597601546836
@@ -130,7 +134,7 @@ MonoBehaviour:
       data:
         Type: Inspection
         Settings:
-          Sentence: I need a screw-driver.
+          Sentence: I need a screwdriver.
           Rate: 0.036
     - rid: 4986929597601546837
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}
@@ -153,3 +157,45 @@ MonoBehaviour:
       type: {class: DisableDialogueTogglerCommand, ns: , asm: Assembly-CSharp}
       data:
         Type: Inspection
+    - rid: 4986929671791181863
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929671791181864
+        Position: {x: 1152, y: 508.60394}
+    - rid: 4986929671791181864
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Add Quest
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 4986929671791181865
+    - rid: 4986929671791181865
+      type: {class: AddQuestCommand, ns: , asm: Assembly-CSharp}
+      data:
+        QuestScriptableObject: {fileID: 11400000, guid: f9edb1b02099bbb449e13fca9f99ed18, type: 2}
+    - rid: 4986929686808363124
+      type: {class: UnityNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Node>k__BackingField:
+          rid: 4986929686808363125
+        Position: {x: 1152, y: 663}
+    - rid: 4986929686808363125
+      type: {class: CompositeNode, ns: , asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: Add Quest
+        <Connections>k__BackingField:
+        - <Text>k__BackingField: Choice
+          <Sprite>k__BackingField: {fileID: 0}
+          <Nodes>k__BackingField: []
+        _wait: 0
+        <Executable>k__BackingField:
+          rid: 4986929686808363126
+    - rid: 4986929686808363126
+      type: {class: AddQuestCommand, ns: , asm: Assembly-CSharp}
+      data:
+        QuestScriptableObject: {fileID: 11400000, guid: 850e03b9b79663d40a006635638f431d, type: 2}

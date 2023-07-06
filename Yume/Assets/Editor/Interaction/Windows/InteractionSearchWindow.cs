@@ -53,6 +53,7 @@ public class InteractionSearchWindow : ScriptableObject, ISearchWindowProvider
             CreateGroupEntry(Utility),
             CreateEntry(INode.WAIT),
             CreateEntry(INode.INVOKE_SCRIPTABLE_OBJECT_EVENT),
+            CreateEntry(INode.ADD_QUEST),
         };
     }
 

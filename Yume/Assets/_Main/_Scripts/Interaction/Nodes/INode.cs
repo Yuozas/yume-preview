@@ -22,6 +22,7 @@ public interface INode
     public const string PLAY_SLIDER_GAME = "Play Slider Game";
     public const string WAIT = "Wait";
     public const string INVOKE_SCRIPTABLE_OBJECT_EVENT = "Invoke Scriptable Object Event";
+    public const string ADD_QUEST = "Add Quest";
 
     List<Connection> Connections { get; }
     ICommand Executable { get; }

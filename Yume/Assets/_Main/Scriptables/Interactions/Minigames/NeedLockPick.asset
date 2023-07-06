@@ -130,7 +130,7 @@ MonoBehaviour:
       data:
         Type: Inspection
         Settings:
-          Sentence: I could open this with a lock-pick.
+          Sentence: I could open this with a lockpick.
           Rate: 0.036
     - rid: 4986929597601546793
       type: {class: UnityNode, ns: , asm: Assembly-CSharp}

@@ -3,28 +3,28 @@ using System;
 
 public class BaseState
 {
-    protected readonly Dictionary<Func<bool>, Type> _transitions;
-    protected States _states;
+    protected readonly Dictionary<Func<bool>, Type> Transitions;
+    protected StateMachine StateMachine;
 
     public BaseState(Dictionary<Func<bool>, Type> transitions)
     {
-        _transitions = transitions;
+        Transitions = transitions;
     }
 
-    public bool TryTransition()
+    public bool TryTransitionToAnotherState()
     {
-        foreach (var transition in _transitions)
+        foreach (var transition in Transitions)
             if (transition.Key())
             {
-                _states.Set(transition.Value);
+                StateMachine.SetState(transition.Value);
                 return true;
             }
 
         return false;
     }
 
-    public void Set(States states)
+    public void SetReferenceToStateMachine(StateMachine states)
     {
-        _states = states;
+        StateMachine = states;
     }
 }
