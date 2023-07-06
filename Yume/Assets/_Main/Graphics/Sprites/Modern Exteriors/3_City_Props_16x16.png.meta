@@ -1063,19 +1063,31 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3_City_Props_16x16_0
+      name: City_Props_Lamp_01_Top
       rect:
         serializedVersion: 2
         x: 256
-        y: 1344
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 1328
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.25, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1088,36 +1100,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_City_Props_16x16_1
-      rect:
-        serializedVersion: 2
-        x: 272
-        y: 1344
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0422a4ad2c0cf7620800000000000000
-      internalID: 2774147838601994816
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_2
+      name: City_Props_Lamp_02_Top
       rect:
         serializedVersion: 2
         x: 288
-        y: 1344
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 1328
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.75, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1125,27 +1116,6 @@ TextureImporter:
       bones: []
       spriteID: 41658e6ced3de1a20800000000000000
       internalID: 3035096152667608596
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_3
-      rect:
-        serializedVersion: 2
-        x: 304
-        y: 1344
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 24f2699eea5457bd0800000000000000
-      internalID: -2633121789582627006
       vertices: []
       indices: 
       edges: []
@@ -1172,15 +1142,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_City_Props_16x16_5
+      name: City_Props_Bench_01_Left
       rect:
         serializedVersion: 2
         x: 336
-        y: 1344
+        y: 1328
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 32
+      alignment: 9
+      pivot: {x: 1, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1193,15 +1163,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_City_Props_16x16_6
+      name: City_Props_Bench_01_Right
       rect:
         serializedVersion: 2
         x: 352
-        y: 1344
+        y: 1328
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 32
+      alignment: 9
+      pivot: {x: 0, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1550,90 +1520,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_City_Props_16x16_23
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 1328
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5a36d0015ac333650800000000000000
-      internalID: 6211374990710629285
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_24
-      rect:
-        serializedVersion: 2
-        x: 272
-        y: 1328
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 095b691dc4a661900800000000000000
-      internalID: 654827673995359632
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_25
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 1328
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9d9a6f63a78070a50800000000000000
-      internalID: 6487163109251656153
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_26
-      rect:
-        serializedVersion: 2
-        x: 304
-        y: 1328
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1c6902239aa18d380800000000000000
-      internalID: -8946371345778698559
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: 3_City_Props_16x16_27
       rect:
         serializedVersion: 2
@@ -1650,48 +1536,6 @@ TextureImporter:
       bones: []
       spriteID: f3cc18d279b927630800000000000000
       internalID: 3923369298998971455
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_28
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 1328
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dc6f3a730899a1e10800000000000000
-      internalID: 2169214946500671181
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_29
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 1328
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5cc60a9e29db2cce0800000000000000
-      internalID: -1386337296594211643
       vertices: []
       indices: 
       edges: []
@@ -2201,36 +2045,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_City_Props_16x16_54
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 1312
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 32bc9721e5646a2c0800000000000000
-      internalID: -4420768614366721245
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_55
+      name: City_Props_Bench_02_Top
       rect:
         serializedVersion: 2
         x: 272
         y: 1312
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2243,15 +2066,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_City_Props_16x16_56
+      name: City_Props_Bench_03_Top
       rect:
         serializedVersion: 2
         x: 288
         y: 1312
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2259,27 +2082,6 @@ TextureImporter:
       bones: []
       spriteID: 0a4850a9886653830800000000000000
       internalID: 4050256176775267488
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_57
-      rect:
-        serializedVersion: 2
-        x: 304
-        y: 1312
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6497a1db3a46f1be0800000000000000
-      internalID: -1504373096103380666
       vertices: []
       indices: 
       edges: []
@@ -2306,15 +2108,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_City_Props_16x16_59
+      name: City_Props_Bench_01_Middle
       rect:
         serializedVersion: 2
-        x: 336
-        y: 1312
+        x: 352
+        y: 1296
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2322,48 +2124,6 @@ TextureImporter:
       bones: []
       spriteID: 81a07b7661b3a2050800000000000000
       internalID: 5776494439471450648
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_60
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 1312
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 872ab9c961b468e00800000000000000
-      internalID: 1046606523899028088
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_61
-      rect:
-        serializedVersion: 2
-        x: 368
-        y: 1312
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c5ab5513fac03a4a0800000000000000
-      internalID: -6583404283699021220
       vertices: []
       indices: 
       edges: []
@@ -2831,15 +2591,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_City_Props_16x16_84
+      name: City_Props_Lamp_01_Bottom
       rect:
         serializedVersion: 2
         x: 256
         y: 1296
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.125}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2852,7 +2612,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_City_Props_16x16_85
+      name: City_Props_Bench_02_Middle
       rect:
         serializedVersion: 2
         x: 272
@@ -2873,7 +2633,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_City_Props_16x16_86
+      name: City_Props_Bench_03_Middle
       rect:
         serializedVersion: 2
         x: 288
@@ -2894,15 +2654,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_City_Props_16x16_87
+      name: City_Props_Lamp_02_Bottom
       rect:
         serializedVersion: 2
         x: 304
         y: 1296
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.125}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2931,69 +2691,6 @@ TextureImporter:
       bones: []
       spriteID: 49a0b755fcdd37be0800000000000000
       internalID: -1480595969912665452
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_89
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 1296
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a43b4283123688650800000000000000
-      internalID: 6235342678421451594
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_90
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 1296
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: af64b45d128164610800000000000000
-      internalID: 1604996850795628282
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_91
-      rect:
-        serializedVersion: 2
-        x: 368
-        y: 1296
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6abf198a5a56d2320800000000000000
-      internalID: 2534793927451605926
       vertices: []
       indices: 
       edges: []
@@ -4595,15 +4292,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_City_Props_16x16_168
+      name: City_Props_Bench_02_Bottom
       rect:
         serializedVersion: 2
         x: 272
         y: 1248
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -4616,15 +4313,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_City_Props_16x16_169
+      name: City_Props_Bench_03_Bottom
       rect:
         serializedVersion: 2
         x: 288
         y: 1248
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -9320,15 +9017,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_City_Props_16x16_393
+      name: City_Props_Bin_04
       rect:
         serializedVersion: 2
         x: 320
-        y: 1120
+        y: 1104
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0625}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -9819,27 +9516,6 @@ TextureImporter:
       bones: []
       spriteID: 5532ba1974f7ca946823e58fc9df0563
       internalID: 1359587748
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_417
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 1104
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 01f824d4bb203df429ef0c08d1ea946c
-      internalID: 1843604420
       vertices: []
       indices: 
       edges: []
@@ -10454,15 +10130,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_City_Props_16x16_447
+      name: City_Props_Pot_Bush_01
       rect:
         serializedVersion: 2
         x: 416
-        y: 1088
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 1072
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15625}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -10470,27 +10146,6 @@ TextureImporter:
       bones: []
       spriteID: 1124c7e2191548e4f849e6adfebe1479
       internalID: -756230184
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_448
-      rect:
-        serializedVersion: 2
-        x: 432
-        y: 1088
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b7137bde5137a534f9c628defad19f62
-      internalID: 584800310
       vertices: []
       indices: 
       edges: []
@@ -10874,27 +10529,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_City_Props_16x16_467
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 1072
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b8225a2ddc4e9f4693c0600c4b98f7b
-      internalID: -449139526
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: 3_City_Props_16x16_468
       rect:
         serializedVersion: 2
@@ -10995,48 +10629,6 @@ TextureImporter:
       bones: []
       spriteID: ad43d10734183eb4c9a2e373cb687e5f
       internalID: -1635566287
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_473
-      rect:
-        serializedVersion: 2
-        x: 416
-        y: 1072
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0a8e4178405a66043b0aac6637bb6a84
-      internalID: -690484024
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_474
-      rect:
-        serializedVersion: 2
-        x: 432
-        y: 1072
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 12c9b2a563c4196479ac5e893d3d7aee
-      internalID: 1265975931
       vertices: []
       indices: 
       edges: []
@@ -11462,15 +11054,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_City_Props_16x16_495
+      name: City_Props_Bin_03
       rect:
         serializedVersion: 2
         x: 320
         y: 1056
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0625}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -12008,15 +11600,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_City_Props_16x16_521
+      name: City_Props_Bin_01
       rect:
         serializedVersion: 2
         x: 368
-        y: 1040
+        y: 1024
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15625}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -12633,27 +12225,6 @@ TextureImporter:
       bones: []
       spriteID: 576b2561ef4d57846ba907a3707cb8c3
       internalID: 2137278582
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_551
-      rect:
-        serializedVersion: 2
-        x: 368
-        y: 1024
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 63c28b6087c894747afa811582fcc2d2
-      internalID: -914311107
       vertices: []
       indices: 
       edges: []
@@ -13667,15 +13238,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_City_Props_16x16_600
+      name: City_Props_Bin_02
       rect:
         serializedVersion: 2
         x: 352
-        y: 992
+        y: 976
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15625}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -13814,15 +13385,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_City_Props_16x16_607
+      name: City_Props_Tree_01
       rect:
         serializedVersion: 2
         x: 480
-        y: 992
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 944
+        width: 32
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0625}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -13830,27 +13401,6 @@ TextureImporter:
       bones: []
       spriteID: a1abecc1f34f4514cb719bb20c5c4179
       internalID: 1096803697
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_608
-      rect:
-        serializedVersion: 2
-        x: 496
-        y: 992
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 976de6fe542161f40b9c431f04890b44
-      internalID: 1966019024
       vertices: []
       indices: 
       edges: []
@@ -14192,27 +13742,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_City_Props_16x16_625
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 976
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 929320070903ab04a8ca75f5fc72c713
-      internalID: 431147136
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: 3_City_Props_16x16_626
       rect:
         serializedVersion: 2
@@ -14313,48 +13842,6 @@ TextureImporter:
       bones: []
       spriteID: d6cb6a7f3bb0c454786313b3f6ca0098
       internalID: -515012706
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_631
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 976
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 899df9cfe87003e449bf147bcb400170
-      internalID: 1489151646
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_632
-      rect:
-        serializedVersion: 2
-        x: 496
-        y: 976
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8bb0fb5a8b1417a4dae9a1de617c1b53
-      internalID: -512153345
       vertices: []
       indices: 
       edges: []
@@ -14654,48 +14141,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_City_Props_16x16_647
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 960
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0bcb8769a2dc4f944aadb29f18d9da4b
-      internalID: -112077121
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_648
-      rect:
-        serializedVersion: 2
-        x: 496
-        y: 960
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4e41c9a42da70904589a9715dd347419
-      internalID: -374625070
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: 3_City_Props_16x16_649
       rect:
         serializedVersion: 2
@@ -14864,15 +14309,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_City_Props_16x16_657
+      name: City_Props_Pot_Plants_01
       rect:
         serializedVersion: 2
         x: 128
-        y: 944
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 928
+        width: 48
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3125}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -14880,48 +14325,6 @@ TextureImporter:
       bones: []
       spriteID: 35927105779e9bb45a51894e8e3fe8b9
       internalID: 394137417
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_658
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 944
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f250db7ac16ee564490e96dec6d6aa9b
-      internalID: 1650241879
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_659
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 944
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4e5748a6dae3dac40b2aa0009a19ddaf
-      internalID: -436708872
       vertices: []
       indices: 
       edges: []
@@ -15263,48 +14666,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_City_Props_16x16_676
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 944
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0972601de3bf51468d2bc80a3f2a772
-      internalID: 1891990058
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_677
-      rect:
-        serializedVersion: 2
-        x: 496
-        y: 944
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b3590a6432b5d5b439de1caa7460cb54
-      internalID: -511507468
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: 3_City_Props_16x16_678
       rect:
         serializedVersion: 2
@@ -15384,69 +14745,6 @@ TextureImporter:
       bones: []
       spriteID: acdeaafbcfe5f5440ac47f6e506827c5
       internalID: 1538410827
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_682
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 928
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: beb90b46be587404296f8dfd7ce569ec
-      internalID: -174751703
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_683
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 928
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 080d2e4a1dd88a9439b043e98b9f1c31
-      internalID: -1098827506
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_684
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 928
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a0137966f9d5fdd4ba143504ff098382
-      internalID: 201979861
       vertices: []
       indices: 
       edges: []
@@ -16544,15 +15842,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_City_Props_16x16_737
+      name: City_Props_Fountain_01
       rect:
         serializedVersion: 2
         x: 176
-        y: 896
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 864
+        width: 32
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33333334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -16560,27 +15858,6 @@ TextureImporter:
       bones: []
       spriteID: b1f07480258f2934b802b2253b26aa59
       internalID: 723974153
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_738
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 896
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ecb6a9b83cee40744856526e73f69cbf
-      internalID: 1239024646
       vertices: []
       indices: 
       edges: []
@@ -17006,48 +16283,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3_City_Props_16x16_759
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 880
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3dd3e60e9c6858a44bb67b3f8c91482a
-      internalID: -664161566
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_760
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 880
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ccdb77751c849a742914d7f82fdbf95b
-      internalID: 1490684061
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: 3_City_Props_16x16_761
       rect:
         serializedVersion: 2
@@ -17463,48 +16698,6 @@ TextureImporter:
       bones: []
       spriteID: 51c5ac029f4c73249868d978463bd412
       internalID: -2073928407
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_781
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 864
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5c9beda8a883c5946a3b82b41441ae5c
-      internalID: -1689461164
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3_City_Props_16x16_782
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 864
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 801919541fb0996498eef18316168180
-      internalID: -32911299
       vertices: []
       indices: 
       edges: []
@@ -38478,7 +37671,6 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      3_City_Props_16x16_0: -2632541410706800938
       3_City_Props_16x16_1: 2774147838601994816
       3_City_Props_16x16_10: 8257289704112794221
       3_City_Props_16x16_100: -1620869385252806960
@@ -39231,7 +38423,6 @@ TextureImporter:
       3_City_Props_16x16_1677: 1158863140
       3_City_Props_16x16_1678: 443134959
       3_City_Props_16x16_1679: 990206636
-      3_City_Props_16x16_168: 3955436503647017205
       3_City_Props_16x16_1680: -1004484631
       3_City_Props_16x16_1681: 1536549348
       3_City_Props_16x16_1682: 1332733908
@@ -39242,7 +38433,6 @@ TextureImporter:
       3_City_Props_16x16_1687: 279934072
       3_City_Props_16x16_1688: 1980882831
       3_City_Props_16x16_1689: 1829665750
-      3_City_Props_16x16_169: 3251888351478214612
       3_City_Props_16x16_1690: -262206671
       3_City_Props_16x16_1691: -1605483282
       3_City_Props_16x16_1692: -1242282013
@@ -39518,7 +38708,6 @@ TextureImporter:
       3_City_Props_16x16_197: 1933533564431090007
       3_City_Props_16x16_198: 7067898640645254831
       3_City_Props_16x16_199: 8037675814152454485
-      3_City_Props_16x16_2: 3035096152667608596
       3_City_Props_16x16_20: 3182393956490954261
       3_City_Props_16x16_200: 5783606262135262670
       3_City_Props_16x16_201: -5209523121485830057
@@ -39733,7 +38922,6 @@ TextureImporter:
       3_City_Props_16x16_390: 1804894554
       3_City_Props_16x16_391: 105727275
       3_City_Props_16x16_392: -236222380
-      3_City_Props_16x16_393: -2059661251
       3_City_Props_16x16_394: 1998274762
       3_City_Props_16x16_395: 1873450285
       3_City_Props_16x16_396: 1619520361
@@ -39793,7 +38981,6 @@ TextureImporter:
       3_City_Props_16x16_444: -1602496288
       3_City_Props_16x16_445: -1217599329
       3_City_Props_16x16_446: 1414094813
-      3_City_Props_16x16_447: -756230184
       3_City_Props_16x16_448: 584800310
       3_City_Props_16x16_449: -1454502258
       3_City_Props_16x16_45: -3255209878185967041
@@ -39846,12 +39033,10 @@ TextureImporter:
       3_City_Props_16x16_492: 300692133
       3_City_Props_16x16_493: 131178340
       3_City_Props_16x16_494: -1234868631
-      3_City_Props_16x16_495: 1502169422
       3_City_Props_16x16_496: 482811236
       3_City_Props_16x16_497: 1671606209
       3_City_Props_16x16_498: 627738680
       3_City_Props_16x16_499: -179869459
-      3_City_Props_16x16_5: -2895744347823040043
       3_City_Props_16x16_50: -3135026308954596144
       3_City_Props_16x16_500: 1398058644
       3_City_Props_16x16_501: 326118693
@@ -39876,7 +39061,6 @@ TextureImporter:
       3_City_Props_16x16_519: 202104581
       3_City_Props_16x16_52: 4603198507211488622
       3_City_Props_16x16_520: 309464140
-      3_City_Props_16x16_521: 1655030716
       3_City_Props_16x16_522: 1403927193
       3_City_Props_16x16_523: 2014862925
       3_City_Props_16x16_524: 1864885409
@@ -39907,7 +39091,6 @@ TextureImporter:
       3_City_Props_16x16_547: 1754491833
       3_City_Props_16x16_548: -2094355313
       3_City_Props_16x16_549: -2074926943
-      3_City_Props_16x16_55: 3031878945481845972
       3_City_Props_16x16_550: 2137278582
       3_City_Props_16x16_551: -914311107
       3_City_Props_16x16_552: -12352778
@@ -39918,7 +39101,6 @@ TextureImporter:
       3_City_Props_16x16_557: 811313319
       3_City_Props_16x16_558: -1041124660
       3_City_Props_16x16_559: -172021395
-      3_City_Props_16x16_56: 4050256176775267488
       3_City_Props_16x16_560: -1589422402
       3_City_Props_16x16_561: 530197730
       3_City_Props_16x16_562: 67796939
@@ -39951,7 +39133,6 @@ TextureImporter:
       3_City_Props_16x16_587: -1055575329
       3_City_Props_16x16_588: -1716421649
       3_City_Props_16x16_589: -1157972500
-      3_City_Props_16x16_59: 5776494439471450648
       3_City_Props_16x16_590: 961873315
       3_City_Props_16x16_591: 1138348913
       3_City_Props_16x16_592: -1875007036
@@ -39962,16 +39143,13 @@ TextureImporter:
       3_City_Props_16x16_597: -1084073895
       3_City_Props_16x16_598: -1206171149
       3_City_Props_16x16_599: -723573202
-      3_City_Props_16x16_6: 2919717912449787415
       3_City_Props_16x16_60: 1046606523899028088
-      3_City_Props_16x16_600: -1817986285
       3_City_Props_16x16_601: 2143819757
       3_City_Props_16x16_602: 1343576576
       3_City_Props_16x16_603: 1683163635
       3_City_Props_16x16_604: -1776788689
       3_City_Props_16x16_605: 204308947
       3_City_Props_16x16_606: -1095990861
-      3_City_Props_16x16_607: 1096803697
       3_City_Props_16x16_608: 1966019024
       3_City_Props_16x16_609: -1333472908
       3_City_Props_16x16_61: -6583404283699021220
@@ -40026,7 +39204,6 @@ TextureImporter:
       3_City_Props_16x16_654: 624614313
       3_City_Props_16x16_655: 597628453
       3_City_Props_16x16_656: -1162035213
-      3_City_Props_16x16_657: 394137417
       3_City_Props_16x16_658: 1650241879
       3_City_Props_16x16_659: -436708872
       3_City_Props_16x16_66: 6157929816047688649
@@ -40115,7 +39292,6 @@ TextureImporter:
       3_City_Props_16x16_734: 1730160313
       3_City_Props_16x16_735: 48547394
       3_City_Props_16x16_736: -1280462519
-      3_City_Props_16x16_737: 723974153
       3_City_Props_16x16_738: 1239024646
       3_City_Props_16x16_739: -1895933887
       3_City_Props_16x16_74: 4838354473623119675
@@ -40229,7 +39405,6 @@ TextureImporter:
       3_City_Props_16x16_837: -859324433
       3_City_Props_16x16_838: -1030779817
       3_City_Props_16x16_839: 1080491356
-      3_City_Props_16x16_84: 1425694380347526088
       3_City_Props_16x16_840: -1744885359
       3_City_Props_16x16_841: -203399696
       3_City_Props_16x16_842: 209899292
@@ -40240,7 +39415,6 @@ TextureImporter:
       3_City_Props_16x16_847: 963687790
       3_City_Props_16x16_848: -2114368189
       3_City_Props_16x16_849: -243394070
-      3_City_Props_16x16_85: -8395624976129548841
       3_City_Props_16x16_850: 1920377394
       3_City_Props_16x16_851: -669781349
       3_City_Props_16x16_852: -1472688463
@@ -40251,7 +39425,6 @@ TextureImporter:
       3_City_Props_16x16_857: -1101401994
       3_City_Props_16x16_858: -1373525812
       3_City_Props_16x16_859: -598739633
-      3_City_Props_16x16_86: -9096952164755508557
       3_City_Props_16x16_860: -1642786008
       3_City_Props_16x16_861: 957628083
       3_City_Props_16x16_862: 1876341568
@@ -40262,7 +39435,6 @@ TextureImporter:
       3_City_Props_16x16_867: 22096697
       3_City_Props_16x16_868: 1113739734
       3_City_Props_16x16_869: -2047202643
-      3_City_Props_16x16_87: 8161092886714757264
       3_City_Props_16x16_870: -592099213
       3_City_Props_16x16_871: 586021628
       3_City_Props_16x16_872: 343019038
@@ -40406,6 +39578,27 @@ TextureImporter:
       3_City_Props_16x16_997: -227459066
       3_City_Props_16x16_998: 649482131
       3_City_Props_16x16_999: 1392588168
+      City_Props_Bench_01_Left: -2895744347823040043
+      City_Props_Bench_01_Middle: 5776494439471450648
+      City_Props_Bench_01_Right: 2919717912449787415
+      City_Props_Bench_02_Bottom: 3955436503647017205
+      City_Props_Bench_02_Middle: -8395624976129548841
+      City_Props_Bench_02_Top: 3031878945481845972
+      City_Props_Bench_03_Bottom: 3251888351478214612
+      City_Props_Bench_03_Middle: -9096952164755508557
+      City_Props_Bench_03_Top: 4050256176775267488
+      City_Props_Bin_01: 1655030716
+      City_Props_Bin_02: -1817986285
+      City_Props_Bin_03: 1502169422
+      City_Props_Bin_04: -2059661251
+      City_Props_Fountain_01: 723974153
+      City_Props_Lamp_01_Bottom: 1425694380347526088
+      City_Props_Lamp_01_Top: -2632541410706800938
+      City_Props_Lamp_02_Bottom: 8161092886714757264
+      City_Props_Lamp_02_Top: 3035096152667608596
+      City_Props_Pot_Bush_01: -756230184
+      City_Props_Pot_Plants_01: 394137417
+      City_Props_Tree_01: 1096803697
       Electricity_Structure_01: 1925302610
       Electricity_Structure_02: -234946424
       Electricity_Structure_03: 1203662873
