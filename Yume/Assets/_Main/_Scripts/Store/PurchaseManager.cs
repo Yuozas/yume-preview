@@ -6,13 +6,16 @@ public class PurchaseManager : IPurchaseManager
     private readonly IRealmActiveSaveHelper _realmActiveSaveHelper;
     private readonly IStorageItemHelper _storageItemHelper;
     private readonly IActiveCharacterHelper _activeCharacterHelper;
+    private readonly Notifications _notifications;
 
     public PurchaseManager(IRealmActiveSaveHelper realmActiveSaveHelper, 
-        IStorageItemHelper storageItemHelper, IActiveCharacterHelper activeCharacterHelper)
+        IStorageItemHelper storageItemHelper, IActiveCharacterHelper activeCharacterHelper,
+        Notifications notifications)
     {
         _realmActiveSaveHelper = realmActiveSaveHelper;
         _storageItemHelper = storageItemHelper;
         _activeCharacterHelper = activeCharacterHelper;
+        _notifications = notifications;
     }
 
     public bool TryPurchase(StorageSlot storageSlot)
@@ -42,6 +45,8 @@ public class PurchaseManager : IPurchaseManager
         activeRealm.Remove(storageSlot);
 
         transaction.Commit();
+
+        _notifications.Add(Notifications.INVENTORY_UPDATED);
         return true;
     }
 }

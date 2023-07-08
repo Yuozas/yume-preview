@@ -10,8 +10,10 @@ public class StoreScriptableObject : ScriptableObject
     [field: SerializeField] public Sprite Sprite { get; private set; }
     [field: SerializeField] public string IconPath { get; private set; }
 
+#if UNITY_EDITOR
     public void OnValidate()
     {
         IconPath = Sprite.GetResourcesPath();
     }
+#endif
 }

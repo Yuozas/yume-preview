@@ -9,12 +9,14 @@ public class ItemScriptableObject : ScriptableObject
     [field: SerializeField] public string Description { get; private set; }
     [field: SerializeField] public string ItemIconPath { get; private set; }
 
+#if UNITY_EDITOR
     public void OnValidate()
     {
         if(ItemIcon == null)
             return;
         ItemIconPath = ItemIcon.GetResourcesPath();
     }
+#endif
 
     public static implicit operator Item(ItemScriptableObject itemScriptableObject)
     {

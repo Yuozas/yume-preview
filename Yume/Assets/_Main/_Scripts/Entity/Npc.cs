@@ -41,6 +41,9 @@ public class Npc : Entity, IInteractable
     {
         if (_item == null)
             return;
-        ServiceLocator.GetSingleton<IStorageItemHelper>().TryAddItemToBackpack(_item);
+
+        var itemAddedSuccessfully = ServiceLocator.GetSingleton<IStorageItemHelper>().TryAddItemToBackpack(_item);
+        if(itemAddedSuccessfully)
+            ServiceLocator.GetSingleton<Notifications>().Add(Notifications.INVENTORY_UPDATED);
     }
 }
