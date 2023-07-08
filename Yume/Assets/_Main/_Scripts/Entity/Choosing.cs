@@ -16,8 +16,7 @@ public class Choosing : BaseState, IState
         _choosing = actions;
         _choices = ServiceLocator.GetSingleton<Decisions>().Choices;
 
-        var settings = new DelayedExecutorSettings(1, 0.05f);
-        _executor = new DelayedExecutor(settings: settings);
+        _executor = new DelayedExecutor(settings: DelayedExecutorSettings.Default);
     }
 
     public void Enter()

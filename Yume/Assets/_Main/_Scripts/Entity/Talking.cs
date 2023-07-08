@@ -16,8 +16,7 @@ public class Talking : BaseState, IState
         _talking = actions;
         _dialogues = ServiceLocator.GetSingleton<DialogueResolver>();
 
-        var settings = new DelayedExecutorSettings(1, 0.05f);
-        _executor = new DelayedExecutor(settings: settings);
+        _executor = new DelayedExecutor(settings: DelayedExecutorSettings.Default);
     }
 
     public void Enter()
