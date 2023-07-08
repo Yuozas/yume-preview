@@ -4,6 +4,7 @@ using UnityEngine;
 
 public static class SpriteExtensions
 {
+#if UNITY_EDITOR
     public static string GetResourcesPath(this Sprite sprite)
     {
         const string searchString = "Resources/";
@@ -25,4 +26,5 @@ public static class SpriteExtensions
 
         return result;
     }
+#endif
 }

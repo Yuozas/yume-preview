@@ -13,9 +13,7 @@ public class WaitCommand : ICommand
 
     public void Execute(Action onFinished = null)
     {
-        var settings = new DelayedExecutorSettings(1, 0.05f);
-        var executor = new DelayedExecutor(settings: settings);
-
+        var executor = new DelayedExecutor(settings: DelayedExecutorSettings.Default);
         executor.Begin(() => onFinished?.Invoke());
     }
 }

@@ -2699,9 +2699,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
+    y: 0.01222494
     width: 1
-    height: 1
+    height: 0.9747615
   near clip plane: 0.1
   far clip plane: 5000
   field of view: 40
@@ -3462,7 +3462,9 @@ MonoBehaviour:
   _animator: {fileID: 1522361654}
   _facing: {x: 0, y: -1}
   _interaction: {fileID: 11400000, guid: 5ca6a1bedc60e1943aa1c5b0266e88fe, type: 2}
+  _goodEndingInteraction: {fileID: 11400000, guid: fd01e1a6ea15d0740b2f58acce2ae125, type: 2}
   _event: {fileID: 11400000, guid: f37f974f255d71b40bf9091bd48c864e, type: 2}
+  _item: {fileID: 11400000, guid: 03728ef7b7c508c45b212a589a8f7cf9, type: 2}
 --- !u!4 &616431529
 Transform:
   m_ObjectHideFlags: 0
